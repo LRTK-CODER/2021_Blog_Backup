@@ -3,7 +3,21 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/tags/BeeBox/</loc>
+        <lastmod>2020-12-16T01:49:16.901Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/tags/backjoon-bronze4/</loc>
+        <lastmod>2020-12-09T15:14:57.974Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/tags/backjoon/</loc>
         <lastmod>2020-12-09T15:14:57.974Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -19,20 +33,6 @@
     <url>
         <loc>https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/</loc>
         <lastmod>2020-12-09T15:14:57.974Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/tags/backjoon/</loc>
-        <lastmod>2020-12-09T15:14:57.974Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/tags/BeeBox/</loc>
-        <lastmod>2020-12-08T16:44:57.644Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

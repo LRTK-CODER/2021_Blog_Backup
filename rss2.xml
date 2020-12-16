@@ -9,8 +9,137 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Wed, 09 Dec 2020 15:14:57 GMT</pubDate>
+    <pubDate>Wed, 16 Dec 2020 01:49:16 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>SSI Injection</title>
+      <link>https://lrtk-coder.github.io/2020/12/16/SSI-Injection/</link>
+      <guid>https://lrtk-coder.github.io/2020/12/16/SSI-Injection/</guid>
+      <pubDate>Wed, 16 Dec 2020 01:48:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;Server-Side-Includes이란&quot;&gt;&lt;a href=&quot;#Server-Side-Includes이란&quot; class=&quot;headerlink&quot; title=&quot;Server Side Includes이란?&quot;&gt;&lt;/a&gt;Server Side Include</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Server-Side-Includes이란"><a href="#Server-Side-Includes이란" class="headerlink" title="Server Side Includes이란?"></a>Server Side Includes이란?</h2><p>HTML 페이지에 사용하는 지시어로, 페이지를 서비스할 때 서버가 처리한다.<br><br>SSI를 사용하면 CGI 프로그램이나 다른 동적인 기술로 페이지 전체를 만들어서 서비스하지 않고도 HTML 페이지에 동적으로 생성한 내용을 추가할 수 있다.</p><p>즉, SSI을 이용하여 악성행위를 Injection할 경우 SSI은 그 지시를 받고 동적으로 페이지를 생성할 것이다.</p><p>HTML로만 작성된 웹문서와는 달리 SSI코드가 들어있는 파일의 이름은 <code>.shtml</code>이라는 확장자를 가진다.</p><p><img src="img/post_img/SSI_Injection/1.png" alt="사진1"><br>* CGI : Web 서버에서 외부 프로그램과 통신하는 방법을 정의하는 스크립트 또는 프로그램</p><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="img/post_img/SSI_Injection/2.png" alt="사진2"><br>페이지를 보니 BeeBox 웹서버의 IP 주소를 조회하는 기능을 가진 페이지인 것 같다.<br><br>First Name과 Last Name에 test, test를 입력하여 어떻게 결과가 나오는 확인하였다.</p><p><img src="img/post_img/SSI_Injection/3.png" alt="사진3"><br>Form에 입력했던 값이 그대로 나오고, 밑에 BeeBox 웹서버의 IP 주소이 출력되었다.<br>또한 출력된 페이지는 확장자가 <code>ssii.shtml</code>의 이름을 가진 SSI 파일으로 확인되었다.</p><p>Form에 SSI 지시어와 HTML 태그를 입력해보았다.</p><p>First Name : <code>&lt;h1&gt;test&lt;/h1&gt;</code><br><br>Last Name : <code>test</code><br><img src="img/post_img/SSI_Injection/4.png" alt="사진4"></p><p>HTML 태그가 그대로 적용이 된 것을 확인할 수 있었다.<br>이번엔 SSI 지시어를 사용하여 Injection 하겠다.</p><p>First Name : <code>&lt;!--#exec cmd=&quot;ls&quot; --&gt;</code><br><br>Last Name : <code>test</code><br><img src="img/post_img/SSI_Injection/5.png" alt="사진5"></p><h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><p><code>functions_external.php</code></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">no_check</span>(<span class="params">$data</span>)</span>&#123;    </span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><p><code>ssii.php</code></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>($firstname == <span class="string">&quot;&quot;</span> <span class="keyword">or</span> $lastname == <span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">        $field_empty = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    $line = <span class="string">&#x27;&lt;p&gt;Hello &#x27;</span> . $firstname . <span class="string">&#x27; &#x27;</span> . $lastname . <span class="string">&#x27;,&lt;/p&gt;&lt;p&gt;Your IP address is:&#x27;</span> . <span class="string">&#x27;&lt;/p&gt;&lt;h1&gt;&lt;!--#echo var=&quot;REMOTE_ADDR&quot; --&gt;&lt;/h1&gt;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Writes a new line to the file</span></span><br><span class="line">    $fp = fopen(<span class="string">&quot;ssii.shtml&quot;</span>, <span class="string">&quot;w&quot;</span>);</span><br><span class="line">    fputs($fp, $line, <span class="number">200</span>);</span><br><span class="line">    fclose($fp);</span><br><span class="line"></span><br><span class="line">    header(<span class="string">&quot;Location: ssii.shtml&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">exit</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>빈 입력값을 검증하는 항목은 있지만, 입력값은 그대로 출력한다.</p><br><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>Low Level에서 확인해봤던 HTML 태그를 입력해봤더니, 그대로 출력이 되었다.<br><br><code>&lt;, &gt;, /</code> 3개의 특수 문자 검증이 없을 것으로 추측이 된다.</p><p><code>&quot;, &#39;</code>도 검증 없이 출력이 되는지 확인하겠다.<br><br>First Name : <code>&lt;!--#exec cmd=&quot;ls&quot; --&gt;</code><br><br>Last Name : <code>test</code></p><p>결과는 막힌 것으로 확인되었다.<br><br> <code>&quot;, &#39;</code>을 검사하여, 치환된 것으로 추측이 된다.</p><p>First Name : <code>&lt;!--#exec cmd=ls --&gt;</code><br><br>Last Name : <code>test</code><br><img src="img/post_img/SSI_Injection/6.png" alt="사진6"></p><p><code>&quot;, &#39;</code>을 제거 후 출력 결과를 보니 SSI 지시어가 잘 실행되는 것을 확인 할 수 있었다.</p><h3 id="Source-Code-1"><a href="#Source-Code-1" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">xss_check_4</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// addslashes - returns a string with backslashes before characters that need to be quoted in database queries etc.</span></span><br><span class="line">    <span class="comment">// These characters are single quote (&#x27;), double quote (&quot;), backslash (\) and NUL (the NULL byte).</span></span><br><span class="line">    <span class="comment">// Do NOT use this for XSS or HTML validations!!!</span></span><br><span class="line">    <span class="keyword">return</span> addslashes($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>addslashes 함수는 iFrame Injection 문제에서 확인할 수 있다.<br><br>Link : <a href="http://lrtk-github.io/2020/12/09/iFrame-Injection-1/">http://lrtk-github.io/2020/12/09/iFrame-Injection-1/</a></p><br><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">xss_check_3</span>(<span class="params">$data, $encoding = <span class="string">&quot;UTF-8&quot;</span></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// htmlspecialchars - converts special characters to HTML entities    </span></span><br><span class="line">    <span class="comment">// &#x27;&amp;&#x27; (ampersand) becomes &#x27;&amp;amp;&#x27; </span></span><br><span class="line">    <span class="comment">// &#x27;&quot;&#x27; (double quote) becomes &#x27;&amp;quot;&#x27; when ENT_NOQUOTES is not set</span></span><br><span class="line">    <span class="comment">// &quot;&#x27;&quot; (single quote) becomes &#x27;&amp;#039;&#x27; (or &amp;apos;) only when ENT_QUOTES is set</span></span><br><span class="line">    <span class="comment">// &#x27;&lt;&#x27; (less than) becomes &#x27;&amp;lt;&#x27;</span></span><br><span class="line">    <span class="comment">// &#x27;&gt;&#x27; (greater than) becomes &#x27;&amp;gt;&#x27;  </span></span><br><span class="line">    <span class="keyword">return</span> htmlspecialchars($data, ENT_QUOTES, $encoding);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>htmlspecialchars 함수도 iFrame Injection 문제에서 확인할 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2020/12/16/SSI-Injection/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>PHP Code Injection</title>
+      <link>https://lrtk-coder.github.io/2020/12/16/PHP-Code-Injection/</link>
+      <guid>https://lrtk-coder.github.io/2020/12/16/PHP-Code-Injection/</guid>
+      <pubDate>Tue, 15 Dec 2020 22:43:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;PHP-Code-Injection이란&quot;&gt;&lt;a href=&quot;#PHP-Code-Injection이란&quot; class=&quot;headerlink&quot; title=&quot;PHP Code Injection이란?&quot;&gt;&lt;/a&gt;PHP Code Injection이란?&lt;/h2</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="PHP-Code-Injection이란"><a href="#PHP-Code-Injection이란" class="headerlink" title="PHP Code Injection이란?"></a>PHP Code Injection이란?</h2><p>웹 어플리케이션을 통해 PHP 코드를 입력하면, 웹 어플리케이션의 입력을 정상적으로 인식하여 개발자가 의도와는 다르게 내부에 있는 PHP 코드를 실행하는 취약점이다.<br></p><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/img/post_img/PHP_Code_Injection/1.png" alt="사진1"><br>페이지를 들어가니 <code>This is just a test page, reflecting back your message...</code>이라는 문구를 확인 할 수 있었다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is just a test page, reflecting back your </span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/bWAPP/phpi.php?message=test&quot;</span>&gt;</span>message<span class="tag">&lt;/<span class="name">a</span>&gt;</span>...</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure><p>message를 자세히보니 a태그로 되어있는 것을 확인할 수 있었다.<br></p><p><img src="/img/post_img/PHP_Code_Injection/2.png" alt="사진2"><br>클릭하여 넘어가보니, 서버에 message이라는 변수에 test를 넘어갔다.<br><br>페이지에 그대로 <code>test</code>라는 문구가 써져있는 것을 확인할 수 있었다.</p><p>저는 message에 php 내장 함수를 넘겨서 어떻게 작동하는지 확인해보았다.<br><code>http://localhost/bWAPP/phpi.php?message=exec(id)</code><br><img src="/img/post_img/PHP_Code_Injection/3.png" alt="사진3"></p><p>실행이 잘되는 것을 확인할 수 있었다.</p><h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_REQUEST[<span class="string">&quot;message&quot;</span>]))&#123;</span><br><span class="line">    <span class="comment">// If the security level is not MEDIUM or HIGH</span></span><br><span class="line">    <span class="keyword">if</span>($_COOKIE[<span class="string">&quot;security_level&quot;</span>] != <span class="string">&quot;1&quot;</span> &amp;&amp; $_COOKIE[<span class="string">&quot;security_level&quot;</span>] != <span class="string">&quot;2&quot;</span>)&#123;</span><br><span class="line">        &lt;p&gt;&lt;i&gt;<span class="meta">&lt;?php</span> @<span class="keyword">eval</span> (<span class="string">&quot;echo &quot;</span> . $_REQUEST[<span class="string">&quot;message&quot;</span>] . <span class="string">&quot;;&quot;</span>);<span class="meta">?&gt;</span>&lt;/i&gt;&lt;/p&gt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>코드를 보니 message 변수에 넘기고, 아무 검증 없이 eval 함수를 이용하여 바로 출력하여 페이지에 반영하는 것을 볼 수 있다.</p><br><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p><img src="/img/post_img/PHP_Code_Injection/4.png" alt="사진4"></p><p>이번엔 검증이 추가가 되었는지 Low Level에서 했던 방법이 안된다.<br>도통 모르겠어서 소스코드를 확인해보았다.</p><h3 id="Source-Code-1"><a href="#Source-Code-1" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If the security level is MEDIUM or HIGH</span></span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    &lt;p&gt;&lt;i&gt;<span class="meta">&lt;?php</span> <span class="keyword">echo</span> htmlspecialchars($_REQUEST[<span class="string">&quot;message&quot;</span>], ENT_QUOTES, <span class="string">&quot;UTF-8&quot;</span>);;<span class="meta">?&gt;</span>&lt;/i&gt;&lt;/p&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>확인해보니 Medium &amp; High Level 같은 방어 방법으로 해결을 하였다.<br><br>바로 htmlspecialchars 함수를 이용하여 특수 문자를 필터링하여 Injection을 방어하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2020/12/16/PHP-Code-Injection/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>OS Injection Blind</title>
+      <link>https://lrtk-coder.github.io/2020/12/13/OS-Injection-Blind/</link>
+      <guid>https://lrtk-coder.github.io/2020/12/13/OS-Injection-Blind/</guid>
+      <pubDate>Sat, 12 Dec 2020 19:29:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;Blind-Command-Injection이란&quot;&gt;&lt;a href=&quot;#Blind-Command-Injection이란&quot; class=&quot;headerlink&quot; title=&quot;Blind Command Injection이란?&quot;&gt;&lt;/a&gt;Blind Comm</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Blind-Command-Injection이란"><a href="#Blind-Command-Injection이란" class="headerlink" title="Blind Command Injection이란?"></a>Blind Command Injection이란?</h2><p>시스템 명령의 수행 결과 값이 없이 수행하는 Injection 공격이다.</p><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/img/post_img/OS_Command_Injection_Blind/1.png"><br>Form에 IP나 도메인을 입력하면 Ping을 보내는 페이지인 것 같다.<br><br>DNS 서버인 8.8.8.8를 입력하여 어떻게 출력되는지 확인하였다.</p><p><img src="/img/post_img/OS_Command_Injection_Blind/2.png"><br><code>Did you captured our GOLDEN packet?</code>이라는 문구만 출력이 되고, 잘 작동되는지도 모르겠다.<br><br>그래서 확실한 오류를 일으키고자, 입력 값을 넣지 않고 서버에 넘겨보았다.</p><p><img src="/img/post_img/OS_Command_Injection_Blind/3.png"><br>IP를 입력하라는 문구가 나오는 것을 확인할 수 있었다.<br><br>빈 입력 값을 검증하는 코드가 있는 것 같다.</p><p>다른 방법으로 현재 나의 집 라우터에 없는 주소를 입력하여 오류를 일으켜보겠다.<br><br><img src="/img/post_img/OS_Command_Injection_Blind/2.png"><br>DNS 서버의 IP을 넘겨줄 때랑 같은 문구를 확인 할 수 있었다.<br><br>문제의 이름처럼 Blind로 이루어진 페이지로 확인이 되었다.</p><p>이제 OS Command Injection 문제처럼 다중 명령어를 사용하여 Command Injection을 시도하였다.<br></p><p><code>8.8.8.8 &amp; echo hi!! &gt;&gt; test.txt</code>를 입력해주었다.<br><br>나는 Injection 잘 수행이 되었는지 확인하기 위해서 test.txt를 생성하였다. 또 다른 확인 방법은 Netcat을 이용하여 확인하는 방법이 있다.<br></p><p>서버에 Injection 입력 값을 넘겨주고, 파일이 잘 생성됬는지 확인하였다.<br><br><code>http://localhost/bWAPP/test.txt</code><br><img src="/img/post_img/OS_Command_Injection_Blind/4.png"></p><p>잘 생성이 된 것을 확인할 수 있다. 이 취약점을 이용하여 악성코드를 이처럼 만들 수도 있고, 아니면 파일을 삭제를 할 수 있다.</p><h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><p>functions_external.php</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">no_check</span>(<span class="params">$data</span>)</span>&#123;    </span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><p>commandi_blind.php</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>($target == <span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;font color=\&quot;red\&quot;&gt;Please enter your IP address...&lt;/font&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Did you captured our GOLDEN packet?&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(PHP_OS == <span class="string">&quot;Windows&quot;</span> <span class="keyword">or</span> PHP_OS == <span class="string">&quot;WINNT&quot;</span> <span class="keyword">or</span> PHP_OS == <span class="string">&quot;WIN32&quot;</span>)&#123;</span><br><span class="line">        <span class="comment">// Debugging</span></span><br><span class="line">        <span class="comment">// echo &quot;Windows!&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// Increasing the PING count will slow down your web scanner!</span></span><br><span class="line">        shell_exec(<span class="string">&quot;ping -n 1 &quot;</span> . commandi($target));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// Debugging</span></span><br><span class="line">        <span class="comment">// echo &quot;Not Windows!&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// Increasing the PING count will slow down your web scanner!</span></span><br><span class="line">        shell_exec(<span class="string">&quot;ping -c 1 &quot;</span> . commandi($target));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>코드를 보니 입력 값을 검사하는 항목은 빈 입력을 검사하는 것 밖에 없다.</p><br><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>아마 OS Command Injection 문제의 Medium Leval처럼 특정 문자를 치환하는 것으로 방어를 할 것으로 생각되지만 일단 해보겠다.</p><p><code>8.8.8.8 | echo Hi!! Medium &gt;&gt; test.txt</code>을 입력하여 제대로 생성이 됬는지 확인하였다.<br><img src="/img/post_img/OS_Command_Injection_Blind/5.png"><br>예상대로 OS Command Injection 문제와 똑같이 방어를 한 것으로 추측된다.</p><h3 id="Source-Code-1"><a href="#Source-Code-1" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commandi_check_1</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    $input = str_replace(<span class="string">&quot;&amp;&quot;</span>, <span class="string">&quot;&quot;</span>, $data);</span><br><span class="line">    $input = str_replace(<span class="string">&quot;;&quot;</span>, <span class="string">&quot;&quot;</span>, $input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> $input;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>파이프(|)가 치환되지 않았다. 또한 Command Injection에 많이 쓰이는 {}, (), $ 등등 다른 것들도 치환하지 않는 것을 확인할 수 있었다.</p><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commandi_check_2</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> escapeshellcmd($data); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>이에 대한 설명은 OS Command Injection에서 확인하면 된다.<br>Link : <a href="http://lrtk-github.io/2020/12/12/OS-Injection/">http://lrtk-github.io/2020/12/12/OS-Injection/</a></p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2020/12/13/OS-Injection-Blind/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>OS Injection</title>
+      <link>https://lrtk-coder.github.io/2020/12/12/OS-Injection/</link>
+      <guid>https://lrtk-coder.github.io/2020/12/12/OS-Injection/</guid>
+      <pubDate>Fri, 11 Dec 2020 21:52:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h2 id=&quot;리눅스-다중-명령어&quot;&gt;&lt;a href=&quot;#리눅스-다중-명령어&quot; class=&quot;headerlink&quot; title=&quot;리눅스 다중 명령어&quot;&gt;&lt;/a&gt;리눅스 다중 명령어&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;세미클론(;) : 하나의 라인에 주어진 명령어들을 성공,실</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="리눅스-다중-명령어"><a href="#리눅스-다중-명령어" class="headerlink" title="리눅스 다중 명령어"></a>리눅스 다중 명령어</h2><ul><li>세미클론(;) : 하나의 라인에 주어진 명령어들을 성공,실패와 관련 없이 전부 실행한다.</li><li>파이프(|) : 앞 명령어의 실행 결과를 뒤 명령어에 전달하여 실행한다.</li><li>더블 버티컬바(||) : 앞에서부터 순차적으로 실행하되, 명령 실행에 성공하면 뒤에 오는 명령을 실행하지 않는다.</li><li>엠퍼센트(&amp;) : 앞의 명령어를 백그라운드로 돌리고 동시에 뒤의 명령어를 실행한다.</li><li>더블 엠퍼센트(&amp;&amp;) : 앞에서부터 순차적으로 실행하되, 명령 실행에 실패할 경우 뒤에 오는 명령은 실행하지 않는다.</li></ul><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/img/post_img/OS_Command_Injection/1.png"><br>form에 nslookup 명령어 인자값을 전달 받아서 nslookup을 실행하는 페이지인 것 같다.<br><br>리눅스의 다중 명령어를 삽입하였다.</p><p><code>www.nsa.gov &amp; ls -al commandi.php</code><br><img src="/img/post_img/OS_Command_Injection/2.png"></p><p>성공한 것을 보니 아마 검증이 없는 것 같다.</p><h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">no_check</span>(<span class="params">$data</span>)</span>&#123;    </span><br><span class="line">    <span class="keyword">return</span> $data;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>코드를 보니 검증이 없었다.</p><br><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>Low Level에 시도한 <code>&amp;</code>은 검증을 통해 제거가 된 것 같다.<br><br>또한 nslookup 결과도 안뜨는 것을 보니 특정 문자가 있으면 넘어온 데이터를 제거를 하는 것 같다.</p><p>현 입력에서 쓸 수 있는 다중 명령어(;, |)도 블랙리스트에 들어있는지 확인 하였다.</p><p><code>www.nsa.gov | ls -al commandi.php</code><br><img src="/img/post_img/OS_Command_Injection/3.png"></p><p>파이프는 블랙리스트에 없던 것으로 결과가 나왔다.<br></p><h3 id="Source-Code-1"><a href="#Source-Code-1" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commandi_check_1</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    $input = str_replace(<span class="string">&quot;&amp;&quot;</span>, <span class="string">&quot;&quot;</span>, $data);</span><br><span class="line">    $input = str_replace(<span class="string">&quot;;&quot;</span>, <span class="string">&quot;&quot;</span>, $input);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> $input;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>소스코드를 보니 역시 파이프(|)는 검증에 넣지 않은 모습을 확인 할 수 있었다.<br><br>하지만 좀 이상한 것은 특정 문자가 있으면 지워서 반환을 하는데 nslookup 명령어는 왜 실행이 안된는 것은 디버깅을 통해 알아봐야 할 것 같다.</p><br><h2 id="Hight"><a href="#Hight" class="headerlink" title="Hight"></a>Hight</h2><p>시도하였지만 모두 통하지 않았다…<br><br>또한 다중 명령어 말고도 <code>\n, $()</code>으로도 우회를 시도하였지만 차단되었다.</p><h3 id="Source-Code-2"><a href="#Source-Code-2" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commandi_check_2</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> escapeshellcmd($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>escapeshellcmd 함수를 이용하여 OS Command Injection를 방어한 것을 확인 할 수 있었다.<br></p><h4 id="escapeshellcmd이란"><a href="#escapeshellcmd이란" class="headerlink" title="escapeshellcmd이란?"></a>escapeshellcmd이란?</h4><p>link : <a href="https://www.php.net/manual/en/function.escapeshellcmd.php">https://www.php.net/manual/en/function.escapeshellcmd.php</a></p><p>OS Injection에 사용될 수있는 문자열의 모든 문자를 이스케이프하는 함수이다.</p><p><strong>[ 치환 목록 ]</strong><br><br>&amp; # ; ` | * ? ~ &lt;&gt; ^ () [] {} $ \ \x0A \xFF</p><p>이 문자는 앞에 <code>\</code>를 붙어서 치환이 된다.<br><br>또한 <code>&#39;</code>, <code>&quot;</code>은 하나의 쌍으로 되었을 때만 치환이 된다.</p><p>escapeshellcmd 함수의 우회법은 몇가지가 있어서 추후에 우회를 시도하겠다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2020/12/12/OS-Injection/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈4 - 9498번 문제</title>
@@ -35,11 +164,11 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/backjoon-bronze4/">backjoon bronze4</category>
       
@@ -103,11 +232,11 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/backjoon-bronze4/">backjoon bronze4</category>
       
@@ -237,9 +366,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -273,9 +402,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -309,9 +438,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -345,9 +474,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -381,9 +510,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -417,9 +546,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -453,9 +582,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -489,9 +618,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -525,9 +654,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -561,9 +690,9 @@
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
       
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
       
       <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
       
@@ -571,78 +700,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2020/11/09/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1271%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈5 - 1001번 문제</title>
-      <link>https://lrtk-coder.github.io/2020/11/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EB%93%9C5-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2020/11/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EB%93%9C5-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Sat, 07 Nov 2020 18:57:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;백준-1001번-문제&quot;&gt;&lt;a href=&quot;#백준-1001번-문제&quot; class=&quot;headerlink&quot; title=&quot;백준 1001번 문제&quot;&gt;&lt;/a&gt;백준 1001번 문제&lt;/h2&gt;&lt;h3 id=&quot;A-B&quot;&gt;&lt;a href=&quot;#A-B&quot; class=&quot;he</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="백준-1001번-문제"><a href="#백준-1001번-문제" class="headerlink" title="백준 1001번 문제"></a>백준 1001번 문제</h2><h3 id="A-B"><a href="#A-B" class="headerlink" title="A-B"></a>A-B</h3><p>Link : <a href="https://www.acmicpc.net/problem/1001">https://www.acmicpc.net/problem/1001</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">int</span>(<span class="built_in">input</span>())-<span class="built_in">int</span>(<span class="built_in">input</span>()))</span><br></pre></td></tr></table></figure><p>1000번 문제처럼 데이터를 입력받아 정수형으로 변환하여 -를 해주었다.<br><br>하지만 결과는? <strong><em>런타임 에러</em></strong><br><br><strong>이유는 모르겠다… 혹시 아시는 분은 댓글 부탁드립니다…</strong><br></p><p>일단 입력값은 ‘3 2’이다. 이를 입력받아야히는데 어떻게 입력을 받아야할까?</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="built_in">input</span>().split()</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure><p>split함수를 사용하면 하나의 input함수로 여러 변수에 값을 넣어줄 수 있다.<br></p><h3 id="split"><a href="#split" class="headerlink" title="split"></a>split</h3><p>Link : <a href="https://wikidocs.net/13#split">https://wikidocs.net/13#split</a></p><p>split함수는 문자열을 나누는 함수이다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;a b c d&#x27;</span></span><br><span class="line">print(s.split())<span class="comment"># [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;] 출력</span></span><br></pre></td></tr></table></figure><p>list로 return되어지만, input에는 각 하나씩 입력되어 변수에 저장될 것이다.<br><br>이를 이용해서 문제를 해결해보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="built_in">input</span>().split()</span><br><span class="line">print(<span class="built_in">int</span>(a)-<span class="built_in">int</span>(b))</span><br></pre></td></tr></table></figure><p>input은 문자열로 데이터를 넣어주기 때문에 값을 계산하기 위해서는 정수 변환이 필수이다.<br><br>하지만 입력받은 정수가 100개라면? 하나하나 int함수를 넣어서 계산해야하나?<br>답은 map함수에 있다.</p><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>Link : <a href="https://wikidocs.net/32#map">https://wikidocs.net/32#map</a></p><p>map(f, iterable)로 함수(f)와 반복 가능한(iterable) 자료형을 입력받아 f에 iterable를 넣어서 f의 결과를 묶어서 돌려주는 함수이다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon-bronze5/">backjoon bronze5</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2020/11/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EB%93%9C5-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈5 - 1000번 문제</title>
-      <link>https://lrtk-coder.github.io/2020/11/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2020/11/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Fri, 06 Nov 2020 22:53:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;백준-1000번-문제&quot;&gt;&lt;a href=&quot;#백준-1000번-문제&quot; class=&quot;headerlink&quot; title=&quot;백준 1000번 문제&quot;&gt;&lt;/a&gt;백준 1000번 문제&lt;/h2&gt;&lt;h3 id=&quot;A-B&quot;&gt;&lt;a href=&quot;#A-B&quot; class=&quot;he</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="백준-1000번-문제"><a href="#백준-1000번-문제" class="headerlink" title="백준 1000번 문제"></a>백준 1000번 문제</h2><h3 id="A-B"><a href="#A-B" class="headerlink" title="A+B"></a>A+B</h3><p>Link : <a href="https://www.acmicpc.net/problem/1000">https://www.acmicpc.net/problem/1000</a></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">int</span>(<span class="built_in">input</span>())+<span class="built_in">int</span>(<span class="built_in">input</span>()))</span><br></pre></td></tr></table></figure><p>간단하게 생각할 수 있는 코드이다.<br><br>input로 값을 입력받아 int 함수를 이용하여 문자에서 정수로 데이터타입을 변경하여 더하여 print 함수를 이용하여 출력하였다.<br></p><p>이 코드를 좀 더 python스럽게 만들어 보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">eval</span>(<span class="string">&#x27;+&#x27;</span>.join(<span class="built_in">input</span>())))</span><br></pre></td></tr></table></figure><p>eval, join 함수를 사용하여 python스럽게 아주 간단하게 변경되었다.<br><br>join과 eval에 대하여 알아보자.</p><h3 id="문자열-삽입-join"><a href="#문자열-삽입-join" class="headerlink" title="문자열 삽입(join)"></a>문자열 삽입(join)</h3><p>Link : <a href="https://wikidocs.net/13#join">https://wikidocs.net/13#join</a></p><p>문자열의 문자 사이에 문자를 삽입하는 함수이다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&#x27;+&#x27;</span>.join(<span class="string">&#x27;1234&#x27;</span>))   <span class="comment"># 1+2+3+4 출력</span></span><br></pre></td></tr></table></figure><p>위와 같이 문자열인 1234의 문자 사이에 +를 삽입되었다.<br><br>python스럽게 고친 코드도 이를 이용하여 입력 받은 문자열에 +를 삽입하였다.<br><br>허나 이상한 부분이 있다. join은 문자열의 문자 사이에 문자를 넣은 함수이지 계산을 하는 함수는 아니다.<br><br>그럼 어떻게 계산을 할 수 있을지는 eval함수에 답이 있다.</p><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>Link : <a href="https://wikidocs.net/32#eval">https://wikidocs.net/32#eval</a></p><p>eval함수는 실행 가능한 문자열을 실행한 결과값을 돌려주는 마법의 함수이다.<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">&quot;&#x27;Hi&#x27; + &#x27;!!!&#x27;&quot;</span>)         <span class="comment"># &#x27;Hi&#x27; + &#x27;!!!&#x27; 출력</span></span><br><span class="line">print(<span class="built_in">eval</span>(<span class="string">&quot;&#x27;Hi&#x27; + &#x27;!!!&#x27;&quot;</span>))   <span class="comment"># Hi!!! 출력</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">eval</span>(<span class="string">&#x27;+&#x27;</span>.join(<span class="string">&#x27;1234&#x27;</span>))) <span class="comment"># 10 출력</span></span><br></pre></td></tr></table></figure><p>위와 같이 실행 가능한 문자를 실행해주는 함수이다.<br><br>자세한 예제를 보고 싶다면 programiz 사이트에서 참고하면 좋다.<br></p><p>Link : <a href="https://www.programiz.com/python-programming/methods/built-in/eval">https://www.programiz.com/python-programming/methods/built-in/eval</a></p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885/">백준 브론즈5</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon-bronze5/">backjoon bronze5</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2020/11/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     

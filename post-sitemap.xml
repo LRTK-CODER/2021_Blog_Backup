@@ -9,6 +9,38 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/2020/12/16/SSI-Injection/</loc>
+        <lastmod>2020-12-16T01:49:16.901Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/16/PHP-Code-Injection/</loc>
+        <lastmod>2020-12-15T22:44:19.059Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/13/OS-Injection-Blind/</loc>
+        <lastmod>2020-12-12T19:32:26.060Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/12/OS-Injection/</loc>
+        <lastmod>2020-12-11T21:54:14.631Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/2020/12/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1330%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
         <lastmod>2020-12-09T15:14:57.974Z</lastmod>
         <changefreq>weekly</changefreq>

@@ -1,0 +1,17 @@
+<svg width="531" height="291" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
+    <defs>
+        <clipPath id="clip0">
+            <rect x="282" y="97" width="531" height="291"/>
+        </clipPath>
+    </defs>
+
+    <g clip-path="url(#clip0)" transform="translate(-282 -97)">
+        <text fill="#595959" font-family="BM DoHyeon,BM DoHyeon_MSFontService,sans-serif" font-weight="700" font-size="133" transform="translate(371.509 254)">
+            LRTK
+            <tspan fill="#5B9BD5" x="-8.81628" y="-9">LRTK</tspan>
+            
+            <tspan fill="#404040" font-size="40" x="-0.468658" y="78">Security &amp; Coding</tspan>
+            <tspan fill="#FFD966" font-size="40" x="-4.87234" y="74">Security &amp; Coding</tspan>
+        </text>
+    </g>
+</svg>
