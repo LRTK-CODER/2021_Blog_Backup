@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/2020/12/20/SQL-Injection-AJAX-JSON-JQUERY/</loc>
+        <lastmod>2020-12-20T11:12:05.073Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/20/SQL-Injection-Get-Post-Select/</loc>
+        <lastmod>2020-12-20T08:14:51.019Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/2020/12/18/SQL-Injection-Get-Search/</loc>
         <lastmod>2020-12-17T22:06:29.318Z</lastmod>
         <changefreq>weekly</changefreq>
