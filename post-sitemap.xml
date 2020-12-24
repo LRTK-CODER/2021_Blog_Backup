@@ -9,6 +9,54 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/2020/12/18/SQL-Injection-Get-Search/</loc>
+        <lastmod>2020-12-24T04:03:16.743Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1330%EB%B2%88-%EB%AC%B9/</loc>
+        <lastmod>2020-12-24T04:02:17.332Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/24/SQL-Injection-SQLite/</loc>
+        <lastmod>2020-12-24T03:56:01.716Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/24/SQL-Injection-Captcha/</loc>
+        <lastmod>2020-12-24T02:07:02.923Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/24/SQL-Injection-Login-Form-Hero/</loc>
+        <lastmod>2020-12-24T02:06:40.156Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2020/12/16/SSI-Injection/</loc>
+        <lastmod>2020-12-24T02:03:56.048Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/2020/12/20/SQL-Injection-AJAX-JSON-JQUERY/</loc>
         <lastmod>2020-12-20T11:12:05.073Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,22 +67,6 @@
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/20/SQL-Injection-Get-Post-Select/</loc>
         <lastmod>2020-12-20T08:14:51.019Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/2020/12/18/SQL-Injection-Get-Search/</loc>
-        <lastmod>2020-12-17T22:06:29.318Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/2020/12/16/SSI-Injection/</loc>
-        <lastmod>2020-12-16T01:49:16.901Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
