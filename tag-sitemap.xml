@@ -3,36 +3,36 @@
 
 
     <url>
-        <loc>https://lrtk-coder.github.io/tags/BeeBox/</loc>
-        <lastmod>2021-02-03T14:48:50.890Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://lrtk-coder.github.io/tags/baekjoon-bronze4/</loc>
-        <lastmod>2021-02-02T13:09:50.420Z</lastmod>
+        <lastmod>2021-02-04T12:02:33.230Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://lrtk-coder.github.io/tags/baekjoon/</loc>
-        <lastmod>2021-02-02T13:09:50.420Z</lastmod>
+        <lastmod>2021-02-04T12:02:33.230Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/</loc>
-        <lastmod>2021-02-02T13:09:50.420Z</lastmod>
+        <lastmod>2021-02-04T12:02:33.230Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/</loc>
-        <lastmod>2021-02-02T13:09:50.420Z</lastmod>
+        <lastmod>2021-02-04T12:02:33.230Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/tags/BeeBox/</loc>
+        <lastmod>2021-02-03T14:48:50.890Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

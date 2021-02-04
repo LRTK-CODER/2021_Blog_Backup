@@ -9,8 +9,44 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Wed, 03 Feb 2021 14:48:50 GMT</pubDate>
+    <pubDate>Thu, 04 Feb 2021 12:02:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈4 15680번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Thu, 04 Feb 2021 02:52:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;연세대학교&quot;&gt;&lt;a href=&quot;#연세대학교&quot; class=&quot;headerlink&quot; title=&quot;연세대학교&quot;&gt;&lt;/a&gt;연세대학교&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://onlinejudgeimages.s3-ap-northeast-1.amaz</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="연세대학교"><a href="#연세대학교" class="headerlink" title="연세대학교"></a>연세대학교</h1><p><img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15680/1.png"></p><p>연세대학교의 영문명은 YONSEI, 슬로건은 Leading the Way to the Future이다.</p><p>이를 출력하는 프로그램을 작성해보도록 하자.</p><p><a href="https://www.acmicpc.net/problem/15680">백준 15680번 문제</a></p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([<span class="string">&#x27;YONSEI&#x27;</span>, <span class="string">&#x27;Leading the Way to the Future&#x27;</span>][<span class="built_in">int</span>(<span class="built_in">input</span>())])</span><br></pre></td></tr></table></figure><p>입력값이 0과 1 뿐이니, 리스트에 출력값을 넣어서 index에 입력값을 넣으면 원하는 출력값을 볼 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/baekjoon/">baekjoon</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/baekjoon-bronze4/">baekjoon bronze4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Broken Auth - Insecure Login Forms</title>
@@ -93,7 +129,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="Broken-Auth-Forgotten-Function"><a href="#Broken-Auth-Forgotten-Function" class="headerlink" title="Broken Auth - Forgotten Function"></a>Broken Auth - Forgotten Function</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/2.png"><br>bWAPP에 가입된 사용자의 Email를 입력하면 사용자의 비밀이 출력되는 페이지이다.</p><p><img src="/images/1.png"><br>현재 bWAPP에 가입된 사용자의 Email를 알지 못하여, Create User 메뉴를 이용하여 사용자를 만들어줬다.</p><p><img src="/images/3.png"><br>입력하니, 회원 가입할 때 입력한 secret이 출력되는 것을 확인 할 수 있었다.</p><p>여러 방법을 시도 했으나, 어떠한 취약점을 찾아 볼 수 없었다.</p><p>그래서 다른 분들의 Wirte Up를 찾아보니, bee 계정의 이메일을 넣어서 비밀을 보고 패스워드를 추측할 수 있다는 것이 이 문제의 답이였다.</p><p>Bee 계정의 이메일 : <a href="mailto:&#98;&#119;&#97;&#112;&#112;&#x2d;&#x62;&#x65;&#101;&#x40;&#x6d;&#97;&#105;&#108;&#x69;&#x6e;&#97;&#x74;&#111;&#x72;&#46;&#x63;&#111;&#x6d;">&#98;&#119;&#97;&#112;&#112;&#x2d;&#x62;&#x65;&#101;&#x40;&#x6d;&#97;&#105;&#108;&#x69;&#x6e;&#97;&#x74;&#111;&#x72;&#46;&#x63;&#111;&#x6d;</a><br><img src="/images/4.png"><br>해당 비밀을 보니, 패드워드는 bug와 관련된 확률이 높을 것으로 추측된다.</p><p>이 단서를 가지고 brute-force 공격을 시도하여 패스워드를 찾는게 이 문제의 답이였다.</p><hr><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p>이 문제는 Medium과 High와 같다.</p><p><img src="/images/5.png"><br>이메일을 입력하여 출력 결과를 보니, “이메일을 보내 수 없다.” 라는 결과를 얻을 수 있었다.</p><p>이 것을 보니 비밀은 이메일로 보내는 것을 알 수 있다.</p><p>이렇게 되면 해커가 이메일 계정 정보를 가지고 있지 않는 한 비밀이 유출되는 것을 막을 수 있을 것이다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="Broken-Auth-Forgotten-Function"><a href="#Broken-Auth-Forgotten-Function" class="headerlink" title="Broken Auth - Forgotten Function"></a>Broken Auth - Forgotten Function</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/2.png"><br>bWAPP에 가입된 사용자의 Email를 입력하면 사용자의 비밀이 출력되는 페이지이다.</p><p><img src="/images/1.png"><br>현재 bWAPP에 가입된 사용자의 Email를 알지 못하여, Create User 메뉴를 이용하여 사용자를 만들어줬다.</p><p><img src="/images/3.png"><br>입력하니, 회원 가입할 때 입력한 secret이 출력되는 것을 확인 할 수 있었다.</p><p>여러 방법을 시도 했으나, 어떠한 취약점을 찾아 볼 수 없었다.</p><p>그래서 다른 분들의 Wirte Up를 찾아보니, bee 계정의 이메일을 넣어서 비밀을 보고 패스워드를 추측할 수 있다는 것이 이 문제의 답이였다.</p><p>Bee 계정의 이메일 : <a href="mailto:&#98;&#x77;&#x61;&#112;&#x70;&#45;&#98;&#101;&#x65;&#64;&#x6d;&#97;&#105;&#x6c;&#x69;&#110;&#97;&#116;&#x6f;&#x72;&#46;&#x63;&#x6f;&#109;">&#98;&#x77;&#x61;&#112;&#x70;&#45;&#98;&#101;&#x65;&#64;&#x6d;&#97;&#105;&#x6c;&#x69;&#110;&#97;&#116;&#x6f;&#x72;&#46;&#x63;&#x6f;&#109;</a><br><img src="/images/4.png"><br>해당 비밀을 보니, 패드워드는 bug와 관련된 확률이 높을 것으로 추측된다.</p><p>이 단서를 가지고 brute-force 공격을 시도하여 패스워드를 찾는게 이 문제의 답이였다.</p><hr><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p>이 문제는 Medium과 High와 같다.</p><p><img src="/images/5.png"><br>이메일을 입력하여 출력 결과를 보니, “이메일을 보내 수 없다.” 라는 결과를 얻을 수 있었다.</p><p>이 것을 보니 비밀은 이메일로 보내는 것을 알 수 있다.</p><p>이렇게 되면 해커가 이메일 계정 정보를 가지고 있지 않는 한 비밀이 유출되는 것을 막을 수 있을 것이다.</p>]]></content:encoded>
       
       
       <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
@@ -655,38 +691,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-User-Agent/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>SQL Injection - Stored (SQLite)</title>
-      <link>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-SQLite/</link>
-      <guid>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-SQLite/</guid>
-      <pubDate>Thu, 21 Jan 2021 19:46:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;Low&quot;&gt;&lt;a href=&quot;#Low&quot; class=&quot;headerlink&quot; title=&quot;Low&quot;&gt;&lt;/a&gt;Low&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/pasted-5.png&quot; alt=&quot;upload successful&quot;&gt;&lt;br&gt;PHP의 S</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-5.png" alt="upload successful"><br>PHP의 SQLite 모듈을 사용하였다고 써져있다.</p><p>어떤 기능을 가진 페이지인지 확인하겠다.<br>입력 : <strong>test</strong><br>Button : Add Entry<br><img src="/images/pasted-6.png" alt="upload successful"></p><p>Button : Delete Entries<br><img src="/images/pasted-7.png" alt="upload successful"><br>확인을 해보니, Add 버튼은 Form에 입력한 데이터를 DB를 저장하는 기능이고, Delecte 버튼은 DB에 저장된 데이터를 삭제하는 기능이다.</p><p>Error를 일으켜 정보를 획득하겠다.<br>입력 : <strong>‘</strong><br><img src="/images/pasted-8.png" alt="upload successful"><br>오류 메시지는 출력이 안된다.<br>또한 <code>&#39; or &#39;1&#39; = &#39;1</code>의 경우는 어차피 페이지 기능이 DB에 저장된 데이터를 출력하는 거라서 여기선 필요없다.</p><p>아무런 정보가 없어서 추측을 해보겠다.<br>보통 이런 기능은 <strong>INSERT 문</strong>을 이용하여 DB에 데이터를 추가한다.<br>아마 <code>INSERT INTO table_name (column1, column2, ... column_N) VALUES (data, data,&#39;입력값&#39;, data);</code>으로 되어있을거라 추측이 된다.</p><p>저 INSERT 문으로 생각하고 SQL Injection를 시도하겠다.<br>INSERT 문에 대한 어떠한 정보도 얻을 수 없어서 <code>test&#39;);#</code>부터 시작하여 추가가 안되면, <code>test&#39;</code> 뒤에 <code>, &#39;&#39;</code>를 추가하여 SQLi를 진행하였다.<br>입력 : <strong>test’, ‘’);#</strong><br><img src="/images/pasted-9.png" alt="upload successful"></p><p>Form의 입력값이 뒤에서 두번째이며, Owner가 맨 뒤 자리인 것으로 확인되었다.<br>Owner의 자리를 이용하여 SQLi를 더 진행하겠다.</p><p>입력 : <strong>test’, sqlite_version());#</strong><br><img src="/images/pasted-10.png" alt="upload successful"></p><p>입력 : <strong>test’, (SELECT name FROM sqlite_master WHERE type=’table’ ));#</strong><br><img src="/images/pasted-11.png" alt="upload successful"></p><p>그 후의 SQLi은 전에 풀이했던 SQLite 문제에서 설명했으니 진행은 안하겠다.</p><h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><p><strong>Function_external.php</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">no_check</span>(<span class="params">$data</span>)</span>&#123;    </span><br><span class="line">    <span class="keyword">return</span> $data;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>sqli_12.php</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sql = <span class="string">&quot;INSERT INTO blog (id, date, entry, owner) VALUES (&quot;</span> . ++$id . <span class="string">&quot;,&#x27;&quot;</span> . date(<span class="string">&#x27;Y-m-d&#x27;</span>, time()) . <span class="string">&quot;&#x27;,&#x27;&quot;</span> . $entry . <span class="string">&quot;&#x27;,&#x27;&quot;</span> . $owner . <span class="string">&quot;&#x27;);&quot;</span>;</span><br></pre></td></tr></table></figure><p>예상한 INSERT 문이 맞았다.<br>Low 문제에선 아무런 검증 없이 바로 데이터를 return하였다.</p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>문제 풀이는 추후에 업데이트하겠다.</p><h3 id="Source-Code-1"><a href="#Source-Code-1" class="headerlink" title="Source Code"></a>Source Code</h3><p><strong>Function_external.php</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_4</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// Not bulletproof</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Replaces a single quote (&#x27;)</span></span><br><span class="line">    $input = str_replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;&#x27;&#x27;&quot;</span>, $data);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> $input;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p>이 문제에선 High가 없다. Medium과 같다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-SQLite/#disqus_thread</comments>
       
     </item>
     
