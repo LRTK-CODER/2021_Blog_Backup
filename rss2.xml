@@ -9,8 +9,44 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Tue, 09 Feb 2021 17:17:25 GMT</pubDate>
+    <pubDate>Wed, 10 Feb 2021 14:25:12 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈4 17362번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/02/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17362%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17362%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 10 Feb 2021 04:25:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;수학은-체육과목-입니다-2&quot;&gt;&lt;a href=&quot;#수학은-체육과목-입니다-2&quot; class=&quot;headerlink&quot; title=&quot;수학은 체육과목 입니다 2&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/173</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="수학은-체육과목-입니다-2"><a href="#수학은-체육과목-입니다-2" class="headerlink" title="수학은 체육과목 입니다 2"></a><a href="https://www.acmicpc.net/problem/17362">수학은 체육과목 입니다 2</a></h1><p>이 사진을 기억하는가?</p><p><img src="/images/pasted-93.png"></p><p>이 사진은 오래전부터 인터넷에 돌아다니는 사진으로, 작년 전대프연 예선 A번에서는 수학을 정말 못 하는 고등학생인 성원이의 시험지로 소개되었다. 저작권이 있는 사진일 수 있어 알아보기 어렵게 가공했음을 양해 바란다.</p><p>예선 날짜가 다가오는데도 적당한 A번 문제를 생각하지 못한 출제진은 작년 전대프연 예선 A번을 응용해서 문제를 만들기로 했다. 이를 위해 사진 속 문제를 찾아본 출제진은 해당 문제가 2007학년도 6월 고등학교 1학년 전국연합학력평가 수리 영역 26번임을 알게 되었다.</p><p>시험지를 내려받고 문제들을 살펴보던 출제진은 아래와 같은 문제를 발견했다.</p><p><img src="/images/pasted-94.png"></p><p>예상했겠지만, 여러분은 이제 위의 19번 문제 세 번째 줄에 등장하는 수 ‘1000’을 임의의 자연수로 바꾸었을 때 그에 해당하는 답을 출력하는 프로그램을 작성해야 한다.</p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">   2  3  4</span><br><span class="line">            5</span><br><span class="line">   8  7  6</span><br><span class="line">9</span><br><span class="line">   10 11 12</span><br><span class="line">            13 </span><br><span class="line">   16 15 14</span><br><span class="line">17</span><br><span class="line">   18 19 20 </span><br></pre></td></tr></table></figure><p>문제를 읽어보니 이런 형태로 숫자가 흘려가고 있었다.<br><br>엄지에서 새끼을 찍고, 다시 엄지로 돌아가는데 이 주기가 8 숫자라는 것을 파악을 했다.</p><p>그럼 8로 나눈 나머지를 보고 어떤 손가락에 들어갈 지를 결정할 수 있을거라 생각하였다.</p><p>1~10를 8로 나누어 보면 <code>1, 2, 3, 4, 5, 6, 7, 0, 1, 2</code>이라는 나머지가 나온다.<br></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">   2  3  4</span><br><span class="line">            5</span><br><span class="line">   0  7  6</span><br><span class="line">1</span><br><span class="line">   2</span><br></pre></td></tr></table></figure><p>이를 좀더 쉬게 보기 위해 위에 나온 손가락의 형태로 정렬하였다.<br></p><ul><li>엄지 : 1</li><li>검지 : 2, 0</li><li>중지 : 3, 7</li><li>약지 : 4, 6</li><li>새끼 : 5</li></ul><p>검증을 시도하니, 해당 손가락의 숫자을 찾을 수 있었다.</p><p>좀 더 많은 숫자들로 정확한 검증을 위해 코드를 짜서 검증을 하였다.</p><h3 id="검증코드"><a href="#검증코드" class="headerlink" title="검증코드"></a>검증코드</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">finger_dict = &#123;<span class="number">1</span> : [], <span class="number">2</span> : [], <span class="number">3</span> : [], <span class="number">4</span> : [], <span class="number">5</span> : []&#125;</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">21</span>):</span><br><span class="line">    print(_%<span class="number">8</span>, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> _%<span class="number">8</span> == <span class="number">1</span>: finger_dict[<span class="number">1</span>].append(_)</span><br><span class="line">    <span class="keyword">elif</span> _%<span class="number">8</span> <span class="keyword">in</span> [<span class="number">2</span>, <span class="number">0</span>]: finger_dict[<span class="number">2</span>].append(_)</span><br><span class="line">    <span class="keyword">elif</span> _%<span class="number">8</span> <span class="keyword">in</span> [<span class="number">3</span>, <span class="number">7</span>]: finger_dict[<span class="number">3</span>].append(_)</span><br><span class="line">    <span class="keyword">elif</span> _%<span class="number">8</span> <span class="keyword">in</span> [<span class="number">4</span>, <span class="number">6</span>]: finger_dict[<span class="number">4</span>].append(_)</span><br><span class="line">    <span class="keyword">elif</span> _%<span class="number">8</span> == <span class="number">5</span>: finger_dict[<span class="number">5</span>].append(_)</span><br><span class="line"></span><br><span class="line">print()</span><br><span class="line">print(finger_dict)</span><br></pre></td></tr></table></figure><p>dict의 Key는 손가락을 가르키는 숫자이며, for문으로 1~20을 8로 나눈 나머지 값들을 가지고, 해당 손가락의 리스트에 값을 넣어줬다.</p><p><img src="/images/pasted-95.png" alt="검증코드 출력"></p><p>8로 나눈 나머지가 손가락의 위치를 지정할 수 있다는 논리가 검증이 되었다.</p><p>이를 가지고 문제풀이를 하였다.</p><p><img src="/images/pasted-97.png" alt="문제풀이"></p><hr><h2 id="숏코딩-문제풀이"><a href="#숏코딩-문제풀이" class="headerlink" title="숏코딩 문제풀이"></a>숏코딩 문제풀이</h2><p><img src="/images/pasted-96.png" alt="숏코딩 문제풀이"></p><p>해당 손가락 위치의 값을 알았으니, 인덱스로 좀 더 간단하게 만들 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/baekjoon/">baekjoon</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/baekjoon-bronze4/">baekjoon bronze4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17362%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Session Mgmt - Cookies (HTTPOnly)</title>
@@ -471,7 +507,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="Broken-Auth-Forgotten-Function"><a href="#Broken-Auth-Forgotten-Function" class="headerlink" title="Broken Auth - Forgotten Function"></a>Broken Auth - Forgotten Function</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/2.png"><br>bWAPP에 가입된 사용자의 Email를 입력하면 사용자의 비밀이 출력되는 페이지이다.</p><p><img src="/images/1.png"><br>현재 bWAPP에 가입된 사용자의 Email를 알지 못하여, Create User 메뉴를 이용하여 사용자를 만들어줬다.</p><p><img src="/images/3.png"><br>입력하니, 회원 가입할 때 입력한 secret이 출력되는 것을 확인 할 수 있었다.</p><p>여러 방법을 시도 했으나, 어떠한 취약점을 찾아 볼 수 없었다.</p><p>그래서 다른 분들의 Wirte Up를 찾아보니, bee 계정의 이메일을 넣어서 비밀을 보고 패스워드를 추측할 수 있다는 것이 이 문제의 답이였다.</p><p>Bee 계정의 이메일 : <a href="mailto:&#98;&#x77;&#x61;&#112;&#x70;&#45;&#x62;&#101;&#x65;&#64;&#x6d;&#x61;&#x69;&#x6c;&#105;&#x6e;&#x61;&#116;&#111;&#114;&#46;&#x63;&#x6f;&#x6d;">&#98;&#x77;&#x61;&#112;&#x70;&#45;&#x62;&#101;&#x65;&#64;&#x6d;&#x61;&#x69;&#x6c;&#105;&#x6e;&#x61;&#116;&#111;&#114;&#46;&#x63;&#x6f;&#x6d;</a><br><img src="/images/4.png"><br>해당 비밀을 보니, 패드워드는 bug와 관련된 확률이 높을 것으로 추측된다.</p><p>이 단서를 가지고 brute-force 공격을 시도하여 패스워드를 찾는게 이 문제의 답이였다.</p><hr><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p>이 문제는 Medium과 High와 같다.</p><p><img src="/images/5.png"><br>이메일을 입력하여 출력 결과를 보니, “이메일을 보내 수 없다.” 라는 결과를 얻을 수 있었다.</p><p>이 것을 보니 비밀은 이메일로 보내는 것을 알 수 있다.</p><p>이렇게 되면 해커가 이메일 계정 정보를 가지고 있지 않는 한 비밀이 유출되는 것을 막을 수 있을 것이다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="Broken-Auth-Forgotten-Function"><a href="#Broken-Auth-Forgotten-Function" class="headerlink" title="Broken Auth - Forgotten Function"></a>Broken Auth - Forgotten Function</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/2.png"><br>bWAPP에 가입된 사용자의 Email를 입력하면 사용자의 비밀이 출력되는 페이지이다.</p><p><img src="/images/1.png"><br>현재 bWAPP에 가입된 사용자의 Email를 알지 못하여, Create User 메뉴를 이용하여 사용자를 만들어줬다.</p><p><img src="/images/3.png"><br>입력하니, 회원 가입할 때 입력한 secret이 출력되는 것을 확인 할 수 있었다.</p><p>여러 방법을 시도 했으나, 어떠한 취약점을 찾아 볼 수 없었다.</p><p>그래서 다른 분들의 Wirte Up를 찾아보니, bee 계정의 이메일을 넣어서 비밀을 보고 패스워드를 추측할 수 있다는 것이 이 문제의 답이였다.</p><p>Bee 계정의 이메일 : <a href="mailto:&#x62;&#x77;&#x61;&#112;&#x70;&#45;&#x62;&#101;&#x65;&#x40;&#x6d;&#x61;&#x69;&#108;&#105;&#x6e;&#97;&#x74;&#111;&#x72;&#x2e;&#x63;&#111;&#109;">&#x62;&#x77;&#x61;&#112;&#x70;&#45;&#x62;&#101;&#x65;&#x40;&#x6d;&#x61;&#x69;&#108;&#105;&#x6e;&#97;&#x74;&#111;&#x72;&#x2e;&#x63;&#111;&#109;</a><br><img src="/images/4.png"><br>해당 비밀을 보니, 패드워드는 bug와 관련된 확률이 높을 것으로 추측된다.</p><p>이 단서를 가지고 brute-force 공격을 시도하여 패스워드를 찾는게 이 문제의 답이였다.</p><hr><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p>이 문제는 Medium과 High와 같다.</p><p><img src="/images/5.png"><br>이메일을 입력하여 출력 결과를 보니, “이메일을 보내 수 없다.” 라는 결과를 얻을 수 있었다.</p><p>이 것을 보니 비밀은 이메일로 보내는 것을 알 수 있다.</p><p>이렇게 되면 해커가 이메일 계정 정보를 가지고 있지 않는 한 비밀이 유출되는 것을 막을 수 있을 것이다.</p>]]></content:encoded>
       
       
       <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
@@ -653,42 +689,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/01/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2530%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 - 2420번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/01/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2420%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/01/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2420%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Fri, 22 Jan 2021 05:43:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;백준-브론즈4-2420번-문제&quot;&gt;&lt;a href=&quot;#백준-브론즈4-2420번-문제&quot; class=&quot;headerlink&quot; title=&quot;백준 브론즈4 2420번 문제&quot;&gt;&lt;/a&gt;백준 브론즈4 2420번 문제&lt;/h1&gt;&lt;p&gt;사파리월드는 인터넷으로만 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="백준-브론즈4-2420번-문제"><a href="#백준-브론즈4-2420번-문제" class="headerlink" title="백준 브론즈4 2420번 문제"></a>백준 브론즈4 2420번 문제</h1><p>사파리월드는 인터넷으로만 존재하는 미스테리한 나라이다. 사파리월드에는 2개의 서브도메인이 seunghwan.royal.gov.sw와 kyuhyun.royal.gov.sw 이 있는데, 이것이 couple.royal.gov.sw으로 합쳐질 것이다. 그러나 도메인 관리 센터 SWNIC(센터장: 김동규)에는 엄격한 룰이 있다. 두 서브도메인을 합칠 때, 유명도의 차이가 너무 차이나지 않을 경우에만 두 서브도메인을 결혼시키는 것이다. 서브도메인의 유명도는 정수이다. 두 서브도메인의 유명도가 주어졌을 때, 그 차이를 구하는 프로그램을 작성하시오.<br>Link : <a href="https://www.acmicpc.net/problem/2420">https://www.acmicpc.net/problem/2420</a></p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">print(<span class="built_in">abs</span>(a-b))</span><br></pre></td></tr></table></figure><p>Abs 함수를 이용하여 문제 풀이를 하였다.<br>Abs 함수는 절대값을 구하는 함수이다.</p><hr><h2 id="숏코딩-문제풀이"><a href="#숏코딩-문제풀이" class="headerlink" title="숏코딩 문제풀이"></a>숏코딩 문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="built_in">abs</span>(<span class="built_in">eval</span>(<span class="built_in">input</span>().replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;-&#x27;</span>))))</span><br></pre></td></tr></table></figure><p>Eval 함수와 Replace 함수를 이용하여 문제풀이를 하였다.<br>Eval 함수는 ::-2–5::라는 문자열을 받아서 계산할 것이다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon-bronze4/">backjoon bronze4</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon/">backjoon</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/01/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2420%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
