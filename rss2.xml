@@ -9,8 +9,98 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Fri, 12 Feb 2021 04:56:10 GMT</pubDate>
+    <pubDate>Sat, 13 Feb 2021 10:31:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>XSS - Reflected (JSON)</title>
+      <link>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-JSON/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-JSON/</guid>
+      <pubDate>Sat, 13 Feb 2021 01:04:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;문제풀이&quot;&gt;&lt;a href=&quot;#문제풀이&quot; class=&quot;headerlink&quot; title=&quot;문제풀이&quot;&gt;&lt;/a&gt;문제풀이&lt;/h1&gt;&lt;h2 id=&quot;Low&quot;&gt;&lt;a href=&quot;#Low&quot; class=&quot;headerlink&quot; title=&quot;Low&quot;&gt;&lt;/a&gt;Lo</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-126.png"></p><p>우리의 마스터가 마블 영화를 엄청 좋아한다는 힌트가 써져있다.<br><br>저번 문제에서 계속 아이언맨이 있었으니, 아이언맨을 입력해 보았다.</p><p><img src="/images/pasted-127.png"></p><p>이번엔 이상한 값을 입력해 보았다.</p><p><img src="/images/pasted-128.png"></p><p>아직까진 어떻게 작동하는지 잘 모르겠다.<br><br>개발자 도구를 열어서 Json을 확인하였다.</p><p><img src="/images/pasted-129.png"></p><p>입력한 값이 ??? 앞에 들어가는 것을 확인할 수 있었다.<br><br>현재 저 Json은 자바스크립트로 묶어져 있는 코드들이다. 만약 입력값이 JS를 넣는다면 어떻게 되는지 확인해봤다.</p><p>input : <code>&lt;/script&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p><p><img src="/images/pasted-131.png"></p><p>원래의 JS가 한참 밑에도 있어야 하지만, 입력에 </script>를 넣어 끊어버렸다.<br><br>그리고 새로운 JS를 넣어서 alert 함수를 실행하였다.</p><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p><img src="/images/pasted-132.png"></p><p>htmlspecialchars 함수에 의해서 특수 문자가 HTML 엔티티로 이스케이프되면서 문자열로 출력되고 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-JSON/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>XSS - Reflected (GET)</title>
+      <link>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-GET/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-GET/</guid>
+      <pubDate>Sat, 13 Feb 2021 01:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Xss&quot;&gt;&lt;a href=&quot;#Xss&quot; class=&quot;headerlink&quot; title=&quot;Xss&quot;&gt;&lt;/a&gt;Xss&lt;/h1&gt;&lt;p&gt;Cross Site Scripting의 약자로, 해커가 사용자의 브라우저 내에서 악성 Javascript를 실행하는 취</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Xss"><a href="#Xss" class="headerlink" title="Xss"></a>Xss</h1><p>Cross Site Scripting의 약자로, 해커가 사용자의 브라우저 내에서 악성 Javascript를 실행하는 취약점이다.</p><p>현재의 Javascript는 웹상에서 없어선 안되는 존재입니다.<br><br>JavaScript가 피해자의 브라우저 페이지에서 실행되기 때문에 인증 된 사용자에 대한 민감한 세부 정보가 세션에서 도용 될 수 있으며, 본질적으로 악의적 인 행위자가 사이트 관리자를 표적으로 삼아 웹 사이트를 완전히 손상시킬 수 있습니다.</p><h2 id="Xss-공격-유형"><a href="#Xss-공격-유형" class="headerlink" title="Xss 공격 유형"></a>Xss 공격 유형</h2><h3 id="Stored-Persistent-Cross-Site-Scripting"><a href="#Stored-Persistent-Cross-Site-Scripting" class="headerlink" title="Stored (Persistent) Cross-Site Scripting"></a>Stored (Persistent) Cross-Site Scripting</h3><p>공격자의 페이로드(악성 Javascript)를 서버에 저장하여 웹사이트가 다른 방문자에게 페이로드를 전달하는 공격</p><h3 id="Reflected-Cross-Site-Scripting"><a href="#Reflected-Cross-Site-Scripting" class="headerlink" title="Reflected Cross-Site Scripting"></a>Reflected Cross-Site Scripting</h3><p>브라우저에서 서버로 전송된 공격자의 페이로드가 페이지에 반영이 될 때 발생되는 공격</p><h3 id="Self-Cross-Site-Scripting"><a href="#Self-Cross-Site-Scripting" class="headerlink" title="Self Cross-Site Scripting"></a>Self Cross-Site Scripting</h3><p>매우 구체적인 컨텍스트 및 수동 변경이 필요한 취약점을 악용할 때 발생되는 공격이라고 정의가 되어있는데,<br>나는 쉽게 생각해서, 악성 Javascript가 나한테만 일어나는 것이 Self Xss이라고 생각한다.</p><p>예제로, LRTK 블로그 BeeBox의 첫 문제풀이인 HTML Injection을 예제로 생각한다.<br><br>내가 입력한 값이 서버에 저장이 안되어, 다른 사용자들에게 피해를 입히지 못하는 것이 Self Xss의 예시라 생각한다.</p><h3 id="Blind-Cross-Site-Scripting"><a href="#Blind-Cross-Site-Scripting" class="headerlink" title="Blind Cross-Site Scripting"></a>Blind Cross-Site Scripting</h3><p>공격자가 공격의 결과를 볼 수 없는 공격<br><br>이러한 취약점은 일반적으로 권한이 있는 사용자만 액세스 할 수 있는 페이지에서 진행될 경우가 많다.</p><h3 id="Dom-Based-Cross-Site-Scripting"><a href="#Dom-Based-Cross-Site-Scripting" class="headerlink" title="Dom-Based Cross-Site Scripting"></a>Dom-Based Cross-Site Scripting</h3><p>이 공격은 서버 자체가 Xss에 취약한 것이 아닌 페이지의 Javascript가 취약할 때 발생되는 공격이다.</p><hr><h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-116.png"></p><p>이와 같이 First/Last name을 입력하여 서버에 넘겨주면, 서버는 입력된 값을 form 밑에 Welcome ‘first name’ ‘last name’으로 반영하여 다시 브라우저에 넘겨준다.</p><p>이를 이용하여 Javascript를 이용하여 쿠키를 alert 창으로 띄워 보겠다.</p><p>first name : <code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code><br><br>last name : aaaa</p><p><img src="/images/pasted-117.png" alt="Javascript alert창"><br><img src="/images/pasted-118.png"></p><p>이 Xss은 페이지에서 자바스크립트를 그대로 반영하여 일어난 거지만, 관리자/다른 사용자들은 전혀 공격 대상으로 삼을 수 없으니, Self Xss로 봐도 무방하다.</p><p>Low 레벨에선 태그와 Javascript의 함수 등을 예외처리을 안하고 그대로 반영을 하여 Xss가 일어난 것으로 판단된다.</p><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>Low 문제와 똑같이 Javascript를 시도하였는데 그대로 반영이 되어 Xss가 일어났다.<br><br>분명 Low와 달리 Xss 방어를 했을거라 생각이 들어 다른 방법으로 시도하였다.</p><p>svg 파일을 불려오는데 만약 error가 생기면 Javascript가 발생되는 Xss 코드를 입력하였다.<br>first name : <code>&lt;svg src=&#39;#&#39; onerror=&#39;alert(document.cookie)&#39; /&gt;</code><br><br>last name : aaaa</p><p><img src="/images/pasted-120.png"></p><p>어떻게 방어를 했는지 보기 위해 개발자 도구를 이용하여 해당 Xss 코드를 살펴보았다.</p><p><code>&lt;svg src=&quot;\&#39;#\&#39;&quot; onerror=&quot;\&#39;alert(document.cookie)\&#39;&quot;&gt;&lt;/svg&gt;</code><br><br>서버에서 입력 받은 데이터가 예외처리를 받아 Xss 코드가 변경이 되었다.</p><p>차이점이라면, <code>&#39;</code>이 변경이 된 것 같다.<br><br>정확한 확인을 위해 first name에 <code>&#39;a&#39;</code>를 입력하여 확인하였다.</p><p><img src="/images/pasted-121.png"></p><p>변경 된 것을 확인 할 수 있었다.<br></p><h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><p><img src="/images/pasted-122.png"></p><p>코드를 분석하니, 입력 받은 데이터는 addslashes 함수에 넣어지고 있었다.</p><h4 id="addslashes-함수"><a href="#addslashes-함수" class="headerlink" title="addslashes 함수"></a><a href="https://www.php.net/manual/en/function.addslashes.php">addslashes 함수</a></h4><p>문자열에 <code>&#39;</code>, <code>&quot;</code>, <code>\</code>, <code>NUL</code>의 문자가 있으면 해당 문자 앞에 \를 추가하여 이스케이프하여 반환하는 함수이다.</p><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p><img src="/images/pasted-123.png"><br><img src="/images/pasted-124.png"></p><p>위 Low, Medium Level에서 사용하였던 Xss 코드로 시도하였지만, Javascript로 반영되지 않고 문자열로 취급받아 반영되었다.</p><h3 id="Source-Code-1"><a href="#Source-Code-1" class="headerlink" title="Source Code"></a>Source Code</h3><p><img src="/images/pasted-125.png"></p><h4 id="htmlspecialchars-함수"><a href="#htmlspecialchars-함수" class="headerlink" title="htmlspecialchars 함수"></a><a href="https://www.php.net/manual/en/function.htmlspecialchars.php">htmlspecialchars 함수</a></h4><p>HTML에서 특별한 의미를 가진 특정 문자(<code>&amp;</code>, <code>&quot;</code>, <code>&#39;</code>, <code>&lt;</code>, <code>&gt;</code>)을 HTML 엔티티로 이스케이프하여 반환하는 함수이다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-GET/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Data Structure - Linked List</title>
+      <link>https://lrtk-coder.github.io/2021/02/12/Data-Structure-Linked-List/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/12/Data-Structure-Linked-List/</guid>
+      <pubDate>Fri, 12 Feb 2021 21:17:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Linked-List&quot;&gt;&lt;a href=&quot;#Linked-List&quot; class=&quot;headerlink&quot; title=&quot;Linked List&quot;&gt;&lt;/a&gt;Linked List&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/pasted-113.png&quot;&gt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h1><p><img src="/images/pasted-113.png"></p><p>연결 리스트라고 많이 불림.<br><br>떨어진 곳에 존재하는 데이터의 주소를 저장하여, 연결해 관리하는 데이터 구조</p><p>배열과 많이 혼돈하지만, 배열은 순차적으로 메모리 공간에 데이터를 나열하는 데이터 구조<br><br>연결 리스트는 각기 다른 메모리 공간에 데이터를 저장하여, 데이터의 저장 공간 주소가 저장 필요</p><h2 id="알아둘-용어"><a href="#알아둘-용어" class="headerlink" title="알아둘 용어"></a>알아둘 용어</h2><ul><li>노드(Node) : 데이터 저장 단위(데이터 값, 포인터)로 구성</li><li>포인터(Pointer) : 각 노드 안에서, 다음이나 이전의 노드와의 연결 정보를 가지고 있는 공간</li></ul><h2 id="장단점"><a href="#장단점" class="headerlink" title="장단점"></a>장단점</h2><h3 id="장점"><a href="#장점" class="headerlink" title="장점"></a>장점</h3><ul><li>미리 데이터 공간을 할당하지 않아도 됨</li></ul><h3 id="단점"><a href="#단점" class="headerlink" title="단점"></a>단점</h3><ul><li>연결을 위한 별도의 데이터 공간(Pointer)이 필요함으로, 저장 공간 효율이 높지 않음</li><li>연결 정보를 찾는 시간이 필요하므로 접근 속도가 느림</li><li>중간 데이터 삭제/삽입 시, 앞뒤 데이터의 연결을 재 구성해야 하는 부가적인 작업 필요함</li></ul><h2 id="다양한-연결-리스트"><a href="#다양한-연결-리스트" class="headerlink" title="다양한 연결 리스트"></a>다양한 연결 리스트</h2><h3 id="이중-연결-리스트"><a href="#이중-연결-리스트" class="headerlink" title="이중 연결 리스트"></a>이중 연결 리스트</h3><p><img src="/images/pasted-114.png"></p><h3 id="원형-연결-리스트"><a href="#원형-연결-리스트" class="headerlink" title="원형 연결 리스트"></a>원형 연결 리스트</h3><p><img src="/images/pasted-115.png"></p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Linked-List/">Linked List</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/12/Data-Structure-Linked-List/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈4 10179번 문제</title>
@@ -549,110 +639,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/04/Broken-Auth-Logout-Management/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 11943번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-11943%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-11943%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Thu, 04 Feb 2021 18:05:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;파일-옮기기&quot;&gt;&lt;a href=&quot;#파일-옮기기&quot; class=&quot;headerlink&quot; title=&quot;파일 옮기기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11943&quot;&gt;파일 옮기기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;두 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="파일-옮기기"><a href="#파일-옮기기" class="headerlink" title="파일 옮기기"></a><a href="https://www.acmicpc.net/problem/11943">파일 옮기기</a></h1><p>두 개의 바구니에 사과와 오렌지가 있다. 첫 번째 바구니에는 사과 A개와 오렌지 B개가 있으며 두 번째 바구니에는 사과 C개와 오렌지 D개가 있다.</p><p>당신은 한 바구니에 있는 과일 하나를 집어서 다른 바구니로 옮길 수 있다. 이런 식으로 과일을 옮길 때, 한 바구니에는 사과만 있게 하고 다른 쪽에는 오렌지만 있게 하려고 한다.</p><p>앞서 말한 조건을 만족하도록 과일을 옮길 때, 과일을 옮기는 최소 횟수를 구하는 프로그램을 작성하여라.</p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a, b = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">c, d = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line"></span><br><span class="line">print(<span class="built_in">min</span>(a+d, c+b))</span><br></pre></td></tr></table></figure><p>두 개의 바구니에서 서로 다른 바구니의 사과와 오렌지의 합을 구해서 최소값을 구하면 된다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/baekjoon/">baekjoon</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/baekjoon-bronze4/">baekjoon bronze4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-11943%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 15680번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Thu, 04 Feb 2021 02:52:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;연세대학교&quot;&gt;&lt;a href=&quot;#연세대학교&quot; class=&quot;headerlink&quot; title=&quot;연세대학교&quot;&gt;&lt;/a&gt;연세대학교&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://onlinejudgeimages.s3-ap-northeast-1.amaz</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="연세대학교"><a href="#연세대학교" class="headerlink" title="연세대학교"></a>연세대학교</h1><p><img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15680/1.png"></p><p>연세대학교의 영문명은 YONSEI, 슬로건은 Leading the Way to the Future이다.</p><p>이를 출력하는 프로그램을 작성해보도록 하자.</p><p><a href="https://www.acmicpc.net/problem/15680">백준 15680번 문제</a></p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([<span class="string">&#x27;YONSEI&#x27;</span>, <span class="string">&#x27;Leading the Way to the Future&#x27;</span>][<span class="built_in">int</span>(<span class="built_in">input</span>())])</span><br></pre></td></tr></table></figure><p>입력값이 0과 1 뿐이니, 리스트에 출력값을 넣어서 index에 입력값을 넣으면 원하는 출력값을 볼 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/baekjoon/">baekjoon</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/baekjoon-bronze4/">baekjoon bronze4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Broken Auth - Insecure Login Forms</title>
-      <link>https://lrtk-coder.github.io/2021/02/02/Broken-Auth-Insecure-Login-Forms/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/02/Broken-Auth-Insecure-Login-Forms/</guid>
-      <pubDate>Tue, 02 Feb 2021 20:44:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Broken-Auth-Insecure-Login-Forms&quot;&gt;&lt;a href=&quot;#Broken-Auth-Insecure-Login-Forms&quot; class=&quot;headerlink&quot; title=&quot;Broken Auth. - Insecure Logi</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Broken-Auth-Insecure-Login-Forms"><a href="#Broken-Auth-Insecure-Login-Forms" class="headerlink" title="Broken Auth. - Insecure Login Forms"></a>Broken Auth. - Insecure Login Forms</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-42.png"></p><p>bee 계정으로 로그인을 시도했지만, 로그인에 실패하였다.<br>form이 어디에 데이터를 보내는지, 문자 길이 제한 등을 확인하기 위해 개발자 도구를 이용하여 확인하였다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/ba_insecure_login_1.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;login&quot;</span>&gt;</span>Login:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;white&quot;</span>&gt;</span>tonystark<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;login&quot;</span> <span class="attr">name</span>=<span class="string">&quot;login&quot;</span> <span class="attr">size</span>=<span class="string">&quot;20&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;password&quot;</span>&gt;</span>Password:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;white&quot;</span>&gt;</span>I am Iron Man<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">size</span>=<span class="string">&quot;20&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">name</span>=<span class="string">&quot;form&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>Login<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><p>위 코드를 확인해보니, <code>/ba_insecure_login_1.php</code>에 보내는 것을 확인할 수 있다.<br>특이한 것은 흰색으로 <code>tonystark</code>과 <code>I am Iron Man</code>이 적혀져 있었다.</p><p>이 값을 form에 입력하여 전송했다.</p><p><img src="/images/pasted-43.png"></p><p>로그인 성공 메시지가 출력되었다.</p><p>이런 경우가 진짜 있나?라고 하지만, 몇몇 커뮤니티 사이트에서 글 올린 사람의 ip 주소를 색상을 변경하여 페이지에 올려진 경우도 있다.</p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p><img src="/images/pasted-44.png"></p><p>페이지를 보니, Name에 <code>brucebanner</code>라는 값이 defalt로 지정되어있다.<br>bruce를 보니, bruce force 공격을 의심이 된다.</p><p>15번 연속으로 틀려도 아무 제제가 없다.<br>무차별 대입 공격을 의심을 해볼 가치는 있지만, 다른 가능성을 열어놓고 소스코드를 살펴보았다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;name&quot;</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;white&quot;</span>&gt;</span>brucebanner<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">size</span>=<span class="string">&quot;20&quot;</span> <span class="attr">value</span>=<span class="string">&quot;brucebanner&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;passphrase&quot;</span>&gt;</span>Passphrase:<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;passphrase&quot;</span> <span class="attr">name</span>=<span class="string">&quot;passphrase&quot;</span> <span class="attr">size</span>=<span class="string">&quot;20&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">name</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Unlock&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;unlock_secret()&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure><p>마지막 input 부분에 클릭 시 unlock_secret() 함수를 실행하는 것을 볼 수 있다.<br>어떤 기능을 실행하는지 확인하였다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unlock_secret</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bWAPP = <span class="string">&quot;bash update killed my shells!&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = bWAPP.charAt(<span class="number">0</span>);  <span class="keyword">var</span> d = bWAPP.charAt(<span class="number">3</span>);  <span class="keyword">var</span> r = bWAPP.charAt(<span class="number">16</span>);</span><br><span class="line">    <span class="keyword">var</span> b = bWAPP.charAt(<span class="number">1</span>);  <span class="keyword">var</span> e = bWAPP.charAt(<span class="number">4</span>);  <span class="keyword">var</span> j = bWAPP.charAt(<span class="number">9</span>);</span><br><span class="line">    <span class="keyword">var</span> c = bWAPP.charAt(<span class="number">2</span>);  <span class="keyword">var</span> f = bWAPP.charAt(<span class="number">5</span>);  <span class="keyword">var</span> g = bWAPP.charAt(<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">var</span> j = bWAPP.charAt(<span class="number">9</span>);  <span class="keyword">var</span> h = bWAPP.charAt(<span class="number">6</span>);  <span class="keyword">var</span> l = bWAPP.charAt(<span class="number">11</span>);</span><br><span class="line">    <span class="keyword">var</span> g = bWAPP.charAt(<span class="number">4</span>);  <span class="keyword">var</span> i = bWAPP.charAt(<span class="number">7</span>);  <span class="keyword">var</span> x = bWAPP.charAt(<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">var</span> l = bWAPP.charAt(<span class="number">11</span>); <span class="keyword">var</span> p = bWAPP.charAt(<span class="number">23</span>); <span class="keyword">var</span> m = bWAPP.charAt(<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">var</span> s = bWAPP.charAt(<span class="number">17</span>); <span class="keyword">var</span> k = bWAPP.charAt(<span class="number">10</span>); <span class="keyword">var</span> d = bWAPP.charAt(<span class="number">23</span>);</span><br><span class="line">    <span class="keyword">var</span> t = bWAPP.charAt(<span class="number">2</span>);  <span class="keyword">var</span> n = bWAPP.charAt(<span class="number">12</span>); <span class="keyword">var</span> e = bWAPP.charAt(<span class="number">4</span>);</span><br><span class="line">    <span class="keyword">var</span> a = bWAPP.charAt(<span class="number">1</span>);  <span class="keyword">var</span> o = bWAPP.charAt(<span class="number">13</span>); <span class="keyword">var</span> f = bWAPP.charAt(<span class="number">5</span>);</span><br><span class="line">    <span class="keyword">var</span> b = bWAPP.charAt(<span class="number">1</span>);  <span class="keyword">var</span> q = bWAPP.charAt(<span class="number">15</span>); <span class="keyword">var</span> h = bWAPP.charAt(<span class="number">9</span>);</span><br><span class="line">    <span class="keyword">var</span> c = bWAPP.charAt(<span class="number">2</span>);  <span class="keyword">var</span> h = bWAPP.charAt(<span class="number">2</span>);  <span class="keyword">var</span> i = bWAPP.charAt(<span class="number">7</span>);</span><br><span class="line">    <span class="keyword">var</span> j = bWAPP.charAt(<span class="number">5</span>);  <span class="keyword">var</span> i = bWAPP.charAt(<span class="number">7</span>);  <span class="keyword">var</span> y = bWAPP.charAt(<span class="number">22</span>);</span><br><span class="line">    <span class="keyword">var</span> g = bWAPP.charAt(<span class="number">1</span>);  <span class="keyword">var</span> p = bWAPP.charAt(<span class="number">4</span>);  <span class="keyword">var</span> p = bWAPP.charAt(<span class="number">28</span>);</span><br><span class="line">    <span class="keyword">var</span> l = bWAPP.charAt(<span class="number">11</span>); <span class="keyword">var</span> k = bWAPP.charAt(<span class="number">14</span>);</span><br><span class="line">    <span class="keyword">var</span> q = bWAPP.charAt(<span class="number">12</span>); <span class="keyword">var</span> n = bWAPP.charAt(<span class="number">12</span>);</span><br><span class="line">    <span class="keyword">var</span> m = bWAPP.charAt(<span class="number">4</span>);  <span class="keyword">var</span> o = bWAPP.charAt(<span class="number">19</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> secret = (d + <span class="string">&quot;&quot;</span> + j + <span class="string">&quot;&quot;</span> + k + <span class="string">&quot;&quot;</span> + q + <span class="string">&quot;&quot;</span> + x + <span class="string">&quot;&quot;</span> + t + <span class="string">&quot;&quot;</span> +o + <span class="string">&quot;&quot;</span> + g + <span class="string">&quot;&quot;</span> + h + <span class="string">&quot;&quot;</span> + d + <span class="string">&quot;&quot;</span> + p);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">document</span>.forms[<span class="number">0</span>].passphrase.value == secret)</span><br><span class="line">    &#123; </span><br><span class="line">        <span class="comment">// Unlocked</span></span><br><span class="line">        location.href=<span class="string">&quot;/ba_insecure_login_2.php?secret=&quot;</span> + secret;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Locked</span></span><br><span class="line">        location.href=<span class="string">&quot;/ba_insecure_login_2.php?secret=&quot;</span>;           </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>해더 부분에 정의된 unlock_secret 함수이다.<br>charAt 함수가 무슨 함수인지 몰라서 인터넷에 검색하였다.</p><p><img src="/images/pasted-45.png">)</p><p>알파벳 변수에 bWAPP 변수의 문자열을 charAt 함수로 지정된 인덱스에 해당한 값을 넣어주고, secret 변수에 필요한 알파벳 변수만 넣었다. 그리고 Passphrase 값이 secret 변수와 같으면 secret 변수를 서버로 전송하였다.</p><p>기능은 확인하였으니, secret 값을 구해보겠다.</p><p><img src="/images/pasted-46.png"></p><p>개발자 도구의 Console에 해당 부분을 넣어서 출력하는 방법으로 secret 값을 구할 수 있었다.</p><p><img src="/images/pasted-47.png"></p><p>로그인에 성공한 모습이다.</p><p>여기서 알 수 있는 점은 <strong>패스워드와 같은  중요한 값은 클라이언트에서 검증하기보단 서버에서 검증하는 것이 더 안전하다는 것을 알 수 있었다.</strong></p><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p><img src="/images/pasted-48.png"></p><p>이번엔 form 밑에 Remember 데이터가 있다.<br>이 값을 입력하여 로그인을 하였다.</p><p><img src="/images/pasted-49.png"></p><p>굳이 글로 쓰자면, 계정 정보를 추측 할 수 있는 데이터는 안전한 페이지나 이메일로 전달해야 안전하다는 것을 알 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/02/Broken-Auth-Insecure-Login-Forms/#disqus_thread</comments>
       
     </item>
     
