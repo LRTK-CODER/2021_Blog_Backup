@@ -50,6 +50,39 @@
     </item>
     
     <item>
+      <title>XSS - Reflected (AJAX/JSON)</title>
+      <link>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-AJAX-JSON/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-AJAX-JSON/</guid>
+      <pubDate>Sat, 13 Feb 2021 17:12:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;AJAX&quot;&gt;&lt;a href=&quot;#AJAX&quot; class=&quot;headerlink&quot; title=&quot;AJAX&quot;&gt;&lt;/a&gt;AJAX&lt;/h1&gt;&lt;p&gt;Ajax는 비동기적인 웹 애플리케이션의 제작을 위해 아래와 같은 조합을 이용하는 웹 개발 기법&lt;/p&gt;
+&lt;p&gt;쉽게</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><p>Ajax는 비동기적인 웹 애플리케이션의 제작을 위해 아래와 같은 조합을 이용하는 웹 개발 기법</p><p>쉽게 말해 JavaScript를 사용한 비동기 통신, 클라이언트와 서버간에 XML 데이터를 주고받는 기술인데, 이를 이용하여 동적 웹 어플리케이션을 손쉽게 제작할 수 있었다.</p><h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-134.png"><br>전에 풀었던 Xss 문제와 같은 형식이다.<br><br>다른 점이라면, form에 데이터를 입력하면, 해당 데이터값을 서버에 보내서 다시 HTML을 받아오는 것이 아닌 AJAX를 이용하여 서버로 데이터를 보내고 응답값을 표시해준다.</p><p>Xss 코드를 입력하기 앞서 Xss 코드에 들어가는 특수문자가 이스케이프가 되는지 확인하였다.<br><br><img src="/images/pasted-135.png" alt="Input : `&amp;lta&amp;gttest&amp;lt/a&amp;gt`"></p><p><code>&#39;</code>,<code>&quot;</code>은 확인을 안해보았지만, 될거 같아서 확인을 안하고 바로 Xss 공격을 시도하였다.</p><p><img src="/images/pasted-136.png" alt="Input : `&amp;ltimg scr=&#39;#&#39; onerror=&#39;alert(document.cookie)&#39; /&amp;gt`"></p><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>이번에도 Xss 공격에 사용되는 특수문자를 넣어서 확인해보았다.</p><p><img src="/images/pasted-141.png"><br><img src="/images/pasted-142.png" alt="Input : `&amp;lta&amp;gt&quot;test&quot;&amp;lt/a&amp;gt`"></p><p>입력해보니, <code>&lt;</code>,<code>&gt;</code>,<code>&#39;</code>은 치환되지 않고 잘 되는 거 같은데 왠지는 모르겠지만, <code>&quot;</code>이 출력이 되지 않고 있다.<br></p><p>이벤트(onerror, onload 등)를 이용한 Xss 공격은 Low에서 해봤으니, script 태그를 입력하여 alert 창으로 쿠키를 출력해보겠다.</p><p><img src="/images/pasted-137.png"><br><img src="/images/pasted-138.png"></p><p>이상하게 스크립트 태그가 잘 들어갔지만, alert창이 안띄어졌다.<br><br>검색을 해보니, 크롬에서 막고 있어서 출력이 안된다는 것이다.</p><p>그래서 AJAX가 어디로 값을 보내는지를 확인하여 이용하고자 코드를 살펴보았다.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(xmlHttp.readyState == <span class="number">4</span> || xmlHttp.readyState == <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Retrieves the movie title typed by the user on the form</span></span><br><span class="line">    <span class="comment">// title = document.getElementById(&quot;title&quot;).value;</span></span><br><span class="line">    title = <span class="built_in">encodeURIComponent</span>(<span class="built_in">document</span>.getElementById(<span class="string">&quot;title&quot;</span>).value);</span><br><span class="line">    <span class="comment">// Executes the &#x27;xss_ajax_1-2.php&#x27; page from the server</span></span><br><span class="line">    xmlHttp.open(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;xss_ajax_2-2.php?title=&quot;</span> + title, <span class="literal">true</span>);  </span><br><span class="line">    <span class="comment">// Defines the method to handle server responses</span></span><br><span class="line">    xmlHttp.onreadystatechange = handleServerResponse;</span><br><span class="line">    <span class="comment">// Makes the server request</span></span><br><span class="line">    xmlHttp.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Get 메소드로 입력 데이터를 보내는 코드를 발견할 수 있었다.<br><br>xss_ajax_2-2.php 페이지에 xss코드를 보내면 어떻게 작동하는지 테스트를 하였다.</p><p><img src="/images/pasted-143.png" alt="Input : `/xss_ajax_2-2.php?title=&amp;ltscript&amp;gtalert(1)&amp;lt/script&amp;gt`"></p><p>예상은 했지만, xss_ajax_2-2.php에서 alert창을 출력하였다.</p><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p><img src="/images/pasted-145.png" alt="Input : `&amp;lta&amp;gta&amp;lt/a&amp;gt`"></p><p>High에서는 htmlspecialchars 함수로 방어가 되어있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/">PHP</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/PHP/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-AJAX-JSON/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>Data Structure - Linked List 구현</title>
       <link>https://lrtk-coder.github.io/2021/02/13/Data-Structure-Linked-List-%EA%B5%AC%ED%98%84/</link>
       <guid>https://lrtk-coder.github.io/2021/02/13/Data-Structure-Linked-List-%EA%B5%AC%ED%98%84/</guid>
@@ -601,42 +634,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/07/Broken-Auth-Weak-Passwords/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 15963번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/07/%EB%B0%B1%EC%A4%80-15963%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/07/%EB%B0%B1%EC%A4%80-15963%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Sun, 07 Feb 2021 05:41:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;CASIO&quot;&gt;&lt;a href=&quot;#CASIO&quot; class=&quot;headerlink&quot; title=&quot;CASIO&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15963&quot;&gt;CASIO&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;카시오 계산</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="CASIO"><a href="#CASIO" class="headerlink" title="CASIO"></a><a href="https://www.acmicpc.net/problem/15963">CASIO</a></h1><p>카시오 계산기는 만능 계산기이다. 시험을 한 번이라도 쳐본 일곽인이라면, 이 카시오의 소중함에 대해서 뼈저리게 느껴보았을 것이다. 하지만, 이런 카시오에도 함정이 있다. 바로, 카시오 계산기는 배터리를 통해 돌아간다는 것이다.</p><p>송찬이는 시험을 치다가 갑자기 계산기의 배터리가 나가버렸다. 그래서 선생님께 배터리를 달라고 요구했는데, 요구하고 보니 카시오 계산기의 배터리가 어떤 종류인지 말을 안 해버렸다! 과연 선생님은 송찬이가 필요한 배터리 종류를 들고 왔을까?</p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n, m = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">print(<span class="number">1</span> <span class="keyword">if</span> n==m <span class="keyword">else</span> <span class="number">0</span>)</span><br></pre></td></tr></table></figure><p>삼항연산자로 깔끔하게 풀이하였다.<br><br>파이썬의 삼항연산자 형태는 <code>[True Value] if [Condition] else [False Value]</code>으로 이루어진다.</p><hr><h2 id="숏코딩-문제풀이"><a href="#숏코딩-문제풀이" class="headerlink" title="숏코딩 문제풀이"></a>숏코딩 문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">2</span>-<span class="built_in">len</span>(&#123;*<span class="built_in">input</span>().split()&#125;))</span><br></pre></td></tr></table></figure><p>두 개의 입력 중복을 확인하는 문제이다.<br><br>이 풀이는 딕셔너리의 Key 중복이 안된다는 점을 이용하였다.</p><p>입력 받은 값을 Key로 저장되는데 만약 같은 값이면 단 하나만 저장이 되기 때문에 len 함수를 찍어본다면 ‘1’로 출력하게 된다.</p><p>만약 두 개의 입력값이 서로 다른 값이면 2개의 Key가 저장이 되고, len 함수는 ‘2’를 출력할 것이다.</p><p>2개의 입력값이 중복이면 1, 아니면 0이므로 2와 len 함수의 출력값을 빼준다면 원하는 값을 얻을 수 있다.</p><p>이 문제에선 Dict를 이용했지만, set으로 이용할 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/baekjoon/">baekjoon</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/backjoon-bronze4/">backjoon bronze4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/07/%EB%B0%B1%EC%A4%80-15963%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
