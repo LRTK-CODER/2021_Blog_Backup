@@ -9,8 +9,70 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 15 Feb 2021 06:05:30 GMT</pubDate>
+    <pubDate>Tue, 16 Feb 2021 07:07:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈4 15873번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/02/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15873%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15873%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Mon, 15 Feb 2021 21:15:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;공백-없는-A-B&quot;&gt;&lt;a href=&quot;#공백-없는-A-B&quot; class=&quot;headerlink&quot; title=&quot;공백 없는 A+B&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15873&quot;&gt;공백 없는 A+B&lt;/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="공백-없는-A-B"><a href="#공백-없는-A-B" class="headerlink" title="공백 없는 A+B"></a><a href="https://www.acmicpc.net/problem/15873">공백 없는 A+B</a></h1><p>자연수 A, B가 주어지면 A+B를 구하는 프로그램을 작성하시오.</p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>()</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(a) == <span class="number">2</span>:</span><br><span class="line">    print(<span class="built_in">int</span>(a[<span class="number">0</span>])+<span class="built_in">int</span>(a[<span class="number">1</span>]))</span><br><span class="line"><span class="keyword">elif</span> <span class="built_in">len</span>(a) == <span class="number">3</span>:</span><br><span class="line">    print(<span class="built_in">int</span>(a[<span class="number">0</span>:<span class="number">2</span>])+<span class="built_in">int</span>(a[<span class="number">2</span>]) <span class="keyword">if</span> a[<span class="number">0</span>:<span class="number">2</span>] == <span class="string">&#x27;10&#x27;</span> <span class="keyword">else</span> <span class="built_in">int</span>(a[<span class="number">0</span>])+<span class="built_in">int</span>(a[<span class="number">1</span>:]))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="number">20</span>)</span><br></pre></td></tr></table></figure><p>솔직히 이 문제의 체점이 잘못됬다고 생각한다.<br><br>A와 B의 조건을 보면, A는 0보다 크고 B는 10보다 같거나 작으면 된다.<br><br>또한 입력값을 줄 때, 두 수의 앞에 불필요한 0이 붙는 경우가 없다고 했다.</p><p>위 전제를 생각하면,</p><ul><li>100 : 10(a) + 0(b)</li><li>1010 : 10(a) + 10(b)</li><li>1001 : 100(a) + 1 (b)</li><li>1011 : 101(a) + 1(b)</li></ul><p>이 된다.</p><p>그러나 무조건 입력값의 길이가 4이면, 20이 되어야하니….<br><br>그리고 120을 입력하면 21이 출력되는데 정답으로 처리가 된다.</p><p>내 생각에는 문제 체점 방식이 잘못되지 않았나 생각된다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15873%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>XSS - Reflected (Back Button)</title>
+      <link>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/</guid>
+      <pubDate>Mon, 15 Feb 2021 14:06:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;문제풀이&quot;&gt;&lt;a href=&quot;#문제풀이&quot; class=&quot;headerlink&quot; title=&quot;문제풀이&quot;&gt;&lt;/a&gt;문제풀이&lt;/h1&gt;&lt;h2 id=&quot;Low&quot;&gt;&lt;a href=&quot;#Low&quot; class=&quot;headerlink&quot; title=&quot;Low&quot;&gt;&lt;/a&gt;Lo</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-170.png"></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;http://xxx.xxx.xxx.xxx:xxx/portal.php&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Go back 버튼을 클릭 시 portal.php로 돌아감.</p><p>자세한 흐름을 알기 위해 해당 문제의 페이지로 Request를 하는 것을 burp suit를 이용하여 살펴보았다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/xss_back_button.php</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: xxx.xxx.xxx.xxx:xxx</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="line"><span class="attribute">Referer</span>: http://xxx.xxx.xxx.xxx:xxx/portal.php</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=2f9fqpk49iaolf6eqav1i3m7b2; security_level=0</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br></pre></td></tr></table></figure><p>살펴보니 Referer라는 부분이 있었다.<br><br>Referer 해더는 현재 요청된 페이지의 링크 이전의 웹 페이지 주소를 포함하는 헤더이다.</p><p>이를 수정하여 alert창을 띄우도록 하겠다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Referer</span>: &#x27;;alert(1);&#x27;</span><br></pre></td></tr></table></figure><p>해당 Referer는 Onclick에 들어가기 때문에 script 태그 사용을 안해도 된다.</p><p><img src="/images/pasted-171.png"></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;&#x27;;alert(1);&#x27;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Referer의 변조가 성공하였다.</p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>Low 레벨의 방법대로 했더니,</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;\&#x27;hihihi\&#x27;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><code>&#39;</code>가 이스케이프가 되었음. 아마 addslashes 함수로 처리했을거라 판단이 됨.<br><br>그럼 <code>&#39;</code>,<code>&quot;</code>,<code>\</code>,<code>NUL</code>은 Xss에 사용이 불가능하다.</p><p>addslashes 함수를 우회하기 위해 HTML entity Encoding를 사용하였다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Referer</span>: &amp;#039;;alert(document.cookie);&amp;#039;</span><br></pre></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;&#x27;;alert(document.cookie);&#x27;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><img src="/images/pasted-172.png"></p><p>Xss 성공함.</p><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p>Medium 레벨와 같은 방식으로 시도하였지만, 실패함.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;<span class="symbol">&amp;amp;</span>#039;;alert(document.cookie);<span class="symbol">&amp;amp;</span>#039;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>htmlspecialchars 함수로 Referer 값을 이스케이프 했기 때문에 &amp;의 값이 HTML 엔티티로 변경되어 Xss이 실패함.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Data Structure - Linked List 구현</title>
@@ -541,68 +603,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/09/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17362%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Session Mgmt - Cookies (HTTPOnly)</title>
-      <link>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/</guid>
-      <pubDate>Mon, 08 Feb 2021 22:10:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;HttpOnly&quot;&gt;&lt;a href=&quot;#HttpOnly&quot; class=&quot;headerlink&quot; title=&quot;HttpOnly&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://opentutorials.org/course/3387/21744&quot;&gt;HttpOnly</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a><a href="https://opentutorials.org/course/3387/21744">HttpOnly</a></h1><p>XSS 같은 공격으로 쿠키 탈취를 방지하기 위해, 자바스크립트의 document.cookie 함수를 사용하여 쿠키에 접근하는 것을 방지하는 옵션이다.</p><hr><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-77.png"></p><p>쿠키를 확인할 수 있도록 구현된 페이지인 것 같다.<br></p><p><img src="/images/pasted-83.png"></p><p><img src="/images/pasted-84.png"></p><p>위와 같이 ‘Cookies’ 버튼을 클릭 시 쿠키 및 관련 정보들이 테이블에 출력되며, here를 클릭 시 javascript의 alert창으로 쿠키 및 관련 정보를 출력하였다.</p><p><img src="/images/pasted-85.png"></p><p>개발자 도구로 확인해보니, HttpOnly는 적용되어 있지 않다.</p><p><img src="/images/pasted-87.png" alt="LRTK 계정"><br><img src="/images/pasted-88.png" alt="Bee 계정"></p><p>쿠키 탈취 예제를 위해 일반 크롬과 시크릿 모드 크롬 두 개를 키고, 하나는 bee 계정으로 로그인을 하고, 다른 하나는 다른 아이디로 로그인을 하여 bee 계정의 쿠키를 탈취했다는 가정하에 bee 계정의 쿠키를 이용하여 bee로 로그인을 시도하였다.</p><p><img src="/images/pasted-89.png" alt="쿠키 변경"></p><p><img src="/images/pasted-90.png" alt="LRTK -&gt; Bee로 로그인 성공"></p><p>위와 같이 공격자가 쿠키를 탈취 시 쿠키를 이용하여 다른 계정으로 로그인을 할 수 있다.</p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p><img src="/images/pasted-91.png"><br>이번에는 top_security의 값이 maybe이며, HttpOnly로 되어있다.</p><p>이 경우, javascript의 document.cookie에선 top_security이 출력이 안될 것이다.</p><p><img src="/images/pasted-92.png" alt="top_security 출력 X"></p><p>만약 해커가 document.cookie 함수를 이용한 csrf 공격으로 다른 서버에 해당 사이트 계정의 쿠키값을 보낸다는 시나리오라면 top_security는 실패할 것이다.</p><p>해당 우회 방법은 XST(Cross Site Tracing)이 있는데, Trace 옵션이 켜져있을 때만 가능한 공격이다.</p><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p>High에선 Medium에선 1시간이였던 top_security의 사용 시간이 5분으로 줄었다.</p><p>다른 차이점은 없다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 - 10768번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10768%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10768%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 08 Feb 2021 20:59:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;특별한-날&quot;&gt;&lt;a href=&quot;#특별한-날&quot; class=&quot;headerlink&quot; title=&quot;특별한 날&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10768&quot;&gt;특별한 날&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;2월 18일</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="특별한-날"><a href="#특별한-날" class="headerlink" title="특별한 날"></a><a href="https://www.acmicpc.net/problem/10768">특별한 날</a></h1><p>2월 18일은 올해 CCC에 있어서 특별한 날이다.</p><p>사용자로부터 정수인 월과 일을 입력받아 날짜가 2월 18일인지 전인지 후인지를 출력하는 프로그램이다.</p><p>만약 날짜가 2월 18일 전이면, “Before”을 출력한다. 만약 날짜가 2월 18일 후면, “After”을 출력한다. 만약 2월 18일이라면 “Special” 을 출력한다.</p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><p><img src="/images/pasted-75.png"></p><p>조건문으로 풀이하였다.<br><br>조건이 많아 엄청 비효율적으로 보인다.</p><hr><h2 id="숏코딩-문제풀이"><a href="#숏코딩-문제풀이" class="headerlink" title="숏코딩 문제풀이"></a>숏코딩 문제풀이</h2><p><img src="/images/pasted-76.png"></p><p>이번엔 입력받은 1월 = 30일 기준으로 잡아 일 단위로 변경하여 총 일을 구하여 인덱싱을 이용하여 풀이를 하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10768%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
