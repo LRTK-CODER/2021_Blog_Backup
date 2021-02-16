@@ -9,40 +9,8 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Tue, 16 Feb 2021 07:07:04 GMT</pubDate>
+    <pubDate>Tue, 16 Feb 2021 09:35:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>백준 브론즈4 15873번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15873%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15873%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 15 Feb 2021 21:15:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;공백-없는-A-B&quot;&gt;&lt;a href=&quot;#공백-없는-A-B&quot; class=&quot;headerlink&quot; title=&quot;공백 없는 A+B&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15873&quot;&gt;공백 없는 A+B&lt;/</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="공백-없는-A-B"><a href="#공백-없는-A-B" class="headerlink" title="공백 없는 A+B"></a><a href="https://www.acmicpc.net/problem/15873">공백 없는 A+B</a></h1><p>자연수 A, B가 주어지면 A+B를 구하는 프로그램을 작성하시오.</p><hr><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>()</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(a) == <span class="number">2</span>:</span><br><span class="line">    print(<span class="built_in">int</span>(a[<span class="number">0</span>])+<span class="built_in">int</span>(a[<span class="number">1</span>]))</span><br><span class="line"><span class="keyword">elif</span> <span class="built_in">len</span>(a) == <span class="number">3</span>:</span><br><span class="line">    print(<span class="built_in">int</span>(a[<span class="number">0</span>:<span class="number">2</span>])+<span class="built_in">int</span>(a[<span class="number">2</span>]) <span class="keyword">if</span> a[<span class="number">0</span>:<span class="number">2</span>] == <span class="string">&#x27;10&#x27;</span> <span class="keyword">else</span> <span class="built_in">int</span>(a[<span class="number">0</span>])+<span class="built_in">int</span>(a[<span class="number">1</span>:]))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="number">20</span>)</span><br></pre></td></tr></table></figure><p>솔직히 이 문제의 체점이 잘못됬다고 생각한다.<br><br>A와 B의 조건을 보면, A는 0보다 크고 B는 10보다 같거나 작으면 된다.<br><br>또한 입력값을 줄 때, 두 수의 앞에 불필요한 0이 붙는 경우가 없다고 했다.</p><p>위 전제를 생각하면,</p><ul><li>100 : 10(a) + 0(b)</li><li>1010 : 10(a) + 10(b)</li><li>1001 : 100(a) + 1 (b)</li><li>1011 : 101(a) + 1(b)</li></ul><p>이 된다.</p><p>그러나 무조건 입력값의 길이가 4이면, 20이 되어야하니….<br><br>그리고 120을 입력하면 21이 출력되는데 정답으로 처리가 된다.</p><p>내 생각에는 문제 체점 방식이 잘못되지 않았나 생각된다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15873%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>XSS - Reflected (Back Button)</title>
@@ -603,6 +571,36 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/09/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17362%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Session Mgmt - Cookies (HTTPOnly)</title>
+      <link>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/</guid>
+      <pubDate>Mon, 08 Feb 2021 22:10:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;HttpOnly&quot;&gt;&lt;a href=&quot;#HttpOnly&quot; class=&quot;headerlink&quot; title=&quot;HttpOnly&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://opentutorials.org/course/3387/21744&quot;&gt;HttpOnly</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="HttpOnly"><a href="#HttpOnly" class="headerlink" title="HttpOnly"></a><a href="https://opentutorials.org/course/3387/21744">HttpOnly</a></h1><p>XSS 같은 공격으로 쿠키 탈취를 방지하기 위해, 자바스크립트의 document.cookie 함수를 사용하여 쿠키에 접근하는 것을 방지하는 옵션이다.</p><hr><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-77.png"></p><p>쿠키를 확인할 수 있도록 구현된 페이지인 것 같다.<br></p><p><img src="/images/pasted-83.png"></p><p><img src="/images/pasted-84.png"></p><p>위와 같이 ‘Cookies’ 버튼을 클릭 시 쿠키 및 관련 정보들이 테이블에 출력되며, here를 클릭 시 javascript의 alert창으로 쿠키 및 관련 정보를 출력하였다.</p><p><img src="/images/pasted-85.png"></p><p>개발자 도구로 확인해보니, HttpOnly는 적용되어 있지 않다.</p><p><img src="/images/pasted-87.png" alt="LRTK 계정"><br><img src="/images/pasted-88.png" alt="Bee 계정"></p><p>쿠키 탈취 예제를 위해 일반 크롬과 시크릿 모드 크롬 두 개를 키고, 하나는 bee 계정으로 로그인을 하고, 다른 하나는 다른 아이디로 로그인을 하여 bee 계정의 쿠키를 탈취했다는 가정하에 bee 계정의 쿠키를 이용하여 bee로 로그인을 시도하였다.</p><p><img src="/images/pasted-89.png" alt="쿠키 변경"></p><p><img src="/images/pasted-90.png" alt="LRTK -&gt; Bee로 로그인 성공"></p><p>위와 같이 공격자가 쿠키를 탈취 시 쿠키를 이용하여 다른 계정으로 로그인을 할 수 있다.</p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p><img src="/images/pasted-91.png"><br>이번에는 top_security의 값이 maybe이며, HttpOnly로 되어있다.</p><p>이 경우, javascript의 document.cookie에선 top_security이 출력이 안될 것이다.</p><p><img src="/images/pasted-92.png" alt="top_security 출력 X"></p><p>만약 해커가 document.cookie 함수를 이용한 csrf 공격으로 다른 서버에 해당 사이트 계정의 쿠키값을 보낸다는 시나리오라면 top_security는 실패할 것이다.</p><p>해당 우회 방법은 XST(Cross Site Tracing)이 있는데, Trace 옵션이 켜져있을 때만 가능한 공격이다.</p><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p>High에선 Medium에선 1시간이였던 top_security의 사용 시간이 5분으로 줄었다.</p><p>다른 차이점은 없다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/#disqus_thread</comments>
       
     </item>
     
