@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/2021/02/16/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88/</loc>
+        <lastmod>2021-02-18T16:58:09.730Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</loc>
+        <lastmod>2021-02-18T16:19:06.320Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/2021/02/17/OWASP-TOP-10-A2-Broken-Authentication/</loc>
+        <lastmod>2021-02-18T16:18:56.410Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/2021/02/18/XSS-Reflected-Eval/</loc>
         <lastmod>2021-02-18T15:34:23.590Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,24 +49,8 @@
     </url>
 
     <url>
-        <loc>https://lrtk-coder.github.io/2021/02/17/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88/</loc>
-        <lastmod>2021-02-17T12:39:19.460Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://lrtk-coder.github.io/2021/02/14/Dreamhack-Web-01/</loc>
         <lastmod>2021-02-17T11:44:34.260Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</loc>
-        <lastmod>2021-02-17T07:58:41.500Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
