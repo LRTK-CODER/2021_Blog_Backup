@@ -9,6 +9,20 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/categories/Security/Dreamhack/</loc>
+        <lastmod>2021-02-22T08:21:04.540Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/categories/Security/</loc>
+        <lastmod>2021-02-22T08:21:04.540Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/categories/Data-Structure/</loc>
         <lastmod>2021-02-21T15:50:39.850Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +38,6 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/categories/Security/Web/</loc>
-        <lastmod>2021-02-20T13:09:20.770Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/categories/Security/</loc>
         <lastmod>2021-02-20T13:09:20.770Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -53,13 +60,6 @@
     <url>
         <loc>https://lrtk-coder.github.io/categories/%25EC%2595%258C%25EA%25B3%25A0%25EB%25A6%25AC%25EC%25A6%2598/</loc>
         <lastmod>2021-02-20T08:58:39.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/categories/Security/Dreamhack/</loc>
-        <lastmod>2021-02-18T16:58:09.730Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
