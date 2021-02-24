@@ -9,14 +9,66 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Tue, 23 Feb 2021 12:33:03 GMT</pubDate>
+    <pubDate>Wed, 24 Feb 2021 02:24:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈4 14470번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/02/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14470%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14470%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 23 Feb 2021 16:43:15 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;전자레인지&quot;&gt;&lt;a href=&quot;#전자레인지&quot; class=&quot;headerlink&quot; title=&quot;전자레인지&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/14470&quot;&gt;전자레인지&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;JOI 군은</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="전자레인지"><a href="#전자레인지" class="headerlink" title="전자레인지"></a><a href="https://www.acmicpc.net/problem/14470">전자레인지</a></h1><p>JOI 군은 식사 준비를 위해 A℃의 고기를 전자레인지로 B℃까지 데우려고 한다. 고기는 온도가 0℃보다 낮을 때 얼어 있고, 0℃보다 높을 때는 얼어 있지 않다. 온도가 정확히 0℃일 때 고기는 얼어 있을 수도, 얼어 있지 않을 수도 있다.</p><p>JOI 군은 가열할 때 고기가 아래의 규칙을 따라 데워진다고 가정하고, 고기를 데우는 데 걸리는 시간을 어림하기로 했다.</p><ul><li>고기가 얼어 있고 온도가 0℃ 미만일 때 : 온도가 C초에 1℃씩 오른다.</li><li>고기가 얼어 있고 온도가 정확히 0℃일 때 : 얼어 있지 않은 상태로 만드는(해동하는) 데 D초가 걸린다.</li><li>고기가 얼어 있지 않을 때 : 온도가 E초에 1℃씩 오른다.</li></ul><p>이 규칙을 토대로, 고기가 B℃까지 데워지는 데 몇 초가 걸리는지 구하라.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b, c, d, e = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">open</span>(<span class="number">0</span>))</span><br><span class="line">print([-(a)*c + b*e + d, b*e - a*e][a&gt;<span class="number">0</span>])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>a : 고기온도<br><br>b : 목표온도<br><br>c : 얼어있는 고기를 1도씩 올리는 시간<br><br>d : 얼어있는 고기를 해동하는 시간<br><br>e : 얼지 않은 고기를 1도씩 올리는 시간</p><p>다음과 같은 시간을 구하고 값을 더해주면 목표 온도까지의 시간을 구할 수 있다.</p><p>0&gt;고기온도:</p><ul><li>언 고기을 0도까지 해동하는 시간 (a*c)</li><li>0도의 고기를 해동하는 시간 (d)</li><li>0도에서 목표온도까지 도달하는 시간 (b*e)</li></ul><p>0&lt;고기온도:</p><ul><li>고기온도에서 목표온도까지 도달하는 시간 (b*e - a*e)</li></ul>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14470%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>XSS - Reflected (Login Form)</title>
+      <link>https://lrtk-coder.github.io/2021/02/23/XSS-Reflected-Login-Form/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/23/XSS-Reflected-Login-Form/</guid>
+      <pubDate>Tue, 23 Feb 2021 09:05:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;문제풀이&quot;&gt;&lt;a href=&quot;#문제풀이&quot; class=&quot;headerlink&quot; title=&quot;문제풀이&quot;&gt;&lt;/a&gt;문제풀이&lt;/h1&gt;&lt;h2 id=&quot;Low&quot;&gt;&lt;a href=&quot;#Low&quot; class=&quot;headerlink&quot; title=&quot;Low&quot;&gt;&lt;/a&gt;Lo</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-219.png"></p><p>로그인을 해야하지만, bee 계정과 LRTK 계정으로 로그인이 안된다.</p><p>현 로그인의 계정 정보도 없어서, SQL Injection이 되는 지 확인을 해보았다.</p><p><img src="/images/pasted-221.png" alt="Login: `&#39;`"></p><p>SQL의 에러메시지가 그대로 출력되는 것을 확인할 수 있었다. 이것을 이용하여 입력한 XSS 코드가 페이지에 반영할 수 있을 것 같다.</p><p><img src="/images/pasted-222.png" alt="Login: `&lt;a&gt;hi&lt;/a&gt;&#39;`"></p><p>먼저 a태그를 넣어서 반영이 되는지 확인을 했는데 반영이 되는 것을 볼 수 있었다.</p><p><img src="/images/pasted-223.png" alt="Login: `&lt;script&gt;alert(1)&lt;/script&gt;&#39;`"></p><p>SQL 에러 메시지 출력을 막으면 될 거 같은데 Medium과 High에서 방어 방법을 알아 보겠다.</p><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p><img src="/images/pasted-224.png"></p><p>SQL 에러가 더이상 출력이 안된다. 더이상 XSS은 시도할 수 없을 것 같다.</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>($_COOKIE[<span class="string">&quot;security_level&quot;</span>])&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;0&quot;</span> :</span><br><span class="line">    $data = no_check($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;1&quot;</span> :</span><br><span class="line">        $data = sqli_check_1($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;2&quot;</span> :</span><br><span class="line">        $data = sqli_check_2($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span> :</span><br><span class="line">        $data = no_check($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight php"><figcaption><span>sqli_check_1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_1</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> addslashes($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>addslashes 함수로 특정 특수 문자 앞에 <code>\</code>을 넣어서 이스케이프하였다.</p><figure class="highlight php"><figcaption><span>sqli_check_2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_2</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mysql_real_escape_string($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>mysql_real_escape_string 함수를 이용하여 SQL에 사용되는 특수 문자 앞에 <code>\</code>을 넣어서 이스케이프 처리하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/23/XSS-Reflected-Login-Form/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>알고리즘 정리 - 버블, 선택, 삽입 정렬</title>
       <link>https://lrtk-coder.github.io/2021/02/21/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</link>
       <guid>https://lrtk-coder.github.io/2021/02/21/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</guid>
-      <pubDate>Sun, 21 Feb 2021 12:44:00 GMT</pubDate>
+      <pubDate>Sun, 21 Feb 2021 03:44:00 GMT</pubDate>
       
         
         
@@ -30,7 +82,9 @@
       <content:encoded><![CDATA[<h1 id="알고리즘-연습-방법"><a href="#알고리즘-연습-방법" class="headerlink" title="알고리즘 연습 방법"></a>알고리즘 연습 방법</h1><ol><li>문제를 읽고 분석한다.</li><li>간단하게 테스트용으로 매우 간단한 경우부터 복잡한 경우 순서대로 생각해보면서, 연습장과 펜을 이용하여 알고리즘을 생각해본다.</li><li>가능한 알고리즘이 보인다면, 구현할 알고리즘을 세부 항목으로 나누고, 문장으로 세부 항목을 나누어서 적어본다.</li><li>코드화하기 위해, 데이터 구조 또는 사용할 변수를 정리한다.</li><li>각 문장을 코드 레벨로 적는다.</li><li>데이터 구조 또는 사용할 변수가 코드에 따라 어떻게 변하는지 손으로 적으면서, 임의 데이터로 코드가 정상 동작하는지를 연습장과 펜으로 검증한다.</li></ol><h1 id="정렬-Sorting-이란"><a href="#정렬-Sorting-이란" class="headerlink" title="정렬(Sorting) 이란?"></a>정렬(Sorting) 이란?</h1><p>어떤 데이터들이 주어졌을 때 이를 정해진 순서대로 나열하는 것</p><blockquote><p>다양한 정렬 알고리즘 이해를 통해, 동일한 문제에 대해 다양한 알고리즘이 고안될 수 있음을 이해하고, 각 알고리즘간 성능 비교를 통해, 알고리즘 성능 분석에 대해서도 이해할 수 있음.</p></blockquote><h2 id="버블-정렬-Bubble-sort"><a href="#버블-정렬-Bubble-sort" class="headerlink" title="버블 정렬(Bubble sort)"></a>버블 정렬(Bubble sort)</h2><p><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https://blog.kakaocdn.net/dn/prD1v/btqBTKVtoUB/10VcPGDRkfWdzCe7l9IVlk/img.gif"></p><p>두 인접한 데이터를 비교해서, 앞에 있는 데이터가 뒤에 있는 데이터보다 크면, 자리를 바꾸는 정렬 알고리즘</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)):</span><br><span class="line">        swap = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> index2 <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data) - index - <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> data[index2] &gt; data[index2 + <span class="number">1</span>]:</span><br><span class="line">                data[index2], data[index2 + <span class="number">1</span>] = data[index2 + <span class="number">1</span>], data[index2]</span><br><span class="line">                swap = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">if</span> swap == <span class="literal">False</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    data_list = random.sample(<span class="built_in">range</span>(<span class="number">100</span>), <span class="number">10</span>)</span><br><span class="line">    print(bubble_sort(data_list))</span><br></pre></td></tr></table></figure><h2 id="선택-정렬-Selection-sort"><a href="#선택-정렬-Selection-sort" class="headerlink" title="선택 정렬(Selection sort)"></a>선택 정렬(Selection sort)</h2><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif" width=100><ol><li>주어진 리스트 중에 최소값을 찾는다.</li><li>그 값을 맨 앞에 위치한 값과 교체한다(패스(pass)).</li><li>맨 처음 위치를 뺀 나머지 리스트를 같은 방법으로 교체한다.</li></ol><p>위 순서를 반복하여 정렬하는 알고리즘</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_sort</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="keyword">for</span> stand <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)<span class="number">-1</span>):</span><br><span class="line">        lowest = stand</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(stand+<span class="number">1</span>, <span class="built_in">len</span>(data)):</span><br><span class="line">            <span class="keyword">if</span> data[index] &lt; data[lowest]:</span><br><span class="line">                lowest = index</span><br><span class="line">        data[lowest], data[stand] = data[stand], data[lowest]</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    data_list = random.sample(<span class="built_in">range</span>(<span class="number">100</span>), <span class="number">10</span>)</span><br><span class="line">    print(select_sort(data_list))</span><br></pre></td></tr></table></figure><h2 id="삽입-정렬-Insertion-sort"><a href="#삽입-정렬-Insertion-sort" class="headerlink" title="삽입 정렬(Insertion sort)"></a>삽입 정렬(Insertion sort)</h2><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Insertion_sort.gif"><p>자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘</p><h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertion_sort</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(data)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> index2 <span class="keyword">in</span> <span class="built_in">range</span>(index+<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> data[index2] &lt; data[index2<span class="number">-1</span>]:</span><br><span class="line">                data[index2], data[index2<span class="number">-1</span>] = data[index2<span class="number">-1</span>], data[index2]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    data_list = random.sample(<span class="built_in">range</span>(<span class="number">100</span>), <span class="number">10</span>)</span><br><span class="line">    print(insertion_sort(data_list))</span><br></pre></td></tr></table></figure>]]></content:encoded>
       
       
-      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EB%A1%A0/">이론</category>
       
       
       <category domain="https://lrtk-coder.github.io/tags/Bubble-Sort/">Bubble Sort</category>
@@ -432,34 +486,6 @@
     </item>
     
     <item>
-      <title>알고리즘 복잡도</title>
-      <link>https://lrtk-coder.github.io/2021/02/16/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/16/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</guid>
-      <pubDate>Tue, 16 Feb 2021 04:25:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;알고리즘-복잡도-계산이-필요한-이유&quot;&gt;&lt;a href=&quot;#알고리즘-복잡도-계산이-필요한-이유&quot; class=&quot;headerlink&quot; title=&quot;알고리즘 복잡도 계산이 필요한 이유&quot;&gt;&lt;/a&gt;알고리즘 복잡도 계산이 필요한 이유&lt;/h1&gt;&lt;p&gt;하나</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="알고리즘-복잡도-계산이-필요한-이유"><a href="#알고리즘-복잡도-계산이-필요한-이유" class="headerlink" title="알고리즘 복잡도 계산이 필요한 이유"></a>알고리즘 복잡도 계산이 필요한 이유</h1><p>하나의 문제를 푸는 알고리즘은 다양할 수 있음.<br><br>이 중 어느 알고리즘이 더 뛰어난지 계산이 필요함.</p><h1 id="알고리즘-복잡도-계산-항목"><a href="#알고리즘-복잡도-계산-항목" class="headerlink" title="알고리즘 복잡도 계산 항목"></a>알고리즘 복잡도 계산 항목</h1><ol><li>시간 복잡도 : 알고리즘 실행 속도</li><li>공간 복잡도 : 알고리즘이 사용하는 메모리 사이즈</li></ol><blockquote><p>요즘, 하드웨어가 발전을 하면서 공간 복잡도는 그리 중요하지 않게 된다.</p></blockquote><h2 id="시간-복잡도의-주요-요소"><a href="#시간-복잡도의-주요-요소" class="headerlink" title="시간 복잡도의 주요 요소"></a>시간 복잡도의 주요 요소</h2><p>반복문이 크게 영향을 끼침.</p><h1 id="알고리즘-성능-표기법"><a href="#알고리즘-성능-표기법" class="headerlink" title="알고리즘 성능 표기법"></a>알고리즘 성능 표기법</h1><h2 id="빅-오-표기법-O-n"><a href="#빅-오-표기법-O-n" class="headerlink" title="빅-오 표기법 : O(n)"></a>빅-오 표기법 : O(n)</h2><ul><li>알고리즘 최악의 실행 시간을 표기</li><li>가장 많이/일반적으로 사용함.</li><li>아무리 최악의 상황이라도, 빅오의 만큼의 성능은 보장한다는 의미</li></ul><h2 id="오메가-표기법-Ω-n"><a href="#오메가-표기법-Ω-n" class="headerlink" title="오메가 표기법 : Ω(n)"></a>오메가 표기법 : Ω(n)</h2><ul><li>오메가 표기법은 알고리즘 최상의 실행 시간을 표기</li></ul><h2 id="세타-표기법-Θ-n"><a href="#세타-표기법-Θ-n" class="headerlink" title="세타 표기법 : Θ(n)"></a>세타 표기법 : Θ(n)</h2><ul><li>세타 표기법은 알고리즘 평균 실행 시간을 표기</li></ul><blockquote><p>시간 복잡도 계산은 반복문이 핵심 요소임을 인지하고, 계산 표기는 최상, 평균, 최악 중 최악의 시간인 빅-오 표기법을 중심으로 익히면 됨.</p></blockquote><h1 id="빅-오-표기법"><a href="#빅-오-표기법" class="headerlink" title="빅-오 표기법"></a>빅-오 표기법</h1><ul><li>입력 n에 따라 결정되는 시간 복잡도 함수</li><li>O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), O(n!) 등으로 표기함<br><code>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n^2) &lt; O(2^n) &lt; O(n!)</code></li></ul><blockquote><p>참고 : log n 의 베이스는 2 - log<sub>2</sub> n</p></blockquote><ul><li>단순하게 입력 n에 따라, 몇 번 실행되는지를 계산하면 됨.</li><li>표현식에 가장 큰 영향을 미치는 n의 단위로 표기함.<br><br>ex)<br><br>3n+10, 3n+10 : O(n)<br><br>3n<sup>2</sup>, n<sup>2</sup>+2 : O(n<sup>2</sup>)</li></ul><figure class="highlight python"><figcaption><span>O(1)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> n &gt; <span class="number">10</span>:</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>O(n)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>3n<sup>2</sup> : O(n<sup>2</sup>)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-173.png"></p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%B3%B5%EC%9E%A1%EB%8F%84/">알고리즘 복잡도</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/Big-O/">Big-O</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/16/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>OWASP TOP 10 A1 - Injection</title>
       <link>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</link>
       <guid>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</guid>
@@ -486,6 +512,36 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>알고리즘 복잡도</title>
+      <link>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</guid>
+      <pubDate>Mon, 15 Feb 2021 19:25:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;알고리즘-복잡도-계산이-필요한-이유&quot;&gt;&lt;a href=&quot;#알고리즘-복잡도-계산이-필요한-이유&quot; class=&quot;headerlink&quot; title=&quot;알고리즘 복잡도 계산이 필요한 이유&quot;&gt;&lt;/a&gt;알고리즘 복잡도 계산이 필요한 이유&lt;/h1&gt;&lt;p&gt;하나</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="알고리즘-복잡도-계산이-필요한-이유"><a href="#알고리즘-복잡도-계산이-필요한-이유" class="headerlink" title="알고리즘 복잡도 계산이 필요한 이유"></a>알고리즘 복잡도 계산이 필요한 이유</h1><p>하나의 문제를 푸는 알고리즘은 다양할 수 있음.<br><br>이 중 어느 알고리즘이 더 뛰어난지 계산이 필요함.</p><h1 id="알고리즘-복잡도-계산-항목"><a href="#알고리즘-복잡도-계산-항목" class="headerlink" title="알고리즘 복잡도 계산 항목"></a>알고리즘 복잡도 계산 항목</h1><ol><li>시간 복잡도 : 알고리즘 실행 속도</li><li>공간 복잡도 : 알고리즘이 사용하는 메모리 사이즈</li></ol><blockquote><p>요즘, 하드웨어가 발전을 하면서 공간 복잡도는 그리 중요하지 않게 된다.</p></blockquote><h2 id="시간-복잡도의-주요-요소"><a href="#시간-복잡도의-주요-요소" class="headerlink" title="시간 복잡도의 주요 요소"></a>시간 복잡도의 주요 요소</h2><p>반복문이 크게 영향을 끼침.</p><h1 id="알고리즘-성능-표기법"><a href="#알고리즘-성능-표기법" class="headerlink" title="알고리즘 성능 표기법"></a>알고리즘 성능 표기법</h1><h2 id="빅-오-표기법-O-n"><a href="#빅-오-표기법-O-n" class="headerlink" title="빅-오 표기법 : O(n)"></a>빅-오 표기법 : O(n)</h2><ul><li>알고리즘 최악의 실행 시간을 표기</li><li>가장 많이/일반적으로 사용함.</li><li>아무리 최악의 상황이라도, 빅오의 만큼의 성능은 보장한다는 의미</li></ul><h2 id="오메가-표기법-Ω-n"><a href="#오메가-표기법-Ω-n" class="headerlink" title="오메가 표기법 : Ω(n)"></a>오메가 표기법 : Ω(n)</h2><ul><li>오메가 표기법은 알고리즘 최상의 실행 시간을 표기</li></ul><h2 id="세타-표기법-Θ-n"><a href="#세타-표기법-Θ-n" class="headerlink" title="세타 표기법 : Θ(n)"></a>세타 표기법 : Θ(n)</h2><ul><li>세타 표기법은 알고리즘 평균 실행 시간을 표기</li></ul><blockquote><p>시간 복잡도 계산은 반복문이 핵심 요소임을 인지하고, 계산 표기는 최상, 평균, 최악 중 최악의 시간인 빅-오 표기법을 중심으로 익히면 됨.</p></blockquote><h1 id="빅-오-표기법"><a href="#빅-오-표기법" class="headerlink" title="빅-오 표기법"></a>빅-오 표기법</h1><ul><li>입력 n에 따라 결정되는 시간 복잡도 함수</li><li>O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), O(n!) 등으로 표기함<br><code>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n^2) &lt; O(2^n) &lt; O(n!)</code></li></ul><blockquote><p>참고 : log n 의 베이스는 2 - log<sub>2</sub> n</p></blockquote><ul><li>단순하게 입력 n에 따라, 몇 번 실행되는지를 계산하면 됨.</li><li>표현식에 가장 큰 영향을 미치는 n의 단위로 표기함.<br><br>ex)<br><br>3n+10, 3n+10 : O(n)<br><br>3n<sup>2</sup>, n<sup>2</sup>+2 : O(n<sup>2</sup>)</li></ul><figure class="highlight python"><figcaption><span>O(1)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> n &gt; <span class="number">10</span>:</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>O(n)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>3n<sup>2</sup> : O(n<sup>2</sup>)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-173.png"></p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EB%A1%A0/">이론</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%B3%B5%EC%9E%A1%EB%8F%84/">알고리즘 복잡도</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Big-O/">Big-O</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/#disqus_thread</comments>
       
     </item>
     
@@ -544,62 +600,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Data Structure - Linked List 구현</title>
-      <link>https://lrtk-coder.github.io/2021/02/14/Data-Structure-Linked-List-%EA%B5%AC%ED%98%84/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/14/Data-Structure-Linked-List-%EA%B5%AC%ED%98%84/</guid>
-      <pubDate>Sun, 14 Feb 2021 20:56:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Code&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<figure class="highlight python"><figcaption><span>Code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data, <span class="built_in">next</span>=<span class="literal">None</span></span>):</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="built_in">next</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NodeMgmt</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        self.head = Node(data)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.head == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            self.head = Node(data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            node = self.head</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 마지막 노드를 찾기 위한 반복문</span></span><br><span class="line">            <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">                node = node.<span class="built_in">next</span></span><br><span class="line">            </span><br><span class="line">            node.<span class="built_in">next</span> = Node(data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.head == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            print(<span class="string">&#x27;Node가 없습니다.&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> self.head.data == data:</span><br><span class="line">            temp = self.head</span><br><span class="line">            self.head = self.head.<span class="built_in">next</span></span><br><span class="line">            <span class="keyword">del</span> temp</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            node = self.head</span><br><span class="line">            <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">                <span class="keyword">if</span> node.<span class="built_in">next</span>.data == data:</span><br><span class="line">                    temp = node.<span class="built_in">next</span></span><br><span class="line">                    node.<span class="built_in">next</span> = node.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">                    <span class="keyword">del</span> temp</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    node = node.<span class="built_in">next</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">desc</span>(<span class="params">self</span>):</span></span><br><span class="line">        node = self.head</span><br><span class="line">        <span class="comment"># node가 없을 때</span></span><br><span class="line">        <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            print(<span class="literal">None</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">            print(node.data, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            node = node.<span class="built_in">next</span></span><br><span class="line">        print(node.data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    link = NodeMgmt(<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">10</span>):</span><br><span class="line">        link.add(_)</span><br><span class="line">    link.desc()</span><br><span class="line"></span><br><span class="line">    link.delete(<span class="number">1</span>)</span><br><span class="line">    link.desc()</span><br><span class="line"></span><br><span class="line">    link.delete(<span class="number">3</span>)</span><br><span class="line">    link.desc()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">10</span>):</span><br><span class="line">        link.delete(_)</span><br><span class="line">    link.desc()</span><br></pre></td></tr></table></figure><figure class="highlight zsh"><figcaption><span>출력</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5 6 7 8 9</span><br><span class="line">2 3 4 5 6 7 8 9</span><br><span class="line">2 4 5 6 7 8 9</span><br><span class="line">None</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Linked-List/">Linked List</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/14/Data-Structure-Linked-List-%EA%B5%AC%ED%98%84/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>XSS - Reflected (AJAX/XML)</title>
-      <link>https://lrtk-coder.github.io/2021/02/14/XSS-Reflected-AJAX-XML/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/14/XSS-Reflected-AJAX-XML/</guid>
-      <pubDate>Sun, 14 Feb 2021 15:01:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;XML&quot;&gt;&lt;a href=&quot;#XML&quot; class=&quot;headerlink&quot; title=&quot;XML&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://www.tcpschool.com/xml/xml_intro_basic&quot;&gt;XML&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;EXtensi</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a><a href="http://www.tcpschool.com/xml/xml_intro_basic">XML</a></h1><p>EXtensible Markup Languag의 약자이며, HTML과 매우 비슷한 문자 기반의 마크업 언어이다.<br><br>그러나 XML은 HTML처럼 데이터를 보여주는 목적이 아닌, 데이터를 저장하고 전달할 목적으로만 만들어졌다.</p><h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-146.png"></p><p>이전 문제인 AJAX/JSON과 같은 방식의 페이지이다.</p><p>이번에도 특수 문자를 넣어서 이스케이프가 되는지 확인하였다.</p><p><img src="/images/pasted-147.png" alt="Input : `&amp;lt&#39;&quot;&amp;gt`"></p><p>반응을 하지 않는다. 일단 알 수 없는 상항이니, 입력 데이터를 어디로 보내는지 확인을 하였다.</p><p><img src="/images/pasted-148.png" alt="xss_ajax_1.js"></p><p>개발자 도구로 코드를 살펴보니, Head 부분에 xss_ajax_1.js이라는 JS파일을 불려오고 있었다.<br><br>그래서 Source 칸에서 xss_ajax_1.js를 보니, <code>xss_ajax_1-2.php?title=</code>로 입력 데이터를 보내고 있었다.</p><p>이번엔 직접 입력 데이터를 보내서 어떻게 XML으로 생성되는지 확인을 하였다.</p><p><img src="/images/pasted-149.png" alt="`xss_ajax_1-2.php?title=&amp;lt%27&quot;&amp;gt`"></p><p>처음 특수문자가 이스케이프가 되는지 안되는지 확인하기 위한 값이 에러가 나서 페이지에서 파싱을 못해 동작하지 못했던 것이였다.</p><p>이번에 xss_ajax_1-2.php에 a태그를 넣어서 에러가 나는지 확인을 하였다.</p><p><img src="/images/pasted-150.png" alt="`/xss_ajax_1-2.php?title=&amp;lta&amp;gthi&amp;lt/a&amp;gt`"></p><p>에러가 나타나지 않고 잘 나오는 것을 확인할 수 있었다.</p><p>그럼 이번에 결과값이 페이지에 잘 반영이 되는지 확인하였다.</p><p><img src="/images/pasted-151.png" alt="Input : `&amp;lt;a&amp;gt;hi&amp;lt;/a&amp;gt;`"></p><p>왜 그런가 했더니, a 태그가 XML의 태그로 잡혀서 반영이 안된 것이다.</p><p>검색을 하니, 특수 문자를 HTML 특수문자 코드로 변경하여 넘겨주면 XML에서 문자열로 읽을 것이고 그걸 그대로 HTML에 넘기면 HTML은 태그로 알아듣는 다는 것을 알 수 있었다.</p><p>Get은 입력값을 url 인코딩을 하여 보내기 때문에 HTML 특수문자 코드를 url 인코딩을 하여 서버로 전달해야한다.</p><p><code>&lt;a&gt;hi&lt;/a&gt;</code> - <code>&amp;lt;a&amp;gt;hi&amp;lt;/a&amp;gt;</code> - <code>%26lt%3ba%26gt%3bhi%26lt%3b%2fa%26gt%3b</code></p><p>url 인코딩된 값을 xss_ajax_1-2.php에 보내줬다.</p><p><img src="/images/pasted-152.png" alt="Input : `%26lt%3ba%26gt%3bhi%26lt%3b%2fa%26gt%3b`"></p><p>a태그가 XML에 태그로 잡히지 않고, 문자열로 잡힌 것을 볼 수 있었다.<br><br>이제 XML 파싱 JS 코드인 xss_ajax_1.js가 파싱을 하면, 브라우저에선 a태그를 태그로 보고 처리를 할 것이다.</p><p><img src="/images/pasted-153.png"></p><p>반영이 잘 된 것을 알 수 있다.<br><br>JS로 alert창을 띄우는 것은 브라우저에서 막고 있으니, img 태그를 이용하여 xss을 시도하였다.</p><p><img src="/images/pasted-154.png"></p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p><img src="/images/pasted-156.png"></p><p>addslashes 함수로 이스케이프되어 있다.</p><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p><img src="/images/pasted-157.png"></p><p>htmlspecialchars 함수로 특수 문자를 HTML의 특수문자 코드로 이스케이프하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/14/XSS-Reflected-AJAX-XML/#disqus_thread</comments>
       
     </item>
     
