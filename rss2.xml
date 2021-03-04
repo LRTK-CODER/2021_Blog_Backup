@@ -9,8 +9,31 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Wed, 03 Mar 2021 01:19:32 GMT</pubDate>
+    <pubDate>Thu, 04 Mar 2021 20:04:52 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>KISEC - 그들의 사이버 첩보전 이야기 (OSINT에 대하여) 강의 후기</title>
+      <link>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/</guid>
+      <pubDate>Thu, 04 Mar 2021 10:50:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;평소에 OSINT에 관심이 있어서 강의를 수강하려 KISEC으로 갔다.&lt;/p&gt;
+&lt;p&gt;강의에서 정말 많이 배울 수 있었다. 평소에 다크웹에 들어갈 때 감염의 위험을 두려워서 VM 위에 토르와 VPN으로 접속했는데 강사님의 말씀으로 파일을 다운로드 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>평소에 OSINT에 관심이 있어서 강의를 수강하려 KISEC으로 갔다.</p><p>강의에서 정말 많이 배울 수 있었다. 평소에 다크웹에 들어갈 때 감염의 위험을 두려워서 VM 위에 토르와 VPN으로 접속했는데 강사님의 말씀으로 파일을 다운로드 안하는 이상 감염은 그리 신경 안써도 된다고 한다.</p><p>또한 토르말고 일반 브라우저로 onion 사이트를 접속할 수 있는 방법을 알려주셨는데 다크웹에 접속하기 위해 고생한 것이 헛고생이 되었다.</p><p>강의 내용 중에서 가장 흥미로운 것이 디지털 교도소와 n번방의 관계를 OSINT를 이용하여 증명한 CASE가 흥미롭고 재밌었다.</p><p>CASE에서 어떻게 디지털 교도소가 서버의 위치를 숨기는 방법, 추적을 피하기 위한 서비스 등을 알려주셨는데 그동안 궁금하였던 것이 풀어졌던 순간이였다.</p><p>다만 아쉬운 점이 강의가 8시간으로 다소 짧은 시간이라는 점이다. 좀 더 길게 진행됬으면 더 많은 것을 배울 수 있지만, 현 강의도 충분히 배울 내용이 많았다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Insecure DOR (Order Tickets)</title>
@@ -604,38 +627,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/24/phpMyAdmin-BBCode-Tag-XSS/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 15726번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Wed, 24 Feb 2021 22:51:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;이칙연산&quot;&gt;&lt;a href=&quot;#이칙연산&quot; class=&quot;headerlink&quot; title=&quot;이칙연산&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15726&quot;&gt;이칙연산&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;다음과 같이 세 수</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="이칙연산"><a href="#이칙연산" class="headerlink" title="이칙연산"></a><a href="https://www.acmicpc.net/problem/15726">이칙연산</a></h1><p>다음과 같이 세 수가 연속해서 주어졌을 때 한 번의 곱셈 기호와 한 번의 나눗셈 기호를 이용하여 만든 식 중 가장 큰 값을 출력하는 프로그램을 작성하시오. (세 수의 순서는 변하지 않는다.)</p><p>32 ☐ 16 ☐ 8</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">print(<span class="built_in">int</span>(<span class="built_in">max</span>(a*b/c, a/b*c)))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제의 요점은 3개의 숫자를 곱셈과 나누기를 이용해서 계산했을 때 어떻게 계산해야 가장 큰 수가 나오는지를 구하는 문제이다.</p><ol><li>숫자1 * 숫자2 / 숫자3</li><li>숫자1 / 숫자2 * 숫자3</li><li>1과 2의 결과값 크키 비교 후 큰 수 출력.</li></ol><p>여기서, 많이 헤매는 부분은 <code>//</code>, <code>/</code> 둘 중 어느 것을 써야하는지이다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()) <span class="comment"># 10 3 3 입력</span></span><br><span class="line">print(a*b/c, a/b*c)<span class="comment"># 10.0 10.0 출력</span></span><br><span class="line">print(a*b//c, a//b*c)<span class="comment"># 10 9 출력</span></span><br></pre></td></tr></table></figure><p><code>//</code>은 소수점을 버리기 때문에 값이 차이가 나는 것을 알 수 있다.</p><p>하지만 이 문제에서 왜 <code>/</code>을 쓰는지는 모르겠다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
