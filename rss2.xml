@@ -9,8 +9,36 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Fri, 05 Mar 2021 16:44:15 GMT</pubDate>
+    <pubDate>Sun, 07 Mar 2021 00:54:20 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Dreamhack Web Client-side 기초 - CSRF</title>
+      <link>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/</guid>
+      <pubDate>Sat, 06 Mar 2021 06:04:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;CSRF-Cross-Site-Request-Forgery-이란&quot;&gt;&lt;a href=&quot;#CSRF-Cross-Site-Request-Forgery-이란&quot; class=&quot;headerlink&quot; title=&quot;CSRF(Cross Site Request </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="CSRF-Cross-Site-Request-Forgery-이란"><a href="#CSRF-Cross-Site-Request-Forgery-이란" class="headerlink" title="CSRF(Cross Site Request Forgery)이란?"></a>CSRF(Cross Site Request Forgery)이란?</h1><p>브라우저는 기본적으로 SOP(Same-Origin-Policy)에 위반되지 않은 모든 요청에 쿠키를 포함해 전송함.</p><p>비정상적으로 사용자의 의도와 무관하게 다른 사이트에 HTTP 요청을 보내는 것을 CSRF 공격이라 함.</p><p>공격을 통해 공격자가 취할 수 있는 이득은 해당 세션 쿠키를 가진 사람만 사용할 수 있는 기능을 요청할 수 있다는 것임.</p><p>CSRF 공격을 성공적으로 수행하기 위해서는 아래 두 가지 조건이 요구됨.</p><ol><li><p>해당 사이트가 쿠키를 이용한 인증 방식을 사용해야함.<br><br>모든 HTTP 전송엔 쿠키가 함께 전송되기 때문에 쿠키에 저장된 세션 아이디로 전송됨.</p></li><li><p>공격자가 사전에 알 수 없는 파라미터가 존재해서는 안됨.<br><br>자동입력 방지 문자를 넣어야하는 요청이나 패스워드 변경 시 기존 패스워드를 입력해야하는 경우는 공격자가 입력해야하는 값을 모르기 때문에 공격이 실패하게 됨.</p></li></ol><h2 id="방어법"><a href="#방어법" class="headerlink" title="방어법"></a>방어법</h2><p>CSRF 공격을 막기 위해서는 보통 두 가지 방법을 사용함.</p><ol><li>세션 쿠키 대신 커스텀 헤더를 사용하여 사용자 인증</li></ol><ol start="2"><li>공격자가 예측할 수 없는 파라미터 추가 및 검증<br><br>Sam Origin에서만 접근 가능한 데이터 삽입 (CSRF Token), CAPTCHA, 비밀번호 등등</li></ol><p>위 두가지 방법은 서버 사이드에서 추가적인 검증을 통해 CSRF를 방어하는 방법임. 서버 코드에 검증 로직이 추가되는 방식이라 서버에 오버헤드가 발생하게됨.</p><p>직접적인 원인을 생각해보면, 브라우저가 크로스 사이트(다른 사이트)로부터 온 요청에 쿠키를 함께 전송한다는 것임.</p><p>이를 잡기 위해 SameSite 쿠키 설정이라는 개념이 있음.</p><p>SameSite 쿠키는 다른 사이트로부터 온 요청에 쿠키를 삽입할지를 설정을 통해서 결정할 수 있음.</p><p>설정 옵션은 Strict, Lax, Normal 값으로 설정 가능함.</p><ul><li><p>Strict 옵션<br><br>모든 크로스 사이트에서 출발한 요청에 해당 쿠키를 삽입하지 않음.</p></li><li><p>Lax 옵션<br><br>Link, Prerender, Form GET을 제외한 요청에는 쿠키를 삽입하지 않음.</p></li><li><p>Normal 옵션<br><br>옵션을 설정하지 않을 시와 동일한 권한을 가짐.</p></li></ul><blockquote><p>크롬은 2020년부터 개발자가 강제로 SameSite=None;Secure;을 넣지 않는 이상 모든 쿠키에 SameSite=Lax를 강제로 적용시킴.</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Dreamhack/">Dreamhack</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Dreamhack/">Dreamhack</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 14623번 문제</title>
@@ -596,38 +624,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/27/XSS-Reflected-User-Agent/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 19944번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-19944%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-19944%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Sat, 27 Feb 2021 01:58:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;뉴비의-기준은-뭘까&quot;&gt;&lt;a href=&quot;#뉴비의-기준은-뭘까&quot; class=&quot;headerlink&quot; title=&quot;뉴비의 기준은 뭘까?&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/19944&quot;&gt;뉴비의 기준은</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="뉴비의-기준은-뭘까"><a href="#뉴비의-기준은-뭘까" class="headerlink" title="뉴비의 기준은 뭘까?"></a><a href="https://www.acmicpc.net/problem/19944">뉴비의 기준은 뭘까?</a></h1><p>2020 INPC는 IGRUS 뉴비들을 위해 열리는 대회입니다. 하지만 영수 할아버지나 인용 할아버지와 같이 14학번이지만 마음만은 뉴비인 어르신들 때문에 대회장이 TLE들의 파티가 되자 뉴비의 기준을 정의하기로 하였습니다.</p><p>INPC 운영진들은 고심 끝에 뉴비를 1학년 혹은 2학년인 학생으로 정의 내렸고 뉴비를 정의하는 김에 올드비와 TLE도 정의 내리기로 하였습니다. 올드비는 N학년 이하이면서 뉴비가 아닌 학생으로 정의하기로 하였고 TLE은 뉴비도 아니고 올드비도 아닌 학생으로 정의하였습니다.</p><p>N과 M이 주어졌을 때, M학년이 뉴비인지 올드비인지 TLE인지 구별해 주세요.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n, m &#x3D; map(int, input().split())</span><br><span class="line">print([[&#39;OLDBIE!&#39;, &#39;NEWBIE!&#39;][m &lt; 3], &#39;TLE!&#39;][n &lt; m])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제 요약을 해보면,</p><ul><li>m이 1과 2일 때, NEWBIE! 출력</li><li>m이 n 이하면, OLDBIE! 출력</li><li>둘 다 아니면, TLE! 출력</li></ul><p>이것들을 파이썬으로 변환하면,</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n, m &#x3D; map(int, input().split())</span><br><span class="line">if m &lt; 3:</span><br><span class="line">print(&#39;NEWBIE!&#39;)</span><br><span class="line">elif m &lt;&#x3D; n:</span><br><span class="line">print(&#39;OLDBIE!&#39;)</span><br><span class="line">else:</span><br><span class="line">print(&#39;TLE!&#39;)</span><br></pre></td></tr></table></figure><p>가 된다.</p><p>이를 BOOL을 이용한 인덱싱으로 표현하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-19944%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
