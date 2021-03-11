@@ -9,8 +9,40 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Sun, 07 Mar 2021 00:54:20 GMT</pubDate>
+    <pubDate>Thu, 11 Mar 2021 00:24:52 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 15700번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-15700%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-15700%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 10 Mar 2021 15:21:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;타일-채우기4&quot;&gt;&lt;a href=&quot;#타일-채우기4&quot; class=&quot;headerlink&quot; title=&quot;타일 채우기4&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/15700&quot;&gt;타일 채우기4&lt;/a&gt;&lt;/h1&gt;&lt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="타일-채우기4"><a href="#타일-채우기4" class="headerlink" title="타일 채우기4"></a><a href="https://www.acmicpc.net/problem/15700">타일 채우기4</a></h1><p>N×M 크기의 벽에 2×1, 1×2 크기의 타일을 채우려고 한다. 겹치지 않게 놓는다면, 최대 몇 개를 채울 수 있을까?</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b &#x3D; map(int, input().split())</span><br><span class="line">print(a*b&#x2F;&#x2F;2)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>2x1과 1x2는 2개의 타일을 뜻한다. 입력한 벽의 크기를 실제 크기로 구하고, 2로 나누면 총 몇 개를 채울 수 있는지를 알아낼 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-15700%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Dreamhack Web Client-side 기초 - CSRF</title>
@@ -594,36 +626,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/27/XSS-Stored-Blog/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>XSS - Reflected (User-Agent)</title>
-      <link>https://lrtk-coder.github.io/2021/02/27/XSS-Reflected-User-Agent/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/27/XSS-Reflected-User-Agent/</guid>
-      <pubDate>Sat, 27 Feb 2021 03:34:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;User-Agent&quot;&gt;&lt;a href=&quot;#User-Agent&quot; class=&quot;headerlink&quot; title=&quot;User-Agent&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HT</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="User-Agent"><a href="#User-Agent" class="headerlink" title="User-Agent"></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent</a></h1><p>사용자 에이전트 요청 헤더는 서버와 네트워크 피어가 요청하는 응용 프로그램, 운영 체제, 공급 업체 및 / 또는 버전을 식별 할 수있는 특성 문자열 사용자 에이전트</p><h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low"><a href="#Low" class="headerlink" title="Low"></a>Low</h2><p>XSS - Reflected (Referer) 문제와 똑같은 문제이다. 차이점이라면, Referer 헤더가 아닌 User-Agent 헤더를 이용하는 것이다.</p><p>바로 User-Agent을 프록시를 이용하여 XSS 코드를 삽입하여 페이지에 반영하겠다.</p><p><img src="/images/pasted-235.png" alt="`&amp;ltimg src=# onerror=alert(1)&amp;gt`"></p><h2 id="Medium"><a href="#Medium" class="headerlink" title="Medium"></a>Medium</h2><p><img src="/images/pasted-236.png"><br><code>&#39;</code>, <code>&quot;</code>, <code>\</code>의 앞에 <code>\</code>이 추가되어 이스케이프가 된 것을 볼 수 있었다.</p><p>addslashed 함수로 입력값을 이스케이프를 한 것으로 보인다.</p><p>해당 우회방법은 Low 방법대로 <code>&#39;</code>, <code>&quot;</code>, <code>\</code>를 사용 안하는 방법이 있다.</p><h2 id="High"><a href="#High" class="headerlink" title="High"></a>High</h2><p><img src="/images/pasted-237.png"></p><p>htmlspecialchars 함수에 의해 특수 문자가 HTML 엔티티로 이스케이프되어 그대로 출력되는 것을 볼 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/27/XSS-Reflected-User-Agent/#disqus_thread</comments>
       
     </item>
     
