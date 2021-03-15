@@ -9,8 +9,16 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/2021/03/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11282%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
+        <lastmod>2021-03-15T08:15:48.175Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/2021/03/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-16199%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-12T02:05:02.210Z</lastmod>
+        <lastmod>2021-03-12T02:05:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +26,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-15700%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-11T00:24:52.730Z</lastmod>
+        <lastmod>2021-03-11T00:24:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -26,7 +34,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/</loc>
-        <lastmod>2021-03-07T00:54:20.790Z</lastmod>
+        <lastmod>2021-03-07T00:54:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -34,7 +42,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-14623%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-05T16:44:15.130Z</lastmod>
+        <lastmod>2021-03-05T16:44:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -42,7 +50,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-17009%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-05T16:20:02.770Z</lastmod>
+        <lastmod>2021-03-05T16:20:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -50,7 +58,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/04/%EB%B3%B4%EC%95%88%EB%89%B4%EC%8A%A4-%EA%B5%AC%EC%9D%B8%EA%B5%AC%EC%A7%81-%ED%99%9C%EB%8F%99-%EB%8A%98%EC%96%B4%EB%82%98%EB%8A%94-%EB%8B%A4%ED%81%AC%EC%9B%B9-%EC%B0%A8%EC%84%B8%EB%8C%80-%EB%B2%94%EC%A3%84%EC%9E%90-%EC%9C%A1%EC%84%B1-%EC%A4%91/</loc>
-        <lastmod>2021-03-04T21:07:33.810Z</lastmod>
+        <lastmod>2021-03-04T21:07:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -58,7 +66,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/</loc>
-        <lastmod>2021-03-04T20:04:52.930Z</lastmod>
+        <lastmod>2021-03-04T20:04:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -66,7 +74,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/02/Insecure-DOR-Order-Tickets/</loc>
-        <lastmod>2021-03-03T01:19:32.940Z</lastmod>
+        <lastmod>2021-03-03T01:19:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -74,7 +82,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/02/Insecure-DOR-Reset-Secret/</loc>
-        <lastmod>2021-03-03T01:05:40.720Z</lastmod>
+        <lastmod>2021-03-03T01:05:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -82,7 +90,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-10989%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-02T21:47:25.980Z</lastmod>
+        <lastmod>2021-03-02T21:47:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -90,7 +98,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11650%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-02T21:03:59.590Z</lastmod>
+        <lastmod>2021-03-02T21:03:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -98,7 +106,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-10814%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-02T20:46:28.300Z</lastmod>
+        <lastmod>2021-03-02T20:46:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -106,7 +114,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882-2798%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-01T23:19:12.330Z</lastmod>
+        <lastmod>2021-03-01T23:19:12.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -114,7 +122,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/28/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882-2920%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-01T23:19:01.690Z</lastmod>
+        <lastmod>2021-03-01T23:19:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -122,7 +130,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-1874%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-01T23:18:14.350Z</lastmod>
+        <lastmod>2021-03-01T23:18:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -130,7 +138,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-1966%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-01T23:18:02.480Z</lastmod>
+        <lastmod>2021-03-01T23:18:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -138,7 +146,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-5397%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-01T23:17:51.570Z</lastmod>
+        <lastmod>2021-03-01T23:17:51.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -146,7 +154,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1920%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-03-01T23:17:33.730Z</lastmod>
+        <lastmod>2021-03-01T23:17:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -154,7 +162,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/Insecure-DOR-Change-Secret/</loc>
-        <lastmod>2021-02-28T15:04:21.810Z</lastmod>
+        <lastmod>2021-02-28T15:04:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -162,7 +170,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-16204%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-28T08:36:43.240Z</lastmod>
+        <lastmod>2021-02-28T08:36:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -170,7 +178,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/XSS-Stored-Blog/</loc>
-        <lastmod>2021-02-27T13:08:09.570Z</lastmod>
+        <lastmod>2021-02-27T13:08:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -178,7 +186,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/XSS-Reflected-User-Agent/</loc>
-        <lastmod>2021-02-27T12:46:25.210Z</lastmod>
+        <lastmod>2021-02-27T12:46:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -186,7 +194,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-19944%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-27T12:25:20.240Z</lastmod>
+        <lastmod>2021-02-27T12:25:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -194,7 +202,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/25/XSS-Reflected-Referer/</loc>
-        <lastmod>2021-02-26T03:00:52.700Z</lastmod>
+        <lastmod>2021-02-26T03:00:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -202,7 +210,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/25/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-23178117%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-26T01:53:20.810Z</lastmod>
+        <lastmod>2021-02-26T01:53:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -210,7 +218,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/24/phpMyAdmin-BBCode-Tag-XSS/</loc>
-        <lastmod>2021-02-25T17:12:32.140Z</lastmod>
+        <lastmod>2021-02-25T17:12:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -218,7 +226,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14935%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-25T08:13:54.640Z</lastmod>
+        <lastmod>2021-02-25T08:13:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -226,7 +234,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%ED%80%B5-%EC%A0%95%EB%A0%AC/</loc>
-        <lastmod>2021-02-24T18:39:42.480Z</lastmod>
+        <lastmod>2021-02-24T18:39:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -234,7 +242,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/24/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EB%B6%84%ED%95%A0-%EC%A0%95%EB%B3%B5/</loc>
-        <lastmod>2021-02-24T18:12:47.240Z</lastmod>
+        <lastmod>2021-02-24T18:12:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -242,7 +250,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/23/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%9E%AC%EA%B7%80%EC%9A%A9%EB%B2%95/</loc>
-        <lastmod>2021-02-24T04:27:05.960Z</lastmod>
+        <lastmod>2021-02-24T04:27:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -250,7 +258,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/15/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/</loc>
-        <lastmod>2021-02-24T04:09:21.030Z</lastmod>
+        <lastmod>2021-02-24T04:09:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -258,7 +266,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/20/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC-%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%9C%EC%9A%94/</loc>
-        <lastmod>2021-02-24T04:09:08.910Z</lastmod>
+        <lastmod>2021-02-24T04:09:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -266,7 +274,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/23/XSS-Reflected-Login-Form/</loc>
-        <lastmod>2021-02-24T03:31:51.100Z</lastmod>
+        <lastmod>2021-02-24T03:31:51.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -274,7 +282,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14470%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-24T02:24:55.050Z</lastmod>
+        <lastmod>2021-02-24T02:24:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -282,7 +290,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/17/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-Xss/</loc>
-        <lastmod>2021-02-22T08:21:04.540Z</lastmod>
+        <lastmod>2021-02-22T08:21:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -290,7 +298,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/20/Data-Structure-Tree/</loc>
-        <lastmod>2021-02-21T15:50:39.850Z</lastmod>
+        <lastmod>2021-02-21T15:50:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -298,7 +306,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/15/Data-Structure-Double-Linked-List-%EA%B5%AC%ED%98%84/</loc>
-        <lastmod>2021-02-21T15:49:36.750Z</lastmod>
+        <lastmod>2021-02-21T15:49:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -306,7 +314,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/19/XSS-Reflected-HREF/</loc>
-        <lastmod>2021-02-20T13:09:20.770Z</lastmod>
+        <lastmod>2021-02-20T13:09:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -322,7 +330,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-5893%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-20T08:32:36.460Z</lastmod>
+        <lastmod>2021-02-20T08:32:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -330,7 +338,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/16/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88/</loc>
-        <lastmod>2021-02-18T16:58:09.730Z</lastmod>
+        <lastmod>2021-02-18T16:58:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -338,7 +346,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/16/OWASP-TOP-10-A1-Injection/</loc>
-        <lastmod>2021-02-18T16:19:06.320Z</lastmod>
+        <lastmod>2021-02-18T16:19:06.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -346,7 +354,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/17/OWASP-TOP-10-A2-Broken-Authentication/</loc>
-        <lastmod>2021-02-18T16:18:56.410Z</lastmod>
+        <lastmod>2021-02-18T16:18:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -354,7 +362,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/18/XSS-Reflected-Eval/</loc>
-        <lastmod>2021-02-18T15:34:23.590Z</lastmod>
+        <lastmod>2021-02-18T15:34:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -362,7 +370,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-16431%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-18T10:20:07.180Z</lastmod>
+        <lastmod>2021-02-18T10:20:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -370,7 +378,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/14/Dreamhack-Web-01/</loc>
-        <lastmod>2021-02-17T11:44:34.260Z</lastmod>
+        <lastmod>2021-02-17T11:44:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -378,7 +386,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/16/Data-Structure-Hash-Table/</loc>
-        <lastmod>2021-02-17T04:01:05.270Z</lastmod>
+        <lastmod>2021-02-17T04:01:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -386,7 +394,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/16/XSS-Reflected-Custom-Header/</loc>
-        <lastmod>2021-02-17T03:00:29.040Z</lastmod>
+        <lastmod>2021-02-17T03:00:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -394,7 +402,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/16/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-4299%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-17T01:32:07.110Z</lastmod>
+        <lastmod>2021-02-17T01:32:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -402,7 +410,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/16/2020-OWASP-TOP-10/</loc>
-        <lastmod>2021-02-16T21:04:07.640Z</lastmod>
+        <lastmod>2021-02-16T21:04:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -410,7 +418,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/15/XSS-Reflected-Back-Button/</loc>
-        <lastmod>2021-02-16T09:35:58.880Z</lastmod>
+        <lastmod>2021-02-16T09:35:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -418,7 +426,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/14/Data-Structure-Linked-List-%EA%B5%AC%ED%98%84/</loc>
-        <lastmod>2021-02-15T06:05:30.590Z</lastmod>
+        <lastmod>2021-02-15T06:05:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -426,7 +434,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/14/XSS-Reflected-AJAX-XML/</loc>
-        <lastmod>2021-02-15T01:04:17.700Z</lastmod>
+        <lastmod>2021-02-15T01:04:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -434,7 +442,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14924%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:42:37.510Z</lastmod>
+        <lastmod>2021-02-14T23:42:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -442,7 +450,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/12/XSS-Reflected-JSON/</loc>
-        <lastmod>2021-02-14T23:32:18.230Z</lastmod>
+        <lastmod>2021-02-14T23:32:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -450,7 +458,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/13/XSS-Reflected-AJAX-JSON/</loc>
-        <lastmod>2021-02-14T23:32:04.110Z</lastmod>
+        <lastmod>2021-02-14T23:32:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -458,7 +466,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/12/XSS-Reflected-GET/</loc>
-        <lastmod>2021-02-14T23:31:56.630Z</lastmod>
+        <lastmod>2021-02-14T23:31:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -466,7 +474,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/11/Session-Mgmt-Session-ID-in-URL/</loc>
-        <lastmod>2021-02-14T23:31:45.410Z</lastmod>
+        <lastmod>2021-02-14T23:31:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -474,7 +482,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/08/Session-Mgmt-Cookies-HTTPOnly/</loc>
-        <lastmod>2021-02-14T23:31:35.860Z</lastmod>
+        <lastmod>2021-02-14T23:31:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -482,7 +490,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/07/Session-Mgmt-Administrative-Portals/</loc>
-        <lastmod>2021-02-14T23:31:27.480Z</lastmod>
+        <lastmod>2021-02-14T23:31:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -490,7 +498,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/07/Broken-Auth-Weak-Passwords/</loc>
-        <lastmod>2021-02-14T23:31:20.070Z</lastmod>
+        <lastmod>2021-02-14T23:31:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -498,7 +506,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/05/Broken-Auth-Password-Attacks/</loc>
-        <lastmod>2021-02-14T23:31:10.910Z</lastmod>
+        <lastmod>2021-02-14T23:31:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -506,7 +514,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/04/Broken-Auth-Logout-Management/</loc>
-        <lastmod>2021-02-14T23:31:03.380Z</lastmod>
+        <lastmod>2021-02-14T23:31:03.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -514,7 +522,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/26/Broken-Auth-Forgotten-Fuction/</loc>
-        <lastmod>2021-02-14T23:30:43.670Z</lastmod>
+        <lastmod>2021-02-14T23:30:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -522,7 +530,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/02/Broken-Auth-Insecure-Login-Forms/</loc>
-        <lastmod>2021-02-14T23:30:37.190Z</lastmod>
+        <lastmod>2021-02-14T23:30:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -530,7 +538,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-XML/</loc>
-        <lastmod>2021-02-14T23:30:26.980Z</lastmod>
+        <lastmod>2021-02-14T23:30:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -538,7 +546,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-SQLite/</loc>
-        <lastmod>2021-02-14T23:30:09.170Z</lastmod>
+        <lastmod>2021-02-14T23:30:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -546,7 +554,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Blind-Time-Based/</loc>
-        <lastmod>2021-02-14T23:29:51.680Z</lastmod>
+        <lastmod>2021-02-14T23:29:51.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -554,7 +562,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Blind-Boolean-Based/</loc>
-        <lastmod>2021-02-14T23:29:34.360Z</lastmod>
+        <lastmod>2021-02-14T23:29:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -562,7 +570,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-User-Agent/</loc>
-        <lastmod>2021-02-14T23:29:01.700Z</lastmod>
+        <lastmod>2021-02-14T23:29:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -570,7 +578,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/SQL-Injection-Stored-Blog/</loc>
-        <lastmod>2021-02-14T23:28:40.860Z</lastmod>
+        <lastmod>2021-02-14T23:28:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -578,7 +586,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1212%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:27:09.600Z</lastmod>
+        <lastmod>2021-02-14T23:27:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -586,7 +594,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2525%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:26:42.920Z</lastmod>
+        <lastmod>2021-02-14T23:26:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -594,7 +602,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-16486%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:26:05.970Z</lastmod>
+        <lastmod>2021-02-14T23:26:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -602,7 +610,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/12/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17388%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:25:54.900Z</lastmod>
+        <lastmod>2021-02-14T23:25:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -610,7 +618,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-11948%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:25:37.160Z</lastmod>
+        <lastmod>2021-02-14T23:25:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -618,7 +626,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/09/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-17362%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:25:17.580Z</lastmod>
+        <lastmod>2021-02-14T23:25:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -626,7 +634,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10179%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:25:01.950Z</lastmod>
+        <lastmod>2021-02-14T23:25:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -634,7 +642,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-5575%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:24:15.540Z</lastmod>
+        <lastmod>2021-02-14T23:24:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -642,7 +650,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/06/%EB%B0%B1%EC%A4%80-15963%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:23:56.920Z</lastmod>
+        <lastmod>2021-02-14T23:23:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -650,7 +658,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1297%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:23:23.170Z</lastmod>
+        <lastmod>2021-02-14T23:23:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -658,7 +666,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-11943%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:22:56.830Z</lastmod>
+        <lastmod>2021-02-14T23:22:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -666,7 +674,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/03/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-15680%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:22:21.350Z</lastmod>
+        <lastmod>2021-02-14T23:22:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -674,7 +682,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/01/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-5596%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:21:52.300Z</lastmod>
+        <lastmod>2021-02-14T23:21:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -682,7 +690,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10768%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:21:41.290Z</lastmod>
+        <lastmod>2021-02-14T23:21:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -690,7 +698,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10707%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:21:11.200Z</lastmod>
+        <lastmod>2021-02-14T23:21:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -698,7 +706,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10101%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:20:40.360Z</lastmod>
+        <lastmod>2021-02-14T23:20:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -706,7 +714,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-5532%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:20:27.630Z</lastmod>
+        <lastmod>2021-02-14T23:20:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -714,7 +722,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10162%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:20:16.910Z</lastmod>
+        <lastmod>2021-02-14T23:20:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -722,7 +730,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2530%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:20:05.940Z</lastmod>
+        <lastmod>2021-02-14T23:20:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -730,7 +738,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2420%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:19:52.090Z</lastmod>
+        <lastmod>2021-02-14T23:19:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -738,7 +746,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10156%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:19:27.210Z</lastmod>
+        <lastmod>2021-02-14T23:19:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -746,7 +754,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2752%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:19:16.530Z</lastmod>
+        <lastmod>2021-02-14T23:19:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -754,7 +762,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10797%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:19:01.300Z</lastmod>
+        <lastmod>2021-02-14T23:19:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -762,7 +770,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1712%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:18:46.850Z</lastmod>
+        <lastmod>2021-02-14T23:18:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -770,7 +778,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-5543%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:18:15.740Z</lastmod>
+        <lastmod>2021-02-14T23:18:15.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -778,7 +786,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-14681%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:18:03.970Z</lastmod>
+        <lastmod>2021-02-14T23:18:03.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -786,7 +794,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-10039%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:17:44.640Z</lastmod>
+        <lastmod>2021-02-14T23:17:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -794,7 +802,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2588%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:17:34.710Z</lastmod>
+        <lastmod>2021-02-14T23:17:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -802,7 +810,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2753%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:17:24.890Z</lastmod>
+        <lastmod>2021-02-14T23:17:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -810,7 +818,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1330%EB%B2%88-%EB%AC%B9/</loc>
-        <lastmod>2021-02-14T23:17:10.100Z</lastmod>
+        <lastmod>2021-02-14T23:17:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -818,7 +826,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1330%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:16:54.510Z</lastmod>
+        <lastmod>2021-02-14T23:16:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -826,7 +834,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-5337%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:16:33.430Z</lastmod>
+        <lastmod>2021-02-14T23:16:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -834,7 +842,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-3046%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:16:23.890Z</lastmod>
+        <lastmod>2021-02-14T23:16:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -842,7 +850,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-3003%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:16:16.170Z</lastmod>
+        <lastmod>2021-02-14T23:16:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -858,7 +866,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-2845%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:15:42.480Z</lastmod>
+        <lastmod>2021-02-14T23:15:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -866,7 +874,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-2557%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:15:33.280Z</lastmod>
+        <lastmod>2021-02-14T23:15:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -874,7 +882,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-2475%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:15:25.220Z</lastmod>
+        <lastmod>2021-02-14T23:15:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -882,7 +890,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1550%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:15:10.780Z</lastmod>
+        <lastmod>2021-02-14T23:15:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -890,7 +898,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1271%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:14:48.910Z</lastmod>
+        <lastmod>2021-02-14T23:14:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -898,7 +906,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EB%93%9C5-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:14:36.480Z</lastmod>
+        <lastmod>2021-02-14T23:14:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -906,7 +914,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/08/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-2338%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:14:16.470Z</lastmod>
+        <lastmod>2021-02-14T23:14:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -914,7 +922,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/07/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-1008%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:14:07.630Z</lastmod>
+        <lastmod>2021-02-14T23:14:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -922,7 +930,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/01/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-2480%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:13:52.610Z</lastmod>
+        <lastmod>2021-02-14T23:13:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -930,7 +938,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/23/SQL-Injection-SQLite/</loc>
-        <lastmod>2021-02-14T23:12:37.340Z</lastmod>
+        <lastmod>2021-02-14T23:12:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -938,7 +946,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/23/SQL-Injection-Login-Form-Hero/</loc>
-        <lastmod>2021-02-14T23:12:27.410Z</lastmod>
+        <lastmod>2021-02-14T23:12:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -946,7 +954,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/23/SQL-Injection-Captcha/</loc>
-        <lastmod>2021-02-14T23:12:13.560Z</lastmod>
+        <lastmod>2021-02-14T23:12:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -954,7 +962,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/20/SQL-Injection-AJAX-JSON-JQUERY/</loc>
-        <lastmod>2021-02-14T23:11:56.340Z</lastmod>
+        <lastmod>2021-02-14T23:11:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -962,7 +970,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/19/SQL-Injection-Get-Post-Select/</loc>
-        <lastmod>2021-02-14T23:11:43.980Z</lastmod>
+        <lastmod>2021-02-14T23:11:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -970,7 +978,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/17/SQL-Injection-Get-Search/</loc>
-        <lastmod>2021-02-14T23:11:33.730Z</lastmod>
+        <lastmod>2021-02-14T23:11:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -978,7 +986,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/15/SSI-Injection/</loc>
-        <lastmod>2021-02-14T23:11:23.460Z</lastmod>
+        <lastmod>2021-02-14T23:11:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -986,7 +994,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/15/PHP-Code-Injection/</loc>
-        <lastmod>2021-02-14T23:11:13.300Z</lastmod>
+        <lastmod>2021-02-14T23:11:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -994,7 +1002,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/12/OS-Injection-Blind/</loc>
-        <lastmod>2021-02-14T23:11:04.180Z</lastmod>
+        <lastmod>2021-02-14T23:11:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1002,7 +1010,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/11/OS-Injection/</loc>
-        <lastmod>2021-02-14T23:10:53.970Z</lastmod>
+        <lastmod>2021-02-14T23:10:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1010,7 +1018,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/08/iFrame-Injection-1/</loc>
-        <lastmod>2021-02-14T23:10:11.930Z</lastmod>
+        <lastmod>2021-02-14T23:10:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1018,7 +1026,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/06/HTML-Injection-Stored-Blog/</loc>
-        <lastmod>2021-02-14T23:10:04.450Z</lastmod>
+        <lastmod>2021-02-14T23:10:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1026,7 +1034,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/06/HTML-Injection-Reflected-URL/</loc>
-        <lastmod>2021-02-14T23:09:57.180Z</lastmod>
+        <lastmod>2021-02-14T23:09:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1034,7 +1042,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/12/06/HTML-Injection-Reflected-GET/</loc>
-        <lastmod>2021-02-14T23:09:47.850Z</lastmod>
+        <lastmod>2021-02-14T23:09:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1042,7 +1050,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2020/11/06/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%885-1001%EB%B2%88-%EB%AC%B8%EC%A0%9C/</loc>
-        <lastmod>2021-02-14T23:07:17.570Z</lastmod>
+        <lastmod>2021-02-14T23:07:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1050,7 +1058,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/12/Data-Structure-Linked-List/</loc>
-        <lastmod>2021-02-13T06:54:56.250Z</lastmod>
+        <lastmod>2021-02-13T06:54:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1058,7 +1066,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/11/Data-Structure-Stack/</loc>
-        <lastmod>2021-02-11T23:48:53.370Z</lastmod>
+        <lastmod>2021-02-11T23:48:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1066,7 +1074,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/11/Data-Structure-Stack-%EA%B5%AC%ED%98%84/</loc>
-        <lastmod>2021-02-11T23:39:47.400Z</lastmod>
+        <lastmod>2021-02-11T23:39:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1074,7 +1082,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/10/Data-Structure-Queue/</loc>
-        <lastmod>2021-02-11T23:11:21.080Z</lastmod>
+        <lastmod>2021-02-11T23:11:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1082,7 +1090,7 @@
 
     <url>
         <loc>https://lrtk-coder.github.io/2021/02/11/Data-Structure-enqueue-dequeue-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84/</loc>
-        <lastmod>2021-02-11T19:24:02.460Z</lastmod>
+        <lastmod>2021-02-11T19:24:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
