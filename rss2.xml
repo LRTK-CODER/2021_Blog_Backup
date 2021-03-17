@@ -9,8 +9,40 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 15 Mar 2021 08:15:48 GMT</pubDate>
+    <pubDate>Wed, 17 Mar 2021 17:06:52 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 2739번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-12926704%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-12926704%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 17 Mar 2021 08:04:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;구구단&quot;&gt;&lt;a href=&quot;#구구단&quot; class=&quot;headerlink&quot; title=&quot;구구단&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2739&quot;&gt;구구단&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;N을 입력받은 뒤, 구구단 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="구구단"><a href="#구구단" class="headerlink" title="구구단"></a><a href="https://www.acmicpc.net/problem/2739">구구단</a></h1><p>N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하시오. 출력 형식에 맞춰서 출력하면 된다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">[print(f&#39;&#123;n&#125; * &#123;i&#125; &#x3D; &#123;n*i&#125;&#39;) for i in range(1, 10)]</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>List Comprehension을 이용하여 간단하게 풀이하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-12926704%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 11282번 문제</title>
@@ -596,38 +628,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-1874%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈4 16204번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-16204%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-16204%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Sat, 27 Feb 2021 23:21:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;카드-뽑기&quot;&gt;&lt;a href=&quot;#카드-뽑기&quot; class=&quot;headerlink&quot; title=&quot;카드 뽑기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/16204&quot;&gt;카드 뽑기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;앞 면에 O</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="카드-뽑기"><a href="#카드-뽑기" class="headerlink" title="카드 뽑기"></a><a href="https://www.acmicpc.net/problem/16204">카드 뽑기</a></h1><p>앞 면에 O와 X가 적혀있는 카드 N개가 있다. N개의 카드 중 M개의 카드의 앞면에는 O가 한 개 적혀있고, 나머지 N-M개의 카드의 앞면에는 X가 한 개 적혀있다. 카드의 뒷 면은 두 종류의 카드 모두 같은 모양이라 구분할 수 없다.</p><p>카드의 뒷 면에 O나 X를 하나씩 적으려고 한다. 이 때, O는 K개, X는 N-K개 적으려고 한다.</p><p>앞 면과 뒷 면에 같은 모양이 적혀있는 카드의 최대 개수를 구하는 프로그램을 작성하시오.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n, m, k &#x3D; map(int, input().split())</span><br><span class="line">print(min(m, k) + min(n-m, n-k))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제를 정리하자면, </p><ul><li>카드 총 갯수 : n</li><li>앞면 O의 갯수 : m</li><li>앞면 X의 갯수 : n-m</li><li>뒷면 O의 갯수 : k</li><li>뒷면 X의 갯수 : n-k</li></ul><p>이렇게 정리가 된다.</p><p>즉, m과 k을 비교하여 가장 작은 수를 같은 모양이 적혀있는 O 카드의 최대 개수로 보면 된다.</p><p>X 카드의 경우 n-m과 n-k를 비교하면 된다.</p><p>그 후 더해주면 된다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%884/">브론즈4</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/02/27/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884-16204%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
