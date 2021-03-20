@@ -9,8 +9,104 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Fri, 19 Mar 2021 04:37:11 GMT</pubDate>
+    <pubDate>Sat, 20 Mar 2021 12:59:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 10817번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10817%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10817%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sat, 20 Mar 2021 03:58:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;세수&quot;&gt;&lt;a href=&quot;#세수&quot; class=&quot;headerlink&quot; title=&quot;세수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10817&quot;&gt;세수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;세 정수 A, B, C가 주어진다</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="세수"><a href="#세수" class="headerlink" title="세수"></a><a href="https://www.acmicpc.net/problem/10817">세수</a></h1><p>세 정수 A, B, C가 주어진다. 이때, 두 번째로 큰 정수를 출력하는 프로그램을 작성하시오. </p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; [*map(int, input().split())]</span><br><span class="line">print(sorted(n, reverse&#x3D;True)[1])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>3개의 값들을 정렬한 후 두번째 값을 출력한다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10817%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 10950번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10950%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10950%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sat, 20 Mar 2021 03:45:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;A-B-3&quot;&gt;&lt;a href=&quot;#A-B-3&quot; class=&quot;headerlink&quot; title=&quot;A+B - 3&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10950&quot;&gt;A+B - 3&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;두 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="A-B-3"><a href="#A-B-3" class="headerlink" title="A+B - 3"></a><a href="https://www.acmicpc.net/problem/10950">A+B - 3</a></h1><p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">for _ in range(n):</span><br><span class="line">    m &#x3D; [*map(int, input().split())]</span><br><span class="line">    print(sum(m))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제의 조건대로 케이스를 입력할 때 마다 입력값 두 개를 더한 값을 출력하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10950%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 10871번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10871%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10871%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sat, 20 Mar 2021 03:40:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;X보다-작은-수&quot;&gt;&lt;a href=&quot;#X보다-작은-수&quot; class=&quot;headerlink&quot; title=&quot;X보다 작은 수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10871&quot;&gt;X보다 작은 수&lt;/a&gt;&lt;/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="X보다-작은-수"><a href="#X보다-작은-수" class="headerlink" title="X보다 작은 수"></a><a href="https://www.acmicpc.net/problem/10871">X보다 작은 수</a></h1><p>정수 N개로 이루어진 수열 A와 정수 X가 주어진다. 이때, A에서 X보다 작은 수를 모두 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; [*map(int, input().split())]</span><br><span class="line">m &#x3D; [*map(int, input().split())]</span><br><span class="line"></span><br><span class="line">[print(i, end&#x3D;&#39; &#39;) for i in m if n[1] &gt; i]</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>List Comprehention과 if문을 이용하여 간단하게 풀이 하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10871%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 2439번 문제</title>
@@ -534,102 +630,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/02/Insecure-DOR-Reset-Secret/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 11650번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11650%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11650%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 02 Mar 2021 02:55:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;좌표-정렬하기&quot;&gt;&lt;a href=&quot;#좌표-정렬하기&quot; class=&quot;headerlink&quot; title=&quot;좌표 정렬하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11650&quot;&gt;좌표 정렬하기&lt;/a&gt;&lt;/h1&gt;&lt;</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="좌표-정렬하기"><a href="#좌표-정렬하기" class="headerlink" title="좌표 정렬하기"></a><a href="https://www.acmicpc.net/problem/11650">좌표 정렬하기</a></h1><p>2차원 평면 위의 점 N개가 주어진다. 좌표를 x좌표가 증가하는 순으로, x좌표가 같으면 y좌표가 증가하는 순서로 정렬한 다음 출력하는 프로그램을 작성하시오.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">n &#x3D; int(input())</span><br><span class="line">data &#x3D; []</span><br><span class="line"></span><br><span class="line">for _ in range(n):</span><br><span class="line">    x, y &#x3D; sys.stdin.readline().split()</span><br><span class="line">    data.append((int(x), int(y)))</span><br><span class="line"></span><br><span class="line">for i in sorted(data):</span><br><span class="line">    print(i[0], i[1])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>sorted 함수는 자동으로 0번째 값이 같으면 1번째 값으로 정렬한다.</p><p>하지만, key 속성을 사용하여 0번째 값을 key로 지정한다면 좀 다르게 정렬한다.</p><p>0번째 값이 같으면, 먼저 삽입된 순으로 정렬이 된다.</p><p>직접 sorted 함수와 key 속성을 쓴 sorted 함수를 비교하면 구별이 쉬울 것이다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%845/">백준 실버5</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11650%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 1920번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1920%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1920%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 01 Mar 2021 14:15:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;수-찾기&quot;&gt;&lt;a href=&quot;#수-찾기&quot; class=&quot;headerlink&quot; title=&quot;수 찾기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1920&quot;&gt;수 찾기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;N개의 정수 A[1]</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="수-찾기"><a href="#수-찾기" class="headerlink" title="수 찾기"></a><a href="https://www.acmicpc.net/problem/1920">수 찾기</a></h1><p>N개의 정수 A[1], A[2], …, A[N]이 주어져 있을 때, 이 안에 X라는 정수가 존재하는지 알아내는 프로그램을 작성하시오.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; input()</span><br><span class="line">data &#x3D; &#123;*map(int, input().split())&#125;</span><br><span class="line">n2 &#x3D; input()</span><br><span class="line">data2 &#x3D; [*map(int, input().split())]</span><br><span class="line"></span><br><span class="line">for _ in data2:</span><br><span class="line">    if _ in data:</span><br><span class="line">        print(1)</span><br><span class="line">    else:</span><br><span class="line">        print(0)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>Set 함수를 이용하여 혹시나 있을 첫번째 데이터인 data 속의 값의 중복 제거 후 data2의 값과 하나씩 비교하여 있으면 1를 출력</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%844/">백준 실버4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1920%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 5397번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-5397%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-5397%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 01 Mar 2021 03:42:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;키로거&quot;&gt;&lt;a href=&quot;#키로거&quot; class=&quot;headerlink&quot; title=&quot;키로거&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/5397&quot;&gt;키로거&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;창영이는 강산이의 비밀번호를</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="키로거"><a href="#키로거" class="headerlink" title="키로거"></a><a href="https://www.acmicpc.net/problem/5397">키로거</a></h1><p>창영이는 강산이의 비밀번호를 훔치기 위해서 강산이가 사용하는 컴퓨터에 키로거를 설치했다. 며칠을 기다린 끝에 창영이는 강산이가 비밀번호 창에 입력하는 글자를 얻어냈다.</p><p>키로거는 사용자가 키보드를 누른 명령을 모두 기록한다. 따라서, 강산이가 비밀번호를 입력할 때, 화살표나 백스페이스를 입력해도 정확한 비밀번호를 알아낼 수 있다.</p><p>강산이가 비밀번호 창에서 입력한 키가 주어졌을 때, 강산이의 비밀번호를 알아내는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">test_case &#x3D; int(input())</span><br><span class="line">for _ in range(test_case):</span><br><span class="line">    left_stack, right_stack &#x3D; [], []</span><br><span class="line">    cuser &#x3D; input()</span><br><span class="line"></span><br><span class="line">    for data in cuser:</span><br><span class="line">        if data &#x3D;&#x3D; &#39;&lt;&#39;:</span><br><span class="line">            if left_stack:</span><br><span class="line">                right_stack.append(left_stack.pop())</span><br><span class="line">        elif data &#x3D;&#x3D; &#39;&gt;&#39;:</span><br><span class="line">            if right_stack:</span><br><span class="line">                left_stack.append(right_stack.pop())</span><br><span class="line">        elif data &#x3D;&#x3D; &#39;-&#39;:</span><br><span class="line">            if left_stack:</span><br><span class="line">                left_stack.pop()</span><br><span class="line">        else:</span><br><span class="line">            left_stack.append(data)</span><br><span class="line">    left_stack.extend(reversed(right_stack))</span><br><span class="line">    print(&#39;&#39;.join(left_stack))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>두 개의 스택을 선언하여, 진짜 커서가 움직이는 것처럼 구현하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843/">백준 실버3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/01/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%843-5397%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
