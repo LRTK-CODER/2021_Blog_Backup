@@ -9,8 +9,72 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Sat, 20 Mar 2021 12:59:25 GMT</pubDate>
+    <pubDate>Sun, 21 Mar 2021 02:00:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 2884번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/20/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2884%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/20/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2884%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sat, 20 Mar 2021 16:54:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;알람-시계&quot;&gt;&lt;a href=&quot;#알람-시계&quot; class=&quot;headerlink&quot; title=&quot;알람 시계&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2884&quot;&gt;알람 시계&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;상근이는 매일</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="알람-시계"><a href="#알람-시계" class="headerlink" title="알람 시계"></a><a href="https://www.acmicpc.net/problem/2884">알람 시계</a></h1><p>상근이는 매일 아침 알람을 듣고 일어난다. 알람을 듣고 바로 일어나면 다행이겠지만, 항상 조금만 더 자려는 마음 때문에 매일 학교를 지각하고 있다.</p><p>상근이는 모든 방법을 동원해보았지만, 조금만 더 자려는 마음은 그 어떤 것도 없앨 수가 없었다.</p><p>이런 상근이를 불쌍하게 보던, 창영이는 자신이 사용하는 방법을 추천해 주었다.</p><p>바로 “45분 일찍 알람 설정하기”이다.</p><p>이 방법은 단순하다. 원래 설정되어 있는 알람을 45분 앞서는 시간으로 바꾸는 것이다. 어차피 알람 소리를 들으면, 알람을 끄고 조금 더 잘 것이기 때문이다. 이 방법을 사용하면, 매일 아침 더 잤다는 기분을 느낄 수 있고, 학교도 지각하지 않게 된다.</p><p>현재 상근이가 설정한 알람 시각이 주어졌을 때, 창영이의 방법을 사용한다면, 이를 언제로 고쳐야 하는지 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hour,minute &#x3D; map(int, input().split())</span><br><span class="line"></span><br><span class="line">if minute &gt; 44:</span><br><span class="line">    print(hour, minute-45)</span><br><span class="line">elif minute &lt;&#x3D; 44 and hour &gt;&#x3D; 1:</span><br><span class="line">    print(hour-1, minute+15)</span><br><span class="line">else:</span><br><span class="line">    print(23, minute+15)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>첫번째 조건은 분 단위가 44보다 크면 45을 뺏을 때 시 단위를 뺄 필요가 없으니 분 단위만 빼주고 출력하였다.</p><p>두번째 조건은 분 단위가 44보다 같거나 작고, 시 단위가 1보다 같거나 클 때 시 단위를 -1할 수 있어서 시를 -1하고, 분을 60-45의 값을 더해주었다.</p><p>세번째는 시 단위가 0이며, 44보다 같거나 작을 때의 경우이다. 이 경우 시 단위는 23밖에 없어서 23으로 하드코딩하고, 분은 60-45의 값을 더해줬다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/20/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2884%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 10952번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10952%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10952%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sat, 20 Mar 2021 16:42:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;A-B-5&quot;&gt;&lt;a href=&quot;#A-B-5&quot; class=&quot;headerlink&quot; title=&quot;A+B - 5&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10952&quot;&gt;A+B - 5&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;두 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="A-B-5"><a href="#A-B-5" class="headerlink" title="A+B - 5"></a><a href="https://www.acmicpc.net/problem/10952">A+B - 5</a></h1><p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">while True:</span><br><span class="line">    n &#x3D; [*map(int, input().split())]</span><br><span class="line"></span><br><span class="line">    if n[0] &#x3D;&#x3D; 0 and n[1] &#x3D;&#x3D; 0:</span><br><span class="line">        break</span><br><span class="line">    else:</span><br><span class="line">        print(n[0] + n[1])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>조건문으로 두 개의 입력값이 0일 경우 종료되게 하였고, 그게 아니라면 더한 값을 출력하는 것으로 풀이하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10952%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 10817번 문제</title>
@@ -568,68 +632,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-10989%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 10814번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-10814%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-10814%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 02 Mar 2021 11:40:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;나이순-정렬&quot;&gt;&lt;a href=&quot;#나이순-정렬&quot; class=&quot;headerlink&quot; title=&quot;나이순 정렬&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10814&quot;&gt;나이순 정렬&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;온라</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="나이순-정렬"><a href="#나이순-정렬" class="headerlink" title="나이순 정렬"></a><a href="https://www.acmicpc.net/problem/10814">나이순 정렬</a></h1><p>온라인 저지에 가입한 사람들의 나이와 이름이 가입한 순서대로 주어진다. 이때, 회원들을 나이가 증가하는 순으로, 나이가 같으면 먼저 가입한 사람이 앞에 오는 순서로 정렬하는 프로그램을 작성하시오.</p><h2 id="문제풀이1"><a href="#문제풀이1" class="headerlink" title="문제풀이1"></a>문제풀이1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">data &#x3D; []</span><br><span class="line"></span><br><span class="line">for _ in range(n):</span><br><span class="line">    x, y &#x3D; input().split()</span><br><span class="line">    data.append((int(x), y))</span><br><span class="line"></span><br><span class="line">for a, b in sorted(data, key&#x3D;lambda x: x[0]):</span><br><span class="line">    print(a, b)</span><br></pre></td></tr></table></figure><h3 id="풀이1-설명"><a href="#풀이1-설명" class="headerlink" title="풀이1 설명"></a>풀이1 설명</h3><p>간단하게 sorted 함수를 이용하여 정렬하였다. 이때 key 속성을 지정하여 나이로 정렬 될 수 있게 설정하였다.</p><p><img src="/images/pasted-250.png"><br>하지만 여기서 큰 문제가 있으니, 바로 실행 시간이 엄청 많이 나온다는 것이다.</p><p>문제가 for문 안에 있는 input() 함수가 문제인 것으로 판단되어 sys 모듈의 stdin으로 변경하였다.</p><h2 id="문제풀이2"><a href="#문제풀이2" class="headerlink" title="문제풀이2"></a>문제풀이2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">n &#x3D; int(input())</span><br><span class="line">data &#x3D; []</span><br><span class="line"></span><br><span class="line">for _ in range(n):</span><br><span class="line">    x, y &#x3D; sys.stdin.readline().split()</span><br><span class="line">    data.append((int(x), y))</span><br><span class="line"></span><br><span class="line">for i in sorted(data, key&#x3D;lambda x: x[0]):</span><br><span class="line">    print(i[0], i[1])</span><br></pre></td></tr></table></figure><h3 id="풀이2-설명"><a href="#풀이2-설명" class="headerlink" title="풀이2 설명"></a>풀이2 설명</h3><p>문제풀이1에서 for문 안의 input 함수를 sys.stdin.readline 함수로 변경하였다.</p><p><img src="/images/pasted-251.png"><br>실행 시간이 확 줄어진 것을 볼 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%845/">백준 실버5</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-10814%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Insecure DOR (Reset Secret)</title>
-      <link>https://lrtk-coder.github.io/2021/03/02/Insecure-DOR-Reset-Secret/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/02/Insecure-DOR-Reset-Secret/</guid>
-      <pubDate>Tue, 02 Mar 2021 06:51:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;문제풀이&quot;&gt;&lt;a href=&quot;#문제풀이&quot; class=&quot;headerlink&quot; title=&quot;문제풀이&quot;&gt;&lt;/a&gt;문제풀이&lt;/h1&gt;&lt;h2 id=&quot;Low-amp-Medium-amp-High&quot;&gt;&lt;a href=&quot;#Low-amp-Medium-amp-Hig</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h1><h2 id="Low-amp-Medium-amp-High"><a href="#Low-amp-Medium-amp-High" class="headerlink" title="Low &amp; Medium &amp; High"></a>Low &amp; Medium &amp; High</h2><p><img src="/images/pasted-255.png"></p><p>이번엔 계정의 Scret 값을 Any bugs?로 변경해주는 사이트가 나왔다.</p><p>프록시를 이용하여 서버에 어떤 값을 보내는지 확인하였다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/xxe-2.php</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: XXX.XXX.XXX.XXX</span><br><span class="line"><span class="attribute">Content-Length</span>: 59</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36</span><br><span class="line"><span class="attribute">Content-type</span>: text/xml; charset=UTF-8</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Origin</span>: http://XXX.XXX.XXX.XXX</span><br><span class="line"><span class="attribute">Referer</span>: http://XXX.XXX.XXX.XXX/insecure_direct_object_ref_3.php</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=hmnqs8cjcddm4sle4f32ikluk3; security_level=0</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"></span><br><span class="line">&lt;reset&gt;&lt;login&gt;bee&lt;/login&gt;&lt;secret&gt;Any bugs?&lt;/secret&gt;&lt;/reset&gt;</span><br></pre></td></tr></table></figure><p>Body부분을 확인해보니, XML형식으로 데이터를 보내주고 있었다.</p><p><img src="/images/pasted-256.png"><br>이번에도 bee 대신에 다른 계정을 삽입하여 보낸다면 그 계정의 Scret 값이 Any bugs?로 초기화가 되겠지만, 일단 bee 계정을 초기화 해보았다.</p><p><img src="/images/pasted-257.png"><br>이번엔 LRTK 계정의 Scret을 초기화하겠다.</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">reset</span>&gt;</span><span class="tag">&lt;<span class="name">login</span>&gt;</span>lrtk<span class="tag">&lt;/<span class="name">login</span>&gt;</span><span class="tag">&lt;<span class="name">secret</span>&gt;</span>Any bugs?<span class="tag">&lt;/<span class="name">secret</span>&gt;</span><span class="tag">&lt;/<span class="name">reset</span>&gt;</span></span><br></pre></td></tr></table></figure><p><img src="/images/pasted-259.png"></p><p>간단하게 변경되는 것을 볼 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/BeeBox/">BeeBox</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/BeeBox/">BeeBox</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/02/Insecure-DOR-Reset-Secret/#disqus_thread</comments>
       
     </item>
     
