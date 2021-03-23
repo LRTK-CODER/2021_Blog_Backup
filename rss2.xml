@@ -9,8 +9,104 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 22 Mar 2021 13:59:05 GMT</pubDate>
+    <pubDate>Tue, 23 Mar 2021 12:30:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 2441번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2441%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2441%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 23 Mar 2021 03:28:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;별-찍기-4&quot;&gt;&lt;a href=&quot;#별-찍기-4&quot; class=&quot;headerlink&quot; title=&quot;별 찍기 - 4&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2441&quot;&gt;별 찍기 - 4&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="별-찍기-4"><a href="#별-찍기-4" class="headerlink" title="별 찍기 - 4"></a><a href="https://www.acmicpc.net/problem/2441">별 찍기 - 4</a></h1><p>첫째 줄에는 별 N개, 둘째 줄에는 별 N-1개, …, N번째 줄에는 별 1개를 찍는 문제</p><p>하지만, 오른쪽을 기준으로 정렬한 별(예제 참고)을 출력하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">[print(&#39; &#39; * (n - i) + &#39;*&#39; * i) for i in range(n, 0, -1)]</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p><code>&#39; &#39; * (n - i)</code>을 추가하여 문제의 출력 기준을 맞췄다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2441%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 2440번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2440%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2440%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 23 Mar 2021 03:19:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;별-찍기-3&quot;&gt;&lt;a href=&quot;#별-찍기-3&quot; class=&quot;headerlink&quot; title=&quot;별 찍기 - 3&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2440&quot;&gt;별 찍기 - 3&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="별-찍기-3"><a href="#별-찍기-3" class="headerlink" title="별 찍기 - 3"></a><a href="https://www.acmicpc.net/problem/2440">별 찍기 - 3</a></h1><p>첫째 줄에는 별 N개, 둘째 줄에는 별 N-1개, …, N번째 줄에는 별 1개를 찍는 문제</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">[print(&#39;*&#39; * _) for _ in range(n, 0, -1)]</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>range 함수를 이용하여 n부터 0까지 -1씩 줄어지도록 for문을 돌려서 *을 찍었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2440%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 10818번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10818%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10818%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 23 Mar 2021 03:14:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;최소-최대&quot;&gt;&lt;a href=&quot;#최소-최대&quot; class=&quot;headerlink&quot; title=&quot;최소, 최대&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10818&quot;&gt;최소, 최대&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;N개의 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="최소-최대"><a href="#최소-최대" class="headerlink" title="최소, 최대"></a><a href="https://www.acmicpc.net/problem/10818">최소, 최대</a></h1><p>N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">n &#x3D; int(input())</span><br><span class="line">m &#x3D; [*map(int, sys.stdin.readline().split())][:n]</span><br><span class="line">print(min(m), max(m))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>처음엔 input 함수만 사용하여 입력값을 받았는데 시간이 너무 소모가 됐다.</p><p>그래서 sys 모듈의 readline 함수로 입력을 받았는데 소모되는 시간은 같았다.</p><p>다른 문제 풀이를 살펴보니 시간이 비슷했다. 아마 입력값이 커서 시간이 걸린 듯하다. </p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10818%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 11022번 문제</title>
@@ -549,93 +645,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 14623번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-14623%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-14623%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Fri, 05 Mar 2021 07:38:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;감정이입&quot;&gt;&lt;a href=&quot;#감정이입&quot; class=&quot;headerlink&quot; title=&quot;감정이입&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/14623&quot;&gt;감정이입&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;감정이입에 대해서 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="감정이입"><a href="#감정이입" class="headerlink" title="감정이입"></a><a href="https://www.acmicpc.net/problem/14623">감정이입</a></h1><p>감정이입에 대해서 알고 있는가? 감정이입이란 자신의 감정을 특정 대상에 이입시키거나 특정 대상의 감정을 자신에게 이입시켜서 서로 공감하는 것이다. 이렇게 자신이 다른 대상이 됐다고 생각을 하면 그전에는 느끼지 못했던 감정을 느낄 수 있어 풍부한 사고를 할 수 있다. 감정이입에 몰입하게 되면 어떠한 단계에 이르게 된다. 이 단계에서는 자신이 감정이입을 하는 대상이 되어 사고를 할 수 있게 된다.</p><p>예로부터 많은 천재들이 이 단계에 다다라 많은 업적을 세웠다. 알베르트 아인슈타인은 빛이 되어 상대성 이론을 발견했고, 찰리 채플린은 자신이 연기하는 대상 그 자체가 되어 많은 사람들이 기억하는 희극배우가 됐다.</p><p>컴퓨터 공학에서도 이런 단계에 다다를 수 있을까? CPU가 되어서 주변 입/출력 장치를 제어하거나, 뉴럴 네트워크에 존재하는 수많은 뉴런들 중 한 뉴런이 되어 계산에 관여하는 상상을 할 수 있을까?</p><p>천 리 길도 한 걸음부터. 컴퓨터에서는 없어서 안될 ALU(Arithmetic Logic Unit)가 되는 상상을 해보자. ALU는 두 이진수의 산술 연산 혹은 논리 연산을 계산하는 회로다. 두 이진수가 주어졌을 때 덧셈은 가산기를, 뺄셈은 보수기와 가산기를 이용해 이루어진다. 그렇다면 두 이진수의 곱셈은 어떻게 이루어 질까? ALU가 되어 이 문제를 해결해보자.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(bin(int(input(), 2) * int(input(), 2))[2:])</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-14623%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 17009번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-17009%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-17009%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Fri, 05 Mar 2021 07:18:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Winning-Score&quot;&gt;&lt;a href=&quot;#Winning-Score&quot; class=&quot;headerlink&quot; title=&quot;Winning Score&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/17009&quot;</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Winning-Score"><a href="#Winning-Score" class="headerlink" title="Winning Score"></a><a href="https://www.acmicpc.net/problem/17009">Winning Score</a></h1><p>You record all of the scoring activity at a basketball game. Points are scored by a 3-point shot, a 2-point field goal, or a 1-point free throw.</p><p>You know the number of each of these types of scoring for the two teams: the Apples and the Bananas. Your job is to determine which team won, or if the game ended in a tie.</p><h2 id="문제풀이"><a href="#문제풀이" class="headerlink" title="문제풀이"></a>문제풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; [int(input()) for _ in range(3)]</span><br><span class="line">b &#x3D; [int(input()) for _ in range(3)]</span><br><span class="line"></span><br><span class="line">a_score &#x3D; a[0] * 3 + a[1] * 2 + a[2]</span><br><span class="line">b_score &#x3D; b[0] * 3 + b[1] * 2 + b[2]</span><br><span class="line"></span><br><span class="line">print([[&#39;A&#39;, &#39;T&#39;][a_score &#x3D;&#x3D; b_score], &#39;B&#39;][a_score &lt; b_score])</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-17009%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>KISEC - 그들의 사이버 첩보전 이야기 (OSINT에 대하여) 강의 후기</title>
-      <link>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/</guid>
-      <pubDate>Thu, 04 Mar 2021 10:50:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;평소에 OSINT에 관심이 있어서 강의를 수강하려 KISEC으로 갔다.&lt;/p&gt;
-&lt;p&gt;강의에서 정말 많이 배울 수 있었다. 평소에 다크웹에 들어갈 때 감염의 위험을 두려워서 VM 위에 토르와 VPN으로 접속했는데 강사님의 말씀으로 파일을 다운로드 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>평소에 OSINT에 관심이 있어서 강의를 수강하려 KISEC으로 갔다.</p><p>강의에서 정말 많이 배울 수 있었다. 평소에 다크웹에 들어갈 때 감염의 위험을 두려워서 VM 위에 토르와 VPN으로 접속했는데 강사님의 말씀으로 파일을 다운로드 안하는 이상 감염은 그리 신경 안써도 된다고 한다.</p><p>또한 토르말고 일반 브라우저로 onion 사이트를 접속할 수 있는 방법을 알려주셨는데 다크웹에 접속하기 위해 고생한 것이 헛고생이 되었다.</p><p>강의 내용 중에서 가장 흥미로운 것이 디지털 교도소와 n번방의 관계를 OSINT를 이용하여 증명한 CASE가 흥미롭고 재밌었다.</p><p>CASE에서 어떻게 디지털 교도소가 서버의 위치를 숨기는 방법, 추적을 피하기 위한 서비스 등을 알려주셨는데 그동안 궁금하였던 것이 풀어졌던 순간이였다.</p><p>다만 아쉬운 점이 강의가 8시간으로 다소 짧은 시간이라는 점이다. 좀 더 길게 진행됬으면 더 많은 것을 배울 수 있지만, 현 강의도 충분히 배울 내용이 많았다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/04/KISEC-%EA%B7%B8%EB%93%A4%EC%9D%98-%EC%82%AC%EC%9D%B4%EB%B2%84-%EC%B2%A9%EB%B3%B4%EC%A0%84-%EC%9D%B4%EC%95%BC%EA%B8%B0-OSINT%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EA%B0%95%EC%9D%98-%ED%9B%84%EA%B8%B0/#disqus_thread</comments>
       
     </item>
     
