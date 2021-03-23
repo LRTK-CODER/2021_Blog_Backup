@@ -109,6 +109,32 @@
     </item>
     
     <item>
+      <title>[Python] 연결 리스트(Linked List)</title>
+      <link>https://lrtk-coder.github.io/2021/03/22/Python-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Linked-List/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/22/Python-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Linked-List/</guid>
+      <pubDate>Mon, 22 Mar 2021 20:38:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;script src=&quot;https://gist.github.com/LRTK-CODER/a1e72818f8eaf2794eed9bdcf429b8f9.js&quot;&gt;&lt;/script&gt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<script src="https://gist.github.com/LRTK-CODER/a1e72818f8eaf2794eed9bdcf429b8f9.js"></script>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/LinkedList/">LinkedList</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/22/Python-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Linked-List/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>백준 브론즈 11022번 문제</title>
       <link>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11022%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
       <guid>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11022%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
@@ -617,34 +643,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/10/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-15700%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Dreamhack Web Client-side 기초 - CSRF</title>
-      <link>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/</guid>
-      <pubDate>Sat, 06 Mar 2021 06:04:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;CSRF-Cross-Site-Request-Forgery-이란&quot;&gt;&lt;a href=&quot;#CSRF-Cross-Site-Request-Forgery-이란&quot; class=&quot;headerlink&quot; title=&quot;CSRF(Cross Site Request </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="CSRF-Cross-Site-Request-Forgery-이란"><a href="#CSRF-Cross-Site-Request-Forgery-이란" class="headerlink" title="CSRF(Cross Site Request Forgery)이란?"></a>CSRF(Cross Site Request Forgery)이란?</h1><p>브라우저는 기본적으로 SOP(Same-Origin-Policy)에 위반되지 않은 모든 요청에 쿠키를 포함해 전송함.</p><p>비정상적으로 사용자의 의도와 무관하게 다른 사이트에 HTTP 요청을 보내는 것을 CSRF 공격이라 함.</p><p>공격을 통해 공격자가 취할 수 있는 이득은 해당 세션 쿠키를 가진 사람만 사용할 수 있는 기능을 요청할 수 있다는 것임.</p><p>CSRF 공격을 성공적으로 수행하기 위해서는 아래 두 가지 조건이 요구됨.</p><ol><li><p>해당 사이트가 쿠키를 이용한 인증 방식을 사용해야함.<br><br>모든 HTTP 전송엔 쿠키가 함께 전송되기 때문에 쿠키에 저장된 세션 아이디로 전송됨.</p></li><li><p>공격자가 사전에 알 수 없는 파라미터가 존재해서는 안됨.<br><br>자동입력 방지 문자를 넣어야하는 요청이나 패스워드 변경 시 기존 패스워드를 입력해야하는 경우는 공격자가 입력해야하는 값을 모르기 때문에 공격이 실패하게 됨.</p></li></ol><h2 id="방어법"><a href="#방어법" class="headerlink" title="방어법"></a>방어법</h2><p>CSRF 공격을 막기 위해서는 보통 두 가지 방법을 사용함.</p><ol><li>세션 쿠키 대신 커스텀 헤더를 사용하여 사용자 인증</li></ol><ol start="2"><li>공격자가 예측할 수 없는 파라미터 추가 및 검증<br><br>Sam Origin에서만 접근 가능한 데이터 삽입 (CSRF Token), CAPTCHA, 비밀번호 등등</li></ol><p>위 두가지 방법은 서버 사이드에서 추가적인 검증을 통해 CSRF를 방어하는 방법임. 서버 코드에 검증 로직이 추가되는 방식이라 서버에 오버헤드가 발생하게됨.</p><p>직접적인 원인을 생각해보면, 브라우저가 크로스 사이트(다른 사이트)로부터 온 요청에 쿠키를 함께 전송한다는 것임.</p><p>이를 잡기 위해 SameSite 쿠키 설정이라는 개념이 있음.</p><p>SameSite 쿠키는 다른 사이트로부터 온 요청에 쿠키를 삽입할지를 설정을 통해서 결정할 수 있음.</p><p>설정 옵션은 Strict, Lax, Normal 값으로 설정 가능함.</p><ul><li><p>Strict 옵션<br><br>모든 크로스 사이트에서 출발한 요청에 해당 쿠키를 삽입하지 않음.</p></li><li><p>Lax 옵션<br><br>Link, Prerender, Form GET을 제외한 요청에는 쿠키를 삽입하지 않음.</p></li><li><p>Normal 옵션<br><br>옵션을 설정하지 않을 시와 동일한 권한을 가짐.</p></li></ul><blockquote><p>크롬은 2020년부터 개발자가 강제로 SameSite=None;Secure;을 넣지 않는 이상 모든 쿠키에 SameSite=Lax를 강제로 적용시킴.</p></blockquote>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Dreamhack/">Dreamhack</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Dreamhack/">Dreamhack</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/06/Dreamhack-Web-Client-side-%EA%B8%B0%EC%B4%88-CSRF/#disqus_thread</comments>
       
     </item>
     
