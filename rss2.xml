@@ -9,8 +9,94 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Wed, 24 Mar 2021 00:17:03 GMT</pubDate>
+    <pubDate>Thu, 25 Mar 2021 00:50:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 2446번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2446%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2446%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 24 Mar 2021 15:48:03 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;별-찍기-9&quot;&gt;&lt;a href=&quot;#별-찍기-9&quot; class=&quot;headerlink&quot; title=&quot;별 찍기 - 9&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2446&quot;&gt;별 찍기 - 9&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="별-찍기-9"><a href="#별-찍기-9" class="headerlink" title="별 찍기 - 9"></a><a href="https://www.acmicpc.net/problem/2446">별 찍기 - 9</a></h1><p>예제를 보고 규칙을 유추한 뒤에 별을 찍어 보세요.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">m &#x3D; 2 * n -1</span><br><span class="line"></span><br><span class="line">for i in range(n, 0, -1):</span><br><span class="line">    print(&#39; &#39; * (n-i) + &#39;*&#39; * m)</span><br><span class="line">    m -&#x3D; 2</span><br><span class="line"></span><br><span class="line">m &#x3D; 3</span><br><span class="line"></span><br><span class="line">for j in range(2, n+1):</span><br><span class="line">    print(&#39; &#39; * (n-j) + &#39;*&#39; * m)</span><br><span class="line">    m +&#x3D; 2</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>시간이 없어서 고민을 못하고 생각나는대로 풀이하였다.</p><p>그러다 보니, 코드의 최적화가 필요해 보이지만 나중에 하도록 하겠다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2446%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 1085번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1085%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1085%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 24 Mar 2021 15:23:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;직사각형에서-탈출&quot;&gt;&lt;a href=&quot;#직사각형에서-탈출&quot; class=&quot;headerlink&quot; title=&quot;직사각형에서 탈출&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1085&quot;&gt;직사각형에서 탈출&lt;/a</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="직사각형에서-탈출"><a href="#직사각형에서-탈출" class="headerlink" title="직사각형에서 탈출"></a><a href="https://www.acmicpc.net/problem/1085">직사각형에서 탈출</a></h1><p>한수는 지금 (x, y)에 있다. 직사각형의 왼쪽 아래 꼭짓점은 (0, 0)에 있고, 오른쪽 위 꼭짓점은 (w, h)에 있다. 직사각형의 경계선까지 가는 거리의 최솟값을 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x, y, w, h &#x3D; map(int, input().split())</span><br><span class="line">print(min(min(abs(w-x), abs(0-x)), min(abs(h-y), abs(0-y))))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>(0, 0)과 (w, h)의 크기를 가진 사각형이 있는데 (x, y)의 위치에서 가장 빠르게 경계면으로 갈 수 있는지를 구하는 문제이다.</p><p>경우의 수를 살펴봤을 때,</p><ul><li>w-x, 0-x</li><li>h-y, 0-y<br>로 구분할 수 있다.</li></ul><p>저 4개의 경우의 수 중에 가장 작은 수를 출력하면 된다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1085%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 10250번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10250%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10250%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 24 Mar 2021 15:10:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;ACM-호텔&quot;&gt;&lt;a href=&quot;#ACM-호텔&quot; class=&quot;headerlink&quot; title=&quot;ACM 호텔&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10250&quot;&gt;ACM 호텔&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;AC</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="ACM-호텔"><a href="#ACM-호텔" class="headerlink" title="ACM 호텔"></a><a href="https://www.acmicpc.net/problem/10250">ACM 호텔</a></h1><p>ACM 호텔 매니저 지우는 손님이 도착하는 대로 빈 방을 배정하고 있다. 고객 설문조사에 따르면 손님들은 호텔 정문으로부터 걸어서 가장 짧은 거리에 있는 방을 선호한다고 한다. 여러분은 지우를 도와 줄 프로그램을 작성하고자 한다. 즉 설문조사 결과 대로 호텔 정문으로부터 걷는 거리가 가장 짧도록 방을 배정하는 프로그램을 작성하고자 한다.</p><p>문제를 단순화하기 위해서 호텔은 직사각형 모양이라고 가정하자. 각 층에 W 개의 방이 있는 H 층 건물이라고 가정하자 (1 ≤ H, W ≤ 99). 그리고 엘리베이터는 가장 왼쪽에 있다고 가정하자(그림 1 참고). 이런 형태의 호텔을 H × W 형태 호텔이라고 부른다. 호텔 정문은 일층 엘리베이터 바로 앞에 있는데, 정문에서 엘리베이터까지의 거리는 무시한다. 또 모든 인접한 두 방 사이의 거리는 같은 거리(거리 1)라고 가정하고 호텔의 정면 쪽에만 방이 있다고 가정한다.</p><p><img src="/images/pasted-269.png" alt="그림 1. H = 6 이고 W = 12 인 H × W 호텔을 간략하게 나타낸 그림"></p><p>방 번호는 YXX 나 YYXX 형태인데 여기서 Y 나 YY 는 층 수를 나타내고 XX 는 엘리베이터에서부터 세었을 때의 번호를 나타낸다. 즉, 그림 1 에서 빗금으로 표시한 방은 305 호가 된다.</p><p>손님은 엘리베이터를 타고 이동하는 거리는 신경 쓰지 않는다. 다만 걷는 거리가 같을 때에는 아래층의 방을 더 선호한다. 예를 들면 102 호 방보다는 301 호 방을 더 선호하는데, 102 호는 거리 2 만큼 걸어야 하지만 301 호는 거리 1 만큼만 걸으면 되기 때문이다. 같은 이유로 102 호보다 2101 호를 더 선호한다.</p><p>여러분이 작성할 프로그램은 초기에 모든 방이 비어있다고 가정하에 이 정책에 따라 N 번째로 도착한 손님에게 배정될 방 번호를 계산하는 프로그램이다. 첫 번째 손님은 101 호, 두 번째 손님은 201 호 등과 같이 배정한다. 그림 1 의 경우를 예로 들면, H = 6이므로 10 번째 손님은 402 호에 배정해야 한다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">testCase &#x3D; int(input())</span><br><span class="line">for _ in range(testCase):</span><br><span class="line">    h, w, n &#x3D; map(int, input().split())</span><br><span class="line"></span><br><span class="line">    line &#x3D; n&#x2F;&#x2F;h+1</span><br><span class="line">    if n%h &#x3D;&#x3D; 0:</span><br><span class="line">        floor &#x3D; h</span><br><span class="line">        line &#x3D; n&#x2F;&#x2F;h</span><br><span class="line">    else:</span><br><span class="line">        floor &#x3D; n%h</span><br><span class="line"></span><br><span class="line">    print(floor*(10**2) + line)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>룸의 호는 n을 h로 나누면 구할 수 있다.</p><p>문제의 조건 중 엘리베이터와 가까운 룸을 사람들이 선호하다는 조건을 이용한 것이다.</p><p>룸의 층은 n을 h로 나눈 나머지로 구할 수 있는데 만약 나머지가 0이면 사람들이 층 크기만큼 온 것으로 볼 수 있으므로 그 층의 1호실로 된다. </p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10250%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 10872번 문제</title>
@@ -547,102 +633,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/18/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2741%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2438번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2438%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2438%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Wed, 17 Mar 2021 10:30:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;별-찍기-1&quot;&gt;&lt;a href=&quot;#별-찍기-1&quot; class=&quot;headerlink&quot; title=&quot;별 찍기 - 1&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2438&quot;&gt;별 찍기 - 1&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="별-찍기-1"><a href="#별-찍기-1" class="headerlink" title="별 찍기 - 1"></a><a href="https://www.acmicpc.net/problem/2438">별 찍기 - 1</a></h1><p>첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">[print(&#39;*&#39; * i) for i in range(1, n+1)]</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>List Comprehention을 이용하여 간단하게 풀이하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2438%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2739번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-12926704%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-12926704%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Wed, 17 Mar 2021 08:04:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;구구단&quot;&gt;&lt;a href=&quot;#구구단&quot; class=&quot;headerlink&quot; title=&quot;구구단&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2739&quot;&gt;구구단&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;N을 입력받은 뒤, 구구단 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="구구단"><a href="#구구단" class="headerlink" title="구구단"></a><a href="https://www.acmicpc.net/problem/2739">구구단</a></h1><p>N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하시오. 출력 형식에 맞춰서 출력하면 된다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">[print(f&#39;&#123;n&#125; * &#123;i&#125; &#x3D; &#123;n*i&#125;&#39;) for i in range(1, 10)]</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>List Comprehension을 이용하여 간단하게 풀이하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-12926704%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 11282번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11282%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11282%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Sun, 14 Mar 2021 23:03:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;한글&quot;&gt;&lt;a href=&quot;#한글&quot; class=&quot;headerlink&quot; title=&quot;한글&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11282&quot;&gt;한글&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;한글의 각 글자는 초성, 중성, </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="한글"><a href="#한글" class="headerlink" title="한글"></a><a href="https://www.acmicpc.net/problem/11282">한글</a></h1><p>한글의 각 글자는 초성, 중성, 종성으로 이루어져 있고, 이 세 가지를 모아써서 한 글자를 나타낸다.</p><p>초성은 ㄱ, ㄲ, ㄴ, ㄷ, ㄸ, ㄹ, ㅁ, ㅂ, ㅃ, ㅅ, ㅆ, ㅇ, ㅈ, ㅉ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ로 총 19개가 있고, 중성은 ㅏ, ㅐ, ㅑ, ㅒ, ㅓ, ㅔ, ㅕ ㅖ, ㅗ, ㅘ, ㅙ, ㅚ, ㅛ, ㅜ, ㅝ, ㅞ, ㅟ, ㅠ, ㅡ, ㅢ, ㅣ로 총 21개, 종성은 없음, ㄱ, ㄲ, ㄳ, ㄴ, ㄵ, ㄶ, ㄷ, ㄹ, ㄺ, ㄻ, ㄼ, ㄽ, ㄾ, ㄿ, ㅀ, ㅁ, ㅂ, ㅄ, ㅅ, ㅆ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ로 총 28개가 있다.</p><p>첫 번째 글자는 초성에서 ㄱ, 중성에서 ㅏ, 종성에서 없음을 합친 “가”가 되고, 두 번째 글자는 초성에서 ㄱ, 중성에서 ㅏ, 종성에서 ㄱ을 합친 “각”이 된다. 마지막 글자는 초성에서 ㅎ, 중성에서 ㅣ, 종성에서 ㅎ를 합친 “힣”이 된다.</p><p>초성과 중성, 그리고 종성을 합쳐서 만들 수 있는 글자의 개수는 총 19<em>21</em>28 = 11,172개가 된다.</p><p>입력으로 N이 주어졌을 때, N번째 글자를 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(chr(44031+int(input())))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>chr 함수을 알고 있으면 쉽게 풀 수 있는 문제이다.</p><p>유니코드는 문제 설명과 같이 차례대로 한글이 정해져 있다. 현재 이 문제는 이를 아는지 확인하는 문제이다.</p><p>ord 함수를 이용하여 ‘가’를 유니코드로 변경한다면 44032이라는 값이 출력이 된다. 이를 이용하여 44031과 입력값을 더한 다음 chr함수로 문자로 변환하면 된다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%884/">백준 브론즈4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11282%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
