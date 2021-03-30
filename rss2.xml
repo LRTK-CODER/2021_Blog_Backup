@@ -9,8 +9,34 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 29 Mar 2021 12:13:10 GMT</pubDate>
+    <pubDate>Tue, 30 Mar 2021 10:14:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[Python] 이중 연결 리스트(Double Linked List)</title>
+      <link>https://lrtk-coder.github.io/2021/03/29/Python-%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Double-Linked-List/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/29/Python-%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Double-Linked-List/</guid>
+      <pubDate>Mon, 29 Mar 2021 07:13:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;script src=&quot;https://gist.github.com/LRTK-CODER/c461da96c36cc45b3d98aba03cfcebb4.js&quot;&gt;&lt;/script&gt;</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<script src="https://gist.github.com/LRTK-CODER/c461da96c36cc45b3d98aba03cfcebb4.js"></script>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/DoubleLinkedList/">DoubleLinkedList</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/29/Python-%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Double-Linked-List/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 2455번 문제</title>
@@ -601,38 +627,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11022%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 11021번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11021%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11021%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 22 Mar 2021 04:53:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;A-B-7&quot;&gt;&lt;a href=&quot;#A-B-7&quot; class=&quot;headerlink&quot; title=&quot;A+B - 7&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11021&quot;&gt;A+B - 7&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;두 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="A-B-7"><a href="#A-B-7" class="headerlink" title="A+B - 7"></a><a href="https://www.acmicpc.net/problem/11021">A+B - 7</a></h1><p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">for _ in range(n):</span><br><span class="line">    print(f&#39;Case #&#123;_+1&#125;:&#39;, sum([*map(int, input().split())]))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>간단하게 풀이하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11021%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
