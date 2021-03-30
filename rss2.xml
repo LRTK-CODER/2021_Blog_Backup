@@ -9,8 +9,104 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Tue, 30 Mar 2021 10:14:37 GMT</pubDate>
+    <pubDate>Tue, 30 Mar 2021 12:09:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 2522번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2522%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2522%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 30 Mar 2021 03:06:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;별-찍기-12&quot;&gt;&lt;a href=&quot;#별-찍기-12&quot; class=&quot;headerlink&quot; title=&quot;별 찍기 - 12&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2522&quot;&gt;별 찍기 - 12&lt;/a&gt;&lt;/h</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="별-찍기-12"><a href="#별-찍기-12" class="headerlink" title="별 찍기 - 12"></a><a href="https://www.acmicpc.net/problem/2522">별 찍기 - 12</a></h1><p>예제를 보고 규칙을 유추한 뒤에 별을 찍어 보세요.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">for i in range(1, n+1):</span><br><span class="line">    print(&#39; &#39; * (n-i) + &#39;*&#39; * i)</span><br><span class="line">for j in range(n-1, 0, -1):</span><br><span class="line">    print(&#39; &#39; * (n-j) + &#39;*&#39; * j)</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2522%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 3053번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/30/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/30/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 30 Mar 2021 02:54:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;택시-기하학&quot;&gt;&lt;a href=&quot;#택시-기하학&quot; class=&quot;headerlink&quot; title=&quot;택시 기하학&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/3053&quot;&gt;택시 기하학&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;19세</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="택시-기하학"><a href="#택시-기하학" class="headerlink" title="택시 기하학"></a><a href="https://www.acmicpc.net/problem/3053">택시 기하학</a></h1><p>19세기 독일 수학자 헤르만 민코프스키는 비유클리드 기하학 중 택시 기하학을 고안했다.</p><p>택시 기하학에서 두 점 T1(x1,y1), T2(x2,y2) 사이의 거리는 다음과 같이 구할 수 있다.</p><p>D(T1,T2) = |x1-x2| + |y1-y2|</p><p>두 점 사이의 거리를 제외한 나머지 정의는 유클리드 기하학에서의 정의와 같다.</p><p>따라서 택시 기하학에서 원의 정의는 유클리드 기하학에서 원의 정의와 같다.</p><p>원: 평면 상의 어떤 점에서 거리가 일정한 점들의 집합</p><p>반지름 R이 주어졌을 때, 유클리드 기하학에서 원의 넓이와, 택시 기하학에서 원의 넓이를 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">n &#x3D; int(input())</span><br><span class="line">print(n * n * math.pi)</span><br><span class="line">print(n * n * 2)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>유클리드 기하학의 원과 택시 기하학의 원을 알면 쉽게 공식을 생각할 수 있다.</p><p>유클리드 기하학의 원은 우리가 생각하는 기존의 원과 같다. 그래서 반지름^2 * pi로 원의 넓이를 구할 수 있다.</p><p>택시 기하학의 원은 정삼각형의 모양이다. 중심점부터 꼭지점까지의 길이가 반지름이니, 넓이를 구하기 위해선 반지름^2 * 2로 구할 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/30/%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 3009번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/03/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3009%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/03/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3009%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 30 Mar 2021 01:38:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;네-번째-점&quot;&gt;&lt;a href=&quot;#네-번째-점&quot; class=&quot;headerlink&quot; title=&quot;네 번째 점&quot;&gt;&lt;/a&gt;&lt;a href=&quot;acmicpc.net/problem/3009&quot;&gt;네 번째 점&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;세 점이 주어졌을 때, 축에</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="네-번째-점"><a href="#네-번째-점" class="headerlink" title="네 번째 점"></a><a href="acmicpc.net/problem/3009">네 번째 점</a></h1><p>세 점이 주어졌을 때, 축에 평행한 직사각형을 만들기 위해서 필요한 네 번째 점을 찾는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x, y &#x3D; [], []</span><br><span class="line">for _ in range(3):</span><br><span class="line">    n, m &#x3D; map(int, input().split())</span><br><span class="line">    x.append(n)</span><br><span class="line">    y.append(m)</span><br><span class="line"></span><br><span class="line">print(list(set(x))[0] if x.count(list(set(x))[0]) &#x3D;&#x3D; 1 else list(set(x))[1], end&#x3D;&#39; &#39;)</span><br><span class="line">print(list(set(y))[0] if y.count(list(set(y))[0]) &#x3D;&#x3D; 1 else list(set(y))[1])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>직사각형의 모서리를 생각하면, (x1, y1), (x1, y2), (x2, y2), (x2, y1)로 볼 수 있다.</p><p>즉, x축과 y축에 같은 값이 2개 씩 있다면 직사각형으로 볼 수 있으니 중복값이 1개인 값을 출력하면 정답을 찾을 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/03/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3009%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>[Python] 이중 연결 리스트(Double Linked List)</title>
@@ -537,96 +633,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2440%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 10818번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10818%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10818%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 23 Mar 2021 03:14:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;최소-최대&quot;&gt;&lt;a href=&quot;#최소-최대&quot; class=&quot;headerlink&quot; title=&quot;최소, 최대&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10818&quot;&gt;최소, 최대&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;N개의 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="최소-최대"><a href="#최소-최대" class="headerlink" title="최소, 최대"></a><a href="https://www.acmicpc.net/problem/10818">최소, 최대</a></h1><p>N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">n &#x3D; int(input())</span><br><span class="line">m &#x3D; [*map(int, sys.stdin.readline().split())][:n]</span><br><span class="line">print(min(m), max(m))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>처음엔 input 함수만 사용하여 입력값을 받았는데 시간이 너무 소모가 됐다.</p><p>그래서 sys 모듈의 readline 함수로 입력을 받았는데 소모되는 시간은 같았다.</p><p>다른 문제 풀이를 살펴보니 시간이 비슷했다. 아마 입력값이 커서 시간이 걸린 듯하다. </p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10818%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>[Python] 연결 리스트(Linked List)</title>
-      <link>https://lrtk-coder.github.io/2021/03/22/Python-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Linked-List/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/22/Python-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Linked-List/</guid>
-      <pubDate>Mon, 22 Mar 2021 20:38:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;script src=&quot;https://gist.github.com/LRTK-CODER/a1e72818f8eaf2794eed9bdcf429b8f9.js&quot;&gt;&lt;/script&gt;</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<script src="https://gist.github.com/LRTK-CODER/a1e72818f8eaf2794eed9bdcf429b8f9.js"></script>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Data-Structure/">Data Structure</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/LinkedList/">LinkedList</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/22/Python-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8-Linked-List/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 11022번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11022%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11022%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 22 Mar 2021 04:57:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;A-B-8&quot;&gt;&lt;a href=&quot;#A-B-8&quot; class=&quot;headerlink&quot; title=&quot;A+B - 8&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11022&quot;&gt;A+B - 8&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;두 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="A-B-8"><a href="#A-B-8" class="headerlink" title="A+B - 8"></a><a href="https://www.acmicpc.net/problem/11022">A+B - 8</a></h1><p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; int(input())</span><br><span class="line">for _ in range(n):</span><br><span class="line">    m &#x3D; [*map(int, input().split())]</span><br><span class="line">    print(f&#39;Case #&#123;_+1&#125;: &#123;m[0]&#125; + &#123;m[1]&#125; &#x3D;&#39;, sum(m))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>이전 문제와 똑같은 방식으로 풀이하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/22/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11022%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
