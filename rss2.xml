@@ -9,8 +9,40 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Thu, 01 Apr 2021 14:50:29 GMT</pubDate>
+    <pubDate>Mon, 12 Apr 2021 08:48:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 5565번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5565%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5565%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sun, 11 Apr 2021 23:46:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;영수증&quot;&gt;&lt;a href=&quot;#영수증&quot; class=&quot;headerlink&quot; title=&quot;영수증&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/5565&quot;&gt;영수증&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;새 학기를 맞아 상근이는 책</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="영수증"><a href="#영수증" class="headerlink" title="영수증"></a><a href="https://www.acmicpc.net/problem/5565">영수증</a></h1><p>새 학기를 맞아 상근이는 책을 10권 구입했다. 상근이는 의욕이 너무 앞서서 가격을 조사하지 않고 책을 구입했다. 이제 각 책의 가격을 알아보려고 한다.</p><p>하지만, 영수증에는 얼룩이 묻어있었고, 상근이는 책 10권 중 9권의 가격만 읽을 수 있었다.</p><p>책 10권의 총 가격과 가격을 읽을 수 있는 9권 가격이 주어졌을 때, 가격을 읽을 수 없는 책의 가격을 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">total &#x3D; int(input())</span><br><span class="line"></span><br><span class="line">for i in range(9):</span><br><span class="line">    total -&#x3D; int(input())</span><br><span class="line">print(total)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>1번째 값을 2~9번째 값들을 빼주면 답이 나온다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5565%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 2576번 문제</title>
@@ -601,38 +633,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10872%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 11718번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11718%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11718%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 23 Mar 2021 15:00:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;그대로-출력하기&quot;&gt;&lt;a href=&quot;#그대로-출력하기&quot; class=&quot;headerlink&quot; title=&quot;그대로 출력하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11718&quot;&gt;그대로 출력하기&lt;/a&gt;&lt;/</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="그대로-출력하기"><a href="#그대로-출력하기" class="headerlink" title="그대로 출력하기"></a><a href="https://www.acmicpc.net/problem/11718">그대로 출력하기</a></h1><p>입력 받은 대로 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        print(input())</span><br><span class="line">    except:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>간단하게 풀이하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/03/23/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11718%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
