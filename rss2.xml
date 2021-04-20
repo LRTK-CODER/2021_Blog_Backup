@@ -9,8 +9,104 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 19 Apr 2021 12:49:23 GMT</pubDate>
+    <pubDate>Tue, 20 Apr 2021 14:26:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 3052번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 20 Apr 2021 05:25:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;나머지&quot;&gt;&lt;a href=&quot;#나머지&quot; class=&quot;headerlink&quot; title=&quot;나머지&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/3052&quot;&gt;나머지&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;두 자연수 A와 B가 있을 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="나머지"><a href="#나머지" class="headerlink" title="나머지"></a><a href="https://www.acmicpc.net/problem/3052">나머지</a></h1><p>두 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 예를 들어, 7, 14, 27, 38을 3으로 나눈 나머지는 1, 2, 0, 2이다. </p><p>수 10개를 입력받은 뒤, 이를 42로 나눈 나머지를 구한다. 그 다음 서로 다른 값이 몇 개 있는지 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = [<span class="built_in">int</span>(<span class="built_in">input</span>())%<span class="number">42</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line">print(<span class="built_in">len</span>(<span class="built_in">set</span>(result)))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>간단한 구현 문제라서 설명은 안하겠다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 2675번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2675%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2675%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 20 Apr 2021 05:19:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;문자열-반복&quot;&gt;&lt;a href=&quot;#문자열-반복&quot; class=&quot;headerlink&quot; title=&quot;문자열 반복&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2675&quot;&gt;문자열 반복&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;문자열</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="문자열-반복"><a href="#문자열-반복" class="headerlink" title="문자열 반복"></a><a href="https://www.acmicpc.net/problem/2675">문자열 반복</a></h1><p>문자열 S를 입력받은 후에, 각 문자를 R번 반복해 새 문자열 P를 만든 후 출력하는 프로그램을 작성하시오. 즉, 첫 번째 문자를 R번 반복하고, 두 번째 문자를 R번 반복하는 식으로 P를 만들면 된다. S에는 QR Code “alphanumeric” 문자만 들어있다.</p><p>QR Code “alphanumeric” 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ$%*+-./: 이다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">T = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(T):</span><br><span class="line">    R, S = <span class="built_in">input</span>().split()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> S:</span><br><span class="line">        print(<span class="built_in">int</span>(R) * i, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure><h3 id="문제-풀이-1"><a href="#문제-풀이-1" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>마지막 print 함수를 사용하여 결과를 출력 후 줄 바꿈을 해줘야 정답으로 인정 받는다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2675%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 10809번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10809%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10809%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 20 Apr 2021 05:12:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;알파벳-찾기&quot;&gt;&lt;a href=&quot;#알파벳-찾기&quot; class=&quot;headerlink&quot; title=&quot;알파벳 찾기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10809&quot;&gt;알파벳 찾기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;알파</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="알파벳-찾기"><a href="#알파벳-찾기" class="headerlink" title="알파벳 찾기"></a><a href="https://www.acmicpc.net/problem/10809">알파벳 찾기</a></h1><p>알파벳 소문자로만 이루어진 단어 S가 주어진다. 각각의 알파벳에 대해서, 단어에 포함되어 있는 경우에는 처음 등장하는 위치를, 포함되어 있지 않은 경우에는 -1을 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> ascii_lowercase</span><br><span class="line">lower = ascii_lowercase</span><br><span class="line">S = <span class="built_in">input</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lower:</span><br><span class="line">    print(S.find(i), end=<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>find 함수는 리스트의 아이템 인덱스를 리턴하는 함수이다. 만약 리스트에 없다면 -1를 리턴을 한다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10809%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 1152번 문제</title>
@@ -543,102 +639,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2953%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 5086번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5086%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5086%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 13 Apr 2021 14:51:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;배수와-약수&quot;&gt;&lt;a href=&quot;#배수와-약수&quot; class=&quot;headerlink&quot; title=&quot;배수와 약수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/5086&quot;&gt;배수와 약수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;4 ×</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="배수와-약수"><a href="#배수와-약수" class="headerlink" title="배수와 약수"></a><a href="https://www.acmicpc.net/problem/5086">배수와 약수</a></h1><p>4 × 3 = 12이다.</p><p>이 식을 통해 다음과 같은 사실을 알 수 있다.</p><p>3은 12의 약수이고, 12는 3의 배수이다.</p><p>4도 12의 약수이고, 12는 4의 배수이다.</p><p>두 수가 주어졌을 때, 다음 3가지 중 어떤 관계인지 구하는 프로그램을 작성하시오.</p><ol><li>첫 번째 숫자가 두 번째 숫자의 약수이다.</li><li>첫 번째 숫자가 두 번째 숫자의 배수이다.</li><li>첫 번째 숫자가 두 번째 숫자의 약수와 배수 모두 아니다.</li></ol><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">while True:</span><br><span class="line">    n, m &#x3D; map(int, input().split())</span><br><span class="line">    if n &lt; m:</span><br><span class="line">        print([&#39;neither&#39;, &#39;factor&#39;][m%n &#x3D;&#x3D; 0])</span><br><span class="line">    elif n &gt; m:</span><br><span class="line">        print([&#39;neither&#39;, &#39;multiple&#39;][n%m &#x3D;&#x3D; 0])</span><br><span class="line">    elif n &#x3D;&#x3D; 0 and m &#x3D;&#x3D; 0:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제에서 제시하는 조건들을 그대로 반영하면 된다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88/">백준 브론즈</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5086%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 5565번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5565%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5565%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Sun, 11 Apr 2021 23:46:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;영수증&quot;&gt;&lt;a href=&quot;#영수증&quot; class=&quot;headerlink&quot; title=&quot;영수증&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/5565&quot;&gt;영수증&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;새 학기를 맞아 상근이는 책</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="영수증"><a href="#영수증" class="headerlink" title="영수증"></a><a href="https://www.acmicpc.net/problem/5565">영수증</a></h1><p>새 학기를 맞아 상근이는 책을 10권 구입했다. 상근이는 의욕이 너무 앞서서 가격을 조사하지 않고 책을 구입했다. 이제 각 책의 가격을 알아보려고 한다.</p><p>하지만, 영수증에는 얼룩이 묻어있었고, 상근이는 책 10권 중 9권의 가격만 읽을 수 있었다.</p><p>책 10권의 총 가격과 가격을 읽을 수 있는 9권 가격이 주어졌을 때, 가격을 읽을 수 없는 책의 가격을 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">total &#x3D; int(input())</span><br><span class="line"></span><br><span class="line">for i in range(9):</span><br><span class="line">    total -&#x3D; int(input())</span><br><span class="line">print(total)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>1번째 값을 2~9번째 값들을 빼주면 답이 나온다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/11/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-5565%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2576번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/01/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2576%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/01/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2576%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Thu, 01 Apr 2021 05:49:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;홀수&quot;&gt;&lt;a href=&quot;#홀수&quot; class=&quot;headerlink&quot; title=&quot;홀수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2576&quot;&gt;홀수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;7개의 자연수가 주어질 때, 이들 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="홀수"><a href="#홀수" class="headerlink" title="홀수"></a><a href="https://www.acmicpc.net/problem/2576">홀수</a></h1><p>7개의 자연수가 주어질 때, 이들 중 홀수인 자연수들을 모두 골라 그 합을 구하고, 고른 홀수들 중 최솟값을 찾는 프로그램을 작성하시오.</p><p>예를 들어, 7개의 자연수 12, 77, 38, 41, 53, 92, 85가 주어지면 이들 중 홀수는 77, 41, 53, 85이므로 그 합은</p><p>77 + 41 + 53 + 85 = 256</p><p>이 되고,</p><p>41 &lt; 53 &lt; 77 &lt; 85</p><p>이므로 홀수들 중 최솟값은 41이 된다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; []</span><br><span class="line">for _ in range(7):</span><br><span class="line">    m &#x3D; int(input())</span><br><span class="line">    if m%2 !&#x3D; 0:</span><br><span class="line">        n.append(m)</span><br><span class="line"></span><br><span class="line">print(-1 if len(n) &#x3D;&#x3D; 0 else f&#39;&#123;sum(n)&#125;\n&#123;min(n)&#125;&#39;)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제의 조건을 보고 그대로 구현하면 된다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/01/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2576%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
