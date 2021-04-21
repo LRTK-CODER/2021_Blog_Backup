@@ -9,8 +9,104 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Tue, 20 Apr 2021 14:26:49 GMT</pubDate>
+    <pubDate>Wed, 21 Apr 2021 17:39:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 2292번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2292%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2292%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 21 Apr 2021 08:32:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;벌집&quot;&gt;&lt;a href=&quot;#벌집&quot; class=&quot;headerlink&quot; title=&quot;벌집&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2292&quot;&gt;벌집&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="벌집"><a href="#벌집" class="headerlink" title="벌집"></a><a href="https://www.acmicpc.net/problem/2292">벌집</a></h1><p><img src="/images/pasted-282.png"></p><p>위의 그림과 같이 육각형으로 이루어진 벌집이 있다. 그림에서 보는 바와 같이 중앙의 방 1부터 시작해서 이웃하는 방에 돌아가면서 1씩 증가하는 번호를 주소로 매길 수 있다. 숫자 N이 주어졌을 때, 벌집의 중앙 1에서 N번 방까지 최소 개수의 방을 지나서 갈 때 몇 개의 방을 지나가는지(시작과 끝을 포함하여)를 계산하는 프로그램을 작성하시오. 예를 들면, 13까지는 3개, 58까지는 5개를 지난다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">floor = <span class="number">1</span></span><br><span class="line">room = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> n &gt; room:</span><br><span class="line">    room += <span class="number">6</span> * floor</span><br><span class="line">    floor += <span class="number">1</span></span><br><span class="line">print(floor)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>반복되는 공식을 찾기 위해 각 층의 룸의 개수와 숫자를 구해보았다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1층 - 1개 - 1</span><br><span class="line">2층 - 6개 - 2~7</span><br><span class="line">3층 - 12개 - 8~19</span><br><span class="line">4층 - 18개 - 20~37</span><br></pre></td></tr></table></figure><p>여기서 알 수 있는 점은 층이 증가할 때마다 룸의 개수가 6씩 증가한다는 점이다.</p><p>1층은 예외로 두고, 2층부터 보면 6-12-18로 6씩 증가하는 것을 이용하여 문제풀이를 하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2292%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 11721번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11721%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11721%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 21 Apr 2021 08:01:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;열-개씩-끊어-출력하기&quot;&gt;&lt;a href=&quot;#열-개씩-끊어-출력하기&quot; class=&quot;headerlink&quot; title=&quot;열 개씩 끊어 출력하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11721&quot;&gt;열 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="열-개씩-끊어-출력하기"><a href="#열-개씩-끊어-출력하기" class="headerlink" title="열 개씩 끊어 출력하기"></a><a href="https://www.acmicpc.net/problem/11721">열 개씩 끊어 출력하기</a></h1><p>알파벳 소문자와 대문자로만 이루어진 길이가 N인 단어가 주어진다.</p><p>한 줄에 10글자씩 끊어서 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(s), <span class="number">10</span>):</span><br><span class="line">    print(s[i:i+<span class="number">10</span>])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제 예제를 보면 ‘OneTwoThreeFourFiveSixSevenEightNineTen’이라는 예제가 있다.</p><p>인덱스로 끊어 보면,<br><code>[0 : 10] [10 : 20] [20 : 30] [30 : ]</code>으로 끊을 수 있다.</p><p>10씩 반복을 해야하는데 여러 방법 중 range의 세번째 인수를 10으로 지정하여 10씩 반복했다.</p><p>이렇게 하면 0, 10, 20, 30을 반복값으로 얻을 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-11721%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 2908번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2908%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2908%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Wed, 21 Apr 2021 07:42:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;상수&quot;&gt;&lt;a href=&quot;#상수&quot; class=&quot;headerlink&quot; title=&quot;상수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2908&quot;&gt;상수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;상근이의 동생 상수는 수학을 정말 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="상수"><a href="#상수" class="headerlink" title="상수"></a><a href="https://www.acmicpc.net/problem/2908">상수</a></h1><p>상근이의 동생 상수는 수학을 정말 못한다. 상수는 숫자를 읽는데 문제가 있다. 이렇게 수학을 못하는 상수를 위해서 상근이는 수의 크기를 비교하는 문제를 내주었다. 상근이는 세 자리 수 두 개를 칠판에 써주었다. 그 다음에 크기가 큰 수를 말해보라고 했다.</p><p>상수는 수를 다른 사람과 다르게 거꾸로 읽는다. 예를 들어, 734와 893을 칠판에 적었다면, 상수는 이 수를 437과 398로 읽는다. 따라서, 상수는 두 수중 큰 수인 437을 큰 수라고 말할 것이다.</p><p>두 수가 주어졌을 때, 상수의 대답을 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A, B = <span class="built_in">input</span>().split()</span><br><span class="line">print(<span class="built_in">max</span>(<span class="built_in">int</span>(<span class="string">&#x27;&#x27;</span>.join(<span class="built_in">list</span>(A)[::<span class="number">-1</span>])), <span class="built_in">int</span>(<span class="string">&#x27;&#x27;</span>.join(<span class="built_in">list</span>(B)[::<span class="number">-1</span>]))))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>인덱스 세번째 인수를 -1로 지정하면 거꾸로 출력이 되는 것을 이용하여 문제 풀이를 하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/21/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2908%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 3052번 문제</title>
@@ -553,92 +649,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/04/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2010%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2875번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2875%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2875%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Wed, 14 Apr 2021 15:50:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;대회-or-인턴&quot;&gt;&lt;a href=&quot;#대회-or-인턴&quot; class=&quot;headerlink&quot; title=&quot;대회 or 인턴&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2875&quot;&gt;대회 or 인턴&lt;/a&gt;&lt;/h</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="대회-or-인턴"><a href="#대회-or-인턴" class="headerlink" title="대회 or 인턴"></a><a href="https://www.acmicpc.net/problem/2875">대회 or 인턴</a></h1><p>백준대학교에서는 대회에 나갈 때 2명의 여학생과 1명의 남학생이 팀을 결성해서 나가는 것이 원칙이다. (왜인지는 총장님께 여쭈어보는 것이 좋겠다.)</p><p>백준대학교는 뛰어난 인재들이 많아 올해에도 N명의 여학생과 M명의 남학생이 팀원을 찾고 있다. 대회에 참여하려는 학생들 중 K명은 반드시 인턴쉽 프로그램에 참여해야 한다. 인턴쉽에 참여하는 학생은 대회에 참여하지 못한다.</p><p>백준대학교에서는 뛰어난 인재들이 많기 때문에, 많은 팀을 만드는 것이 최선이다.</p><p>여러분은 여학생의 수 N, 남학생의 수 M, 인턴쉽에 참여해야하는 인원 K가 주어질 때 만들 수 있는 최대의 팀 수를 구하면 된다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n, m, k &#x3D; map(int, input().split())</span><br><span class="line">count &#x3D; 0</span><br><span class="line">while n &gt;&#x3D; 2 and m &gt;&#x3D; 1 and n+m &gt;&#x3D; k+3:</span><br><span class="line">    n -&#x3D; 2</span><br><span class="line">    m -&#x3D; 1</span><br><span class="line">    count +&#x3D; 1</span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>여학생 2명, 남학생 1명으로 이루어진 팀이라는 조건을 while의 종료 조건으로 넣었다.</p><p>또한, 여학생과 남학생의 인원 총 합을 인턴을 갈 수 있는 팀의 총 인원을 비교하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/14/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2875%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 10886번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10886%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10886%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 13 Apr 2021 15:15:24 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;0-not-cute-1-cute&quot;&gt;&lt;a href=&quot;#0-not-cute-1-cute&quot; class=&quot;headerlink&quot; title=&quot;0 = not cute / 1 = cute&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="0-not-cute-1-cute"><a href="#0-not-cute-1-cute" class="headerlink" title="0 = not cute / 1 = cute"></a><a href="https://www.acmicpc.net/problem/10886">0 = not cute / 1 = cute</a></h1><p>준희는 자기가 팀에서 귀여움을 담당하고 있다고 생각한다. 하지만 연수가 볼 때 그 의견은 뭔가 좀 잘못된 것 같았다. 그렇기에 설문조사를 하여 준희가 귀여운지 아닌지 알아보기로 했다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">caseTest &#x3D; int(input())</span><br><span class="line">result &#x3D; 0</span><br><span class="line">for _ in range(caseTest):</span><br><span class="line">    result +&#x3D; int(input())</span><br><span class="line">print([&#39;Junhee is cute!&#39;, &#39;Junhee is not cute!&#39;][result &lt;&#x3D; caseTest&#x2F;&#x2F;2])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>for문으로 caseTest(투표할 팀원 인원)만큼 투표값(0 or 1)를 입력 받아 result에 더해주고, 입력이 끝난 뒤 <code>caseTest//2</code>를 기준으로 투표 결과를 출력하였다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10886%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2953번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2953%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2953%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 13 Apr 2021 15:01:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;나는-요리사다&quot;&gt;&lt;a href=&quot;#나는-요리사다&quot; class=&quot;headerlink&quot; title=&quot;나는 요리사다&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2953&quot;&gt;나는 요리사다&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="나는-요리사다"><a href="#나는-요리사다" class="headerlink" title="나는 요리사다"></a><a href="https://www.acmicpc.net/problem/2953">나는 요리사다</a></h1><p>“나는 요리사다”는 다섯 참가자들이 서로의 요리 실력을 뽐내는 티비 프로이다. 각 참가자는 자신있는 음식을 하나씩 만들어오고, 서로 다른 사람의 음식을 점수로 평가해준다. 점수는 1점부터 5점까지 있다.</p><p>각 참가자가 얻은 점수는 다른 사람이 평가해 준 점수의 합이다. 이 쇼의 우승자는 가장 많은 점수를 얻은 사람이 된다.</p><p>각 참가자가 얻은 평가 점수가 주어졌을 때, 우승자와 그의 점수를 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; []</span><br><span class="line">for _ in range(5):</span><br><span class="line">    a.append(sum([*map(int, input().split())]))</span><br><span class="line">print(a.index(max(a))+1, max(a))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>5명의 점수를 담은 리스트를 선언하여 for문을 이용하여 각자의 점수들을 입력받아서 총 점을 계산 후 리스트에 삽입하는 것을 5번 반복하였다.</p><p>그 중 가장 큰 값을 찾기 위해 max 함수를 이용하였고, 가장 큰 값의 인덱스를 구하기 위해 리스트의 index 메소드를 사용하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/13/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2953%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
