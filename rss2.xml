@@ -9,8 +9,72 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Fri, 23 Apr 2021 13:47:15 GMT</pubDate>
+    <pubDate>Mon, 26 Apr 2021 13:57:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 1546번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1546%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1546%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Mon, 26 Apr 2021 04:50:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;평균&quot;&gt;&lt;a href=&quot;#평균&quot; class=&quot;headerlink&quot; title=&quot;평균&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1546&quot;&gt;평균&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;세준이는 기말고사를 망쳤다. 세준이</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="평균"><a href="#평균" class="headerlink" title="평균"></a><a href="https://www.acmicpc.net/problem/1546">평균</a></h1><p>세준이는 기말고사를 망쳤다. 세준이는 점수를 조작해서 집에 가져가기로 했다. 일단 세준이는 자기 점수 중에 최댓값을 골랐다. 이 값을 M이라고 한다. 그리고 나서 모든 점수를 점수/M*100으로 고쳤다.</p><p>예를 들어, 세준이의 최고점이 70이고, 수학점수가 50이었으면 수학점수는 50/70*100이 되어 71.43점이 된다.</p><p>세준이의 성적을 위의 방법대로 새로 계산했을 때, 새로운 평균을 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">data = [*<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())][:n]</span><br><span class="line">result = [ (i/<span class="built_in">max</span>(data)) * <span class="number">100</span> <span class="keyword">for</span> i <span class="keyword">in</span> data]</span><br><span class="line">print(<span class="built_in">sum</span>(result)/n)</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제를 자세하게 읽지 않아서 원치않게 노다가를 하였다…</p><p>문제에선 입력받은 데이터 중에서 최댓값을 뽑고, 모든 점수를 점수/M*100으로 고친 후에 평균값을 구하라는 문제였다.(최댓값도 저 공식에 포함되어야 함.)</p><p>문제만 이해한다면 단순 구현 문제임으로 코드 설명은 안하겠다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%881/">백준 브론즈1</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1546%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 브론즈 2231번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/04/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2231%EB%B2%88-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/</link>
+      <guid>https://lrtk-coder.github.io/2021/04/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2231%EB%B2%88-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/</guid>
+      <pubDate>Sat, 24 Apr 2021 04:18:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;분해합&quot;&gt;&lt;a href=&quot;#분해합&quot; class=&quot;headerlink&quot; title=&quot;분해합&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2231&quot;&gt;분해합&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;어떤 자연수 N이 있을 때,</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="분해합"><a href="#분해합" class="headerlink" title="분해합"></a><a href="https://www.acmicpc.net/problem/2231">분해합</a></h1><p>어떤 자연수 N이 있을 때, 그 자연수 N의 분해합은 N과 N을 이루는 각 자리수의 합을 의미한다. 어떤 자연수 M의 분해합이 N인 경우, M을 N의 생성자라 한다. 예를 들어, 245의 분해합은 256(=245+2+4+5)이 된다. 따라서 245는 256의 생성자가 된다. 물론, 어떤 자연수의 경우에는 생성자가 없을 수도 있다. 반대로, 생성자가 여러 개인 자연수도 있을 수 있다.</p><p>자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성하시오.</p><h2 id="1-문제-풀이"><a href="#1-문제-풀이" class="headerlink" title="1. 문제 풀이"></a>1. 문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">    a = <span class="built_in">sum</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(i))))</span><br><span class="line">    s = i + a</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> s == n:</span><br><span class="line">        print(i)</span><br><span class="line">        quit()</span><br><span class="line"></span><br><span class="line">print(<span class="number">0</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>생성자를 구해야 하는 문제인데 공책에 몇가지 예제로 구해봐도 공식이 생각이 안난다.</p><p>그래서 브루스 포스 방법으로 접근하여 풀이를 하였다.</p><p>for문으로 i에 1~N의 값을 넣어서 변수 a에 각 자리수로 나누어 리스트화하여 sum 함수를 통하여 총 합을 넣어주었다.</p><p>그 후 s에 원래의 값인 i와 각 자리수의 총 합인 a을 더하였다.</p><p>만약 s가 n의 값과 같으면 i를 출력 후 프로그램을 멈추게 하였고, n과 같은 값이 없으면 반복문에서 아무 출력을 하지 않고 모두 끝난 후 0을 출력하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/04/24/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2231%EB%B2%88-%EB%AC%B8%EC%A0%9C-%ED%92%80%EC%9D%B4/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 브론즈 10870번 문제</title>
@@ -575,70 +639,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/04/17/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2506%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 10833번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10833%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10833%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Thu, 15 Apr 2021 16:19:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;사과&quot;&gt;&lt;a href=&quot;#사과&quot; class=&quot;headerlink&quot; title=&quot;사과&quot;&gt;&lt;/a&gt;&lt;a href=&quot;acmicpc.net/problem/10833&quot;&gt;사과&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;경상북도 특산품인 사과를 학생들에게 나눠주기 위해 여러</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="사과"><a href="#사과" class="headerlink" title="사과"></a><a href="acmicpc.net/problem/10833">사과</a></h1><p>경상북도 특산품인 사과를 학생들에게 나눠주기 위해 여러 학교에 사과를 배정하였다. 배정된 사과 개수는 학교마다 다를 수 있고, 학생 수도 학교마다 다를 수 있다. 각 학교에서는 배정된 사과를 모든 학생들에게 똑같이 나눠주되, 남는 사과의 개수를 최소로 하려고 한다. (서로 다른 학교에 속한 학생이 받는 사과 개수는 다를 수 있다.)</p><p>예를 들어, 5개 학교의 학생 수와 배정된 사과 수가 다음과 같다고 하자.</p><p><img src="/images/pasted-274.png"></p><p>A 학교에서는 모든 학생에게 사과를 두 개씩 나눠주고 4개의 사과가 남게 된다. B 학교에서는 모든 학생에게 사과를 한 개씩 나눠주고 9개의 사과가 남게 된다. 비슷하게 C 학교에서는 3개의 사과가, D 학교에서는 10개의 사과가, E 학교에서는 0개의 사과가 남게 되어, 남는 사과의 총 수는 4+9+3+10+0 = 26이다. </p><p>각 학교의 학생 수와 사과 개수가 주어졌을 때, 학생들에게 나눠주고 남는 사과의 총 개수를 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">total &#x3D; []</span><br><span class="line">for _ in range(int(input())):</span><br><span class="line">    x, y &#x3D; map(int, input().split())</span><br><span class="line">    total.append(y-x*(y&#x2F;&#x2F;x))</span><br><span class="line"></span><br><span class="line">print(sum(total))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>단순 구현문제라서 넘어가겠다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10833%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2501번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2501%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2501%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Thu, 15 Apr 2021 15:59:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;약수-구하기&quot;&gt;&lt;a href=&quot;#약수-구하기&quot; class=&quot;headerlink&quot; title=&quot;약수 구하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2501&quot;&gt;약수 구하기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;어떤 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="약수-구하기"><a href="#약수-구하기" class="headerlink" title="약수 구하기"></a><a href="https://www.acmicpc.net/problem/2501">약수 구하기</a></h1><p>어떤 자연수 p와 q가 있을 때, 만일 p를 q로 나누었을 때 나머지가 0이면 q는 p의 약수이다. </p><p>6을 예로 들면</p><ul><li>6 ÷ 1 = 6 … 0</li><li>6 ÷ 2 = 3 … 0</li><li>6 ÷ 3 = 2 … 0</li><li>6 ÷ 4 = 1 … 2</li><li>6 ÷ 5 = 1 … 1</li><li>6 ÷ 6 = 1 … 0</li></ul><p>그래서 6의 약수는 1, 2, 3, 6, 총 네 개이다.</p><p>두 개의 자연수 N과 K가 주어졌을 때, N의 약수들 중 K번째로 작은 수를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n, k &#x3D; map(int, input().split())</span><br><span class="line">value &#x3D; [divmod(n, i) for i in range(1, n+1) if divmod(n, i)[1] &#x3D;&#x3D; 0]</span><br><span class="line">value.sort(key&#x3D;lambda x: x[0])</span><br><span class="line">print(value[k-1][0] if len(value) &gt;&#x3D; k else 0)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>약간의 귀찮음으로 divmod 함수를 이용하여 몫과 나머기를 구하였고, if문으로 튜플로 이루어진 몫과 나머지에서 나머지만 검사하여 0일 때만 리스트에 저장하였다.</p><p>그 후 sort함수를 이용하여 key를 몫으로 지정한 수 정렬하였다.</p><p>출력에선 if문으로 k의 값이 리스트에 저장된 값보다 크면 0이 출력하였고, 그게 아니라면 인덱스를 이용하여 몫을 출력하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%883/">백준 브론즈3</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/15/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2501%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
