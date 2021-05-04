@@ -9,8 +9,132 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Sun, 02 May 2021 10:08:56 GMT</pubDate>
+    <pubDate>Tue, 04 May 2021 14:13:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 브론즈 1193번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1193%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1193%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 04 May 2021 04:46:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;분수찾기&quot;&gt;&lt;a href=&quot;#분수찾기&quot; class=&quot;headerlink&quot; title=&quot;분수찾기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1193&quot;&gt;분수찾기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;무한히 큰 배열에 다</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="분수찾기"><a href="#분수찾기" class="headerlink" title="분수찾기"></a><a href="https://www.acmicpc.net/problem/1193">분수찾기</a></h1><p>무한히 큰 배열에 다음과 같이 분수들이 적혀있다.</p><p><img src="/images/pasted-295.png"></p><p>이와 같이 나열된 분수들을 1/1 -&gt; 1/2 -&gt; 2/1 -&gt; 3/1 -&gt; 2/2 -&gt; … 과 같은 지그재그 순서로 차례대로 1번, 2번, 3번, 4번, 5번, … 분수라고 하자.</p><p>X가 주어졌을 때, X번째 분수를 구하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">line = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> n &gt; line:</span><br><span class="line">    n -= line</span><br><span class="line">    line += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> line % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    child = n</span><br><span class="line">    parent = line - n + <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    child = line - n + <span class="number">1</span></span><br><span class="line">    parent = n</span><br><span class="line"></span><br><span class="line">print(<span class="string">f&#x27;<span class="subst">&#123;child&#125;</span>/<span class="subst">&#123;parent&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">child, parent = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">change = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">if</span> change:</span><br><span class="line">        parent += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> child &gt; <span class="number">1</span>:</span><br><span class="line">            child -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> child == <span class="number">1</span>:</span><br><span class="line">            change = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        child += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> parent &gt; <span class="number">1</span>:</span><br><span class="line">            parent -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> parent == <span class="number">1</span>:</span><br><span class="line">            change = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">f&#x27;<span class="subst">&#123;child&#125;</span>/<span class="subst">&#123;parent&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure><p>처음 구상한 방법은 위 코드였다.</p><p>하지만 반복문 속에 있는 중첩 조건문이 문제 해결 조건인 0.5초를 잡지 못하였다.</p><p>그래서 좀 더 생각을 해보니, 중첩 조건문을 없앨 수 있었다.</p><p>방법은 대각선 라인이 짝수이면 분자가 증가하였고, 홀수이면 분모가 증가한다는 것을 확인할 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/04/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1193%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 16 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/04/Webhacking-kr-Old-16-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/04/Webhacking-kr-Old-16-Write-Up/</guid>
+      <pubDate>Tue, 04 May 2021 03:32:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-16"><a href="#Old-16" class="headerlink" title="Old - 16"></a>Old - 16</h2><p><img src="/images/pasted-293.png"><br>페이지에 들어가니, 의미를 알 수 없는 *이 보인다.</p><p>의미를 알아보기 위해 개발자 도구를 열어서 소스코드 확인을 하였다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">bgcolor</span>=<span class="string">&quot;black&quot;</span> <span class="attr">onload</span>=<span class="string">&quot;kk(1,1)&quot;</span> <span class="attr">onkeypress</span>=<span class="string">&quot;mv(event.keyCode)&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;silver&quot;</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;yellow&quot;</span> <span class="attr">size</span>=<span class="string">&quot;100&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative&quot;</span> <span class="attr">id</span>=<span class="string">&quot;star&quot;</span>&gt;</span>*<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="handlebars"><span class="xml">document.body.innerHTML+=&quot;<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">yellow</span> <span class="attr">id</span>=<span class="string">aa</span> <span class="attr">style</span>=<span class="string">position:relative;left:0;top:0</span>&gt;</span>*<span class="tag">&lt;/<span class="name">font</span>&gt;</span>&quot;;</span></span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">mv</span>(<span class="params">cd</span>)</span>&#123;</span></span><br><span class="line">  kk(star.style.left-50,star.style.top-50);</span><br><span class="line"><span class="javascript">  <span class="keyword">if</span>(cd==<span class="number">100</span>) star.style.left=<span class="built_in">parseInt</span>(star.style.left+<span class="number">0</span>,<span class="number">10</span>)+<span class="number">50</span>+<span class="string">&quot;px&quot;</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span>(cd==<span class="number">97</span>) star.style.left=<span class="built_in">parseInt</span>(star.style.left+<span class="number">0</span>,<span class="number">10</span>)-<span class="number">50</span>+<span class="string">&quot;px&quot;</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span>(cd==<span class="number">119</span>) star.style.top=<span class="built_in">parseInt</span>(star.style.top+<span class="number">0</span>,<span class="number">10</span>)-<span class="number">50</span>+<span class="string">&quot;px&quot;</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span>(cd==<span class="number">115</span>) star.style.top=<span class="built_in">parseInt</span>(star.style.top+<span class="number">0</span>,<span class="number">10</span>)+<span class="number">50</span>+<span class="string">&quot;px&quot;</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">if</span>(cd==<span class="number">124</span>) location.href=<span class="built_in">String</span>.fromCharCode(cd)+<span class="string">&quot;.php&quot;</span>; <span class="comment">// do it!</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">kk</span>(<span class="params">x,y</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">  rndc=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">9000000</span>);</span></span><br><span class="line"><span class="handlebars"><span class="xml">  document.body.innerHTML+=&quot;<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#</span>&quot;+<span class="attr">rndc</span>+&quot; <span class="attr">id</span>=<span class="string">aa</span> <span class="attr">style</span>=<span class="string">position:relative;left:</span>&quot;+<span class="attr">x</span>+&quot;;<span class="attr">top:</span>&quot;+<span class="attr">y</span>+&quot; <span class="attr">onmouseover</span>=<span class="string">this.innerHTML</span>=<span class="string">&#x27;&#x27;</span>&gt;</span>*<span class="tag">&lt;/<span class="name">font</span>&gt;</span>&quot;;</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;yellow&quot;</span> <span class="attr">id</span>=<span class="string">&quot;aa&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;left:0;top:0&quot;</span>&gt;</span>*<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;#1134996&quot;</span> <span class="attr">id</span>=<span class="string">&quot;aa&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;left:1;top:1&quot;</span> <span class="attr">onmouseover</span>=<span class="string">&quot;this.innerHTML=&#x27;&#x27;&quot;</span>&gt;</span>*<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><p>코드를 보면 JS을 공부하였다면 알 수 있는 Body 속성에 정의된 이벤트 속성이 눈에 띌 것이다.</p><blockquote><p>onkeypress  이벤트 : 사용자가 키보드의 특정 키를 누를 때 발생하는 이벤트</p></blockquote><p>키보드를 부를때 마다 스크립트에 정의된 mv 함수가 실행이 된다.<br>인자값으로 event.keyCode를 넘겨준다는데 이를 <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode">KeyboardEvent.keyCode - Web APIs | MDN</a>에서 확인을 하였다.</p><p>읽어보면 디폴트로 입력된 키의 값을 아스키 코드로 변환한다고 한다.</p><blockquote><p>MDN에서 확인하니, onkeypress는 옛날에 손절한 함수이다. 그래서 최신버전 브라우저에선 페이지의 기능이 작동 안됨.</p></blockquote><p>mv 함수는 아스키 코드의 인자 값이 124와 같으면 Flag를 주는 것 같다.</p><p>아스키 코드의 124는 “|”를 뜻한다.</p><p><img src="/images/pasted-294.png"><br>페이지에서 “|”를 클릭하니, Flag를 얻을 수 있었다.</p><p>사실 더 손쉽게 푸는 방법이 있는데, mv함수를 복사하여 개발자 도구의 콘솔에 붙여놓기하여 인자값을 124를 넘겨주면 Flag를 얻을 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/04/Webhacking-kr-Old-16-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 실버 1316번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/03/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1316%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/03/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1316%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Mon, 03 May 2021 03:28:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;그룹-단어-체커&quot;&gt;&lt;a href=&quot;#그룹-단어-체커&quot; class=&quot;headerlink&quot; title=&quot;그룹 단어 체커&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1316&quot;&gt;그룹 단어 체커&lt;/a&gt;&lt;/h</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="그룹-단어-체커"><a href="#그룹-단어-체커" class="headerlink" title="그룹 단어 체커"></a><a href="https://www.acmicpc.net/problem/1316">그룹 단어 체커</a></h1><p>그룹 단어란 단어에 존재하는 모든 문자에 대해서, 각 문자가 연속해서 나타나는 경우만을 말한다. 예를 들면, ccazzzzbb는 c, a, z, b가 모두 연속해서 나타나고, kin도 k, i, n이 연속해서 나타나기 때문에 그룹 단어이지만, aabbbccb는 b가 떨어져서 나타나기 때문에 그룹 단어가 아니다.</p><p>단어 N개를 입력으로 받아 그룹 단어의 개수를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이-1"><a href="#문제-풀이-1" class="headerlink" title="문제 풀이 - 1"></a>문제 풀이 - 1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">groupWord</span>(<span class="params">word:<span class="built_in">str</span></span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(word)<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">2</span>, <span class="built_in">len</span>(word)):</span><br><span class="line">            <span class="keyword">if</span> word[i] == word[j]:</span><br><span class="line">                <span class="keyword">if</span> word[i] == word[j<span class="number">-1</span>]:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">test_case = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(test_case):</span><br><span class="line">    n = <span class="built_in">input</span>()</span><br><span class="line">    count += groupWord(n)</span><br><span class="line"></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>나는 0번째 ~ 5번째 자리수를 가진 문자열을 입력했을 때, 0번째랑 2번째 문자를 비교를 하여 같으면 0를 리턴하였다.<br>하지만 1번째 문자랑 같으면 0-1-2번째 문자는 같은거니 반복문을 계속 실행하였다.</p><p>반복문이 끝날 때까지 0번째 문자와 2번째 문자가 같으나, 1번째 문자랑 같지 않은 상황이 나타나지 않으면 1를 리턴하였다.</p><h2 id="문제-풀이-2"><a href="#문제-풀이-2" class="headerlink" title="문제 풀이 - 2"></a>문제 풀이 - 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(<span class="built_in">input</span>())):</span><br><span class="line">    word = <span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">list</span>(word) == <span class="built_in">sorted</span>(word, key=word.find):</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명-1"><a href="#풀이-설명-1" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>풀이 - 1를 후, 다른 사람의 코드를 살펴보니 새로운 것을 배울 수 있었다.<br><code>sorted(word, key=word.find)</code>로 정렬을 시키면, sorted는 정렬 대상인 아이템을 리스트에서 찾아서 있으면 대상인 아이템의 옆으로 옮긴다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = abcabc</span><br><span class="line">print(<span class="built_in">sorted</span>(n, key=n.find))</span><br></pre></td></tr></table></figure><figure class="highlight zsh"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br></pre></td></tr></table></figure><p>위와 같이 설명한 대로 정렬이 되는 모습이다.</p><p>만약 정력 대상인 아이템의 옆이 아닌 다른 곳에 위치한 값이 없다면 리스트는 정렬되지 않고, 그대로 나온다.</p><p>이 기능을 이용하여 리스트화된 n과 sorted 값이 다르면 그건 그룹 문자가 아닌 것을 알 수 있다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%845/">백준 실버5</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/03/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1316%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 14 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/03/Webhacking-kr-Old-14-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/03/Webhacking-kr-Old-14-Write-Up/</guid>
+      <pubDate>Mon, 03 May 2021 02:41:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-14"><a href="#Old-14" class="headerlink" title="Old - 14"></a>Old - 14</h2><p><img src="/images/pasted-290.png"><br>Input form이 하나 있는 것을 볼 수 있다.</p><p>어떤 기능을 하는지 확인을 하기 위해 개발자 도구를 이용하여 코드를 살펴보았다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">&quot;pw&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;input_pwd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;check&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;ck()&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">ck</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> ul=<span class="built_in">document</span>.URL;</span></span><br><span class="line"><span class="javascript">  ul=ul.indexOf(<span class="string">&quot;.kr&quot;</span>);</span></span><br><span class="line">  ul=ul*30;</span><br><span class="line"><span class="javascript">  <span class="function"><span class="title">if</span>(<span class="params">ul==pw.input_pwd.value</span>)</span> &#123; location.href=<span class="string">&quot;?&quot;</span>+ul*pw.input_pwd.value; &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">else</span> &#123; alert(<span class="string">&quot;Wrong&quot;</span>); &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><p>살펴보니, check 버튼을 클릭하면 스크립트 안에 있는 함수가 실행된다.<br>함수는 해당 사이트의 URL를 변수 ul에 집어 넣고,  “.kr”이 시작되는 인덱스를 다시 변수 ul에 삽입한다.<br>삽입된 인덱스는 30을 곱하여 실질적인 조건 값으로 사용한다.</p><p>문제를 해결하기 위해선 저 조건 값을 구하여 Input form에 똑같은 값을 넣어서 조건문을 실행시켜야 Flag를 얻을 수 있다.</p><p>하지만 직접적으로 구할 필요는 없다.<br>왜냐하면, 해당 코드는 우리한테 있고 우린 그 코드를 복사하여 브라우저의 개발자 도구 안에 있는 콘솔에 실행하면 값을 얻을 수 있다.</p><p>아니면 URL의 개수를 “.kr”이 시작되는 지점까지 하나하나 세어본 값을 30 곱하면 된다.<br>해보니 18이 나왔고, 30을 곱하니 540이 나왔다.</p><p><img src="/images/pasted-291.png"><br>개발자 도구의 콘솔로 구할거면 이렇게 코드를 넣으면 값이 출력된다.</p><p><img src="/images/pasted-292.png"><br>540을 Input form에 넣으니 정답으로 처리가 되었다.</p><p>이 문제는 기초적인 JS을 물어보는 문제인 것으로 추측된다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/03/Webhacking-kr-Old-14-Write-Up/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 실버 2941번 문제</title>
@@ -491,134 +615,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-3052%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2675번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2675%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2675%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 20 Apr 2021 05:19:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;문자열-반복&quot;&gt;&lt;a href=&quot;#문자열-반복&quot; class=&quot;headerlink&quot; title=&quot;문자열 반복&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2675&quot;&gt;문자열 반복&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;문자열</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="문자열-반복"><a href="#문자열-반복" class="headerlink" title="문자열 반복"></a><a href="https://www.acmicpc.net/problem/2675">문자열 반복</a></h1><p>문자열 S를 입력받은 후에, 각 문자를 R번 반복해 새 문자열 P를 만든 후 출력하는 프로그램을 작성하시오. 즉, 첫 번째 문자를 R번 반복하고, 두 번째 문자를 R번 반복하는 식으로 P를 만들면 된다. S에는 QR Code “alphanumeric” 문자만 들어있다.</p><p>QR Code “alphanumeric” 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ$%*+-./: 이다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">T = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(T):</span><br><span class="line">    R, S = <span class="built_in">input</span>().split()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> S:</span><br><span class="line">        print(<span class="built_in">int</span>(R) * i, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure><h3 id="문제-풀이-1"><a href="#문제-풀이-1" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>마지막 print 함수를 사용하여 결과를 출력 후 줄 바꿈을 해줘야 정답으로 인정 받는다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2675%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 10809번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10809%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10809%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 20 Apr 2021 05:12:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;알파벳-찾기&quot;&gt;&lt;a href=&quot;#알파벳-찾기&quot; class=&quot;headerlink&quot; title=&quot;알파벳 찾기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/10809&quot;&gt;알파벳 찾기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;알파</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="알파벳-찾기"><a href="#알파벳-찾기" class="headerlink" title="알파벳 찾기"></a><a href="https://www.acmicpc.net/problem/10809">알파벳 찾기</a></h1><p>알파벳 소문자로만 이루어진 단어 S가 주어진다. 각각의 알파벳에 대해서, 단어에 포함되어 있는 경우에는 처음 등장하는 위치를, 포함되어 있지 않은 경우에는 -1을 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> ascii_lowercase</span><br><span class="line">lower = ascii_lowercase</span><br><span class="line">S = <span class="built_in">input</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> lower:</span><br><span class="line">    print(S.find(i), end=<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>find 함수는 리스트의 아이템 인덱스를 리턴하는 함수이다. 만약 리스트에 없다면 -1를 리턴을 한다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/20/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-10809%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 1152번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1152%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1152%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 19 Apr 2021 03:47:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;단어의-개수&quot;&gt;&lt;a href=&quot;#단어의-개수&quot; class=&quot;headerlink&quot; title=&quot;단어의 개수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1152&quot;&gt;단어의 개수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;영어 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="단어의-개수"><a href="#단어의-개수" class="headerlink" title="단어의 개수"></a><a href="https://www.acmicpc.net/problem/1152">단어의 개수</a></h1><p>영어 대소문자와 띄어쓰기만으로 이루어진 문자열이 주어진다. 이 문자열에는 몇 개의 단어가 있을까? 이를 구하는 프로그램을 작성하시오. 단, 한 단어가 여러 번 등장하면 등장한 횟수만큼 모두 세어야 한다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">input</span>().split()</span><br><span class="line">print(<span class="built_in">len</span>(n))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문장을 띄어쓰기로 나눠서 총 갯수를 구하라는 문제이다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1152%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2562번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2562%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2562%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 19 Apr 2021 03:40:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;최댓값&quot;&gt;&lt;a href=&quot;#최댓값&quot; class=&quot;headerlink&quot; title=&quot;최댓값&quot;&gt;&lt;/a&gt;&lt;a href=&quot;acmicpc.net/problem/2562&quot;&gt;최댓값&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;9개의 서로 다른 자연수가 주어질 때, 이들 중 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="최댓값"><a href="#최댓값" class="headerlink" title="최댓값"></a><a href="acmicpc.net/problem/2562">최댓값</a></h1><p>9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오.</p><p>예를 들어, 서로 다른 9개의 자연수</p><p>3, 29, 38, 12, 57, 74, 40, 85, 61</p><p>이 주어지면, 이들 중 최댓값은 85이고, 이 값은 8번째 수이다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n = [<span class="built_in">int</span>(<span class="built_in">input</span>()) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>)]</span><br><span class="line">print(<span class="string">f&#x27;<span class="subst">&#123;<span class="built_in">max</span>(n)&#125;</span>\n<span class="subst">&#123;n.index(<span class="built_in">max</span>(n))+<span class="number">1</span>&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>max 함수와 index 함수를 알고 있으면 쉽게 풀 수 있다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/19/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2562%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
