@@ -9,8 +9,102 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Sun, 09 May 2021 05:34:01 GMT</pubDate>
+    <pubDate>Mon, 10 May 2021 19:04:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Webhacking.kr Old - 19 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-19-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-19-Write-Up/</guid>
+      <pubDate>Mon, 10 May 2021 10:00:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-19"><a href="#Old-19" class="headerlink" title="Old - 19"></a>Old - 19</h2><p><img src="/images/pasted-319.png"><br>문제 페이지에 들어가니, 이상한 input이 있었다.</p><p>코드에 스크립트나 주석에 힌트가 있는지, 쿠키가 있는지 확인을 해보았다.<br><br>하지만 별다른 것은 없었고, 일단 제출 버튼을 클릭하여 서버에 값을 보내봤다.</p><p><img src="/images/pasted-320.png"><br>어드민이 아니라는 글이 출력되고, 몇 초뒤에 처음봤던 페이지로 이동하였다.</p><p>값이 admin이 아닌 값을 보내면 어떻게 작동하는지 확인해보았다.</p><p><img src="/images/pasted-321.png"><br>서버에 a를 보냈더니, a로 로그인이 되었다.<br><br>그 이후에는 아무 반응이 없어서 코드와 쿠키를 확인해보았는데, userid라는 쿠키가 생성이 되었다.</p><p><img src="/images/pasted-322.png"><br>값을 보니, 맨 뒤에 ::= (%3D)::가 있는 것으로 보아 base64로 인코딩되어있다고 판단하였다.</p><p><img src="/images/pasted-323.png"><br>Base64 디코딩된 값인데, 뭔가 더 인코딩이 되어있는 것으로 보인다.</p><p>해당 값의 길이가 32글자로, MD5로 해쉬가 된 것으로 판단하여 한번 확인을 해보았다.</p><p><img src="/images/pasted-324.png"><br>a을 md5로 인코딩했을 때 나온 값이랑 동일한것을 확인 할 수 있었다.</p><p><img src="/images/pasted-325.png"><br>나는 admin으로 로그인하기 위해 admin를 md5으로 해쉬화 후 base64로 인코딩한 값을 쿠키에 넣어봤지만, error를 반환받았다.</p><p>분명 인코딩과 해쉬도 맞았는데 뭐지 싶어서 admi를 서버로 보내서 쿠키를 확인해보았다.</p><p><img src="/images/pasted-326.png"><br>엄청 긴 값이 나와서 좀 당황을 했다.<br><br>값을 확인하기 위해 base64 디코딩을 진행하였다.</p><p><img src="/images/pasted-327.png"><br>값을 보니, a의 md5값이 맨 앞에 있는 것을 확인할 수 있었다.<br><br>알파벳 하나하나 md5로 해쉬화 후 합쳐서 base64 인코딩한 것으로 알 수 있었다.</p><p>나는 n의 md5 값을 뒤에 붙인 후 base64 인코딩을 하여 쿠키에 넣어서 페이지를 재로딩하였다.</p><p><img src="/images/pasted-328.png"><br>그 결과 Flag를 획득하였다.</p><p>내가 문자열 길이를 보고 MD5로 판단할 수 있던 이유는 각 해쉬가 출력하는 문자의 길이가 정해져있기 때문이다.</p><p><strong>1. MD5</strong></p><ul><li>MD5 출력값 길이 : 128bit (16진수로 32byte)</li></ul><p><strong>2. SHA-1</strong></p><ul><li>SHA-1 출력값 길이 : 160bit (16진수로 40byte)</li></ul><p><strong>3. SHA-256</strong></p><ul><li>SHA-256 출력값 길이 : 256bit (16진수로 64byte)</li></ul><p><strong>4. SHA-512</strong></p><ul><li>SHA-512 출력값 길이 : 512bit (16진수로 128byte)</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-19-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 실버 2581번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/10/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-2581%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/10/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-2581%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Mon, 10 May 2021 06:57:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;소수&quot;&gt;&lt;a href=&quot;#소수&quot; class=&quot;headerlink&quot; title=&quot;소수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2581&quot;&gt;소수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;자연수 M과 N이 주어질 때 M이상</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="소수"><a href="#소수" class="headerlink" title="소수"></a><a href="https://www.acmicpc.net/problem/2581">소수</a></h1><p>자연수 M과 N이 주어질 때 M이상 N이하의 자연수 중 소수인 것을 모두 골라 이들 소수의 합과 최솟값을 찾는 프로그램을 작성하시오.</p><p>예를 들어 M=60, N=100인 경우 60이상 100이하의 자연수 중 소수는 61, 67, 71, 73, 79, 83, 89, 97 총 8개가 있으므로, 이들 소수의 합은 620이고, 최솟값은 61이 된다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primeNumber</span>(<span class="params">start:<span class="built_in">int</span>, end:<span class="built_in">int</span></span>):</span></span><br><span class="line">    prime_number_list = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n, m + <span class="number">1</span>):</span><br><span class="line">        check = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, i):</span><br><span class="line">                <span class="keyword">if</span> i % j == <span class="number">0</span>:</span><br><span class="line">                    check = <span class="literal">False</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> check == <span class="literal">True</span>:</span><br><span class="line">                prime_number_list.append(i)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> prime_number_list</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n, m = <span class="built_in">int</span>(<span class="built_in">input</span>()), <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    prime_number_list = primeNumber(n, m)</span><br><span class="line">    print(<span class="string">f&#x27;<span class="subst">&#123;<span class="built_in">sum</span>(prime_number_list)&#125;</span>\n<span class="subst">&#123;prime_number_list[<span class="number">0</span>]&#125;</span>&#x27;</span> <span class="keyword">if</span> <span class="built_in">len</span>(prime_number_list) != <span class="number">0</span> <span class="keyword">else</span> <span class="number">-1</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>1978번 문제에서 정의한 primeNumber 함수를 조금 수정하여 풀이를 하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%845/">백준 실버5</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/10/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-2581%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 실버 1978번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/09/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1978%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/09/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1978%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sun, 09 May 2021 07:16:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;소수-찾기&quot;&gt;&lt;a href=&quot;#소수-찾기&quot; class=&quot;headerlink&quot; title=&quot;소수 찾기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1978&quot;&gt;소수 찾기&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;주어진 수 N</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="소수-찾기"><a href="#소수-찾기" class="headerlink" title="소수 찾기"></a><a href="https://www.acmicpc.net/problem/1978">소수 찾기</a></h1><p>주어진 수 N개 중에서 소수가 몇 개인지 찾아서 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primeNumber</span>(<span class="params">count</span>):</span></span><br><span class="line">    primeNumberList = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, count + <span class="number">2</span>):</span><br><span class="line">        check = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, i):</span><br><span class="line">            <span class="keyword">if</span> i % j == <span class="number">0</span>:</span><br><span class="line">                check = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> check:</span><br><span class="line">            primeNumberList.append(i)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> primeNumberList</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    m = [*<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())][:n]</span><br><span class="line">    compareNumList = primeNumber(<span class="built_in">max</span>(m))</span><br><span class="line"></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> m:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> compareNumList:</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">    print(count)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>수의 개수만큼 소수를 구하여 비교하여 카운팅하였다.</p><p>소수 구하는 방법은 2부터 n+2까지 반복하여, 2부터 자기 자신의 전까지 나눈 나머지가 0이 안나오면 소수로 판별하여 소수 리스트에 추가하는 방식으로 구하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%844/">백준 실버4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/09/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1978%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Webhacking.kr Old - 54 Write Up</title>
@@ -517,92 +611,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/04/29/test/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 1065번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/29/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1065/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/29/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1065/</guid>
-      <pubDate>Thu, 29 Apr 2021 15:07:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;한수&quot;&gt;&lt;a href=&quot;#한수&quot; class=&quot;headerlink&quot; title=&quot;한수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://acmicpc.net/problem/1065&quot;&gt;한수&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;어떤 양의 정수 X의 각 자리가 등차수열을</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="한수"><a href="#한수" class="headerlink" title="한수"></a><a href="https://acmicpc.net/problem/1065">한수</a></h1><p>어떤 양의 정수 X의 각 자리가 등차수열을 이룬다면, 그 수를 한수라고 한다. 등차수열은 연속된 두 개의 수의 차이가 일정한 수열을 말한다. N이 주어졌을 때, 1보다 크거나 같고, N보다 작거나 같은 한수의 개수를 출력하는 프로그램을 작성하시오. </p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">oneNum</span>(<span class="params">num:<span class="built_in">list</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> num[<span class="number">2</span>] - num[<span class="number">1</span>] == num[<span class="number">1</span>] - num[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> n &lt; <span class="number">100</span>:</span><br><span class="line">    print(n)</span><br><span class="line">    quit()</span><br><span class="line"></span><br><span class="line">count = <span class="number">99</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>, n+<span class="number">1</span>):</span><br><span class="line">    m = [ *<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(i)) ]</span><br><span class="line">    <span class="keyword">if</span> oneNum(m) == <span class="literal">True</span>:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제의 유형이 함수로 푸는 것이라 일부러 함수를 만들어서 풀이를 하였다.</p><p>문제는 1부터 입력된 수까지 반복문으로 한수를 찾는 것이다.<br>일단 한수의 정의는 두 개의 수의 차이가 일정한 수열이라고 했는데 이것은 100 이하의 수는 한수라는 것으로 볼 수 있다.</p><p>3자리부터는 각 자리에 맞쳐서 계산하면 된다.</p><p>ex). 321 -&gt; 3-2 == 2-1</p><p>이 계산을 oneNum이라는 함수로 지정하여 한수인지 아닌지 결과 값을 반환하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%844/">백준 실버4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/29/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1065/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 4673번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/28/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-4673%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/28/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-4673%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Wed, 28 Apr 2021 18:58:50 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;셀프-넘버&quot;&gt;&lt;a href=&quot;#셀프-넘버&quot; class=&quot;headerlink&quot; title=&quot;셀프 넘버&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/4673&quot;&gt;셀프 넘버&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;셀프 넘버는 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="셀프-넘버"><a href="#셀프-넘버" class="headerlink" title="셀프 넘버"></a><a href="https://www.acmicpc.net/problem/4673">셀프 넘버</a></h1><p>셀프 넘버는 1949년 인도 수학자 D.R. Kaprekar가 이름 붙였다. 양의 정수 n에 대해서 d(n)을 n과 n의 각 자리수를 더하는 함수라고 정의하자. 예를 들어, d(75) = 75+7+5 = 87이다.</p><p>양의 정수 n이 주어졌을 때, 이 수를 시작해서 n, d(n), d(d(n)), d(d(d(n))), …과 같은 무한 수열을 만들 수 있다. </p><p>예를 들어, 33으로 시작한다면 다음 수는 33 + 3 + 3 = 39이고, 그 다음 수는 39 + 3 + 9 = 51, 다음 수는 51 + 5 + 1 = 57이다. 이런식으로 다음과 같은 수열을 만들 수 있다.</p><p>33, 39, 51, 57, 69, 84, 96, 111, 114, 120, 123, 129, 141, …</p><p>n을 d(n)의 생성자라고 한다. 위의 수열에서 33은 39의 생성자이고, 39는 51의 생성자, 51은 57의 생성자이다. 생성자가 한 개보다 많은 경우도 있다. 예를 들어, 101은 생성자가 2개(91과 100) 있다. </p><p>생성자가 없는 숫자를 셀프 넘버라고 한다. 100보다 작은 셀프 넘버는 총 13개가 있다. 1, 3, 5, 7, 9, 20, 31, 42, 53, 64, 75, 86, 97</p><p>10000보다 작거나 같은 셀프 넘버를 한 줄에 하나씩 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">notSelfNum</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">return</span> n + <span class="built_in">sum</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(n)))</span><br><span class="line"></span><br><span class="line">not_self_num_list = <span class="built_in">set</span>([notSelfNum(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10001</span>)])</span><br><span class="line">print(*<span class="built_in">sorted</span>(<span class="built_in">set</span>([j <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10001</span>)]).difference(not_self_num_list)))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>문제 해석을 하자면, n과 n의 각 자리수를 더하는 값이 아닌 값들을 셀프 넘버라고 함.<br>이 셀프 넘버를 1부터 10000까지의 범위 내에서 모두 출력하라는 문제이다.</p><p>나는 셀프 번호가 아닌 값들을 구하기 위해 함수를 하나 선언하였다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">notSelfNum</span>(<span class="params">n</span>):</span></span><br><span class="line">  <span class="keyword">return</span> n + <span class="built_in">sum</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(n))</span><br></pre></td></tr></table></figure><p>이 함수는 양의 정수를 인자로 받아서 각 자리수의 더한 후 자기 자신을 더하는 값을 리턴하는 함수이다.</p><p>이 함수를 1 ~ 10000를 넣어서 리스트로 만들었다.</p><p>그 후 set을 통해 집합으로 변환하여 difference 함수를 이용하여 1 ~ 10000까지 들어있는 집합과 차집합을 하여 정렬 후 출력하였다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/28/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-4673%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 4344번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-4344%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-4344%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Mon, 26 Apr 2021 20:04:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;평균은-넘겠지&quot;&gt;&lt;a href=&quot;#평균은-넘겠지&quot; class=&quot;headerlink&quot; title=&quot;평균은 넘겠지&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/4344&quot;&gt;평균은 넘겠지&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="평균은-넘겠지"><a href="#평균은-넘겠지" class="headerlink" title="평균은 넘겠지"></a><a href="https://www.acmicpc.net/problem/4344">평균은 넘겠지</a></h1><p>대학생 새내기들의 90%는 자신이 반에서 평균은 넘는다고 생각한다. 당신은 그들에게 슬픈 진실을 알려줘야 한다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    m = [*<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())]</span><br><span class="line">    avg = <span class="built_in">sum</span>(m[<span class="number">1</span>:])/m[<span class="number">0</span>]</span><br><span class="line">    cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> score <span class="keyword">in</span> m[<span class="number">1</span>:]:</span><br><span class="line">        <span class="keyword">if</span> score &gt; avg:</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line">    rate = cnt/m[<span class="number">0</span>] * <span class="number">100</span></span><br><span class="line">    print(<span class="string">f&#x27;<span class="subst">&#123;rate:<span class="number">.3</span>f&#125;</span>%&#x27;</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>나의 큰 문제는 문제 해석을 대충한다는 것이다.</p><p>이번에도 문제를 대충 읽고, 코딩을 하여 다시 문제를 보고 코딩을 하는 불상사가 일어났다.</p><p>문제 케이스를 입력 후 케이스별로 평균을 구하여, 그 평균의 이상인 사람의 비율을 구하라는 문제이다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%881/">백준 브론즈1</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/26/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-4344%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
