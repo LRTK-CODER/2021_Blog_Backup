@@ -9,8 +9,100 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 10 May 2021 19:04:08 GMT</pubDate>
+    <pubDate>Tue, 11 May 2021 20:23:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 실버 11653번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/11/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11653%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/11/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11653%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Tue, 11 May 2021 10:44:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;소인수분해&quot;&gt;&lt;a href=&quot;#소인수분해&quot; class=&quot;headerlink&quot; title=&quot;소인수분해&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11653&quot;&gt;소인수분해&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;정수 N이 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="소인수분해"><a href="#소인수분해" class="headerlink" title="소인수분해"></a><a href="https://www.acmicpc.net/problem/11653">소인수분해</a></h1><p>정수 N이 주어졌을 때, 소인수분해하는 프로그램을 작성하시오.</p><h2 id="문제-풀이-1"><a href="#문제-풀이-1" class="headerlink" title="문제 풀이 - 1"></a>문제 풀이 - 1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> n != <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">            print(i)</span><br><span class="line">            n = n//i</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>풀긴 했으나, 성능이 너무 안 좋아서, 좀 더 효율적으로 변경을 해야한다.</p><p>현재 이 코드의 시간 복잡도는 O(n^2)이다.<br><br>이 때문에 체점 시간이 1060ms이라는 엄청난 결과를 얻을 수 있었다.</p><h2 id="문제-풀이-2"><a href="#문제-풀이-2" class="headerlink" title="문제 풀이 - 2"></a>문제 풀이 - 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">i = <span class="number">2</span></span><br><span class="line"><span class="keyword">while</span> n != <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">        n = n//i</span><br><span class="line">        print(i)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">        </span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure><h3 id="풀이-설명-1"><a href="#풀이-설명-1" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>O(n)으로 변경하여 체점하였지만, 오히려 시간이 증가하였다…<br><br>수학에 기초가 부족한 나에겐 하루종일 걸릴거 같아서 다른 사람의 풀이를 참고하였다.</p><h2 id="문제-풀이-3"><a href="#문제-풀이-3" class="headerlink" title="문제 풀이 - 3"></a>문제 풀이 - 3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">r = <span class="built_in">int</span>(n ** <span class="number">0.5</span>)</span><br><span class="line">i = <span class="number">2</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= r:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> n % i:</span><br><span class="line">        n //= i</span><br><span class="line">        print(i)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> n &gt; <span class="number">1</span>:</span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명-2"><a href="#풀이-설명-2" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>다른 분들은 루트의 근사값을 이용하여 반복 횟수를 줄임으로써 시간을 절약하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%844/">백준 실버4</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/11/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11653%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 32 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/11/Webhacking-kr-Old-32-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/11/Webhacking-kr-Old-32-Write-Up/</guid>
+      <pubDate>Tue, 11 May 2021 02:54:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-32"><a href="#Old-32" class="headerlink" title="Old - 32"></a>Old - 32</h2><p><img src="/images/pasted-338.png"><br>랭킹 게시판이 문제로 나왔다. 이게 무슨 기능을 하는지 몰라서 일단 개발자 도구로 코드를 살펴보았다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">onmouseover</span>=<span class="string">&quot;this.style.background=&#x27;gray&#x27;&quot;</span> <span class="attr">onmouseout</span>=<span class="string">&quot;this.style.background=&#x27;black&#x27;&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;location.href=&#x27;?hit=hyes4167&#x27;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;background: black;&quot;</span>&gt;</span>....<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br></pre></td></tr></table></figure><p>랭크에 나온 사용자를 클릭하면, <code>?hit=hyes4167</code>와 같이 사용자 이름을 파라미터 값으로 서버에 넘겨주고 있다.<br><br>어떤 기능인지 확인하기 위해 클릭을 했더니, 페이지가 다시 랭킹 게시판으로 넘어오고, hyes4167의 Hit 값이 증가가 되었다.</p><p>이것을 통해 난 Hit 점수를 100까지 올려야한다는 것을 느낌적으로 알아챌 수 있었다.</p><p>그래서 Hit 값을 올리기 위해 한번 클릭하니,<br><img src="/images/pasted-339.png"><br>투표를 이미 했다는 Alert창이 띄어졌다.</p><p>그래서 투표를 했는지 안했는지를 구분하기 위해 쿠키에 값을 넣었을 것 같아서 쿠키를 확인하였다.</p><p><img src="/images/pasted-340.png"><br>예상대로, 쿠키에 투표 값이 있었다.</p><p>나는 쿠키를 삭제하여, 페이지에 다시 들어가서 초기에 쿠키값이 어땠는지를 확인하였다.<br><br>확인한 결과 초기에는 쿠키가 없었다. 즉, 투표 후 쿠키가 생긴다는 것을 알 수 있었다.</p><p>난 이점을 이용하여, Hit 값을 100까지 올리는 작업을 하였다.</p><p><img src="/images/pasted-341.png"><br>파이썬으로 만들기 귀찮아서 Burp Suite의 Repeater을 이용하여 서버에 계속 hyes4167에게 투표한다는 트래픽을 반복적으로 보냈다.</p><p><img src="/images/pasted-342.png"><br>그 결과 어떠한 반응이 없었다.</p><p>뭔가가 더 있나 생각을 해보니, “왜 나는 나를 투표를 안하고 다른 사람을 투표를 했을까”라는 생각을 하게 되었다.</p><p>그래서 보내는 파라미터 값을 lrtk으로 변경하여 보내봤다.</p><p><img src="/images/pasted-343.png"><br>그랬더니, 맨 밑에 내 이름이 생성이 되었다.</p><p>이 방법이 맞는거 같아서 hit 값을 100까지 올렸다.</p><p><img src="/images/pasted-344.png"><br>그 결과 Flag를 획득할 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/11/Webhacking-kr-Old-32-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 27 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-27-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-27-Write-Up/</guid>
+      <pubDate>Mon, 10 May 2021 17:49:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-27"><a href="#Old-27" class="headerlink" title="Old - 27"></a>Old - 27</h2><p><img src="/images/pasted-329.png"><br>SQL Injection 문제인 듯하다.<br><br>소스코드를 주는 거 보니, 입력값에 대한 처리가 있는 기능이 있을 거라 추측된다.</p><p>코드를 확인해보니, 18번 문제와 비슷한 코드가 있었다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_GET[‘no’])&#123;</span><br><span class="line">  $db = dbconnect();</span><br><span class="line">  <span class="keyword">if</span>(preg_match(“/<span class="comment">#|select|\(| |limit|=|0x/I”, $_GET[‘no’])) exit(“no hack”);</span></span><br><span class="line">  $r=mysqli_fetch_array(mysqli_query($db,”select id <span class="keyword">from</span> chall27 where id=‘guest’ <span class="keyword">and</span> no=(&#123;$_GET[‘no’]&#125;)”)) <span class="keyword">or</span> <span class="keyword">die</span>(“query <span class="built_in">error</span>”);</span><br><span class="line">  <span class="keyword">if</span>($r[‘id’]==“guest”) <span class="keyword">echo</span>(“guest”);</span><br><span class="line">  <span class="keyword">if</span>($r[‘id’]==“admin”) solve(<span class="number">27</span>); <span class="comment">// admin’s no = 2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>입력값을 preg_match로 필터를 걸었다. 해당 필터에 걸리면 no hack이라는 문구가 출력이 된다.<br><br>거르려는 문자열은 <code>#, select, \), 스페이스, limit, =, 0x</code>가 있다.</p><p>위 문자열이 없으면, 쿼리문에 들어가기 되는데, 쿼리문은 <code>or die</code>라는 예외처리로 쿼리에 에러가 일어나면 query error가 출력된다.</p><p>나는 위 코드들을 좀 더 분석하기 좋게 따로 빼내서 작성하였다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$stdin = fopen(<span class="string">&#x27;php://stdin&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">$input = trim(fread($stdin, <span class="number">1024</span>));</span><br><span class="line">fclose($stdin);</span><br><span class="line"></span><br><span class="line">$match = preg_match(<span class="string">&quot;/#|select|\(| |limit|=|0x/i&quot;</span>, $input);</span><br><span class="line"><span class="keyword">if</span> ($match == <span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Nop!!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;select id from chall27 where id=&#x27;guest&#x27; and no=(<span class="subst">&#123;$input&#125;</span>) &quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>preg_match에 걸리면, Nop!!을 출력하게 해주었고, 쿼리문을 분석하기 좋게 출력하였다.</p><p>내가 1을 입력하면, </p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">select id from chall27 <span class="built_in">where</span> id=<span class="string">&#x27;guest&#x27;</span> and no=(1)</span><br></pre></td></tr></table></figure><p>로 출력된다.</p><p><img src="/images/pasted-330.png"><br>실제 페이지에선 1을 넣고 서버에 보내보니, guest로 로그인을 하였다.</p><p>실제 코드의 주석엔 admin의 no 값은 2라고 표시 되어있다.</p><p>18번 문제처럼, where절에 <code>id=&#39;guest&#39;</code>로 되어있어서 2을 넣으면 False가 되기 때문에 쿼리문은 작동이 안된다.<br><br>그렇기 때문에 <code>no=3 or no=2</code>로 False or True로 True의 값을 만들어서 admin를 출력해야하지만, no의 값은 ()로 묶어져 있기 때문에 우회 방법을 찾아야 한다.</p><p>나는 <code>3) or no=2--</code>를 생각을 했지만, preg_match에 스페이스와 =이 걸리기 때문에 Nop!!이 출력이 되었다.</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3) or no=2--</span><br><span class="line">Nop!!select id from chall27 <span class="built_in">where</span> id=<span class="string">&#x27;guest&#x27;</span> and no=(3) or no=2--)</span><br></pre></td></tr></table></figure><p>그래서 문제 18번처럼 스페이스를 %09로 우회하였고, =는 SQL 쿼리인 like로 우회하였다.</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3)%09or%09no%09like%092--</span><br><span class="line">select id from chall27 <span class="built_in">where</span> id=<span class="string">&#x27;guest&#x27;</span> and no=(3)%09or%09no%09like%092--)</span><br></pre></td></tr></table></figure><p>그 결과 preg_match에 걸리지 않고 그대로 출력되는 것을 볼 수 있었다.</p><p><img src="/images/pasted-331.png"><br>하지만, 페이지에서 query error가 발생하였고, 쿼리문에는 문제가 없다고 생각이 들어서 직접 Mysql에 쿼리를 시험해보았다.</p><p><img src="/images/pasted-332.png"><br>Mysql는 18번 문제에서 만들었던 것을 재사용하였다.</p><p><img src="/images/pasted-333.png"><br><img src="/images/pasted-334.png"><br>위 SQL를 실행해보니, <code>--)</code>에서 에러가 발생된 것을 발견할 수 있었다.</p><p>그래서 스페이스로 )를 분리하여 <code>-- )</code>로 만들어서 쿼리를 실행하니, 에러가 발생되지 않고, admin이 출력되었다.</p><p><img src="/images/pasted-335.png"><br><img src="/images/pasted-336.png"></p><p>위 SQL 쿼리를 사이트에 넣어보겠다.</p><p><img src="/images/pasted-337.png"><br>Flag를 획득하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-27-Write-Up/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Webhacking.kr Old - 19 Write Up</title>
@@ -525,92 +617,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/02/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-2941%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 6 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/01/Webhacking-kr-Old-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/01/Webhacking-kr-Old-Write-Up/</guid>
-      <pubDate>Sat, 01 May 2021 15:38:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-6"><a href="#Old-6" class="headerlink" title="Old - 6"></a>Old - 6</h2><p><img src="/images/pasted-287.png"><br>문제 페이지에 접속을 하면 ID와 PW가 보이고, 가장 눈에 띄는 것이 view-source가 눈에 보인다.</p><p>View-source를 클릭하여 코드를 살펴보니, 쿠키 관련 코드가 있었다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!$_COOKIE[<span class="string">&#x27;user&#x27;</span>])&#123;</span><br><span class="line">  $val_id=<span class="string">&quot;guest&quot;</span>;</span><br><span class="line">  $val_pw=<span class="string">&quot;123qwe&quot;</span>;</span><br><span class="line">  <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;<span class="number">20</span>;$i++)&#123;</span><br><span class="line">    $val_id=base64_encode($val_id);</span><br><span class="line">    $val_pw=base64_encode($val_pw);</span><br><span class="line">  &#125;</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;!&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;@&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;$&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;4&quot;</span>,<span class="string">&quot;^&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;5&quot;</span>,<span class="string">&quot;&amp;&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;6&quot;</span>,<span class="string">&quot;*&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;7&quot;</span>,<span class="string">&quot;(&quot;</span>,$val_id);</span><br><span class="line">  $val_id=str_replace(<span class="string">&quot;8&quot;</span>,<span class="string">&quot;)&quot;</span>,$val_id);</span><br><span class="line"></span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;!&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;@&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;$&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;4&quot;</span>,<span class="string">&quot;^&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;5&quot;</span>,<span class="string">&quot;&amp;&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;6&quot;</span>,<span class="string">&quot;*&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;7&quot;</span>,<span class="string">&quot;(&quot;</span>,$val_pw);</span><br><span class="line">  $val_pw=str_replace(<span class="string">&quot;8&quot;</span>,<span class="string">&quot;)&quot;</span>,$val_pw);</span><br><span class="line"></span><br><span class="line">  Setcookie(<span class="string">&quot;user&quot;</span>,$val_id,time()+<span class="number">86400</span>,<span class="string">&quot;/challenge/web-06/&quot;</span>);</span><br><span class="line">  Setcookie(<span class="string">&quot;password&quot;</span>,$val_pw,time()+<span class="number">86400</span>,<span class="string">&quot;/challenge/web-06/&quot;</span>);</span><br></pre></td></tr></table></figure><p>위 코드는 guest와 123qwe를 20번 반복하여 Base64로 인코딩하여 나온 값을 1를 !로, 2를 @으로 변경하라는 코드가 들어있다.<br>그 후, Setcookie 함수로 결과 값으로 나온 Base64 값을 각각 user와 password 라는 이름을 가진 쿠키로 지정하였다.</p><p>그 뒤로 나온 코드는 Flag를 찾을 수 있는 방법이 나온 코드였다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">$decode_id=$_COOKIE[‘user’];</span><br><span class="line">$decode_pw=$_COOKIE[‘password’];</span><br><span class="line"></span><br><span class="line">$decode_id=str_replace(“!”,”<span class="number">1</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“@“,”<span class="number">2</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“$”,”<span class="number">3</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“^”,”<span class="number">4</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“&amp;”,”<span class="number">5</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“*”,”<span class="number">6</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“(“,”<span class="number">7</span>”,$decode_id);</span><br><span class="line">$decode_id=str_replace(“)”,”<span class="number">8</span>”,$decode_id);</span><br><span class="line"></span><br><span class="line">$decode_pw=str_replace(“!”,”<span class="number">1</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“@“,”<span class="number">2</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“$”,”<span class="number">3</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“^”,”<span class="number">4</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“&amp;”,”<span class="number">5</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“*”,”<span class="number">6</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“(“,”<span class="number">7</span>”,$decode_pw);</span><br><span class="line">$decode_pw=str_replace(“)”,”<span class="number">8</span>”,$decode_pw);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($I=<span class="number">0</span>;$I&lt;<span class="number">20</span>;$I++)&#123;</span><br><span class="line">  $decode_id=base64_decode($decode_id);</span><br><span class="line">  $decode_pw=base64_decode($decode_pw);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span>(“&lt;hr&gt;&lt;a href=./?view_source=<span class="number">1</span> style=color:yellow;&gt;view-source&lt;/a&gt;&lt;br&gt;&lt;br&gt;”);</span><br><span class="line"><span class="keyword">echo</span>(“ID : $decode_id&lt;br&gt;PW : $decode_pw&lt;hr&gt;”);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($decode_id==“admin” &amp;&amp; $decode_pw==“nimda”)&#123;</span><br><span class="line">  solve(<span class="number">6</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>user, password 쿠키값을 불려들어서 처음 봤던 코드을 거꾸로(!을 1로, @을 2로 변경하고, Base64를 20번 디코딩)하여 그 값이 admin과 nimda이면 Flag가 나오도록 하였다.</p><p>이제 찾을 수 있는 방법을 얻었으니, admin의 쿠키값을 얻어서 Flag를 찾도록 하겠다.</p><p>나는 Python을 이용하여 admin의 쿠키를 얻을 수 있었다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">*<span class="keyword">import</span>* base64</span><br><span class="line"></span><br><span class="line"><span class="built_in">id</span> = b’admin’</span><br><span class="line">pw = b’nimda’</span><br><span class="line"></span><br><span class="line">*<span class="keyword">for</span>* _ *<span class="keyword">in</span>* <span class="built_in">range</span>(<span class="number">20</span>):</span><br><span class="line">    <span class="built_in">id</span> = base64.b64encode(<span class="built_in">id</span>)</span><br><span class="line">    pw = base64.b64encode(pw)</span><br><span class="line"></span><br><span class="line"><span class="built_in">id</span> = <span class="built_in">id</span>.decode(‘utf<span class="number">-8</span>’)</span><br><span class="line">pw = pw.decode(‘utf<span class="number">-8</span>’)</span><br><span class="line"></span><br><span class="line">replace_data = [‘!’, ‘@‘, ‘$’, ‘^’, ‘&amp;’, ‘*’, ‘(‘, ‘)’]</span><br><span class="line">*<span class="keyword">for</span>* idx, data *<span class="keyword">in</span>* <span class="built_in">enumerate</span>(replace_data, <span class="number">1</span>):</span><br><span class="line">    <span class="built_in">id</span> = <span class="built_in">id</span>.replace(<span class="built_in">str</span>(idx), data)</span><br><span class="line">    pw = pw.replace(<span class="built_in">str</span>(idx), data)</span><br><span class="line"></span><br><span class="line">print(‘<span class="built_in">id</span> = ‘, <span class="built_in">id</span>, ‘\n’)</span><br><span class="line">print(‘pw = ‘, pw)</span><br></pre></td></tr></table></figure><p>툴을 사용하여 얻는 방법도 있으니 검색하여 사용하시면 된다.</p><p>이렇게 하여 나온 값을 쿠키 값에 넣고 페이지를 재로딩하면, Flag를 얻을 수 있다.</p><p><img src="/images/pasted-288.png"></p><p>이번 문제는 기초적인 PHP, Base64, 쿠키, 코딩을 알아야 문제 풀이를 할 수 있었다.</p><blockquote><p>쿠키값 확인, 변경 방법은 검색하면 나오니 찾아서 하시길 바란다.</p></blockquote>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/01/Webhacking-kr-Old-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 1157번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/04/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1157%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1157%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Fri, 30 Apr 2021 19:43:09 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;단어-공부&quot;&gt;&lt;a href=&quot;#단어-공부&quot; class=&quot;headerlink&quot; title=&quot;단어 공부&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1157&quot;&gt;단어 공부&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;알파벳 대소문</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="단어-공부"><a href="#단어-공부" class="headerlink" title="단어 공부"></a><a href="https://www.acmicpc.net/problem/1157">단어 공부</a></h1><p>알파벳 대소문자로 된 단어가 주어지면, 이 단어에서 가장 많이 사용된 알파벳이 무엇인지 알아내는 프로그램을 작성하시오. 단, 대문자와 소문자를 구분하지 않는다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">input</span>().upper()</span><br><span class="line">m = <span class="built_in">list</span>(<span class="built_in">set</span>(n))</span><br><span class="line"></span><br><span class="line">cnt = [n.count(i) <span class="keyword">for</span> i <span class="keyword">in</span> m]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> cnt.count(<span class="built_in">max</span>(cnt)) &gt; <span class="number">1</span>:</span><br><span class="line">    print(<span class="string">&#x27;?&#x27;</span>)</span><br><span class="line">    quit()</span><br><span class="line"></span><br><span class="line">max_index = cnt.index(<span class="built_in">max</span>(cnt))</span><br><span class="line">print(m[max_index])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>구현 문제라서 설명은 넘어가겠다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/30/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-1157%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 15 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/04/29/test/</link>
-      <guid>https://lrtk-coder.github.io/2021/04/29/test/</guid>
-      <pubDate>Thu, 29 Apr 2021 15:32:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking.kr Write Up&quot;&gt;Webhacking.kr Write Up&lt;/h1&gt;
-&lt;h2 id=&quot;Old - 15&quot;&gt;Old - 15&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/pasted-284.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;들어</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking.kr Write Up">Webhacking.kr Write Up</h1><h2 id="Old - 15">Old - 15</h2><p><img src="/images/pasted-284.png"></p><p>들어가자마자 Access_Denied라는 Alert창을 띄우는 불친절한 행동을 하는 페이지이다.</p><p>확인 버튼을 누르면 <a href="http://Webhacking.kr">Webhacking.kr</a>의 인덱스 사이트로 리다이렉션된다.</p><p>소스코드를 보고 싶어서 Alert창이 띄어지기 전에 F12을 눌려서 개발자 도구를 열려고 하니, 안먹히고 Alert창이 띄어진다.</p><p>나는 여기서 어떻게 저 Alert창이 안띄어지게 할 것인가? 라는 고민을 하였다.</p><p>여러 방법 중 생각 난 것은 브라우저의 옵션 중 Javascript 설정을 차단하는 것과 Burp Suite이라는 프록시 툴을 사용할 지를 고민하였다.</p><p>이미 노트북에 설치되어 있는 Burp Suite를 사용하기로 하였다.</p><p>옛날 Burp Suite은 브라우저에서 프록시 사용을 켜주고, 포트 설정을 해줘야 했는데 업데이트가 되면서 Burp Suite 자체 내에서 크로미움을 제공하여 그런 귀찮음 중을 해결해주었다.</p><p>잡설은 그만두고, HTTP 응답을 살펴보겠다.</p><pre><code class='code-multiline' lang='http'><span class="sf_code_response-status">HTTP/1.1 </span><span class="sf_code_property">200 OK</span><span class="sf_code_header-name">Date:</span> Tue, 27 Apr 2021 17:52:33 GMT<span class="sf_code_header-name">Server:</span> Apache<span class="sf_code_header-name">Expires:</span> Thu, 19 Nov 1981 08:52:00 GMT<span class="sf_code_header-name">Cache-Control:</span> no-store, no-cache, must-revalidate<span class="sf_code_header-name">Pragma:</span> no-cache<span class="sf_code_header-name">Vary:</span> Accept-Encoding<span class="sf_code_header-name">Content-Length:</span> 184<span class="sf_code_header-name">Connection:</span> close<span class="sf_code_header-name">Content-Type:</span> text/html; charset=UTF-8<span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;</span><span class="sf_code_tag">html</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;</span><span class="sf_code_tag">head</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;</span><span class="sf_code_tag">title</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html">Challenge 15</span><span class="sf_code_punctuation">&lt;/</span><span class="sf_code_tag">title</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;/</span><span class="sf_code_tag">head</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;</span><span class="sf_code_tag">body</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;</span><span class="sf_code_tag">script</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_script">  </span><span class="sf_code_function">alert</span><span class="sf_code_punctuation">(</span><span class="sf_code_string">"Access_Denied"</span><span class="sf_code_punctuation">);</span><span class="sf_code_script">  location</span><span class="sf_code_punctuation">.</span><span class="sf_code_script">href</span><span class="sf_code_operator">=</span><span class="sf_code_string">'/'</span><span class="sf_code_punctuation">;</span><span class="sf_code_script">  document</span><span class="sf_code_punctuation">.</span><span class="sf_code_function">write</span><span class="sf_code_punctuation">(</span><span class="sf_code_string">"&lt;a href=?getFlag&gt;[Get Flag]&lt;/a&gt;"</span><span class="sf_code_punctuation">);</span><span class="sf_code_script"></span><span class="sf_code_punctuation">&lt;/</span><span class="sf_code_tag">script</span><span class="sf_code_punctuation">&gt;</span><span class="sf_code_text/html"></span><span class="sf_code_punctuation">&lt;/</span><span class="sf_code_tag">body</span><span class="sf_code_punctuation">&gt;</span></code></pre><p><br></p><p>해더에는 볼만한 내용은 없으며, Body를 살펴보니 Alert와 Location의 코드가 보였다.</p><p>그 다음으로 DOM에 A 태그를 삽입하는 코드를 살펴보니, 문제 페이지 URL에 getFlag라고 보내면 Flag를 주는 것 같다.</p><p>확인을 위해 방해가 되는 Alert와 Location 코드를 지우고 브라우저에 넘겼다.</p><p><img src="/images/pasted-285.png"></p><p>getFlag를 넘겨주는 A태그나 출력되는 것을 확인하였고, 클릭하였다.</p><p><img src="/images/pasted-286.png"></p><p>옛날에 풀어버린 문제라서 Flag값은 나오지 않았지만, Flag까지 도달하는데 성공하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/04/29/test/#disqus_thread</comments>
       
     </item>
     
