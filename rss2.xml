@@ -9,8 +9,52 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Thu, 13 May 2021 00:39:06 GMT</pubDate>
+    <pubDate>Fri, 14 May 2021 03:26:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Webhacking.kr Old - 42 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/13/Webhacking-kr-Old-42-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/13/Webhacking-kr-Old-42-Write-Up/</guid>
+      <pubDate>Thu, 13 May 2021 18:24:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-42"><a href="#Old-42" class="headerlink" title="Old - 42"></a>Old - 42</h2><p><img src="/images/pasted-380.png"><br>다운로드을 클릭하니, test.txt는 다운로드가 가능하였고, flag.docx은 다운로드가 불가능하였다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test123</span><br><span class="line">qwer123</span><br><span class="line">asdf234</span><br></pre></td></tr></table></figure><p>test.txt 내용을 살펴보니, 의미를 알 수 없는 글자들이 있었다.<br><br>일단 힌트나 암호일 수도 있으니 참고만 하고, 개발자 도구로 다운로드 경로를 살펴보았다.</p><p><img src="/images/pasted-381.png"><br>test.txt의 다운로드 경로를 보니, 끝에가 =로 되어있었다.<br><br>이것을 보고 base64로 인코딩이 되어있다는 것을 판단하여 디코딩을 시도하였다.</p><p><img src="/images/pasted-382.png"><br>Base64 디코딩을 해보니, test.txt로 나왔다.<br><br>이를 통해 난 flag.docx를 base64로 인코딩하여 down 파라미터에 넣어서 서버로 요청하였다.</p><p><img src="/images/pasted-383.png"><br>요청을 하니, flag.docx가 다운로드가 되었다.</p><p><img src="/images/pasted-384.png"><br>다운로드한 파일을 열어보니, flag를 얻을 수 있었다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/13/Webhacking-kr-Old-42-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>백준 실버 4948번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/13/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-4948%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/13/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-4948%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Thu, 13 May 2021 17:34:08 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;베르트랑-공준&quot;&gt;&lt;a href=&quot;#베르트랑-공준&quot; class=&quot;headerlink&quot; title=&quot;베르트랑 공준&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/4948&quot;&gt;베르트랑 공준&lt;/a&gt;&lt;/h1&gt;&lt;p</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="베르트랑-공준"><a href="#베르트랑-공준" class="headerlink" title="베르트랑 공준"></a><a href="https://www.acmicpc.net/problem/4948">베르트랑 공준</a></h1><p>베르트랑 공준은 임의의 자연수 n에 대하여, n보다 크고, 2n보다 작거나 같은 소수는 적어도 하나 존재한다는 내용을 담고 있다.</p><p>이 명제는 조제프 베르트랑이 1845년에 추측했고, 파프누티 체비쇼프가 1850년에 증명했다.</p><p>예를 들어, 10보다 크고, 20보다 작거나 같은 소수는 4개가 있다. (11, 13, 17, 19) 또, 14보다 크고, 28보다 작거나 같은 소수는 3개가 있다. (17,19, 23)</p><p>자연수 n이 주어졌을 때, n보다 크고, 2n보다 작거나 같은 소수의 개수를 구하는 프로그램을 작성하시오. </p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primeList</span>():</span></span><br><span class="line">    n = <span class="number">123456</span> * <span class="number">2</span></span><br><span class="line">    sieve = [<span class="literal">True</span>] * n</span><br><span class="line"></span><br><span class="line">    m = <span class="built_in">int</span>(n ** <span class="number">0.5</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, m + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> sieve[i] == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+i, n, i):</span><br><span class="line">                sieve[j] = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sieve</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    result = primeList()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">        m = n * <span class="number">2</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> n == <span class="number">1</span>:</span><br><span class="line">            print(<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        print(<span class="built_in">sum</span>(result[n+<span class="number">1</span>:m]))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>입력 받은 값 ~ 입력 받은 값의 2배까지의 소수 개수를 구하는 문제이다.</p><figure class="highlight python"><figcaption><span>처음 생각했던 코드</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPrime</span>(<span class="params">num:<span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="built_in">int</span>(num ** <span class="number">0.5</span>)+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> num % i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">      n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">      m = n * <span class="number">2</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">          <span class="keyword">break</span></span><br><span class="line">      <span class="keyword">elif</span> n == <span class="number">1</span>:</span><br><span class="line">          print(<span class="number">1</span>)</span><br><span class="line">          <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">      count = <span class="number">0</span></span><br><span class="line">      <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>, m):</span><br><span class="line">          <span class="keyword">if</span> isPrime(i):</span><br><span class="line">              count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">      print(count)</span><br></pre></td></tr></table></figure><p>나는 처음 문제를 1929번에서 풀이하였던 소수 구하는 함수를 이용하여, 입력 값 n ~ 2n까지의 소수를 구하여 카운트를 증가시키는 코드를 제출하였다.</p><p>하지만, 매번 입력 받을 때 마다 소수를 구하는 게 문제였는지 시간초과로 이어졌다.</p><p>그래서 최대 입력값의 2배까지 소수를 모두 구하여 인덱싱을 하면 좀 더 빠르게 작동하지 하지 않을까? 라는 생각으로 접근하였다.</p><p>인터넷에 검색하여 “에라토스테네스의 체”라는 소수 구하는 방법을 알 수 있었다.</p><p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif" alt="출처: 위키백과"><br>이 처럼 배수들을 배제하는 방법으로 손쉽게 소수를 구하는 방법이다.</p><p>코드도 위키백과에 있어서 나에게 맞게끔 수정하여 사용하였다.</p><p>마지막 출력인 <code>print(sum(result[n+1:m]))</code>에서 sum 함수를 사용한 이유는 True은 1로 인식되기 때문에 이를 이용하였다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/13/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-4948%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Webhacking.kr Old - 36 Write Up</title>
@@ -533,68 +577,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/06/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2839%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 브론즈 2775번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/05/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2775%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2775%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Wed, 05 May 2021 19:18:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;부녀회장이-될테야&quot;&gt;&lt;a href=&quot;#부녀회장이-될테야&quot; class=&quot;headerlink&quot; title=&quot;부녀회장이 될테야&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/2775&quot;&gt;부녀회장이 될테야&lt;/a</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="부녀회장이-될테야"><a href="#부녀회장이-될테야" class="headerlink" title="부녀회장이 될테야"></a><a href="https://www.acmicpc.net/problem/2775">부녀회장이 될테야</a></h1><p>평소 반상회에 참석하는 것을 좋아하는 주희는 이번 기회에 부녀회장이 되고 싶어 각 층의 사람들을 불러 모아 반상회를 주최하려고 한다.</p><p>이 아파트에 거주를 하려면 조건이 있는데, “a층의 b호에 살려면 자신의 아래(a-1)층의 1호부터 b호까지 사람들의 수의 합만큼 사람들을 데려와 살아야 한다” 는 계약 조항을 꼭 지키고 들어와야 한다.</p><p>아파트에 비어있는 집은 없고 모든 거주민들이 이 계약 조건을 지키고 왔다고 가정했을 때, 주어지는 양의 정수 k와 n에 대해 k층에 n호에는 몇 명이 살고 있는지 출력하라. 단, 아파트에는 0층부터 있고 각층에는 1호부터 있으며, 0층의 i호에는 i명이 산다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">testCase = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(testCase):</span><br><span class="line">    k = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    apt = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">            apt[i] += apt[i<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    print(apt[<span class="number">-1</span>])</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>단순한 구현 문제라서 풀이 설명은 넘어가겠다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A1%A0%EC%A6%88/">브론즈</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%882/">백준 브론즈2</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/05/%EB%B0%B1%EC%A4%80-%EB%B8%8C%EB%A1%A0%EC%A6%88-2775%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 26 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/04/Webhacking-kr-Old-26-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/04/Webhacking-kr-Old-26-Write-Up/</guid>
-      <pubDate>Tue, 04 May 2021 19:59:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-26"><a href="#Old-26" class="headerlink" title="Old - 26"></a>Old - 26</h2><p><img src="/images/pasted-308.png"><br>View-source 라는 링크만 있어서 일단 코드를 확인하였다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">if</span>(preg_match(<span class="string">&quot;/admin/&quot;</span>,$_GET[<span class="string">&#x27;id&#x27;</span>])) &#123; <span class="keyword">echo</span><span class="string">&quot;no!&quot;</span>; <span class="keyword">exit</span>(); &#125;</span><br><span class="line">  $_GET[<span class="string">&#x27;id&#x27;</span>] = urldecode($_GET[<span class="string">&#x27;id&#x27;</span>]);</span><br><span class="line">  <span class="keyword">if</span>($_GET[<span class="string">&#x27;id&#x27;</span>] == <span class="string">&quot;admin&quot;</span>)&#123;</span><br><span class="line">    solve(<span class="number">26</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>코드에서 중요한 부분만 가져왔는데, id의 값이 URL 디코딩 후 admin이면 Flag를 획득하는 조건이 있었다.</p><p>나는 admin을 이중 URL 인코딩하여 id에 넣어줄 것이다.</p><p>이중 URL 인코딩을 하는 이유는 PHP는 넘겨받은 값을 URL 디코딩을 하기 때문에 한번만 인코딩을 하면 PHP는 자동으로 디코딩을 하여 원래의 값으로 쓰기 때문이다.<br>문제에서 요구하는 건 URL 인코딩된 admin이기 때문에 이를 반영하기 위해 이중 URL 인코딩을 하였다.</p><p><code>?id=%25%36%31%25%36%34%25%36%64%25%36%39%25%36%65</code>를 페이지 URL 뒤에 넣고 서버에 보내니, </p><p><img src="/images/pasted-309.png"><br>Flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/04/Webhacking-kr-Old-26-Write-Up/#disqus_thread</comments>
       
     </item>
     
