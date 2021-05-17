@@ -9,8 +9,40 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Sun, 16 May 2021 12:51:59 GMT</pubDate>
+    <pubDate>Mon, 17 May 2021 14:16:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>백준 실버 7568번 문제</title>
+      <link>https://lrtk-coder.github.io/2021/05/16/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-7568%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/16/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-7568%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
+      <pubDate>Sun, 16 May 2021 12:16:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;덩치&quot;&gt;&lt;a href=&quot;#덩치&quot; class=&quot;headerlink&quot; title=&quot;덩치&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/7568&quot;&gt;덩치&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;우리는 사람의 덩치를 키와 몸무게,</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="덩치"><a href="#덩치" class="headerlink" title="덩치"></a><a href="https://www.acmicpc.net/problem/7568">덩치</a></h1><p>우리는 사람의 덩치를 키와 몸무게, 이 두 개의 값으로 표현하여 그 등수를 매겨보려고 한다. 어떤 사람의 몸무게가 x kg이고 키가 y cm라면 이 사람의 덩치는 (x, y)로 표시된다. 두 사람 A 와 B의 덩치가 각각 (x, y), (p, q)라고 할 때 x &gt; p 그리고 y &gt; q 이라면 우리는 A의 덩치가 B의 덩치보다 “더 크다”고 말한다. 예를 들어 어떤 A, B 두 사람의 덩치가 각각 (56, 177), (45, 165) 라고 한다면 A의 덩치가 B보다 큰 셈이 된다. 그런데 서로 다른 덩치끼리 크기를 정할 수 없는 경우도 있다. 예를 들어 두 사람 C와 D의 덩치가 각각 (45, 181), (55, 173)이라면 몸무게는 D가 C보다 더 무겁고, 키는 C가 더 크므로, “덩치”로만 볼 때 C와 D는 누구도 상대방보다 더 크다고 말할 수 없다.</p><p>N명의 집단에서 각 사람의 덩치 등수는 자신보다 더 “큰 덩치”의 사람의 수로 정해진다. 만일 자신보다 더 큰 덩치의 사람이 k명이라면 그 사람의 덩치 등수는 k+1이 된다. 이렇게 등수를 결정하면 같은 덩치 등수를 가진 사람은 여러 명도 가능하다. 아래는 5명으로 이루어진 집단에서 각 사람의 덩치와 그 등수가 표시된 표이다.</p><table><thead><tr><th>이름</th><th>(몸무게, 키)</th><th>덩치 등수</th></tr></thead><tbody><tr><td>A</td><td>(55, 185)</td><td>2</td></tr><tr><td>B</td><td>(58, 183)</td><td>2</td></tr><tr><td>C</td><td>(88, 186)</td><td>1</td></tr><tr><td>D</td><td>(60, 175)</td><td>2</td></tr><tr><td>E</td><td>(46, 155)</td><td>5</td></tr></tbody></table><p>위 표에서 C보다 더 큰 덩치의 사람이 없으므로 C는 1등이 된다. 그리고 A, B, D 각각의 덩치보다 큰 사람은 C뿐이므로 이들은 모두 2등이 된다. 그리고 E보다 큰 덩치는 A, B, C, D 이렇게 4명이므로 E의 덩치는 5등이 된다. 위 경우에 3등과 4등은 존재하지 않는다. 여러분은 학생 N명의 몸무게와 키가 담긴 입력을 읽어서 각 사람의 덩치 등수를 계산하여 출력해야 한다.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rankFunc</span>(<span class="params">data:<span class="built_in">list</span></span>):</span></span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">        rank = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> data:</span><br><span class="line">            <span class="keyword">if</span> i[<span class="number">0</span>] &lt; j[<span class="number">0</span>] <span class="keyword">and</span> i[<span class="number">1</span>] &lt; j[<span class="number">1</span>]:</span><br><span class="line">                rank += <span class="number">1</span></span><br><span class="line">        result.append(rank)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    testCase = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">    data = [<span class="built_in">tuple</span>(i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(testCase)]</span><br><span class="line">    print(*rankFunc(data))</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>입력 받은 값들을 각 키와 몸무게 비교하여 작으면 랭크를 1 증가시켰다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%845/">백준 실버5</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/16/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-7568%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>백준 실버 9020번 문제</title>
@@ -539,36 +571,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/09/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1978%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 54 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/08/Webhacking-kr-Old-54-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/08/Webhacking-kr-Old-54-Write-Up/</guid>
-      <pubDate>Sat, 08 May 2021 20:33:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-54"><a href="#Old-54" class="headerlink" title="Old - 54"></a>Old - 54</h2><p><img src="/images/pasted-317.png"><br>?의 위치에서 값이 계속 변경이 되더니, 마지막엔 ?이 되었다.</p><p>무슨 기능인지는 잘 모르겠다. 그래서 개발자 도구에서 코드를 살펴보았다.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">window</span>.ActiveXObject</span>)</span>&#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="string">&#x27;Msxml2.XMLHTTP&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="string">&#x27;Microsoft.XMLHTTP&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">window</span>.XMLHttpRequest</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">x=run();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">answer</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line"> x.open(<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;?m=&#x27;</span>+i,<span class="literal">false</span>);</span><br><span class="line">  x.send(<span class="literal">null</span>);</span><br><span class="line">  aview.innerHTML=x.responseText;</span><br><span class="line">  i++;</span><br><span class="line">  <span class="keyword">if</span>(x.responseText) <span class="built_in">setTimeout</span>(<span class="string">&quot;answer(&quot;</span>+i+<span class="string">&quot;)&quot;</span>,<span class="number">20</span>);</span><br><span class="line">  <span class="keyword">if</span>(x.responseText==<span class="string">&quot;&quot;</span>) aview.innerHTML=<span class="string">&quot;?&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="string">&quot;answer(0)&quot;</span>,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure><p>코드 중에서 ?의 값을 변경하는 JS코드를 가져왔다.</p><p>run 함수는 서버와 통신할 객체를 선언을 해주는 역할이며,<br>answer 함수는 서버 객체에  값을 보내고, 반환 받은 값을 ?에 출력하는 역할이다.</p><p>서버에 0부터 1씩 증가된 m을 보내주는데, 반환값이 없으면 ?을 출력하는 것이다.</p><p>나는 answer 함수의 코드를 조금 수정하였다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aview.innerHTML += x.responseText;</span><br><span class="line">i++;</span><br><span class="line"><span class="keyword">if</span>(x.responseText) <span class="built_in">setTimeout</span>(<span class="string">&quot;answer(&quot;</span>+i+<span class="string">&quot;)&quot;</span>,<span class="number">20</span>);</span><br></pre></td></tr></table></figure><p>aview.innerHTML의 값이 계속 변하는게 아니라, 더해지는 것으로 변경<br>반환값이 없으면 ?으로 변경되는 조건을 삭제하였다.</p><p>수정된 answer 함수를 개발자 도구의 콘솔에 실행하면, 밑과 같이 Flag 값이 출력이 될 것이다.<br><img src="/images/pasted-318.png"></p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/08/Webhacking-kr-Old-54-Write-Up/#disqus_thread</comments>
       
     </item>
     
