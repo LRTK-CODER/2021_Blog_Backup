@@ -9,8 +9,38 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Tue, 18 May 2021 18:16:11 GMT</pubDate>
+    <pubDate>Tue, 18 May 2021 20:50:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Webhackimg.kr Old - 12 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/18/Webhackimg-kr-Old-12-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/18/Webhackimg-kr-Old-12-Write-Up/</guid>
+      <pubDate>Tue, 18 May 2021 11:49:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-12"><a href="#Old-12" class="headerlink" title="Old - 12"></a>Old - 12</h2><p><img src="/images/pasted-408.png"><br>Js challenge라고 하니, 개발자 코드로 살펴봤다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ﾟωﾟﾉ&#x3D; &#x2F;｀ｍ´）ﾉ ~┻━┻   &#x2F;&#x2F;*´∇｀*&#x2F; [&#39;_&#39;]; o&#x3D;(ﾟｰﾟ)  &#x3D;_&#x3D;3; c&#x3D;(ﾟΘﾟ) &#x3D;(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) &#x3D;(ﾟΘﾟ)&#x3D; (o^_^o)&#x2F; (o^_^o);(ﾟДﾟ)&#x3D;&#123;ﾟΘﾟ: &#39;_&#39; ,ﾟωﾟﾉ : ((ﾟωﾟﾉ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ &#39;_&#39;)[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;)[ﾟｰﾟ] &#125;; (ﾟДﾟ) [ﾟΘﾟ] &#x3D;((ﾟωﾟﾉ&#x3D;&#x3D;3) +&#39;_&#39;) [c^_^o];(ﾟДﾟ) [&#39;c&#39;] &#x3D; ((ﾟДﾟ)+&#39;_&#39;) [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) [&#39;o&#39;] &#x3D; ((ﾟДﾟ)+&#39;_&#39;) [ﾟΘﾟ];(ﾟoﾟ)&#x3D;(ﾟДﾟ) [&#39;c&#39;]+(ﾟДﾟ) [&#39;o&#39;]+(ﾟωﾟﾉ +&#39;_&#39;)[ﾟΘﾟ]+ ((ﾟωﾟﾉ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟｰﾟ] + ((ﾟДﾟ) +&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) [&#39;c&#39;]+((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) [&#39;o&#39;]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ];(ﾟДﾟ) [&#39;_&#39;] &#x3D;(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)&#x3D;((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟωﾟﾉ +&#39;_&#39;) [ﾟΘﾟ]; (ﾟｰﾟ)+&#x3D;(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]&#x3D;&#39;\\&#39;;…</span><br></pre></td></tr></table></figure><p>엄청 많은 이모티콘으로 난독화된 JS를 볼 수 있었다.</p><p>이를 통해 JS 이모티콘 난독화를 검색해봤다.<br><br>그 결과 <a href="https://kkamikoon.tistory.com/165">자바스크립트 난독화Javascript Obfuscation 개념과 서비스 웹 페이지 :: 컴퓨터를 다루다</a> 블로그 글을 찾을 수 있었는데, 문제의 JS는 일본 이모티콘 난독화라는 것을 알 수 있었다.</p><p>블로그엔 난독화 인코딩 사이트만 있어서, 디코딩을 위해 다시 검색을 하였다.<br></p><blockquote><p><a href="https://cat-in-136.github.io/2010/12/aadecode-decode-encoded-as-aaencode.html">aadecode - Decode encoded-as-aaencode JavaScript program. ‘_’</a><br><br>사이트의 이름이 aaencode demo라고 했으니, 이를 통해 aadecode라고 검색하니 찾을 수 있었다.</p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> enco=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> enco2=<span class="number">126</span>;</span><br><span class="line"><span class="keyword">var</span> enco3=<span class="number">33</span>;</span><br><span class="line"><span class="keyword">var</span> ck=<span class="built_in">document</span>.URL.substr(<span class="built_in">document</span>.URL.indexOf(<span class="string">&#x27;=&#x27;</span>));</span><br><span class="line"><span class="function"><span class="title">for</span>(<span class="params">i=<span class="number">1</span>;i&lt;<span class="number">122</span>;i++</span>)</span>&#123;</span><br><span class="line">  enco=enco+<span class="built_in">String</span>.fromCharCode(i,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enco_</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> enco.charCodeAt(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>( ck==<span class="string">&quot;=&quot;</span> + <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">240</span>))</span><br><span class="line">+ <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">220</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">232</span>))</span><br><span class="line">  + <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">192</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">226</span>))</span><br><span class="line">+ <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">200</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">204</span>))</span><br><span class="line">+ <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">222</span>-<span class="number">2</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">198</span>))</span><br><span class="line">  + <span class="string">&quot;~~~~~~&quot;</span>+<span class="built_in">String</span>.fromCharCode(enco2)+<span class="built_in">String</span>.fromCharCode(enco3)) &#123;</span><br><span class="line">  location.href=<span class="string">&quot;./&quot;</span>+ck.replace(<span class="string">&quot;=&quot;</span>,<span class="string">&quot;&quot;</span>)+<span class="string">&quot;.php&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>난독화를 하는 위와 같은 코드가 나온다.<br><br>코드를 살펴보니, 가장 중요한 것은 Flag를 획득할 수 있는 if문이다.</p><p>fromCharCode 함수가 어떤 함수인지 알기위해 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">String.fromCharCode() - JavaScript | MDN</a>을 참고하였다. UTF-16 코드 유닛의 시퀀스로부터 문자열을 생성해 반환하는 함수라고 한다.</p><p>65 -&gt; A로 변환하는 함수인데, if문을 보면 여러 fromCharCode 함수가 있는 것을 변환하여 서버에 요청하면 될 듯하다.</p><p><img src="/images/pasted-409.png"><br>필요한 코드들만 사용하여 flag를 얻을 수 있는 페이지를 찾을 수 있었다.</p><p><img src="/images/pasted-410.png"><br>Flag를 획득할 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/18/Webhackimg-kr-Old-12-Write-Up/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Webhacking.kr Old - 10 Write Up</title>
@@ -539,36 +569,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-27-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 19 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-19-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-19-Write-Up/</guid>
-      <pubDate>Mon, 10 May 2021 10:00:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-19"><a href="#Old-19" class="headerlink" title="Old - 19"></a>Old - 19</h2><p><img src="/images/pasted-319.png"><br>문제 페이지에 들어가니, 이상한 input이 있었다.</p><p>코드에 스크립트나 주석에 힌트가 있는지, 쿠키가 있는지 확인을 해보았다.<br><br>하지만 별다른 것은 없었고, 일단 제출 버튼을 클릭하여 서버에 값을 보내봤다.</p><p><img src="/images/pasted-320.png"><br>어드민이 아니라는 글이 출력되고, 몇 초뒤에 처음봤던 페이지로 이동하였다.</p><p>값이 admin이 아닌 값을 보내면 어떻게 작동하는지 확인해보았다.</p><p><img src="/images/pasted-321.png"><br>서버에 a를 보냈더니, a로 로그인이 되었다.<br><br>그 이후에는 아무 반응이 없어서 코드와 쿠키를 확인해보았는데, userid라는 쿠키가 생성이 되었다.</p><p><img src="/images/pasted-322.png"><br>값을 보니, 맨 뒤에 ::= (%3D)::가 있는 것으로 보아 base64로 인코딩되어있다고 판단하였다.</p><p><img src="/images/pasted-323.png"><br>Base64 디코딩된 값인데, 뭔가 더 인코딩이 되어있는 것으로 보인다.</p><p>해당 값의 길이가 32글자로, MD5로 해쉬가 된 것으로 판단하여 한번 확인을 해보았다.</p><p><img src="/images/pasted-324.png"><br>a을 md5로 인코딩했을 때 나온 값이랑 동일한것을 확인 할 수 있었다.</p><p><img src="/images/pasted-325.png"><br>나는 admin으로 로그인하기 위해 admin를 md5으로 해쉬화 후 base64로 인코딩한 값을 쿠키에 넣어봤지만, error를 반환받았다.</p><p>분명 인코딩과 해쉬도 맞았는데 뭐지 싶어서 admi를 서버로 보내서 쿠키를 확인해보았다.</p><p><img src="/images/pasted-326.png"><br>엄청 긴 값이 나와서 좀 당황을 했다.<br><br>값을 확인하기 위해 base64 디코딩을 진행하였다.</p><p><img src="/images/pasted-327.png"><br>값을 보니, a의 md5값이 맨 앞에 있는 것을 확인할 수 있었다.<br><br>알파벳 하나하나 md5로 해쉬화 후 합쳐서 base64 인코딩한 것으로 알 수 있었다.</p><p>나는 n의 md5 값을 뒤에 붙인 후 base64 인코딩을 하여 쿠키에 넣어서 페이지를 재로딩하였다.</p><p><img src="/images/pasted-328.png"><br>그 결과 Flag를 획득하였다.</p><p>내가 문자열 길이를 보고 MD5로 판단할 수 있던 이유는 각 해쉬가 출력하는 문자의 길이가 정해져있기 때문이다.</p><p><strong>1. MD5</strong></p><ul><li>MD5 출력값 길이 : 128bit (16진수로 32byte)</li></ul><p><strong>2. SHA-1</strong></p><ul><li>SHA-1 출력값 길이 : 160bit (16진수로 40byte)</li></ul><p><strong>3. SHA-256</strong></p><ul><li>SHA-256 출력값 길이 : 256bit (16진수로 64byte)</li></ul><p><strong>4. SHA-512</strong></p><ul><li>SHA-512 출력값 길이 : 512bit (16진수로 128byte)</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/10/Webhacking-kr-Old-19-Write-Up/#disqus_thread</comments>
       
     </item>
     
