@@ -9,8 +9,86 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Sun, 23 May 2021 02:32:11 GMT</pubDate>
+    <pubDate>Mon, 24 May 2021 00:32:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Programmers Level 1 - 두 개 뽑아서 더하기</title>
+      <link>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EB%91%90-%EA%B0%9C-%EB%BD%91%EC%95%84%EC%84%9C-%EB%8D%94%ED%95%98%EA%B8%B0/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EB%91%90-%EA%B0%9C-%EB%BD%91%EC%95%84%EC%84%9C-%EB%8D%94%ED%95%98%EA%B8%B0/</guid>
+      <pubDate>Sun, 23 May 2021 15:21:50 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;두-개-뽑아서-더하기&quot;&gt;&lt;a href=&quot;#두-개-뽑아서-더하기&quot; class=&quot;headerlink&quot; title=&quot;두 개 뽑아서 더하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/l</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="두-개-뽑아서-더하기"><a href="#두-개-뽑아서-더하기" class="headerlink" title="두 개 뽑아서 더하기"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/68644">두 개 뽑아서 더하기</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.</p><h2 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h2><ul><li>numbers의 길이는 2 이상 100 이하입니다.</li><li>numbers의 모든 수는 0 이상 100 이하입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><p>문제를 풀기 앞서 문제를 읽어보고 예제를 봤는데 바로 이해가 되지 않았다.<br><br>그래서 직접 시뮬레이션을 하여 문제를 이해하고자 하였다.</p><hr><p>문제 : 1, 1,  2,  3,  4</p><p>1+1 = 2<br>1+2 = 3<br>1+3 = 4<br>1+4 = 5</p><p>1+2 = 3<br>1+3 = 4<br>1+4 = 5</p><p>2+3 = 5<br>2+4 = 6</p><p>3+4 = 7</p><p>결과 : 2, 3, 4, 5, 6, 7</p><hr><p>문제: 0, 2, 5, 7</p><p>0+2 = 2<br>0+5 = 5<br>0+7 = 7</p><p>2+5 = 7<br>2+7 = 9</p><p>5+7 = 12</p><p>결과: 2, 5, 7, 9, 12</p><hr><p>이렇게 정리를 하니, 쉽게 이해할 수 있었다.</p><h4 id="방법1"><a href="#방법1" class="headerlink" title="방법1"></a>방법1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">numbers:<span class="built_in">list</span></span>):</span></span><br><span class="line">    n = <span class="built_in">sorted</span>(numbers)</span><br><span class="line">    </span><br><span class="line">    idx = <span class="number">1</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> n:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> n[idx:]:</span><br><span class="line">            result.append(i+j)</span><br><span class="line">        idx += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sorted</span>(<span class="built_in">list</span>(<span class="built_in">set</span>(result)))</span><br></pre></td></tr></table></figure><p>나는 시뮬레이션을 한 것을 그대로 코드로 구현하였다.</p><h4 id="방법2"><a href="#방법2" class="headerlink" title="방법2"></a>방법2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">numbers</span>):</span></span><br><span class="line">    answer = [numbers[i]+numbers[j] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(numbers)) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, <span class="built_in">len</span>(numbers))]    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sorted</span>(<span class="built_in">list</span>(<span class="built_in">set</span>(answer)))</span><br></pre></td></tr></table></figure><p>방법1과 같은 원리지만, 방법2에선 리스트의 길이를 컨트롤하여 구하였다.<br><br>방법1에선 인덱싱을 컨트롤하기 위해 for문 안에 idx을 1씩 증가 시켜줬지만, 방법2은 그럴 필요 없이 for문 안에 있는 range 함수의 첫번째 인자를 1씩 증가시키는 방법으로 더 간소화 시켰다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EB%91%90-%EA%B0%9C-%EB%BD%91%EC%95%84%EC%84%9C-%EB%8D%94%ED%95%98%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 자연수 뒤집어 배열로 만들기</title>
+      <link>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EC%9E%90%EC%97%B0%EC%88%98-%EB%92%A4%EC%A7%91%EC%96%B4-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EC%9E%90%EC%97%B0%EC%88%98-%EB%92%A4%EC%A7%91%EC%96%B4-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <pubDate>Sun, 23 May 2021 14:45:01 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;자연수-뒤집어-배열로-만들기&quot;&gt;&lt;a href=&quot;#자연수-뒤집어-배열로-만들기&quot; class=&quot;headerlink&quot; title=&quot;자연수 뒤집어 배열로 만들기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="자연수-뒤집어-배열로-만들기"><a href="#자연수-뒤집어-배열로-만들기" class="headerlink" title="자연수 뒤집어 배열로 만들기"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12932">자연수 뒤집어 배열로 만들기</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>n은 10,000,000,000이하인 자연수입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><h4 id="방법1"><a href="#방법1" class="headerlink" title="방법1"></a>방법1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">n:<span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">str</span>(n)[::<span class="number">-1</span>])]</span><br></pre></td></tr></table></figure><p>이 방법은 정수를 문자열로 변경하여, 인덱싱을 통해 뒤집어줬다.<br><br>하지만 인덱싱말고, reversed 함수를 이용하는 방법도 있다.</p><h4 id="방법2"><a href="#방법2" class="headerlink" title="방법2"></a>방법2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">n:<span class="built_in">int</span></span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">reversed</span>(<span class="built_in">str</span>(n))))</span><br></pre></td></tr></table></figure><p>이 방법은 reversed 함수로 문자열을 뒤집었고, 방법1의 list comprehension으로 list로 만들어주지 않고, 타입 변환으로 간단하게 변환하였다.</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EC%9E%90%EC%97%B0%EC%88%98-%EB%92%A4%EC%A7%91%EC%96%B4-%EB%B0%B0%EC%97%B4%EB%A1%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Programmers Level 1 - 제일 작은 수 제거하기</title>
+      <link>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/</guid>
+      <pubDate>Sun, 23 May 2021 14:39:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;제일-작은-수-제거하기&quot;&gt;&lt;a href=&quot;#제일-작은-수-제거하기&quot; class=&quot;headerlink&quot; title=&quot;제일 작은 수 제거하기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/3</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="제일-작은-수-제거하기"><a href="#제일-작은-수-제거하기" class="headerlink" title="제일 작은 수 제거하기"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12935">제일 작은 수 제거하기</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>arr은 길이 1 이상인 배열입니다.</li><li>인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">arr:<span class="built_in">list</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(arr) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [<span class="number">-1</span>]</span><br><span class="line">    </span><br><span class="line">    arr.remove(<span class="built_in">min</span>(arr))</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure><p>리스트의 길이가 1보다 같거나 작으면 <code>[-1]</code>를 반환하였다.<br><br>그게 아니라면, min함수를 사용하여 arr의 최소값을 구하고 remove 함수로 삭제하였다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/23/Programmers-Level-1-%EC%A0%9C%EC%9D%BC-%EC%9E%91%EC%9D%80-%EC%88%98-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Webhacking.kr Old - 56 Write Up</title>
@@ -543,98 +621,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/19/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1018%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhackimg.kr Old - 12 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/18/Webhackimg-kr-Old-12-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/18/Webhackimg-kr-Old-12-Write-Up/</guid>
-      <pubDate>Tue, 18 May 2021 11:49:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-12"><a href="#Old-12" class="headerlink" title="Old - 12"></a>Old - 12</h2><p><img src="/images/pasted-408.png"><br>Js challenge라고 하니, 개발자 코드로 살펴봤다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ﾟωﾟﾉ&#x3D; &#x2F;｀ｍ´）ﾉ ~┻━┻   &#x2F;&#x2F;*´∇｀*&#x2F; [&#39;_&#39;]; o&#x3D;(ﾟｰﾟ)  &#x3D;_&#x3D;3; c&#x3D;(ﾟΘﾟ) &#x3D;(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) &#x3D;(ﾟΘﾟ)&#x3D; (o^_^o)&#x2F; (o^_^o);(ﾟДﾟ)&#x3D;&#123;ﾟΘﾟ: &#39;_&#39; ,ﾟωﾟﾉ : ((ﾟωﾟﾉ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ &#39;_&#39;)[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;)[ﾟｰﾟ] &#125;; (ﾟДﾟ) [ﾟΘﾟ] &#x3D;((ﾟωﾟﾉ&#x3D;&#x3D;3) +&#39;_&#39;) [c^_^o];(ﾟДﾟ) [&#39;c&#39;] &#x3D; ((ﾟДﾟ)+&#39;_&#39;) [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) [&#39;o&#39;] &#x3D; ((ﾟДﾟ)+&#39;_&#39;) [ﾟΘﾟ];(ﾟoﾟ)&#x3D;(ﾟДﾟ) [&#39;c&#39;]+(ﾟДﾟ) [&#39;o&#39;]+(ﾟωﾟﾉ +&#39;_&#39;)[ﾟΘﾟ]+ ((ﾟωﾟﾉ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟｰﾟ] + ((ﾟДﾟ) +&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) [&#39;c&#39;]+((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) [&#39;o&#39;]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ];(ﾟДﾟ) [&#39;_&#39;] &#x3D;(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)&#x3D;((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+&#39;_&#39;) [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ&#x3D;&#x3D;3) +&#39;_&#39;) [ﾟΘﾟ]+ (ﾟωﾟﾉ +&#39;_&#39;) [ﾟΘﾟ]; (ﾟｰﾟ)+&#x3D;(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]&#x3D;&#39;\\&#39;;…</span><br></pre></td></tr></table></figure><p>엄청 많은 이모티콘으로 난독화된 JS를 볼 수 있었다.</p><p>이를 통해 JS 이모티콘 난독화를 검색해봤다.<br><br>그 결과 <a href="https://kkamikoon.tistory.com/165">자바스크립트 난독화Javascript Obfuscation 개념과 서비스 웹 페이지 :: 컴퓨터를 다루다</a> 블로그 글을 찾을 수 있었는데, 문제의 JS는 일본 이모티콘 난독화라는 것을 알 수 있었다.</p><p>블로그엔 난독화 인코딩 사이트만 있어서, 디코딩을 위해 다시 검색을 하였다.<br></p><blockquote><p><a href="https://cat-in-136.github.io/2010/12/aadecode-decode-encoded-as-aaencode.html">aadecode - Decode encoded-as-aaencode JavaScript program. ‘_’</a><br><br>사이트의 이름이 aaencode demo라고 했으니, 이를 통해 aadecode라고 검색하니 찾을 수 있었다.</p></blockquote><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> enco=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> enco2=<span class="number">126</span>;</span><br><span class="line"><span class="keyword">var</span> enco3=<span class="number">33</span>;</span><br><span class="line"><span class="keyword">var</span> ck=<span class="built_in">document</span>.URL.substr(<span class="built_in">document</span>.URL.indexOf(<span class="string">&#x27;=&#x27;</span>));</span><br><span class="line"><span class="function"><span class="title">for</span>(<span class="params">i=<span class="number">1</span>;i&lt;<span class="number">122</span>;i++</span>)</span>&#123;</span><br><span class="line">  enco=enco+<span class="built_in">String</span>.fromCharCode(i,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enco_</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> enco.charCodeAt(x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>( ck==<span class="string">&quot;=&quot;</span> + <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">240</span>))</span><br><span class="line">+ <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">220</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">232</span>))</span><br><span class="line">  + <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">192</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">226</span>))</span><br><span class="line">+ <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">200</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">204</span>))</span><br><span class="line">+ <span class="built_in">String</span>.fromCharCode(enco_(<span class="number">222</span>-<span class="number">2</span>))+<span class="built_in">String</span>.fromCharCode(enco_(<span class="number">198</span>))</span><br><span class="line">  + <span class="string">&quot;~~~~~~&quot;</span>+<span class="built_in">String</span>.fromCharCode(enco2)+<span class="built_in">String</span>.fromCharCode(enco3)) &#123;</span><br><span class="line">  location.href=<span class="string">&quot;./&quot;</span>+ck.replace(<span class="string">&quot;=&quot;</span>,<span class="string">&quot;&quot;</span>)+<span class="string">&quot;.php&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>난독화를 하는 위와 같은 코드가 나온다.<br><br>코드를 살펴보니, 가장 중요한 것은 Flag를 획득할 수 있는 if문이다.</p><p>fromCharCode 함수가 어떤 함수인지 알기위해 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">String.fromCharCode() - JavaScript | MDN</a>을 참고하였다. UTF-16 코드 유닛의 시퀀스로부터 문자열을 생성해 반환하는 함수라고 한다.</p><p>65 -&gt; A로 변환하는 함수인데, if문을 보면 여러 fromCharCode 함수가 있는 것을 변환하여 서버에 요청하면 될 듯하다.</p><p><img src="/images/pasted-409.png"><br>필요한 코드들만 사용하여 flag를 얻을 수 있는 페이지를 찾을 수 있었다.</p><p><img src="/images/pasted-410.png"><br>Flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/18/Webhackimg-kr-Old-12-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Webhacking.kr Old - 10 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/18/Webhacking-kr-Old-10-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/18/Webhacking-kr-Old-10-Write-Up/</guid>
-      <pubDate>Tue, 18 May 2021 09:14:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-10"><a href="#Old-10" class="headerlink" title="Old - 10"></a>Old - 10</h2><p><img src="/images/pasted-403.png"><br><img src="/images/pasted-404.png"><br>페이지를 보니, 엄청 긴 막대기 안에 O이 있고 Goal 라인이 있었다.</p><p>코드를 살펴보니, O은 a태그였고 Onclick 이벤트가 설정되어있었다.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">&quot;hackme&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position:relative;left:0;top:0&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;this.style.left=parseInt(this.style.left,10)+1+&#x27;px&#x27;;if(this.style.left==&#x27;1600px&#x27;)this.href=&#x27;?go=&#x27;+this.style.left&quot;</span> <span class="attr">onmouseover</span>=<span class="string">&quot;this.innerHTML=&#x27;yOu&#x27;&quot;</span> <span class="attr">onmouseout</span>=<span class="string">&quot;this.innerHTML=&#x27;O&#x27;&quot;</span>&gt;</span>O<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Onclick 이벤트가 한 줄로 되어있어서 따로 빼서 보기 좋게 분류했다.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.style.left=<span class="built_in">parseInt</span>(<span class="built_in">this</span>.style.left,<span class="number">10</span>)+<span class="number">1</span>+<span class="string">&#x27;px&#x27;</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="params"><span class="built_in">this</span>.style.left==<span class="string">&#x27;1600px&#x27;</span></span>)</span>&#123;</span><br><span class="line"><span class="built_in">this</span>.href=<span class="string">&#x27;?go=&#x27;</span>+<span class="built_in">this</span>.style.left</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>클릭할 때마다 1px 씩 이동한다.<br><br>만약 O의 위치가 1600px이면, a 태그의 href 속성이 <code>?go=1600px</code>으로 된다.</p><p><img src="/images/pasted-405.png"><br>나는 일단 <code>?go=1600px</code>을 서버에 요청해봤다.<br><br>결과는 no hack이 출력되었다.</p><p>분명 코드에선 <code>?go=1600px</code>으로  이동하는데, 왜 안되는지 이해가 가지 않았다.<br><br>그래서 나는 O의 위치를 1600px로 이동시켜서 a태그로 이동해보려고 한다.</p><p><img src="/images/pasted-406.png"><br>O의 위치를 1599px로 이동하면 한칸 이동을 하여 <code>?go=1600px</code>를 요청하였다.</p><p><img src="/images/pasted-407.png"><br>flag를 획득할 수 있었다.</p><blockquote><p>왜 바로 요청하는건 안되는지는 이해가 되지 않는다.</p></blockquote>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/18/Webhacking-kr-Old-10-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>백준 실버 1002번 문제</title>
-      <link>https://lrtk-coder.github.io/2021/05/18/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1002%EB%B2%88-%EB%AC%B8%EC%A0%9C/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/18/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1002%EB%B2%88-%EB%AC%B8%EC%A0%9C/</guid>
-      <pubDate>Tue, 18 May 2021 07:54:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;터렛&quot;&gt;&lt;a href=&quot;#터렛&quot; class=&quot;headerlink&quot; title=&quot;터렛&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.acmicpc.net/problem/1002&quot;&gt;터렛&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;조규현과 백승환은 터렛에 근무하는 </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="터렛"><a href="#터렛" class="headerlink" title="터렛"></a><a href="https://www.acmicpc.net/problem/1002">터렛</a></h1><p>조규현과 백승환은 터렛에 근무하는 직원이다. 하지만 워낙 존재감이 없어서 인구수는 차지하지 않는다. 다음은 조규현과 백승환의 사진이다.</p><p><img src="/images/pasted-402.png"></p><p>이석원은 조규현과 백승환에게 상대편 마린(류재명)의 위치를 계산하라는 명령을 내렸다. 조규현과 백승환은 각각 자신의 터렛 위치에서 현재 적까지의 거리를 계산했다.</p><p>조규현의 좌표 (x1, y1)와 백승환의 좌표 (x2, y2)가 주어지고, 조규현이 계산한 류재명과의 거리 r1과 백승환이 계산한 류재명과의 거리 r2가 주어졌을 때, 류재명이 있을 수 있는 좌표의 수를 출력하는 프로그램을 작성하시오.</p><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">testCase = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(testCase):</span><br><span class="line">    x1, y1, r1, x2, y2, r2 = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">    distance = ((x1 - x2)**<span class="number">2</span> + (y1 - y2)**<span class="number">2</span>) ** <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> distance == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> r1 == r2:</span><br><span class="line">            print(<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> distance &gt; r1 + r2:</span><br><span class="line">        print(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> distance == r1 + r2:</span><br><span class="line">        print(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> (r1 &lt; r2 <span class="keyword">and</span> r1 + distance == r2) <span class="keyword">or</span> (r2 &lt; r1 <span class="keyword">and</span> r2 + distance == r1):</span><br><span class="line">            print(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">elif</span> (r1 &lt; r2 <span class="keyword">and</span> r1 + distance &lt; r2) <span class="keyword">or</span> (r2 &lt; r1 <span class="keyword">and</span> r2 + distance &lt; r1):</span><br><span class="line">            print(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="number">2</span>)</span><br></pre></td></tr></table></figure><h3 id="풀이-설명"><a href="#풀이-설명" class="headerlink" title="풀이 설명"></a>풀이 설명</h3><p>나는 문제를 읽고 무슨 소리인지 이해를 못했다.<br><br>직접 그림을 그리니, 그제서야 왜 예제에서 1과 2이 출력됬는지 이해가 됐다.</p><p>하지만 이해를 한다고 해서 문제가 풀린 것은 아니였다.</p><p>나는 문제를 풀지 못 했고, 다른 분의 풀이를 보고 이해를 하였다.</p><p><a href="https://www.youtube.com/watch?v=Y0mJyV0KVdw">알고리즘 문제풀이 - 백준 온라인(BOJ) 1002번 문제</a><br><br>이 분의 풀이 설명이 너무 자세하고 이해하기 쉬워서 풀이가 궁금하신 분들은 들어가서 확인하시면 될 것 같다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%B1%EC%A4%80/%EC%8B%A4%EB%B2%84/">실버</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%844/">백준 실버4</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/18/%EB%B0%B1%EC%A4%80-%EC%8B%A4%EB%B2%84-1002%EB%B2%88-%EB%AC%B8%EC%A0%9C/#disqus_thread</comments>
       
     </item>
     
