@@ -3,22 +3,36 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/tags/Programmes-Level-1/</loc>
+        <lastmod>2021-05-25T04:30:17.010Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://lrtk-coder.github.io/tags/Programmes/</loc>
+        <lastmod>2021-05-25T04:30:17.010Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/</loc>
-        <lastmod>2021-05-23T23:42:03.890Z</lastmod>
+        <lastmod>2021-05-25T04:30:17.010Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://lrtk-coder.github.io/tags/Programmers-Level-1/</loc>
-        <lastmod>2021-05-23T23:42:03.890Z</lastmod>
+        <lastmod>2021-05-25T04:26:57.370Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://lrtk-coder.github.io/tags/Programmers/</loc>
-        <lastmod>2021-05-23T23:42:03.890Z</lastmod>
+        <lastmod>2021-05-25T04:26:57.370Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
