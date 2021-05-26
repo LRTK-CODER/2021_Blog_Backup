@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://lrtk-coder.github.io/tags/Webhacking-kr/</loc>
+        <lastmod>2021-05-26T11:01:17.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/</loc>
         <lastmod>2021-05-26T06:39:10.710Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,13 +40,6 @@
     <url>
         <loc>https://lrtk-coder.github.io/tags/Programmes/</loc>
         <lastmod>2021-05-25T04:30:17.010Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://lrtk-coder.github.io/tags/Webhacking-kr/</loc>
-        <lastmod>2021-05-23T02:32:11.700Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
