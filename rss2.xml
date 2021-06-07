@@ -404,36 +404,6 @@
     </item>
     
     <item>
-      <title>Webhacking.kr Old - 29 Write Up</title>
-      <link>https://lrtk-coder.github.io/2021/05/31/Webhacking-kr-Old-29-Write-Up/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/31/Webhacking-kr-Old-29-Write-Up/</guid>
-      <pubDate>Mon, 31 May 2021 00:06:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-29"><a href="#Old-29" class="headerlink" title="Old - 29"></a>Old - 29</h2><p><img src="/images/pasted-533.png"><br>파일을 업로드하는 페이지가 나왔다.<br><br>맨위에 Flag는 다른 테이블에 있다고 하니, 아마 SQLi를 통해 다른 테이블을 알아내는 문제로 추측된다.</p><p><img src="/images/pasted-534.png"><br>몇 번 업로드를 하니, 대충 어떻게 업로드가 되는지 알 수 있었다.<br></p><p><img src="/images/pasted-535.png"><br>일단 공격백터로 filename을 사용할 수 있는지 알아보기 위해 ‘를 넣어서 서버로 보냈다.<br><br>그 결과 쿼리 에러가 발생되었다.</p><p>filename의 값을 insult 쿼리에 삽입하여, 데이터를 저장하는 것으로 추측되는데 문제는 filename의 위치를 알아내야한다.<br><br><code>INSERT INTO 테이블명 VALUES(값1, 값2, 값3);</code> 여기서 filename의 위치가 값1인지 값3인지를 정확하게 모른다는 것이다.<br></p><p><img src="/images/pasted-536.png"><br>그래서 나는 일단 값3에 위치한다고 생각하고, <code>INSERT INTO 테이블명 VALUES(값1, 값2, filename);#);</code>으로 만들어줘서 해당 위치가 맞는지 확인을 하였다.<br><br>기대와 다르게 다른 위치인 듯하여, 경우의 수를 모두 넣어서 테스트를 진행하였다.</p><p><img src="/images/pasted-537.png"><br><code>3&#39;, &#39;123&#39;, My IP);#</code>를 서버로 보내니, 해당 값이 저장되어 출력되었다.<br><br>이로써 <code>INSERT INTO 테이블명 VALUES(filename, time, ip);</code>로 이루어져있다는 것을 알 수 있었다.</p><p>전에 풀이하였던 32번 문제에 사용한 방법대로, VALUES 절에 여러 값들을 넣어서 내가 원하는 값도 같이 저장되도록 하였다.</p><p><img src="/images/pasted-538.png"><br>여기서 굳이 값을 추가하는 이유는 filename은 INSULT 문에서 작음 따음표로 묶어져 있기 때문에 <code>database()</code>를 넣어도 문자열로 인식되어 실행이 되지 않는다.</p><p><img src="/images/pasted-539.png"><br><code>1&#39;, &#39;123&#39;, My IP),(database(), &#39;123&#39;, My IP);#</code><br>database()을 사용하여 해당 테이블이 어떤 database에 존재하는지 확인하였다.</p><p><img src="/images/pasted-540.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT count(table_name) from information_schema.tables where table_schema=&#39;chall29&#39;), &#39;123&#39;, My IP);#"><br>스키마으로 테이블의 개수를 확인하였다. 이렇게 한 이유는 테이블이 여러 개가 있으면, Limit를 이용하여 하나씩 출력을 해야하기 때문인데 총 몇번을 시도를 하면 되는지 확인하기 위해서다.</p><p><img src="/images/pasted-541.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT table_name from information_schema.tables where table_schema=&#39;chall29&#39; LIMIT 0, 1), &#39;123&#39;, My IP);#"><br>2개 중 첫번째 테이블명을 확인하니, <code>files</code>가 나왔다. 아마 파일을 업로드하면 저 테이블에 저장이 될 것으로 판단된다.</p><p><img src="/images/pasted-542.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT table_name from information_schema.tables where table_schema=&#39;chall29&#39; LIMIT 1, 2), &#39;123&#39;, My IP);#"><br>두번째 테이블명을 출력하니, 확실히 Flag가 저장되어 있을 것 같다.</p><p><img src="/images/pasted-543.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT * from flag_congratz), &#39;123&#39;, My IP);#"><br>flag_congratz 테이블 안에 Flag 말고는 다른 데이터는 존재하지 않을 거 같아서 모두 출력하였더니, 운 좋게 빙고였다.<br><br>이렇게 Flag를 획득할 수 있었다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/Secuerity/">Secuerity</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Secuerity/Web/">Web</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/Secuerity/Web/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/31/Webhacking-kr-Old-29-Write-Up/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
       <title>Programmers Lever 1 - 예산</title>
       <link>https://lrtk-coder.github.io/2021/05/30/Programmers-Lever-1-%EC%98%88%EC%82%B0/</link>
       <guid>https://lrtk-coder.github.io/2021/05/30/Programmers-Lever-1-%EC%98%88%EC%82%B0/</guid>
@@ -464,6 +434,36 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/30/Programmers-Lever-1-%EC%98%88%EC%82%B0/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 29 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/05/30/Webhacking-kr-Old-29-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/05/30/Webhacking-kr-Old-29-Write-Up/</guid>
+      <pubDate>Sun, 30 May 2021 15:06:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-29"><a href="#Old-29" class="headerlink" title="Old - 29"></a>Old - 29</h2><p><img src="/images/pasted-533.png"><br>파일을 업로드하는 페이지가 나왔다.<br><br>맨위에 Flag는 다른 테이블에 있다고 하니, 아마 SQLi를 통해 다른 테이블을 알아내는 문제로 추측된다.</p><p><img src="/images/pasted-534.png"><br>몇 번 업로드를 하니, 대충 어떻게 업로드가 되는지 알 수 있었다.<br></p><p><img src="/images/pasted-535.png"><br>일단 공격백터로 filename을 사용할 수 있는지 알아보기 위해 ‘를 넣어서 서버로 보냈다.<br><br>그 결과 쿼리 에러가 발생되었다.</p><p>filename의 값을 insult 쿼리에 삽입하여, 데이터를 저장하는 것으로 추측되는데 문제는 filename의 위치를 알아내야한다.<br><br><code>INSERT INTO 테이블명 VALUES(값1, 값2, 값3);</code> 여기서 filename의 위치가 값1인지 값3인지를 정확하게 모른다는 것이다.<br></p><p><img src="/images/pasted-536.png"><br>그래서 나는 일단 값3에 위치한다고 생각하고, <code>INSERT INTO 테이블명 VALUES(값1, 값2, filename);#);</code>으로 만들어줘서 해당 위치가 맞는지 확인을 하였다.<br><br>기대와 다르게 다른 위치인 듯하여, 경우의 수를 모두 넣어서 테스트를 진행하였다.</p><p><img src="/images/pasted-537.png"><br><code>3&#39;, &#39;123&#39;, My IP);#</code>를 서버로 보내니, 해당 값이 저장되어 출력되었다.<br><br>이로써 <code>INSERT INTO 테이블명 VALUES(filename, time, ip);</code>로 이루어져있다는 것을 알 수 있었다.</p><p>전에 풀이하였던 32번 문제에 사용한 방법대로, VALUES 절에 여러 값들을 넣어서 내가 원하는 값도 같이 저장되도록 하였다.</p><p><img src="/images/pasted-538.png"><br>여기서 굳이 값을 추가하는 이유는 filename은 INSULT 문에서 작음 따음표로 묶어져 있기 때문에 <code>database()</code>를 넣어도 문자열로 인식되어 실행이 되지 않는다.</p><p><img src="/images/pasted-539.png"><br><code>1&#39;, &#39;123&#39;, My IP),(database(), &#39;123&#39;, My IP);#</code><br>database()을 사용하여 해당 테이블이 어떤 database에 존재하는지 확인하였다.</p><p><img src="/images/pasted-540.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT count(table_name) from information_schema.tables where table_schema=&#39;chall29&#39;), &#39;123&#39;, My IP);#"><br>스키마으로 테이블의 개수를 확인하였다. 이렇게 한 이유는 테이블이 여러 개가 있으면, Limit를 이용하여 하나씩 출력을 해야하기 때문인데 총 몇번을 시도를 하면 되는지 확인하기 위해서다.</p><p><img src="/images/pasted-541.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT table_name from information_schema.tables where table_schema=&#39;chall29&#39; LIMIT 0, 1), &#39;123&#39;, My IP);#"><br>2개 중 첫번째 테이블명을 확인하니, <code>files</code>가 나왔다. 아마 파일을 업로드하면 저 테이블에 저장이 될 것으로 판단된다.</p><p><img src="/images/pasted-542.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT table_name from information_schema.tables where table_schema=&#39;chall29&#39; LIMIT 1, 2), &#39;123&#39;, My IP);#"><br>두번째 테이블명을 출력하니, 확실히 Flag가 저장되어 있을 것 같다.</p><p><img src="/images/pasted-543.png" alt="1&#39;, &#39;123&#39;, My IP),((SELECT * from flag_congratz), &#39;123&#39;, My IP);#"><br>flag_congratz 테이블 안에 Flag 말고는 다른 데이터는 존재하지 않을 거 같아서 모두 출력하였더니, 운 좋게 빙고였다.<br><br>이렇게 Flag를 획득할 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/05/30/Webhacking-kr-Old-29-Write-Up/#disqus_thread</comments>
       
     </item>
     
