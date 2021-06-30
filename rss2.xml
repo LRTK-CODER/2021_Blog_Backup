@@ -9,8 +9,40 @@
     <atom:link href="https://lrtk-coder.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Coding, Security, IT News 등 정리한 블로그</description>
-    <pubDate>Mon, 28 Jun 2021 14:22:18 GMT</pubDate>
+    <pubDate>Wed, 30 Jun 2021 02:55:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Programmers Level 2 - 전화번호 목록</title>
+      <link>https://lrtk-coder.github.io/2021/06/29/Programmers-Level-2-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/</link>
+      <guid>https://lrtk-coder.github.io/2021/06/29/Programmers-Level-2-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/</guid>
+      <pubDate>Tue, 29 Jun 2021 17:52:00 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;전화번호-목록&quot;&gt;&lt;a href=&quot;#전화번호-목록&quot; class=&quot;headerlink&quot; title=&quot;전화번호 목록&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/42577</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="전화번호-목록"><a href="#전화번호-목록" class="headerlink" title="전화번호 목록"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/42577">전화번호 목록</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>전화번호부에 적힌 전화번호 중, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인하려 합니다.<br>전화번호가 다음과 같을 경우, 구조대 전화번호는 영석이의 전화번호의 접두사입니다.</p><ul><li>구조대 : 119</li><li>박준영 : 97 674 223</li><li>지영석 : 11 9552 4421</li></ul><p>전화번호부에 적힌 전화번호를 담은 배열 phone_book 이 solution 함수의 매개변수로 주어질 때, 어떤 번호가 다른 번호의 접두어인 경우가 있으면 false를 그렇지 않으면 true를 return 하도록 solution 함수를 작성해주세요.</p><h3 id="제한-사항"><a href="#제한-사항" class="headerlink" title="제한 사항"></a>제한 사항</h3><ul><li>phone_book의 길이는 1 이상 1,000,000 이하입니다.</li><li>각 전화번호의 길이는 1 이상 20 이하입니다.</li><li>같은 전화번호가 중복해서 들어있지 않습니다.</li></ul><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">phoneBook</span>):</span></span><br><span class="line">    phoneBook = <span class="built_in">sorted</span>(phoneBook)</span><br><span class="line">    print(phoneBook)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> p1, p2 <span class="keyword">in</span> <span class="built_in">zip</span>(phoneBook, phoneBook[<span class="number">1</span>:]):</span><br><span class="line">        <span class="keyword">if</span> p2.startswith(p1):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure><p>startswith 함수를 이용한 문제 풀이다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</category>
+      
+      <category domain="https://lrtk-coder.github.io/categories/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/Level-2/">Level 2</category>
+      
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers/">Programmers</category>
+      
+      <category domain="https://lrtk-coder.github.io/tags/Programmers-Level-2/">Programmers Level 2</category>
+      
+      
+      <comments>https://lrtk-coder.github.io/2021/06/29/Programmers-Level-2-%EC%A0%84%ED%99%94%EB%B2%88%ED%98%B8-%EB%AA%A9%EB%A1%9D/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Programmers Level 2 - 소수 찾기</title>
@@ -575,28 +607,6 @@
       
       
       <comments>https://lrtk-coder.github.io/2021/06/09/Programmers-Level-1-%EC%9D%8C%EC%96%91-%EB%8D%94%ED%95%98%EA%B8%B0/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Programmers Level 1 - 폰켓몬</title>
-      <link>https://lrtk-coder.github.io/2021/06/09/Programmers-Level-1-%ED%8F%B0%EC%BC%93%EB%AA%AC/</link>
-      <guid>https://lrtk-coder.github.io/2021/06/09/Programmers-Level-1-%ED%8F%B0%EC%BC%93%EB%AA%AC/</guid>
-      <pubDate>Wed, 09 Jun 2021 15:46:16 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;폰켓몬&quot;&gt;&lt;a href=&quot;#폰켓몬&quot; class=&quot;headerlink&quot; title=&quot;폰켓몬&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://programmers.co.kr/learn/courses/30/lessons/1845&quot;&gt;폰켓몬&lt;/a&gt;&lt;/h1</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="폰켓몬"><a href="#폰켓몬" class="headerlink" title="폰켓몬"></a><a href="https://programmers.co.kr/learn/courses/30/lessons/1845">폰켓몬</a></h1><h2 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h2><p>당신은 폰켓몬을 잡기 위한 오랜 여행 끝에, 홍 박사님의 연구실에 도착했습니다. 홍 박사님은 당신에게 자신의 연구실에 있는 총 N 마리의 폰켓몬 중에서 N/2마리를 가져가도 좋다고 했습니다.<br><br>홍 박사님 연구실의 폰켓몬은 종류에 따라 번호를 붙여 구분합니다. 따라서 같은 종류의 폰켓몬은 같은 번호를 가지고 있습니다. 예를 들어 연구실에 총 4마리의 폰켓몬이 있고, 각 폰켓몬의 종류 번호가 [3번, 1번, 2번, 3번]이라면 이는 3번 폰켓몬 두 마리, 1번 폰켓몬 한 마리, 2번 폰켓몬 한 마리가 있음을 나타냅니다. 이때, 4마리의 폰켓몬 중 2마리를 고르는 방법은 다음과 같이 6가지가 있습니다.</p><ul><li>첫 번째(3번), 두 번째(1번) 폰켓몬을 선택</li><li>첫 번째(3번), 세 번째(2번) 폰켓몬을 선택</li><li>첫 번째(3번), 네 번째(3번) 폰켓몬을 선택</li><li>두 번째(1번), 세 번째(2번) 폰켓몬을 선택</li><li>두 번째(1번), 네 번째(3번) 폰켓몬을 선택</li><li>세 번째(2번), 네 번째(3번) 폰켓몬을 선택</li></ul><p>이때, 첫 번째(3번) 폰켓몬과 네 번째(3번) 폰켓몬을 선택하는 방법은 한 종류(3번 폰켓몬 두 마리)의 폰켓몬만 가질 수 있지만, 다른 방법들은 모두 두 종류의 폰켓몬을 가질 수 있습니다. 따라서 위 예시에서 가질 수 있는 폰켓몬 종류 수의 최댓값은 2가 됩니다.<br><br>당신은 최대한 다양한 종류의 폰켓몬을 가지길 원하기 때문에, 최대한 많은 종류의 폰켓몬을 포함해서 N/2마리를 선택하려 합니다. N마리 폰켓몬의 종류 번호가 담긴 배열 nums가 매개변수로 주어질 때, N/2마리의 폰켓몬을 선택하는 방법 중, 가장 많은 종류의 폰켓몬을 선택하는 방법을 찾아, 그때의 폰켓몬 종류 번호의 개수를 return 하도록 solution 함수를 완성해주세요.</p><h3 id="제한사항"><a href="#제한사항" class="headerlink" title="제한사항"></a>제한사항</h3><ul><li>nums는 폰켓몬의 종류 번호가 담긴 1차원 배열입니다.</li><li>nums의 길이(N)는 1 이상 10,000 이하의 자연수이며, 항상 짝수로 주어집니다.</li><li>폰켓몬의 종류 번호는 1 이상 200,000 이하의 자연수로 나타냅니다.</li><li>가장 많은 종류의 폰켓몬을 선택하는 방법이 여러 가지인 경우에도, 선택할 수 있는 폰켓몬 종류 개수의 최댓값 하나만 return 하면 됩니다.</li></ul><h2 id="문제-풀이"><a href="#문제-풀이" class="headerlink" title="문제 풀이"></a>문제 풀이</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">nums</span>):</span></span><br><span class="line">    n = <span class="built_in">len</span>(nums)//<span class="number">2</span></span><br><span class="line">    nums = <span class="built_in">set</span>(nums)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) &gt;= n:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure><p>문제 설명이 길지만 결론은 사용 가능한 포켓몬 수를 출력하는 문제이다.<br><br>나는 set 함수를 이용하여 중복을 제거하여 사용할 수 있는 포켓몬을 구하여 문제 풀이를 하였다.</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>https://lrtk-coder.github.io/2021/06/09/Programmers-Level-1-%ED%8F%B0%EC%BC%93%EB%AA%AC/#disqus_thread</comments>
       
     </item>
     
